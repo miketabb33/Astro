@@ -56,15 +56,47 @@
 		4BC55CA8225D330B0079A3E5 /* Astro */ = {
 			isa = PBXGroup;
 			children = (
+				4BC55CC3225D337D0079A3E5 /* Models */,
+				4BC55CC2225D337B0079A3E5 /* Controllers */,
+				4BC55CC0225D336E0079A3E5 /* Supporting Files */,
 				4BC55CA9225D330B0079A3E5 /* AppDelegate.swift */,
-				4BC55CAB225D330B0079A3E5 /* ViewController.swift */,
-				4BC55CAD225D330B0079A3E5 /* Main.storyboard */,
-				4BC55CB3225D330D0079A3E5 /* Assets.xcassets */,
-				4BC55CB5225D330D0079A3E5 /* LaunchScreen.storyboard */,
-				4BC55CB8225D330D0079A3E5 /* Info.plist */,
-				4BC55CB0225D330B0079A3E5 /* Astro.xcdatamodeld */,
+				4BC55CBE225D33430079A3E5 /* Views */,
 			);
 			path = Astro;
+			sourceTree = "<group>";
+		};
+		4BC55CBE225D33430079A3E5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4BC55CB5225D330D0079A3E5 /* LaunchScreen.storyboard */,
+				4BC55CAD225D330B0079A3E5 /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4BC55CC0225D336E0079A3E5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4BC55CB8225D330D0079A3E5 /* Info.plist */,
+				4BC55CB3225D330D0079A3E5 /* Assets.xcassets */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4BC55CC2225D337B0079A3E5 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4BC55CAB225D330B0079A3E5 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		4BC55CC3225D337D0079A3E5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4BC55CB0225D330B0079A3E5 /* Astro.xcdatamodeld */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
