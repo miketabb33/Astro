@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LUs-hS-8T0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tWN-vm-GRG">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -38,6 +39,50 @@
             </objects>
             <point key="canvasLocation" x="1836" y="26.53673163418291"/>
         </scene>
+        <!--Enter Weight Controller-->
+        <scene sceneID="n72-n8-heC">
+            <objects>
+                <viewController id="tWN-vm-GRG" customClass="EnterWeightController" customModule="Astro" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="agq-gj-JmO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wSl-C5-PGG">
+                                <rect key="frame" x="87.5" y="318.5" width="200" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="ZPW-13-mAe"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="90k-Ng-ah2">
+                                <rect key="frame" x="113" y="229" width="149" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <state key="normal" title="Push Me"/>
+                                <connections>
+                                    <action selector="weightForPlanetsButtonPressed:" destination="tWN-vm-GRG" eventType="touchUpInside" id="AIp-di-Bvk"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.57045853140000002" green="0.57047235969999999" blue="0.57046490910000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wSl-C5-PGG" firstAttribute="centerX" secondItem="agq-gj-JmO" secondAttribute="centerX" id="Bod-gJ-sDb"/>
+                            <constraint firstItem="wSl-C5-PGG" firstAttribute="centerY" secondItem="agq-gj-JmO" secondAttribute="centerY" id="bab-AO-g2G"/>
+                            <constraint firstItem="90k-Ng-ah2" firstAttribute="centerX" secondItem="agq-gj-JmO" secondAttribute="centerX" id="ezc-AS-TFi"/>
+                            <constraint firstItem="wSl-C5-PGG" firstAttribute="top" secondItem="90k-Ng-ah2" secondAttribute="bottom" constant="29.5" id="rob-M9-KLA"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="8g0-fo-mqt"/>
+                    </view>
+                    <connections>
+                        <outlet property="enteredWeight" destination="wSl-C5-PGG" id="i4F-WJ-PhU"/>
+                        <segue destination="LUs-hS-8T0" kind="show" identifier="goToPlanetWeightScreen" id="uUH-Da-ymc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nhU-kQ-J6E" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="112.8" y="26.53673163418291"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="Bgc-i1-c8V">
             <objects>
@@ -46,6 +91,11 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="GdX-Sh-y68">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -54,7 +104,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PC4-1L-n7m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="896.79999999999995" y="26.53673163418291"/>
+            <point key="canvasLocation" x="1012" y="27"/>
         </scene>
     </scenes>
 </document>

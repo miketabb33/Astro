@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4BB687AF226519E600D423F9 /* EnterWeightController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB687AE226519E600D423F9 /* EnterWeightController.swift */; };
 		4BC55CAA225D330B0079A3E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC55CA9225D330B0079A3E5 /* AppDelegate.swift */; };
 		4BC55CAF225D330B0079A3E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BC55CAD225D330B0079A3E5 /* Main.storyboard */; };
 		4BC55CB2225D330B0079A3E5 /* Astro.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4BC55CB0225D330B0079A3E5 /* Astro.xcdatamodeld */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4BB687AE226519E600D423F9 /* EnterWeightController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterWeightController.swift; sourceTree = "<group>"; };
 		4BC55CA6225D330B0079A3E5 /* Astro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Astro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BC55CA9225D330B0079A3E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4BC55CAE225D330B0079A3E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 		4BC55CC2225D337B0079A3E5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				4BB687AE226519E600D423F9 /* EnterWeightController.swift */,
 				4BC55CC4225D35450079A3E5 /* TableViewController.swift */,
 				4BC55CC8225E59A90079A3E5 /* PlanetCell.swift */,
 			);
@@ -184,6 +187,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BB687AF226519E600D423F9 /* EnterWeightController.swift in Sources */,
 				4BC55CB2225D330B0079A3E5 /* Astro.xcdatamodeld in Sources */,
 				4BC55CC5225D35450079A3E5 /* TableViewController.swift in Sources */,
 				4BC55CAA225D330B0079A3E5 /* AppDelegate.swift in Sources */,
