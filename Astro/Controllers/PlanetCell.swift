@@ -14,6 +14,8 @@ class PlanetCell: UITableViewCell {
     
     @IBOutlet weak var planetCellImage: UIImageView!
     
+    @IBOutlet weak var weightLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

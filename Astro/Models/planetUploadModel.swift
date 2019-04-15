@@ -10,5 +10,5 @@ import UIKit
 
 class planetUpload : Codable{
     var name : String = ""
-    var image : String = ""
+    var relativeWeight : Int = 0
 }

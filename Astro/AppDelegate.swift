@@ -103,9 +103,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     backgroundContext.perform {
                         for (index, planet) in planetArray.enumerated() {
                             let currentPlanet = Planets(context: backgroundContext)
+                            let convertableWeight : Decimal = Decimal(planet.relativeWeight)/1000000
     
                             currentPlanet.name = planet.name
-                            currentPlanet.image = planet.image
+                            currentPlanet.relativeWeight = convertableWeight as NSDecimalNumber
                             currentPlanet.position = Int16(index)
     
                             dbPlanets.append(currentPlanet)

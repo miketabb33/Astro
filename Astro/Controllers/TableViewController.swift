@@ -13,14 +13,17 @@ class TableViewController: UITableViewController {
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var planetsContainer = [Planets]()
+    let decimalFormatter = NumberFormatter()
+    
+    var enteredWeight : Int?
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.loadPlanetData()
+        loadPlanetData()
         
-      
+        askForWeightAlert()
         
         //DB Directory
         //print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
@@ -37,9 +40,21 @@ class TableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CustomPlanetCell", for: indexPath) as! PlanetCell
         
+        decimalFormatter.numberStyle = .decimal
+        decimalFormatter.maximumFractionDigits = 2
+        
         let currentPlanet = planetsContainer[indexPath.row]
         
-        cell.planetName.text = currentPlanet.name
+        if enteredWeight != nil {
+            let weight = ((currentPlanet.relativeWeight! as Decimal) * Decimal(enteredWeight!)) as Any?
+            if let value = weight {
+                let stringWeight = decimalFormatter.string(from: value as! NSNumber)
+                cell.weightLabel.text = "\(stringWeight!) lbs"
+            }
+            
+        }
+        
+        cell.planetName.text = currentPlanet.name!
         cell.planetCellImage.image = UIImage(named: currentPlanet.name!)
         
         tableView.rowHeight = 80
@@ -64,7 +79,26 @@ class TableViewController: UITableViewController {
     }
     
    
-    
+    func askForWeightAlert() {
+        var textfield = UITextField()
+        
+        let alert = UIAlertController(title: "Enter A Weight", message: "", preferredStyle: .alert)
+        
+        let action = UIAlertAction(title: "Enter", style: .default) { (action) in
+            //Add if/else for type checking here
+            self.enteredWeight = Int(textfield.text!)
+            self.tableView.reloadData()
+        }
+        
+        alert.addTextField { (alertTextFeild) in
+        alertTextFeild.placeholder = "Enter a weight"
+        textfield = alertTextFeild
+        }
+        
+        alert.addAction(action)
+        
+        present(alert, animated: true, completion: nil)
+    }
     
 
 }

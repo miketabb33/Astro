@@ -5,68 +5,68 @@
 	<dict>
 		<key>name</key>
 		<string>Moon</string>
-		<key>image</key>
-		<string>portal</string>
+		<key>relativeWeight</key>
+		<real>165556</real>
 	</dict>
 	<dict>
 		<key>name</key>
 		<string>Sun</string>
-		<key>image</key>
-		<string>portal</string>
+		<key>relativeWeight</key>
+		<real>27071667</real>
 	</dict>
 	<dict>
 		<key>name</key>
 		<string>Mercury</string>
-		<key>image</key>
-		<string>portal</string>
+		<key>relativeWeight</key>
+		<real>377778</real>
 	</dict>
 	<dict>
 		<key>name</key>
 		<string>Venus</string>
-		<key>image</key>
-		<string>portal</string>
+		<key>relativeWeight</key>
+		<real>906667</real>
 	</dict>
 	<dict>
 		<key>name</key>
 		<string>Earth</string>
-		<key>image</key>
-		<string>portal</string>
+		<key>relativeWeight</key>
+		<integer>1000000</integer>
 	</dict>
 	<dict>
 		<key>name</key>
 		<string>Mars</string>
-		<key>image</key>
-		<string>portal</string>
+		<key>relativeWeight</key>
+		<real>376667</real>
 	</dict>
 	<dict>
 		<key>name</key>
 		<string>Jupiter</string>
-		<key>image</key>
-		<string>portal</string>
+		<key>relativeWeight</key>
+		<real>2527778</real>
 	</dict>
 	<dict>
 		<key>name</key>
 		<string>Saturn</string>
-		<key>image</key>
-		<string>portal</string>
+		<key>relativeWeight</key>
+		<real>1063889</real>
 	</dict>
 	<dict>
 		<key>name</key>
 		<string>Uranus</string>
-		<key>image</key>
-		<string>portal</string>
+		<key>relativeWeight</key>
+		<real>888889</real>
 	</dict>
 	<dict>
 		<key>name</key>
 		<string>Neptune</string>
-		<key>image</key>
-		<string>portal</string>
+		<key>relativeWeight</key>
+		<real>1125000</real>
 	</dict>
 	<dict>
 		<key>name</key>
 		<string>Pluto</string>
-		<key>image</key>
-		<string>portal</string>
+		<key>relativeWeight</key>
+		<real>66667</real>
 	</dict>
 </array>
 </plist>
