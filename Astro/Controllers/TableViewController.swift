@@ -13,6 +13,7 @@ class TableViewController: UITableViewController {
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var planetsContainer = [Planets]()
+    
     let decimalFormatter = NumberFormatter()
     
     var enteredWeight : Int?

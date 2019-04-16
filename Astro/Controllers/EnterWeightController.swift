@@ -13,14 +13,22 @@ class EnterWeightController: UIViewController {
     
     @IBOutlet weak var enteredWeight: UITextField!
     
+    @IBOutlet weak var validationError: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func weightForPlanetsButtonPressed(_ sender: UIButton) {
-        performSegue(withIdentifier: "goToPlanetWeightScreen", sender: self)
+        
+        if Int(enteredWeight.text!) != nil {
+            performSegue(withIdentifier: "goToPlanetWeightScreen", sender: self)
+        } else {
+            validationError.text = "Please Enter A Number"
+            print("not a number")
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -28,18 +36,6 @@ class EnterWeightController: UIViewController {
         let targetController = destinationNavigationController.viewControllers.first as! TableViewController
         
         targetController.enteredWeight = Int(enteredWeight.text!)
-        
-        
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
