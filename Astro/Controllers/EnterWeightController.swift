@@ -13,8 +13,10 @@ class EnterWeightController: UIViewController {
     
     @IBOutlet weak var enteredWeight: UITextField!
     
+   
     @IBOutlet weak var validationError: UILabel!
     
+  
     
     override func viewDidLoad() {
         super.viewDidLoad()

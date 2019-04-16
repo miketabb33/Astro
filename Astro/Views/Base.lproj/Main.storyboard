@@ -58,9 +58,8 @@
                             <rect key="frame" x="0.0" y="0.0" width="375" height="400"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nasa Live Update" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VCl-wD-hNc">
-                                    <rect key="frame" x="95" y="0.0" width="184" height="26"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nasa News" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VCl-wD-hNc">
+                                    <rect key="frame" x="129" y="4" width="117" height="26"/>
                                     <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="23"/>
                                     <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
@@ -82,12 +81,37 @@
                                         <constraint firstAttribute="height" constant="40" id="r96-yL-jar"/>
                                     </constraints>
                                 </view>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T8K-W2-BLf">
+                                    <rect key="frame" x="30" y="282" width="315" height="28"/>
+                                    <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="25"/>
+                                    <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s1I-lG-PV4">
+                                    <rect key="frame" x="30" y="310" width="315" height="50"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="50" id="IHh-Xa-lpu"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="13"/>
+                                    <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
+                                <constraint firstAttribute="trailing" secondItem="s1I-lG-PV4" secondAttribute="trailing" constant="30" id="0eh-gW-GPE"/>
+                                <constraint firstItem="T8K-W2-BLf" firstAttribute="leading" secondItem="NAW-If-ByG" secondAttribute="leading" constant="30" id="2xG-Ec-37U"/>
                                 <constraint firstItem="k7r-10-TFv" firstAttribute="leading" secondItem="NAW-If-ByG" secondAttribute="leading" id="6ZN-xV-ESe"/>
                                 <constraint firstAttribute="bottom" secondItem="k7r-10-TFv" secondAttribute="bottom" id="CTV-PW-Hqu"/>
+                                <constraint firstItem="s1I-lG-PV4" firstAttribute="leading" secondItem="NAW-If-ByG" secondAttribute="leading" constant="30" id="CWJ-IY-GNb"/>
+                                <constraint firstItem="VCl-wD-hNc" firstAttribute="top" secondItem="NAW-If-ByG" secondAttribute="top" constant="4" id="OhE-pF-vuC"/>
+                                <constraint firstAttribute="trailing" secondItem="T8K-W2-BLf" secondAttribute="trailing" constant="30" id="ZCn-ln-M2a"/>
+                                <constraint firstItem="T8K-W2-BLf" firstAttribute="centerX" secondItem="NAW-If-ByG" secondAttribute="centerX" id="cXb-hm-nm3"/>
+                                <constraint firstItem="VCl-wD-hNc" firstAttribute="centerX" secondItem="NAW-If-ByG" secondAttribute="centerX" id="d1d-BV-JCC"/>
+                                <constraint firstItem="k7r-10-TFv" firstAttribute="top" secondItem="T8K-W2-BLf" secondAttribute="bottom" constant="50" id="fw7-ZI-wWd"/>
+                                <constraint firstItem="s1I-lG-PV4" firstAttribute="centerX" secondItem="NAW-If-ByG" secondAttribute="centerX" id="x2q-Cl-Ssm"/>
                                 <constraint firstAttribute="trailing" secondItem="k7r-10-TFv" secondAttribute="trailing" id="xtP-Dc-51C"/>
+                                <constraint firstItem="k7r-10-TFv" firstAttribute="top" secondItem="s1I-lG-PV4" secondAttribute="bottom" id="zfn-hU-cGC"/>
                             </constraints>
                         </view>
                         <prototypes>
@@ -109,6 +133,9 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="6oM-nP-Oox"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="nasaDescription" destination="s1I-lG-PV4" id="0aT-oM-L4o"/>
+                        <outlet property="nasaHeader" destination="VCl-wD-hNc" id="I7u-kk-mfc"/>
+                        <outlet property="nasaTitle" destination="T8K-W2-BLf" id="gFQ-Kk-eLL"/>
                         <segue destination="tWN-vm-GRG" kind="show" identifier="toWeightOnOtherPlanets" id="h33-z4-n83"/>
                         <segue destination="Pk3-WQ-DTL" kind="show" identifier="toPlanetTempList" id="rh9-PR-HWV"/>
                     </connections>
@@ -138,39 +165,39 @@
                                 <rect key="frame" x="80" y="276" width="219" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="btq-gW-Hu9">
-                                <rect key="frame" x="0.0" y="356" width="375" height="0.0"/>
-                                <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="25"/>
-                                <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="90k-Ng-ah2">
-                                <rect key="frame" x="91" y="417" width="196" height="60"/>
+                                <rect key="frame" x="87" y="184" width="196" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="40"/>
-                                <state key="normal" title="Check it!"/>
+                                <state key="normal" title="Push Me!"/>
                                 <connections>
                                     <action selector="weightForPlanetsButtonPressed:" destination="tWN-vm-GRG" eventType="touchUpInside" id="AIp-di-Bvk"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Y1-XZ-aTB">
+                                <rect key="frame" x="0.0" y="370" width="375" height="0.0"/>
+                                <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="30"/>
+                                <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.57045853140000002" green="0.57047235969999999" blue="0.57046490910000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="wSl-C5-PGG" firstAttribute="centerX" secondItem="agq-gj-JmO" secondAttribute="centerX" id="Bod-gJ-sDb"/>
-                            <constraint firstItem="8g0-fo-mqt" firstAttribute="trailing" secondItem="btq-gW-Hu9" secondAttribute="trailing" id="GAA-HF-9CC"/>
-                            <constraint firstItem="btq-gW-Hu9" firstAttribute="top" secondItem="wSl-C5-PGG" secondAttribute="bottom" constant="7.5" id="GwO-4j-t9v"/>
+                            <constraint firstItem="8Y1-XZ-aTB" firstAttribute="leading" secondItem="8g0-fo-mqt" secondAttribute="leading" id="PbS-kv-8NL"/>
+                            <constraint firstItem="8g0-fo-mqt" firstAttribute="trailing" secondItem="8Y1-XZ-aTB" secondAttribute="trailing" id="Rlo-yt-dR9"/>
                             <constraint firstItem="wSl-C5-PGG" firstAttribute="centerY" secondItem="agq-gj-JmO" secondAttribute="centerY" id="bab-AO-g2G"/>
-                            <constraint firstItem="btq-gW-Hu9" firstAttribute="leading" secondItem="8g0-fo-mqt" secondAttribute="leading" id="mJ2-jy-hs5"/>
+                            <constraint firstItem="8Y1-XZ-aTB" firstAttribute="top" secondItem="wSl-C5-PGG" secondAttribute="bottom" constant="21.5" id="chg-du-0mK"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8g0-fo-mqt"/>
                     </view>
                     <connections>
                         <outlet property="enteredWeight" destination="wSl-C5-PGG" id="i4F-WJ-PhU"/>
-                        <outlet property="validationError" destination="btq-gW-Hu9" id="jXn-U8-1cy"/>
+                        <outlet property="validationError" destination="8Y1-XZ-aTB" id="peZ-uK-BKo"/>
                         <segue destination="LUs-hS-8T0" kind="show" identifier="goToPlanetWeightScreen" id="uUH-Da-ymc"/>
                     </connections>
                 </viewController>
@@ -230,13 +257,23 @@
                                     <constraint firstAttribute="height" constant="220" id="wwj-Gd-9Il"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The temperature is either really hot or really cold brah." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="weN-jh-eRR">
+                                <rect key="frame" x="30" y="427.5" width="315" height="99.5"/>
+                                <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="30"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="H5x-6W-5OY" firstAttribute="centerX" secondItem="k1L-gP-Bid" secondAttribute="centerX" id="Haw-fz-uij"/>
+                            <constraint firstAttribute="trailing" secondItem="weN-jh-eRR" secondAttribute="trailing" constant="30" id="I4y-cn-o5f"/>
                             <constraint firstItem="ln4-G3-EqU" firstAttribute="top" secondItem="H5x-6W-5OY" secondAttribute="bottom" constant="20" id="SVW-IN-lgR"/>
                             <constraint firstItem="H5x-6W-5OY" firstAttribute="top" secondItem="h9D-He-2xa" secondAttribute="top" constant="30" id="Yhe-VW-eLs"/>
+                            <constraint firstItem="weN-jh-eRR" firstAttribute="centerX" secondItem="k1L-gP-Bid" secondAttribute="centerX" id="Ykf-bI-1t3"/>
                             <constraint firstItem="ln4-G3-EqU" firstAttribute="centerX" secondItem="k1L-gP-Bid" secondAttribute="centerX" id="fAs-0o-Ivr"/>
+                            <constraint firstItem="weN-jh-eRR" firstAttribute="leading" secondItem="k1L-gP-Bid" secondAttribute="leading" constant="30" id="jXt-ne-fbH"/>
+                            <constraint firstItem="h9D-He-2xa" firstAttribute="bottom" secondItem="weN-jh-eRR" secondAttribute="bottom" constant="140" id="mX3-1H-cqy"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="h9D-He-2xa"/>
                     </view>

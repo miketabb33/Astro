@@ -47,7 +47,6 @@ class PlanetTempTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.selectedPlanetName = planetsContainer[indexPath.row].name!
-        print(self.selectedPlanetName!)
         performSegue(withIdentifier: "toPlanetTemp", sender: self)
     }
     
