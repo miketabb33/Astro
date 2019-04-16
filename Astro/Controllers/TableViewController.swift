@@ -60,7 +60,7 @@ class TableViewController: UITableViewController {
         return cell
     }
     
-    //MARK - loading data from planets database
+    //MARK - load data from planets database
     
     func loadPlanetData() {
         let request : NSFetchRequest<Planets> = Planets.fetchRequest()
