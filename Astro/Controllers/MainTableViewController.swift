@@ -9,10 +9,11 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import SVProgressHUD
 
 class MainTableViewController: UITableViewController {
     
-    var mainItemsArray = ["Weight on other Planets", "Temperature on other Planets"]
+    var mainItemsArray = ["Weight on Planets", "Temperature on Planets"]
     
     let nasaDataModel = NasaDataModel()
     
@@ -32,6 +33,7 @@ class MainTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        SVProgressHUD.show()
         loadNasaData()
 
         tableView.register(UINib(nibName: "MainItemCell", bundle: nil), forCellReuseIdentifier: "CustomMainItemCell")
@@ -98,14 +100,8 @@ class MainTableViewController: UITableViewController {
     }
     
     //MARK - update UI
-    func updateUIWithNasaData() {
-        nasaHeader.text = "Nasa News \(nasaDataModel.date)"
-        nasaTitle.text = nasaDataModel.title
-        nasaDescription.text = nasaDataModel.description
-        loadNasaImage()
-    }
     
-    func loadNasaImage(){
+    func updateUIWithNasaData(){
         let imageUrlString = nasaDataModel.imageURL
         let imageUrl:URL = URL(string: imageUrlString)!
         
@@ -117,6 +113,11 @@ class MainTableViewController: UITableViewController {
             
             // When from background thread, UI needs to be updated on main_queue
             DispatchQueue.main.async {
+                SVProgressHUD.dismiss()
+                self.nasaHeader.text = "Nasa News \(self.nasaDataModel.date)"
+                self.nasaTitle.text = self.nasaDataModel.title
+                self.nasaDescription.text = self.nasaDataModel.description
+                
                 let imageSize = (self.screenWidth/10) * 7
                 let imagePosition = (self.screenWidth/2) - (imageSize/2)
                 let imageContainer = UIImageView(frame: CGRect(x:imagePosition, y:12, width:imageSize, height:imageSize))

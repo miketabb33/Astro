@@ -9,5 +9,6 @@ target 'Astro' do
 
   pod "SwiftyJSON"
   pod "Alamofire"
+  pod "SVProgressHUD"
 
 end
