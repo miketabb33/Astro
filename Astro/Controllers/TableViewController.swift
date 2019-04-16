@@ -30,7 +30,7 @@ class TableViewController: UITableViewController {
         tableView.register(UINib(nibName: "PlanetCell", bundle: nil), forCellReuseIdentifier: "CustomPlanetCell")
     }
     
-    //MARK - Init Table
+    //MARK - Table View Data Source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return planetsContainer.count

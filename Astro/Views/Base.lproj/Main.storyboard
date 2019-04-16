@@ -54,9 +54,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="NAW-If-ByG" userLabel="Nasa Live Updates">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="400"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nasa Live Update" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VCl-wD-hNc">
+                                    <rect key="frame" x="95" y="0.0" width="184" height="26"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="23"/>
+                                    <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k7r-10-TFv" userLabel="Other Features Title Bar">
+                                    <rect key="frame" x="0.0" y="360" width="375" height="40"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Other Features" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tmz-XM-0Bd">
+                                            <rect key="frame" x="112" y="7.5" width="151" height="25.5"/>
+                                            <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="23"/>
+                                            <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstItem="Tmz-XM-0Bd" firstAttribute="centerY" secondItem="k7r-10-TFv" secondAttribute="centerY" id="ViV-TN-HgZ"/>
+                                        <constraint firstItem="Tmz-XM-0Bd" firstAttribute="centerX" secondItem="k7r-10-TFv" secondAttribute="centerX" id="jAp-OP-2Rp"/>
+                                        <constraint firstAttribute="height" constant="40" id="r96-yL-jar"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="k7r-10-TFv" firstAttribute="leading" secondItem="NAW-If-ByG" secondAttribute="leading" id="6ZN-xV-ESe"/>
+                                <constraint firstAttribute="bottom" secondItem="k7r-10-TFv" secondAttribute="bottom" id="CTV-PW-Hqu"/>
+                                <constraint firstAttribute="trailing" secondItem="k7r-10-TFv" secondAttribute="trailing" id="xtP-Dc-51C"/>
+                            </constraints>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="bKl-dk-rDd">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="428" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bKl-dk-rDd" id="k92-fk-b3t">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -74,11 +110,12 @@
                     </navigationItem>
                     <connections>
                         <segue destination="tWN-vm-GRG" kind="show" identifier="toWeightOnOtherPlanets" id="h33-z4-n83"/>
+                        <segue destination="Pk3-WQ-DTL" kind="show" identifier="toPlanetTempList" id="rh9-PR-HWV"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UXD-rW-xj6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-169" y="27"/>
+            <point key="canvasLocation" x="-242.40000000000001" y="388.15592203898052"/>
         </scene>
         <!--Enter Weight Controller-->
         <scene sceneID="n72-n8-heC">
@@ -141,6 +178,77 @@
             </objects>
             <point key="canvasLocation" x="1052" y="26.53673163418291"/>
         </scene>
+        <!--Planet Temp Table View Controller-->
+        <scene sceneID="GYH-SF-LZ4">
+            <objects>
+                <tableViewController id="Pk3-WQ-DTL" customClass="PlanetTempTableViewController" customModule="Astro" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ulu-t3-umC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="aL1-NI-VgW">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aL1-NI-VgW" id="wrT-yW-W5J">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Pk3-WQ-DTL" id="Le2-Xc-3cY"/>
+                            <outlet property="delegate" destination="Pk3-WQ-DTL" id="pcG-J0-3Hn"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <segue destination="om4-kX-dQl" kind="show" identifier="toPlanetTemp" id="Jzy-iI-cbV"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vDy-PA-ZbX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1053" y="748"/>
+        </scene>
+        <!--Planet Temp View Controller-->
+        <scene sceneID="qSd-bK-G61">
+            <objects>
+                <viewController id="om4-kX-dQl" customClass="PlanetTempViewController" customModule="Astro" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="k1L-gP-Bid">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Planet Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H5x-6W-5OY">
+                                <rect key="frame" x="58.5" y="94" width="258" height="50"/>
+                                <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="45"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ln4-G3-EqU">
+                                <rect key="frame" x="77.5" y="164" width="220" height="220"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="220" id="IQH-Vb-xBf"/>
+                                    <constraint firstAttribute="height" constant="220" id="wwj-Gd-9Il"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="H5x-6W-5OY" firstAttribute="centerX" secondItem="k1L-gP-Bid" secondAttribute="centerX" id="Haw-fz-uij"/>
+                            <constraint firstItem="ln4-G3-EqU" firstAttribute="top" secondItem="H5x-6W-5OY" secondAttribute="bottom" constant="20" id="SVW-IN-lgR"/>
+                            <constraint firstItem="H5x-6W-5OY" firstAttribute="top" secondItem="h9D-He-2xa" secondAttribute="top" constant="30" id="Yhe-VW-eLs"/>
+                            <constraint firstItem="ln4-G3-EqU" firstAttribute="centerX" secondItem="k1L-gP-Bid" secondAttribute="centerX" id="fAs-0o-Ivr"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="h9D-He-2xa"/>
+                    </view>
+                    <connections>
+                        <outlet property="planetImage" destination="ln4-G3-EqU" id="9ll-bU-yhG"/>
+                        <outlet property="planetName" destination="H5x-6W-5OY" id="xSf-O3-nL3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qp1-dm-OJQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1916" y="748"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="Bgc-i1-c8V">
             <objects>
@@ -185,7 +293,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mJC-77-NBV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1113" y="27"/>
+            <point key="canvasLocation" x="-1185" y="389"/>
         </scene>
     </scenes>
 </document>
