@@ -23,8 +23,6 @@ class TableViewController: UITableViewController {
         
         loadPlanetData()
         
-        askForWeightAlert()
-        
         //DB Directory
         //print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
         
@@ -76,28 +74,6 @@ class TableViewController: UITableViewController {
         }
         
         tableView.reloadData()
-    }
-    
-   
-    func askForWeightAlert() {
-        var textfield = UITextField()
-        
-        let alert = UIAlertController(title: "Enter A Weight", message: "", preferredStyle: .alert)
-        
-        let action = UIAlertAction(title: "Enter", style: .default) { (action) in
-            //Add if/else for type checking here
-            self.enteredWeight = Int(textfield.text!)
-            self.tableView.reloadData()
-        }
-        
-        alert.addTextField { (alertTextFeild) in
-        alertTextFeild.placeholder = "Enter a weight"
-        textfield = alertTextFeild
-        }
-        
-        alert.addAction(action)
-        
-        present(alert, animated: true, completion: nil)
     }
     
 
