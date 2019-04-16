@@ -57,9 +57,16 @@ class TableViewController: UITableViewController {
         cell.planetCellImage.image = UIImage(named: currentPlanet.name!)
         
         tableView.rowHeight = 80
+        tableView.allowsSelection = false
         
         return cell
     }
+    
+    //MARK - Dismiss Nav Controller
+    @IBAction func dismissButtonPressed(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     
     //MARK - load data from planets database
     

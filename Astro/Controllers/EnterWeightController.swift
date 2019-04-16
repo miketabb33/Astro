@@ -27,7 +27,6 @@ class EnterWeightController: UIViewController {
             performSegue(withIdentifier: "goToPlanetWeightScreen", sender: self)
         } else {
             validationError.text = "Please Enter A Number"
-            print("not a number")
         }
     }
     

@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		4BB687AF226519E600D423F9 /* EnterWeightController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB687AE226519E600D423F9 /* EnterWeightController.swift */; };
+		4BB687B12266300300D423F9 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB687B02266300300D423F9 /* MainTableViewController.swift */; };
+		4BB687B4226630B800D423F9 /* MainItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB687B2226630B800D423F9 /* MainItemCell.swift */; };
+		4BB687B5226630B800D423F9 /* MainItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BB687B3226630B800D423F9 /* MainItemCell.xib */; };
 		4BC55CAA225D330B0079A3E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC55CA9225D330B0079A3E5 /* AppDelegate.swift */; };
 		4BC55CAF225D330B0079A3E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BC55CAD225D330B0079A3E5 /* Main.storyboard */; };
 		4BC55CB2225D330B0079A3E5 /* Astro.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4BC55CB0225D330B0079A3E5 /* Astro.xcdatamodeld */; };
@@ -22,6 +25,9 @@
 
 /* Begin PBXFileReference section */
 		4BB687AE226519E600D423F9 /* EnterWeightController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterWeightController.swift; sourceTree = "<group>"; };
+		4BB687B02266300300D423F9 /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
+		4BB687B2226630B800D423F9 /* MainItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainItemCell.swift; sourceTree = "<group>"; };
+		4BB687B3226630B800D423F9 /* MainItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MainItemCell.xib; path = ../Controllers/MainItemCell.xib; sourceTree = "<group>"; };
 		4BC55CA6225D330B0079A3E5 /* Astro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Astro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BC55CA9225D330B0079A3E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4BC55CAE225D330B0079A3E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -80,6 +86,7 @@
 			children = (
 				4BC55CAD225D330B0079A3E5 /* Main.storyboard */,
 				4BC55CC9225E59A90079A3E5 /* PlanetCell.xib */,
+				4BB687B3226630B800D423F9 /* MainItemCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -98,9 +105,11 @@
 		4BC55CC2225D337B0079A3E5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				4BB687B02266300300D423F9 /* MainTableViewController.swift */,
 				4BB687AE226519E600D423F9 /* EnterWeightController.swift */,
 				4BC55CC4225D35450079A3E5 /* TableViewController.swift */,
 				4BC55CC8225E59A90079A3E5 /* PlanetCell.swift */,
+				4BB687B2226630B800D423F9 /* MainItemCell.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -173,6 +182,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4BC55CB7225D330D0079A3E5 /* LaunchScreen.storyboard in Resources */,
+				4BB687B5226630B800D423F9 /* MainItemCell.xib in Resources */,
 				4BC55CB4225D330D0079A3E5 /* Assets.xcassets in Resources */,
 				4BC55CAF225D330B0079A3E5 /* Main.storyboard in Resources */,
 				4BC55CF5225FB0210079A3E5 /* PlanetData.plist in Resources */,
@@ -192,7 +202,9 @@
 				4BC55CC5225D35450079A3E5 /* TableViewController.swift in Sources */,
 				4BC55CAA225D330B0079A3E5 /* AppDelegate.swift in Sources */,
 				4BC55CF7225FD97B0079A3E5 /* planetUploadModel.swift in Sources */,
+				4BB687B4226630B800D423F9 /* MainItemCell.swift in Sources */,
 				4BC55CCA225E59A90079A3E5 /* PlanetCell.swift in Sources */,
+				4BB687B12266300300D423F9 /* MainTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
