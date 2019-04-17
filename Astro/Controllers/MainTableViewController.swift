@@ -13,7 +13,7 @@ import SVProgressHUD
 
 class MainTableViewController: UITableViewController {
     
-    var mainItemsArray = ["Weight on Planets", "Temperature on Planets"]
+    var mainItemsArray = ["How much do you weigh on The Moon?", "What's the weather on Mars?"]
     
     let nasaDataModel = NasaDataModel()
     
@@ -105,13 +105,10 @@ class MainTableViewController: UITableViewController {
         let imageUrlString = nasaDataModel.imageURL
         let imageUrl:URL = URL(string: imageUrlString)!
         
-        // Start background thread so that image loading does not make app unresponsive
         DispatchQueue.global(qos: .userInitiated).async {
             
             let imageData:NSData = NSData(contentsOf: imageUrl)!
             
-            
-            // When from background thread, UI needs to be updated on main_queue
             DispatchQueue.main.async {
                 SVProgressHUD.dismiss()
                 self.nasaHeader.text = "Nasa News \(self.nasaDataModel.date)"
@@ -120,7 +117,7 @@ class MainTableViewController: UITableViewController {
                 
                 let imageSize = (self.screenWidth/10) * 7
                 let imagePosition = (self.screenWidth/2) - (imageSize/2)
-                let imageContainer = UIImageView(frame: CGRect(x:imagePosition, y:12, width:imageSize, height:imageSize))
+                let imageContainer = UIImageView(frame: CGRect(x:imagePosition, y:8, width:imageSize, height:imageSize))
                 let nasaImage = UIImage(data: imageData as Data)
                 imageContainer.image = nasaImage
                 imageContainer.contentMode = UIView.ContentMode.scaleAspectFit
@@ -130,6 +127,7 @@ class MainTableViewController: UITableViewController {
     }
     
 }
+
 
 
 

@@ -10,33 +10,35 @@ import UIKit
 
 class EnterWeightController: UIViewController {
     
+    @IBOutlet weak var enterWeightBar: UISearchBar!
     
-    @IBOutlet weak var enteredWeight: UITextField!
-    
-   
-    @IBOutlet weak var validationError: UILabel!
-    
-  
+    @IBOutlet weak var message: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.enterWeightBar.delegate = self
     }
     
-    @IBAction func weightForPlanetsButtonPressed(_ sender: UIButton) {
-        
-        if Int(enteredWeight.text!) != nil {
-            performSegue(withIdentifier: "goToPlanetWeightScreen", sender: self)
-        } else {
-            validationError.text = "Enter A Number"
-        }
-    }
+    //MARK - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destinationNavigationController = segue.destination as! UINavigationController
         let targetController = destinationNavigationController.viewControllers.first as! TableViewController
         
-        targetController.enteredWeight = Int(enteredWeight.text!)
+        targetController.enteredWeight = Int(enterWeightBar.text!)
+    }
+}
+
+extension EnterWeightController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        performAction()
     }
     
+    func performAction(){
+        if Int(enterWeightBar.text!) != nil {
+            performSegue(withIdentifier: "goToPlanetWeightScreen", sender: self)
+        } else {
+            message.text = "Enter a number"
+        }
+    }
 }
