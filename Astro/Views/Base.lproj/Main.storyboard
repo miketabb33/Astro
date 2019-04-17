@@ -46,6 +46,53 @@
             </objects>
             <point key="canvasLocation" x="2775.1999999999998" y="26.53673163418291"/>
         </scene>
+        <!--Nasa Detail View Controller-->
+        <scene sceneID="QiV-59-UjT">
+            <objects>
+                <viewController id="L3B-d8-5xU" customClass="NasaDetailViewController" customModule="Astro" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Zwv-N9-bax">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="40" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="May-N0-euh">
+                                <rect key="frame" x="20" y="407" width="335" height="260"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="260" id="yUQ-sc-PFh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="12"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mmq-Ne-BgM">
+                                <rect key="frame" x="0.0" y="360" width="375" height="39"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="39" id="IF6-zr-r7u"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="25"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="May-N0-euh" firstAttribute="bottom" secondItem="jTn-ZY-Wcb" secondAttribute="bottom" id="Btn-yx-1Qc"/>
+                            <constraint firstItem="May-N0-euh" firstAttribute="top" secondItem="mmq-Ne-BgM" secondAttribute="bottom" constant="8" id="S6u-kt-Tl8"/>
+                            <constraint firstItem="May-N0-euh" firstAttribute="trailing" secondItem="jTn-ZY-Wcb" secondAttribute="trailing" constant="-20" id="izD-77-u9p"/>
+                            <constraint firstItem="mmq-Ne-BgM" firstAttribute="leading" secondItem="jTn-ZY-Wcb" secondAttribute="leading" id="jY2-U1-9GT"/>
+                            <constraint firstItem="jTn-ZY-Wcb" firstAttribute="trailing" secondItem="mmq-Ne-BgM" secondAttribute="trailing" id="qgz-go-fNh"/>
+                            <constraint firstItem="May-N0-euh" firstAttribute="leading" secondItem="jTn-ZY-Wcb" secondAttribute="leading" constant="20" id="xoW-lp-gmT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="jTn-ZY-Wcb"/>
+                    </view>
+                    <connections>
+                        <outlet property="nasaDescription" destination="May-N0-euh" id="9CJ-0l-Hdm"/>
+                        <outlet property="nasaTitle" destination="mmq-Ne-BgM" id="emD-kS-C3E"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZHD-5k-aIc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-228" y="-753.37331334332839"/>
+        </scene>
         <!--Astro-->
         <scene sceneID="bQd-IO-hlw">
             <objects>
@@ -68,7 +115,7 @@
                                     <rect key="frame" x="0.0" y="360" width="375" height="40"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Other Features" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tmz-XM-0Bd">
-                                            <rect key="frame" x="112" y="7.5" width="151" height="25.5"/>
+                                            <rect key="frame" x="112" y="7.5" width="151" height="25"/>
                                             <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="23"/>
                                             <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
@@ -96,21 +143,35 @@
                                     <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XHI-bq-WB1">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="360"/>
+                                    <connections>
+                                        <action selector="nasaViewPressed:" destination="wVi-hA-Gzb" eventType="touchUpInside" id="nZf-x6-UmC"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <accessibility key="accessibilityConfiguration" identifier="NasaLiveUpdateBox">
+                                <accessibilityTraits key="traits" none="YES"/>
+                                <bool key="isElement" value="NO"/>
+                            </accessibility>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="s1I-lG-PV4" secondAttribute="trailing" constant="30" id="0eh-gW-GPE"/>
                                 <constraint firstItem="T8K-W2-BLf" firstAttribute="leading" secondItem="NAW-If-ByG" secondAttribute="leading" constant="30" id="2xG-Ec-37U"/>
                                 <constraint firstItem="k7r-10-TFv" firstAttribute="leading" secondItem="NAW-If-ByG" secondAttribute="leading" id="6ZN-xV-ESe"/>
+                                <constraint firstItem="k7r-10-TFv" firstAttribute="top" secondItem="XHI-bq-WB1" secondAttribute="bottom" id="7lg-Iv-sYZ"/>
+                                <constraint firstItem="XHI-bq-WB1" firstAttribute="top" secondItem="NAW-If-ByG" secondAttribute="top" id="7mN-Pb-Y8A"/>
                                 <constraint firstAttribute="bottom" secondItem="k7r-10-TFv" secondAttribute="bottom" id="CTV-PW-Hqu"/>
                                 <constraint firstItem="s1I-lG-PV4" firstAttribute="leading" secondItem="NAW-If-ByG" secondAttribute="leading" constant="30" id="CWJ-IY-GNb"/>
                                 <constraint firstItem="VCl-wD-hNc" firstAttribute="top" secondItem="NAW-If-ByG" secondAttribute="top" constant="4" id="OhE-pF-vuC"/>
                                 <constraint firstAttribute="trailing" secondItem="T8K-W2-BLf" secondAttribute="trailing" constant="30" id="ZCn-ln-M2a"/>
                                 <constraint firstItem="T8K-W2-BLf" firstAttribute="centerX" secondItem="NAW-If-ByG" secondAttribute="centerX" id="cXb-hm-nm3"/>
                                 <constraint firstItem="VCl-wD-hNc" firstAttribute="centerX" secondItem="NAW-If-ByG" secondAttribute="centerX" id="d1d-BV-JCC"/>
+                                <constraint firstItem="XHI-bq-WB1" firstAttribute="leading" secondItem="NAW-If-ByG" secondAttribute="leading" id="eRw-gu-cBP"/>
                                 <constraint firstItem="k7r-10-TFv" firstAttribute="top" secondItem="T8K-W2-BLf" secondAttribute="bottom" constant="50" id="fw7-ZI-wWd"/>
                                 <constraint firstItem="s1I-lG-PV4" firstAttribute="centerX" secondItem="NAW-If-ByG" secondAttribute="centerX" id="x2q-Cl-Ssm"/>
                                 <constraint firstAttribute="trailing" secondItem="k7r-10-TFv" secondAttribute="trailing" id="xtP-Dc-51C"/>
+                                <constraint firstAttribute="trailing" secondItem="XHI-bq-WB1" secondAttribute="trailing" id="y07-TT-Edb"/>
                                 <constraint firstItem="k7r-10-TFv" firstAttribute="top" secondItem="s1I-lG-PV4" secondAttribute="bottom" id="zfn-hU-cGC"/>
                             </constraints>
                         </view>
@@ -134,15 +195,17 @@
                     </navigationItem>
                     <connections>
                         <outlet property="nasaDescription" destination="s1I-lG-PV4" id="0aT-oM-L4o"/>
+                        <outlet property="nasaDetailBtn" destination="XHI-bq-WB1" id="C5O-71-oR7"/>
                         <outlet property="nasaHeader" destination="VCl-wD-hNc" id="I7u-kk-mfc"/>
                         <outlet property="nasaTitle" destination="T8K-W2-BLf" id="gFQ-Kk-eLL"/>
                         <segue destination="tWN-vm-GRG" kind="show" identifier="toWeightOnOtherPlanets" id="h33-z4-n83"/>
                         <segue destination="Pk3-WQ-DTL" kind="show" identifier="toPlanetTempList" id="rh9-PR-HWV"/>
+                        <segue destination="L3B-d8-5xU" kind="show" identifier="toNasaDetail" id="owC-J6-2Xt"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UXD-rW-xj6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-242.40000000000001" y="388.15592203898052"/>
+            <point key="canvasLocation" x="-228" y="27"/>
         </scene>
         <!--Enter Weight Controller-->
         <scene sceneID="n72-n8-heC">
@@ -164,7 +227,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="standingOnPlanet" translatesAutoresizingMaskIntoConstraints="NO" id="RaI-F9-Zhk">
-                                <rect key="frame" x="0.0" y="169" width="375" height="502"/>
+                                <rect key="frame" x="0.0" y="205" width="375" height="502"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="RaI-F9-Zhk" secondAttribute="height" multiplier="375:502" id="I4y-z8-DVI"/>
                                 </constraints>
@@ -176,7 +239,7 @@
                             <constraint firstItem="RaI-F9-Zhk" firstAttribute="leading" secondItem="8g0-fo-mqt" secondAttribute="leading" id="8sJ-k2-tss"/>
                             <constraint firstItem="uGz-xR-84N" firstAttribute="top" secondItem="8g0-fo-mqt" secondAttribute="top" id="Ar1-fC-xNy"/>
                             <constraint firstItem="uGz-xR-84N" firstAttribute="trailing" secondItem="8g0-fo-mqt" secondAttribute="trailing" id="HZk-VT-boE"/>
-                            <constraint firstAttribute="bottom" secondItem="RaI-F9-Zhk" secondAttribute="bottom" constant="-4" id="WPa-2g-ICf"/>
+                            <constraint firstAttribute="bottom" secondItem="RaI-F9-Zhk" secondAttribute="bottom" constant="-40" id="WPa-2g-ICf"/>
                             <constraint firstItem="AD6-cQ-Udx" firstAttribute="top" secondItem="uGz-xR-84N" secondAttribute="bottom" constant="10" id="c9s-13-kkt"/>
                             <constraint firstItem="RaI-F9-Zhk" firstAttribute="trailing" secondItem="8g0-fo-mqt" secondAttribute="trailing" id="coS-cL-vX0"/>
                             <constraint firstItem="uGz-xR-84N" firstAttribute="centerX" secondItem="agq-gj-JmO" secondAttribute="centerX" id="hBD-zA-di4"/>
@@ -224,7 +287,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vDy-PA-ZbX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1053" y="748"/>
+            <point key="canvasLocation" x="1087" y="843"/>
         </scene>
         <!--Planet Temp View Controller-->
         <scene sceneID="qSd-bK-G61">
@@ -274,7 +337,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qp1-dm-OJQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1916" y="748"/>
+            <point key="canvasLocation" x="1951" y="843"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Bgc-i1-c8V">
@@ -320,7 +383,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mJC-77-NBV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1185" y="389"/>
+            <point key="canvasLocation" x="-1172" y="27"/>
         </scene>
     </scenes>
     <resources>

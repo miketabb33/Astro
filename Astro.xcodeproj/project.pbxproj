@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B9752682267D25D004F9E59 /* NasaDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9752672267D25D004F9E59 /* NasaDetailViewController.swift */; };
 		4BB687AF226519E600D423F9 /* EnterWeightController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB687AE226519E600D423F9 /* EnterWeightController.swift */; };
 		4BB687B12266300300D423F9 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB687B02266300300D423F9 /* MainTableViewController.swift */; };
 		4BB687B4226630B800D423F9 /* MainItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB687B2226630B800D423F9 /* MainItemCell.swift */; };
@@ -32,6 +33,7 @@
 /* Begin PBXFileReference section */
 		201695E2626193813C0D7112 /* Pods-Astro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Astro.debug.xcconfig"; path = "Target Support Files/Pods-Astro/Pods-Astro.debug.xcconfig"; sourceTree = "<group>"; };
 		3FDA973E3FD78D118A37704B /* Pods_Astro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Astro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B9752672267D25D004F9E59 /* NasaDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaDetailViewController.swift; sourceTree = "<group>"; };
 		4BB687AE226519E600D423F9 /* EnterWeightController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterWeightController.swift; sourceTree = "<group>"; };
 		4BB687B02266300300D423F9 /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 		4BB687B2226630B800D423F9 /* MainItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainItemCell.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 		4BC55CC2225D337B0079A3E5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				4B9752672267D25D004F9E59 /* NasaDetailViewController.swift */,
 				4BB687B02266300300D423F9 /* MainTableViewController.swift */,
 				4BB687B822664C6A00D423F9 /* PlanetTempTableViewController.swift */,
 				4BB687BE2266538000D423F9 /* PlanetTempViewController.swift */,
@@ -315,6 +318,7 @@
 				4BC55CF7225FD97B0079A3E5 /* planetUploadModel.swift in Sources */,
 				4BB687B4226630B800D423F9 /* MainItemCell.swift in Sources */,
 				4BB687BF2266538000D423F9 /* PlanetTempViewController.swift in Sources */,
+				4B9752682267D25D004F9E59 /* NasaDetailViewController.swift in Sources */,
 				4BB687BC22664D1F00D423F9 /* PlanetTempCell.swift in Sources */,
 				4BC55CCA225E59A90079A3E5 /* PlanetCell.swift in Sources */,
 				4BB687B12266300300D423F9 /* MainTableViewController.swift in Sources */,

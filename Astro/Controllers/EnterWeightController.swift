@@ -14,6 +14,8 @@ class EnterWeightController: UIViewController {
     
     @IBOutlet weak var message: UILabel!
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.enterWeightBar.delegate = self
@@ -30,6 +32,8 @@ class EnterWeightController: UIViewController {
 }
 
 extension EnterWeightController: UISearchBarDelegate {
+    
+    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         performAction()
     }

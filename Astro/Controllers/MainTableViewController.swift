@@ -19,6 +19,7 @@ class MainTableViewController: UITableViewController {
     
     let api_key = "O5XtjFT6wV1o5zLwNDhhwf8giPbWhlasYL24H69p"
     let api_url = "https://api.nasa.gov/planetary/apod"
+    var passableImageData: Data?
     
     public var screenWidth: CGFloat {
         return UIScreen.main.bounds.width
@@ -30,15 +31,23 @@ class MainTableViewController: UITableViewController {
     
     @IBOutlet weak var nasaDescription: UILabel!
     
+    @IBOutlet weak var nasaDetailBtn: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        nasaDetailBtn.isEnabled = false
         
         SVProgressHUD.show()
         loadNasaData()
 
         tableView.register(UINib(nibName: "MainItemCell", bundle: nil), forCellReuseIdentifier: "CustomMainItemCell")
     }
-
+    @IBAction func nasaViewPressed(_ sender: UIButton) {
+        performSegue(withIdentifier: "toNasaDetail", sender: self)
+    }
+    
     //MARK - Table View data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -61,6 +70,16 @@ class MainTableViewController: UITableViewController {
             performSegue(withIdentifier: "toWeightOnOtherPlanets", sender: self)
         } else if indexPath.row == 1{
             performSegue(withIdentifier: "toPlanetTempList", sender: self)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "toNasaDetail") {
+            let destinationVC = segue.destination as! NasaDetailViewController
+            
+            destinationVC.passedTitle = nasaDataModel.title
+            destinationVC.passedDescription = nasaDataModel.description
+            destinationVC.passedImage = passableImageData! as NSData
         }
     }
     
@@ -111,6 +130,7 @@ class MainTableViewController: UITableViewController {
             
             DispatchQueue.main.async {
                 SVProgressHUD.dismiss()
+                
                 self.nasaHeader.text = "Nasa News \(self.nasaDataModel.date)"
                 self.nasaTitle.text = self.nasaDataModel.title
                 self.nasaDescription.text = self.nasaDataModel.description
@@ -122,6 +142,9 @@ class MainTableViewController: UITableViewController {
                 imageContainer.image = nasaImage
                 imageContainer.contentMode = UIView.ContentMode.scaleAspectFit
                 self.view.addSubview(imageContainer)
+                
+                self.passableImageData = imageData as Data
+                self.nasaDetailBtn.isEnabled = true
             }
         }
     }
