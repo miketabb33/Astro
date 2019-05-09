@@ -23,9 +23,6 @@ class TableViewController: UITableViewController {
         
         loadPlanetData()
         
-        //DB Directory
-        //print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
-        
         tableView.register(UINib(nibName: "PlanetCell", bundle: nil), forCellReuseIdentifier: "CustomPlanetCell")
     }
     

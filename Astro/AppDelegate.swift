@@ -86,6 +86,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //This next line of code turns database preloding on. Be sure to clear the database before hand
         //userDefaults.set(false, forKey: preloadedDataKey)
         
+        //DB Directory
+        //print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
+        
         if userDefaults.bool(forKey: preloadedDataKey) == false {
             
             guard let urlPath = Bundle.main.url(forResource: "PlanetData", withExtension: "plist") else {
