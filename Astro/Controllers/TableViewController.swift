@@ -18,7 +18,6 @@ class TableViewController: UITableViewController {
     
     var enteredWeight : Int?
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         

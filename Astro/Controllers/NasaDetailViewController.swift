@@ -13,6 +13,8 @@ import SVProgressHUD
 
 class NasaDetailViewController: UIViewController {
     
+    
+    
     @IBOutlet weak var nasaTitle: UILabel!
     
     @IBOutlet weak var nasaDescription: UILabel!

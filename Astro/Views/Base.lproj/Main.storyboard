@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WfX-W4-qzj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zpT-ih-wir">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -44,7 +44,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AMC-VP-5GJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2775.1999999999998" y="26.53673163418291"/>
+            <point key="canvasLocation" x="2889" y="27"/>
         </scene>
         <!--Nasa Detail View Controller-->
         <scene sceneID="QiV-59-UjT">
@@ -91,7 +91,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZHD-5k-aIc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-228" y="-753.37331334332839"/>
+            <point key="canvasLocation" x="-2079" y="1459"/>
         </scene>
         <!--Astro-->
         <scene sceneID="bQd-IO-hlw">
@@ -106,7 +106,7 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VCl-wD-hNc">
-                                    <rect key="frame" x="187.5" y="4" width="0.0" height="0.0"/>
+                                    <rect key="frame" x="187.5" y="8" width="0.0" height="0.0"/>
                                     <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="23"/>
                                     <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
@@ -149,6 +149,10 @@
                                         <action selector="nasaViewPressed:" destination="wVi-hA-Gzb" eventType="touchUpInside" id="nZf-x6-UmC"/>
                                     </connections>
                                 </button>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cBq-bF-amg">
+                                    <rect key="frame" x="0.0" y="57" width="375" height="211"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </imageView>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <accessibility key="accessibilityConfiguration" identifier="NasaLiveUpdateBox">
@@ -163,7 +167,7 @@
                                 <constraint firstItem="XHI-bq-WB1" firstAttribute="top" secondItem="NAW-If-ByG" secondAttribute="top" id="7mN-Pb-Y8A"/>
                                 <constraint firstAttribute="bottom" secondItem="k7r-10-TFv" secondAttribute="bottom" id="CTV-PW-Hqu"/>
                                 <constraint firstItem="s1I-lG-PV4" firstAttribute="leading" secondItem="NAW-If-ByG" secondAttribute="leading" constant="30" id="CWJ-IY-GNb"/>
-                                <constraint firstItem="VCl-wD-hNc" firstAttribute="top" secondItem="NAW-If-ByG" secondAttribute="top" constant="4" id="OhE-pF-vuC"/>
+                                <constraint firstItem="VCl-wD-hNc" firstAttribute="top" secondItem="NAW-If-ByG" secondAttribute="top" constant="8" id="OhE-pF-vuC"/>
                                 <constraint firstAttribute="trailing" secondItem="T8K-W2-BLf" secondAttribute="trailing" constant="30" id="ZCn-ln-M2a"/>
                                 <constraint firstItem="T8K-W2-BLf" firstAttribute="centerX" secondItem="NAW-If-ByG" secondAttribute="centerX" id="cXb-hm-nm3"/>
                                 <constraint firstItem="VCl-wD-hNc" firstAttribute="centerX" secondItem="NAW-If-ByG" secondAttribute="centerX" id="d1d-BV-JCC"/>
@@ -175,6 +179,15 @@
                                 <constraint firstItem="k7r-10-TFv" firstAttribute="top" secondItem="s1I-lG-PV4" secondAttribute="bottom" id="zfn-hU-cGC"/>
                             </constraints>
                         </view>
+                        <toolbar key="tableFooterView" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="Uay-3j-2oC">
+                            <rect key="frame" x="0.0" y="472" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <items>
+                                <barButtonItem title="Weights" id="fFC-4l-Xtt"/>
+                                <barButtonItem title="Item" id="oee-Bv-B4i"/>
+                                <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="NLL-No-9Z7"/>
+                            </items>
+                        </toolbar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="mainCellProto" id="bKl-dk-rDd">
                                 <rect key="frame" x="0.0" y="428" width="375" height="44"/>
@@ -197,17 +210,68 @@
                         <outlet property="nasaDescription" destination="s1I-lG-PV4" id="0aT-oM-L4o"/>
                         <outlet property="nasaDetailBtn" destination="XHI-bq-WB1" id="C5O-71-oR7"/>
                         <outlet property="nasaHeader" destination="VCl-wD-hNc" id="I7u-kk-mfc"/>
+                        <outlet property="nasaImageContainer" destination="cBq-bF-amg" id="ksI-Jd-Gee"/>
                         <outlet property="nasaTitle" destination="T8K-W2-BLf" id="gFQ-Kk-eLL"/>
-                        <segue destination="tWN-vm-GRG" kind="show" identifier="toWeightOnOtherPlanets" id="h33-z4-n83"/>
-                        <segue destination="Pk3-WQ-DTL" kind="show" identifier="toPlanetTempList" id="rh9-PR-HWV"/>
-                        <segue destination="L3B-d8-5xU" kind="show" identifier="toNasaDetail" id="owC-J6-2Xt"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UXD-rW-xj6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-228" y="27"/>
+            <point key="canvasLocation" x="-228" y="1459"/>
         </scene>
-        <!--Enter Weight Controller-->
+        <!--Info-->
+        <scene sceneID="nXJ-u5-KSw">
+            <objects>
+                <viewController id="b2c-Wl-Ypb" customClass="NasaInfoViewController" customModule="Astro" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jsh-Uu-KqH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="541-qw-14r">
+                                <rect key="frame" x="0.0" y="51" width="375" height="300"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zA2-Ma-KCZ">
+                                <rect key="frame" x="16" y="20" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KKN-Qd-CVU">
+                                <rect key="frame" x="0.0" y="437" width="375" height="181"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wN3-OO-LRz">
+                                <rect key="frame" x="0.0" y="359" width="375" height="70"/>
+                                <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="wN3-OO-LRz" firstAttribute="top" secondItem="541-qw-14r" secondAttribute="bottom" id="Tsi-W4-fA6"/>
+                            <constraint firstItem="wN3-OO-LRz" firstAttribute="leading" secondItem="krc-xz-gBs" secondAttribute="leading" id="evN-AS-D7H"/>
+                            <constraint firstItem="krc-xz-gBs" firstAttribute="trailing" secondItem="wN3-OO-LRz" secondAttribute="trailing" id="xRN-pQ-uoC"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="krc-xz-gBs"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Info" image="rocket" id="tiH-0v-LkA"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="nasaDescription" destination="KKN-Qd-CVU" id="56O-Ao-NJI"/>
+                        <outlet property="nasaHeader" destination="zA2-Ma-KCZ" id="DrZ-me-Q0c"/>
+                        <outlet property="nasaImageContainer" destination="541-qw-14r" id="vGg-xG-MtC"/>
+                        <outlet property="nasaTitle" destination="wN3-OO-LRz" id="Jvw-PX-Vbu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xqk-VK-vgS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1085.5999999999999" y="-927.88605697151434"/>
+        </scene>
+        <!--Weight-->
         <scene sceneID="n72-n8-heC">
             <objects>
                 <viewController id="tWN-vm-GRG" customClass="EnterWeightController" customModule="Astro" customModuleProvider="target" sceneMemberID="viewController">
@@ -216,12 +280,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="uGz-xR-84N">
-                                <rect key="frame" x="0.0" y="64" width="375" height="56"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="56"/>
                                 <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your weight" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AD6-cQ-Udx">
-                                <rect key="frame" x="66.5" y="130" width="242" height="34"/>
+                                <rect key="frame" x="66.5" y="86" width="242" height="34"/>
                                 <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="30"/>
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -248,6 +312,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8g0-fo-mqt"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Weight" image="globe_earth" id="5xO-dy-l22"/>
                     <connections>
                         <outlet property="enterWeightBar" destination="uGz-xR-84N" id="mBw-Lb-4HL"/>
                         <outlet property="message" destination="AD6-cQ-Udx" id="dhH-9a-yYR"/>
@@ -256,9 +321,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nhU-kQ-J6E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1052" y="26.53673163418291"/>
+            <point key="canvasLocation" x="1086" y="27"/>
         </scene>
-        <!--Planet Temp Table View Controller-->
+        <!--Planet Selection-->
         <scene sceneID="GYH-SF-LZ4">
             <objects>
                 <tableViewController id="Pk3-WQ-DTL" customClass="PlanetTempTableViewController" customModule="Astro" customModuleProvider="target" sceneMemberID="viewController">
@@ -281,13 +346,14 @@
                             <outlet property="delegate" destination="Pk3-WQ-DTL" id="pcG-J0-3Hn"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Planet Selection" id="qpz-nZ-1HN"/>
                     <connections>
                         <segue destination="om4-kX-dQl" kind="show" identifier="toPlanetTemp" id="Jzy-iI-cbV"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vDy-PA-ZbX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1087" y="843"/>
+            <point key="canvasLocation" x="2024.8" y="842.42878560719646"/>
         </scene>
         <!--Planet Temp View Controller-->
         <scene sceneID="qSd-bK-G61">
@@ -303,19 +369,19 @@
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ln4-G3-EqU">
-                                <rect key="frame" x="77.5" y="164" width="220" height="220"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The temperature is either really hot or really cold brah." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="weN-jh-eRR">
+                                <rect key="frame" x="30" y="378.5" width="315" height="99.5"/>
+                                <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="30"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ln4-G3-EqU">
+                                <rect key="frame" x="77" y="150" width="220" height="220"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="220" id="IQH-Vb-xBf"/>
                                     <constraint firstAttribute="height" constant="220" id="wwj-Gd-9Il"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The temperature is either really hot or really cold brah." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="weN-jh-eRR">
-                                <rect key="frame" x="30" y="427.5" width="315" height="99.5"/>
-                                <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="30"/>
-                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -330,6 +396,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="h9D-He-2xa"/>
                     </view>
+                    <navigationItem key="navigationItem" id="HFa-tz-eaP"/>
                     <connections>
                         <outlet property="planetImage" destination="ln4-G3-EqU" id="9ll-bU-yhG"/>
                         <outlet property="planetName" destination="H5x-6W-5OY" id="xSf-O3-nL3"/>
@@ -337,7 +404,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qp1-dm-OJQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1951" y="843"/>
+            <point key="canvasLocation" x="2888.8000000000002" y="842.42878560719646"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Bgc-i1-c8V">
@@ -360,7 +427,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PC4-1L-n7m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1951.2" y="26.53673163418291"/>
+            <point key="canvasLocation" x="2025" y="27"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="SlB-b7-Qcn">
@@ -383,10 +450,56 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mJC-77-NBV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1172" y="27"/>
+            <point key="canvasLocation" x="-1172" y="1459"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="hMC-kE-SEt">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="zpT-ih-wir" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="c8W-OO-WfZ">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="8wZ-2o-Lqj" kind="relationship" relationship="viewControllers" id="f7t-Qw-chx"/>
+                        <segue destination="b2c-Wl-Ypb" kind="relationship" relationship="viewControllers" id="7M3-kR-Hln"/>
+                        <segue destination="tWN-vm-GRG" kind="relationship" relationship="viewControllers" id="lUy-1W-r0L"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4PB-KR-29w" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-569" y="27"/>
+        </scene>
+        <!--Temperature-->
+        <scene sceneID="UVV-KD-ydh">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8wZ-2o-Lqj" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Temperature" image="sun-1" springLoaded="YES" id="KMq-SE-Tvo"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="GFf-Hs-FWs">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Pk3-WQ-DTL" kind="relationship" relationship="rootViewController" id="zi6-0Z-ud5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ATl-lq-CMh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1085.5999999999999" y="842.42878560719646"/>
         </scene>
     </scenes>
     <resources>
+        <image name="globe_earth" width="30" height="30"/>
+        <image name="rocket" width="30" height="30"/>
         <image name="standingOnPlanet" width="346" height="470"/>
+        <image name="sun-1" width="30" height="30"/>
     </resources>
+    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>
