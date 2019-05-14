@@ -23,7 +23,7 @@ class PlanetTempTableViewController: UITableViewController {
         tableView.register(UINib(nibName: "PlanetTempCell", bundle: nil), forCellReuseIdentifier: "CustomPlanetTempCell")
 
     }
-
+    
     // MARK: - Table view data source
 
 

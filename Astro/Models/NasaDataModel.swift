@@ -13,5 +13,13 @@ class NasaDataModel {
     var imageURL : String = ""
     var title : String = ""
     var date : String = ""
+    var imageData : UIImage? = nil
 }
+
+
+
+
+
+
+
 

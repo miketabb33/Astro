@@ -16,6 +16,7 @@
 		4BB687BF2266538000D423F9 /* PlanetTempViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB687BE2266538000D423F9 /* PlanetTempViewController.swift */; };
 		4BB687C1226665AE00D423F9 /* NasaDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB687C0226665AE00D423F9 /* NasaDataModel.swift */; };
 		4BBB94F6228308C000944506 /* NasaInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBB94F5228308C000944506 /* NasaInfoViewController.swift */; };
+		4BBB94F82284CE9100944506 /* MainTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBB94F72284CE9100944506 /* MainTabController.swift */; };
 		4BC55CAA225D330B0079A3E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC55CA9225D330B0079A3E5 /* AppDelegate.swift */; };
 		4BC55CAF225D330B0079A3E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BC55CAD225D330B0079A3E5 /* Main.storyboard */; };
 		4BC55CB2225D330B0079A3E5 /* Astro.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4BC55CB0225D330B0079A3E5 /* Astro.xcdatamodeld */; };
@@ -41,6 +42,7 @@
 		4BB687BE2266538000D423F9 /* PlanetTempViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetTempViewController.swift; sourceTree = "<group>"; };
 		4BB687C0226665AE00D423F9 /* NasaDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaDataModel.swift; sourceTree = "<group>"; };
 		4BBB94F5228308C000944506 /* NasaInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaInfoViewController.swift; sourceTree = "<group>"; };
+		4BBB94F72284CE9100944506 /* MainTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabController.swift; sourceTree = "<group>"; };
 		4BC55CA6225D330B0079A3E5 /* Astro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Astro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BC55CA9225D330B0079A3E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4BC55CAE225D330B0079A3E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -118,6 +120,8 @@
 			children = (
 				4BC55CA9225D330B0079A3E5 /* AppDelegate.swift */,
 				4BC55CC2225D337B0079A3E5 /* Controllers */,
+				4B9752672267D25D004F9E59 /* NasaDetailViewController.swift */,
+				4BB687B02266300300D423F9 /* MainTableViewController.swift */,
 				4BC55CBE225D33430079A3E5 /* Views */,
 				4BC55CC3225D337D0079A3E5 /* Models */,
 				4BC55CC0225D336E0079A3E5 /* Supporting Files */,
@@ -148,9 +152,8 @@
 		4BC55CC2225D337B0079A3E5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				4B9752672267D25D004F9E59 /* NasaDetailViewController.swift */,
+				4BBB94F72284CE9100944506 /* MainTabController.swift */,
 				4BBB94F5228308C000944506 /* NasaInfoViewController.swift */,
-				4BB687B02266300300D423F9 /* MainTableViewController.swift */,
 				4BB687B822664C6A00D423F9 /* PlanetTempTableViewController.swift */,
 				4BB687BE2266538000D423F9 /* PlanetTempViewController.swift */,
 				4BB687AE226519E600D423F9 /* EnterWeightController.swift */,
@@ -310,6 +313,7 @@
 				4BC55CB2225D330B0079A3E5 /* Astro.xcdatamodeld in Sources */,
 				4BBB94F6228308C000944506 /* NasaInfoViewController.swift in Sources */,
 				4BC55CC5225D35450079A3E5 /* TableViewController.swift in Sources */,
+				4BBB94F82284CE9100944506 /* MainTabController.swift in Sources */,
 				4BB687C1226665AE00D423F9 /* NasaDataModel.swift in Sources */,
 				4BC55CAA225D330B0079A3E5 /* AppDelegate.swift in Sources */,
 				4BC55CF7225FD97B0079A3E5 /* planetUploadModel.swift in Sources */,
