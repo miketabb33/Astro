@@ -55,7 +55,7 @@ class MainTabController: UITabBarController {
     
     //MARK - Json parsing
     func updateNasaData(json: JSON) {
-        //print(json)
+        print(json)
         
         nasaDataModel.title = json["title"].stringValue
         nasaDataModel.description = json["explanation"].stringValue

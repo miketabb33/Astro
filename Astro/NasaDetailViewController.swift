@@ -12,8 +12,7 @@ import SwiftyJSON
 import SVProgressHUD
 
 class NasaDetailViewController: UIViewController {
-    
-    
+
     
     @IBOutlet weak var nasaTitle: UILabel!
     
