@@ -20,31 +20,31 @@ class NasaInfoViewController: UIViewController {
     @IBOutlet weak var nasaDescription: UILabel!
     
     var nasaDataModel = NasaDataModel()
+    
+    var nasaDataLoadedTrigger : UIImage? = nil {
+        didSet{
+            if view.isHidden == false {
+                updateUIWithNasaData()
+                SVProgressHUD.dismiss()
+            }
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        isNasaDataFinishedLoading()
+    }
     
-        //SVProgressHUD.show()
-        
-        //To Do: Figure a way to trigger updateUIWithNasaData() after the model is finished loading data while on this page.
-        
+    //MARK - update UI
+    
+    func isNasaDataFinishedLoading(){
         if nasaDataModel.imageData == nil {
-            nasaTitle.text = "DOPE!"
+            SVProgressHUD.show()
         } else {
             updateUIWithNasaData()
         }
-        
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        if nasaTitle.text == "DOPE!" && nasaDataModel.imageData != nil {
-            updateUIWithNasaData()
-        }
-    }
-    
-    
-    
-    //MARK - update UI
     func updateUIWithNasaData(){
         nasaHeader.text = "Nasa News \(nasaDataModel.date)"
         nasaTitle.text = nasaDataModel.title
