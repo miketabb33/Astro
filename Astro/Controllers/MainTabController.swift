@@ -42,8 +42,6 @@ class MainTabController: UITabBarController {
         Alamofire.request(url, method: .get, parameters: parameters).responseJSON {
             response in
             if response.result.isSuccess {
-                print("Success, got the Nasa data")
-                
                 let nasaJSON : JSON = JSON(response.result.value!)
                 self.updateNasaData(json: nasaJSON)
             } else {
@@ -55,7 +53,7 @@ class MainTabController: UITabBarController {
     
     //MARK - Json parsing
     func updateNasaData(json: JSON) {
-        print(json)
+        //print(json)
         
         nasaDataModel.title = json["title"].stringValue
         nasaDataModel.description = json["explanation"].stringValue

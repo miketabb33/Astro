@@ -15,10 +15,14 @@ class EnterWeightController: UIViewController {
     @IBOutlet weak var message: UILabel!
     
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.enterWeightBar.delegate = self
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        enterWeightBar.text = ""
+        message.text = "Enter Your Weight"
     }
     
     //MARK - Navigation
@@ -32,8 +36,6 @@ class EnterWeightController: UIViewController {
 }
 
 extension EnterWeightController: UISearchBarDelegate {
-    
-    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         performAction()
     }
