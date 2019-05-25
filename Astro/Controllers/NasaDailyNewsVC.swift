@@ -13,6 +13,8 @@ class NasaDailyNewsVC: UIViewController {
     
     var nasaDataModel = NasaDataModel()
     
+    let screenWidth = UIScreen.main.bounds.width
+    
     var nasaDataLoadedTrigger : UIImage? = nil {
         didSet{
             if view.isHidden == false {
@@ -25,6 +27,9 @@ class NasaDailyNewsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         isNasaDataFinishedLoading()
+        
+        nasaImageContainer.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenWidth)
+        
     }
     
     //MARK - update UI
