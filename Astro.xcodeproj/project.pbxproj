@@ -119,6 +119,8 @@
 				4BC55CBE225D33430079A3E5 /* Views */,
 				4BC55CC3225D337D0079A3E5 /* Models */,
 				4BC55CC0225D336E0079A3E5 /* Supporting Files */,
+				4BC55CB3225D330D0079A3E5 /* Assets.xcassets */,
+				4BC55CB5225D330D0079A3E5 /* LaunchScreen.storyboard */,
 			);
 			path = Astro;
 			sourceTree = "<group>";
@@ -136,9 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				4BC55CB8225D330D0079A3E5 /* Info.plist */,
-				4BC55CB3225D330D0079A3E5 /* Assets.xcassets */,
 				4BC55CF4225FB0210079A3E5 /* PlanetData.plist */,
-				4BC55CB5225D330D0079A3E5 /* LaunchScreen.storyboard */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";

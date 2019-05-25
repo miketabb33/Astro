@@ -67,7 +67,6 @@ class MainTabController: UITabBarController {
             
             DispatchQueue.main.async {
                 self.nasaDataModel.imageData = UIImage(data: imageData as Data)
-                print("Picture loaded into Nasa Data Model")
                 let nasaDailyNewsView = self.viewControllers?[1] as! NasaDailyNewsVC
                 nasaDailyNewsView.nasaDataModel = self.nasaDataModel
                 nasaDailyNewsView.nasaDataLoadedTrigger = self.nasaDataModel.imageData
@@ -75,17 +74,5 @@ class MainTabController: UITabBarController {
         }
     }
     
-    
-    
-    
-
-//    // MARK: - Navigation
-//
-//    // In a storyboard-based application, you will often want to do a little preparation before navigation
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//
-//        // Get the new view controller using segue.destination.
-//        // Pass the selected object to the new view controller.
-//    }
 
 }
