@@ -1,6 +1,6 @@
 import UIKit
 
-class PlanetCell: UITableViewCell {
+class PlanetWeightCell: UITableViewCell {
     
     @IBOutlet weak var planetName: UILabel!
     

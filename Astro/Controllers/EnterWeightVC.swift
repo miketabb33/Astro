@@ -1,6 +1,6 @@
 import UIKit
 
-class EnterWeightController: UIViewController {
+class EnterWeightVC: UIViewController {
     
     @IBOutlet weak var enterWeightBar: UISearchBar!
     
@@ -21,13 +21,13 @@ class EnterWeightController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destinationNavigationController = segue.destination as! UINavigationController
-        let targetController = destinationNavigationController.viewControllers.first as! TableViewController
+        let targetController = destinationNavigationController.viewControllers.first as! WeightDisplayTVC
         
         targetController.enteredWeight = Int(enterWeightBar.text!)
     }
 }
 
-extension EnterWeightController: UISearchBarDelegate {
+extension EnterWeightVC: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         performAction()
     }

@@ -1,7 +1,7 @@
 import UIKit
 import CoreData
 
-class PlanetTempTableViewController: UITableViewController {
+class PlanetTemperatureTVC: UITableViewController {
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var planetsContainer = [Planets]()
@@ -43,7 +43,7 @@ class PlanetTempTableViewController: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destinationVC = segue.destination as! PlanetTempViewController
+        let destinationVC = segue.destination as! PlanetTemperatureVC
         
         destinationVC.receivedPlanetName = self.selectedPlanetName!
     }

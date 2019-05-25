@@ -1,7 +1,7 @@
 import UIKit
 import SVProgressHUD
 
-class NasaInfoViewController: UIViewController {
+class NasaDailyNewsVC: UIViewController {
     
     @IBOutlet weak var nasaImageContainer: UIImageView!
     

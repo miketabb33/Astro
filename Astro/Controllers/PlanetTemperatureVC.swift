@@ -1,6 +1,6 @@
 import UIKit
 
-class PlanetTempViewController: UIViewController {
+class PlanetTemperatureVC: UIViewController {
     
     var receivedPlanetName : String?
     

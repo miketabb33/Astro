@@ -1,7 +1,7 @@
 import UIKit
 import CoreData
 
-class TableViewController: UITableViewController {
+class WeightDisplayTVC: UITableViewController {
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var planetsContainer = [Planets]()
@@ -25,7 +25,7 @@ class TableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CustomPlanetCell", for: indexPath) as! PlanetCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CustomPlanetCell", for: indexPath) as! PlanetWeightCell
         
         decimalFormatter.numberStyle = .decimal
         decimalFormatter.maximumFractionDigits = 2

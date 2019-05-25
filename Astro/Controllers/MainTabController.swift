@@ -68,7 +68,7 @@ class MainTabController: UITabBarController {
             DispatchQueue.main.async {
                 self.nasaDataModel.imageData = UIImage(data: imageData as Data)
                 print("Picture loaded into Nasa Data Model")
-                let nasaDailyNewsView = self.viewControllers?[1] as! NasaInfoViewController
+                let nasaDailyNewsView = self.viewControllers?[1] as! NasaDailyNewsVC
                 nasaDailyNewsView.nasaDataModel = self.nasaDataModel
                 nasaDailyNewsView.nasaDataLoadedTrigger = self.nasaDataModel.imageData
             }
