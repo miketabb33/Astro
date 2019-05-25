@@ -35,7 +35,7 @@ class MainTabController: UITabBarController {
             response in
             if response.result.isSuccess {
                 let nasaJSON : JSON = JSON(response.result.value!)
-                self.updateNasaData(json: nasaJSON)
+                self.updateModelWithNasaData(json: nasaJSON)
             } else {
                 print("Error \(String(describing: response.result.error))")
                 //self.cityLabel.text = "Connection Issues"
@@ -44,7 +44,7 @@ class MainTabController: UITabBarController {
     }
     
     //MARK - Json parsing
-    func updateNasaData(json: JSON) {
+    func updateModelWithNasaData(json: JSON) {
         //print(json)
         
         nasaDataModel.title = json["title"].stringValue
