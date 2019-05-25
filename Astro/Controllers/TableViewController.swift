@@ -1,11 +1,3 @@
-//
-//  TableViewController.swift
-//  Astro
-//
-//  Created by Michael Tabb on 4/9/19.
-//  Copyright © 2019 Michael Tabb. All rights reserved.
-//
-
 import UIKit
 import CoreData
 

@@ -1,11 +1,3 @@
-//
-//  MainTabViewController.swift
-//  Astro
-//
-//  Created by Michael Tabb on 5/9/19.
-//  Copyright © 2019 Michael Tabb. All rights reserved.
-//
-
 import UIKit
 import Alamofire
 import SwiftyJSON
