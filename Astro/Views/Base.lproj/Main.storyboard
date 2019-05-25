@@ -35,7 +35,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Your Weight" id="zTA-En-DjS">
                         <barButtonItem key="leftBarButtonItem" title="Done" style="done" id="fIM-5x-SsS">
-                            <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="dismissButtonPressed:" destination="T4o-Ew-tPV" id="LgZ-xz-5HW"/>
                             </connections>
@@ -55,13 +55,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="541-qw-14r">
-                                <rect key="frame" x="0.0" y="60" width="375" height="375"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="371"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vbD-gh-bHi">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zA2-Ma-KCZ">
-                                        <rect key="frame" x="0.0" y="19" width="375" height="41"/>
+                                        <rect key="frame" x="0.0" y="23" width="375" height="41"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="41" id="u9z-qM-8VJ"/>
                                         </constraints>
@@ -69,11 +69,11 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="zA2-Ma-KCZ" secondAttribute="bottom" id="3ft-aH-FTg"/>
                                     <constraint firstAttribute="trailing" secondItem="zA2-Ma-KCZ" secondAttribute="trailing" id="Z6s-Sk-1pK"/>
-                                    <constraint firstAttribute="height" constant="60" id="ZIH-Kj-evh"/>
+                                    <constraint firstAttribute="height" constant="64" id="ZIH-Kj-evh"/>
                                     <constraint firstItem="zA2-Ma-KCZ" firstAttribute="leading" secondItem="vbD-gh-bHi" secondAttribute="leading" id="vuK-qV-5oc"/>
                                 </constraints>
                             </view>
@@ -134,7 +134,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Your Weight" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AD6-cQ-Udx" userLabel="Validation error msg">
-                                <rect key="frame" x="65.5" y="86" width="244.5" height="33.5"/>
+                                <rect key="frame" x="65.5" y="90" width="244.5" height="33.5"/>
                                 <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="30"/>
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -146,10 +146,10 @@
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jXd-19-9lN" userLabel="Title Bar">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weight On Other Planets" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rJG-MT-o5W" userLabel="Title">
-                                        <rect key="frame" x="0.0" y="19" width="375" height="41"/>
+                                        <rect key="frame" x="0.0" y="23" width="375" height="41"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="41" id="P5m-Gk-QnM"/>
                                         </constraints>
@@ -158,16 +158,16 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="rJG-MT-o5W" firstAttribute="leading" secondItem="jXd-19-9lN" secondAttribute="leading" id="B2N-51-Obn"/>
                                     <constraint firstAttribute="trailing" secondItem="rJG-MT-o5W" secondAttribute="trailing" id="IAe-TB-NVn"/>
                                     <constraint firstAttribute="bottom" secondItem="rJG-MT-o5W" secondAttribute="bottom" id="WFv-2z-WUz"/>
-                                    <constraint firstAttribute="height" constant="60" id="hhn-bh-riU"/>
+                                    <constraint firstAttribute="height" constant="64" id="hhn-bh-riU"/>
                                 </constraints>
                             </view>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="uGz-xR-84N">
-                                <rect key="frame" x="0.0" y="128" width="375" height="56"/>
+                                <rect key="frame" x="0.0" y="132" width="375" height="56"/>
                                 <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
@@ -257,7 +257,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ln4-G3-EqU">
-                                <rect key="frame" x="77" y="150" width="220" height="220"/>
+                                <rect key="frame" x="77.5" y="150" width="220" height="220"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="220" id="IQH-Vb-xBf"/>
                                     <constraint firstAttribute="height" constant="220" id="wwj-Gd-9Il"/>
@@ -295,10 +295,8 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="GdX-Sh-y68">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <textAttributes key="titleTextAttributes">
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -339,9 +337,8 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="GFf-Hs-FWs">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <textAttributes key="titleTextAttributes">
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -360,5 +357,5 @@
         <image name="standingOnPlanet" width="346" height="470"/>
         <image name="sun-1" width="30" height="30"/>
     </resources>
-    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>
