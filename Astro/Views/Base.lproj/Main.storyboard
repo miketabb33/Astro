@@ -224,6 +224,7 @@
                             <outlet property="delegate" destination="Pk3-WQ-DTL" id="pcG-J0-3Hn"/>
                         </connections>
                     </tableView>
+                    <tabBarItem key="tabBarItem" title="Temperature" image="sun-1" id="l5K-iO-eCn"/>
                     <navigationItem key="navigationItem" title="Planet Selection" id="qpz-nZ-1HN"/>
                     <connections>
                         <segue destination="om4-kX-dQl" kind="show" identifier="toPlanetTemp" id="Jzy-iI-cbV"/>
@@ -242,13 +243,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Planet Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H5x-6W-5OY">
-                                <rect key="frame" x="58.5" y="94" width="258" height="36"/>
+                                <rect key="frame" x="58.5" y="50" width="258" height="129"/>
                                 <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="45"/>
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The temperature is either really hot or really cold brah." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="weN-jh-eRR">
-                                <rect key="frame" x="30" y="379" width="315" height="100"/>
+                                <rect key="frame" x="30" y="428" width="315" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="g6V-CM-MZj"/>
                                 </constraints>
@@ -257,7 +258,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ln4-G3-EqU">
-                                <rect key="frame" x="77.5" y="150" width="220" height="220"/>
+                                <rect key="frame" x="77.5" y="199" width="220" height="220"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="220" id="IQH-Vb-xBf"/>
                                     <constraint firstAttribute="height" constant="220" id="wwj-Gd-9Il"/>
@@ -319,7 +320,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="8wZ-2o-Lqj" kind="relationship" relationship="viewControllers" id="f7t-Qw-chx"/>
+                        <segue destination="Pk3-WQ-DTL" kind="relationship" relationship="viewControllers" id="u1b-GB-F6Z"/>
                         <segue destination="b2c-Wl-Ypb" kind="relationship" relationship="viewControllers" id="7M3-kR-Hln"/>
                         <segue destination="tWN-vm-GRG" kind="relationship" relationship="viewControllers" id="lUy-1W-r0L"/>
                     </connections>
@@ -357,5 +358,8 @@
         <image name="standingOnPlanet" width="346" height="470"/>
         <image name="sun-1" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="u1b-GB-F6Z"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>

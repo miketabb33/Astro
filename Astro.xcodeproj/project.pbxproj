@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B79B41B22AD5C0200D6711C /* PlanetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B79B41A22AD5C0200D6711C /* PlanetData.swift */; };
 		4BB687AF226519E600D423F9 /* EnterWeightVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB687AE226519E600D423F9 /* EnterWeightVC.swift */; };
 		4BB687B922664C6A00D423F9 /* PlanetTemperatureTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB687B822664C6A00D423F9 /* PlanetTemperatureTVC.swift */; };
 		4BB687BC22664D1F00D423F9 /* PlanetTempCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB687BA22664D1F00D423F9 /* PlanetTempCell.swift */; };
@@ -32,6 +33,7 @@
 /* Begin PBXFileReference section */
 		201695E2626193813C0D7112 /* Pods-Astro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Astro.debug.xcconfig"; path = "Target Support Files/Pods-Astro/Pods-Astro.debug.xcconfig"; sourceTree = "<group>"; };
 		3FDA973E3FD78D118A37704B /* Pods_Astro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Astro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B79B41A22AD5C0200D6711C /* PlanetData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetData.swift; sourceTree = "<group>"; };
 		4BB687AE226519E600D423F9 /* EnterWeightVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterWeightVC.swift; sourceTree = "<group>"; };
 		4BB687B822664C6A00D423F9 /* PlanetTemperatureTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetTemperatureTVC.swift; sourceTree = "<group>"; };
 		4BB687BA22664D1F00D423F9 /* PlanetTempCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetTempCell.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 			children = (
 				4BC55CA9225D330B0079A3E5 /* AppDelegate.swift */,
 				4BE64A832299ADC2009FF9C2 /* FetchNasaDailyNewsData.swift */,
+				4B79B41A22AD5C0200D6711C /* PlanetData.swift */,
 				4BC55CC2225D337B0079A3E5 /* Controllers */,
 				4BC55CBE225D33430079A3E5 /* Views */,
 				4BC55CC3225D337D0079A3E5 /* Models */,
@@ -308,6 +311,7 @@
 				4BB687AF226519E600D423F9 /* EnterWeightVC.swift in Sources */,
 				4BB687B922664C6A00D423F9 /* PlanetTemperatureTVC.swift in Sources */,
 				4BC55CB2225D330B0079A3E5 /* Astro.xcdatamodeld in Sources */,
+				4B79B41B22AD5C0200D6711C /* PlanetData.swift in Sources */,
 				4BBB94F6228308C000944506 /* NasaDailyNewsVC.swift in Sources */,
 				4BC55CC5225D35450079A3E5 /* WeightDisplayTVC.swift in Sources */,
 				4BBB94F82284CE9100944506 /* MainTabController.swift in Sources */,

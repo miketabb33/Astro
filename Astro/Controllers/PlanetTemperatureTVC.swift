@@ -3,17 +3,13 @@ import CoreData
 
 class PlanetTemperatureTVC: UITableViewController {
     
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var planetsContainer = [Planets]()
     var selectedPlanetName : String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loadPlanetData()
-        
         tableView.register(UINib(nibName: "PlanetTempCell", bundle: nil), forCellReuseIdentifier: "CustomPlanetTempCell")
-
     }
     
     // MARK: - Table view data source
@@ -22,7 +18,6 @@ class PlanetTemperatureTVC: UITableViewController {
         return planetsContainer.count
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CustomPlanetTempCell", for: indexPath) as! PlanetTempCell
         
@@ -47,20 +42,4 @@ class PlanetTemperatureTVC: UITableViewController {
         destinationVC.receivedPlanetName = self.selectedPlanetName!
     }
  
-    //MARK - Load planet data
-    
-    func loadPlanetData() {
-        let request : NSFetchRequest<Planets> = Planets.fetchRequest()
-        let sortDescriptor = NSSortDescriptor(key: "position", ascending: true)
-        request.sortDescriptors = [sortDescriptor]
-        
-        do {
-            planetsContainer = try context.fetch(request)
-        } catch {
-            print("Error fetching data from context \(error)")
-        }
-        
-        tableView.reloadData()
-    }
-    
 }

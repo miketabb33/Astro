@@ -2,20 +2,29 @@ import UIKit
 
 class MainTabController: UITabBarController {
     
-    let fetchNasaNailyNewsData = FetchNasaDailyNewsData()
+    let fetchNasaDailyNewsData = FetchNasaDailyNewsData()
+    var planetData = PlanetData()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let planetTemperatureTVC = self.viewControllers?[0] as! PlanetTemperatureTVC
         let nasaDailyNewsView = self.viewControllers?[1] as! NasaDailyNewsVC
+        let enterWeightVC = self.viewControllers?[2] as! EnterWeightVC
+        
+        planetData.loadPlanetData()
+        planetTemperatureTVC.planetsContainer = planetData.container
+        enterWeightVC.planetsContainer = planetData.container
+        
+        //Fetch Nasa Daily News
         
         let nasaDataCompletetionHandler: (Bool) -> Void = {
             if $0 {
-                nasaDailyNewsView.nasaData = self.fetchNasaNailyNewsData.nasaData
+                nasaDailyNewsView.nasaData = self.fetchNasaDailyNewsData.nasaData
             }
         }
         
-        fetchNasaNailyNewsData.getNasaData(completion: nasaDataCompletetionHandler)
+        fetchNasaDailyNewsData.getNasaData(completion: nasaDataCompletetionHandler)
 
         //select which tab is displayed upon opening app.
         selectedViewController = self.viewControllers?[2]

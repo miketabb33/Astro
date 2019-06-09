@@ -3,7 +3,6 @@ import CoreData
 
 class WeightDisplayTVC: UITableViewController {
     
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var planetsContainer = [Planets]()
     
     let decimalFormatter = NumberFormatter()
@@ -12,8 +11,6 @@ class WeightDisplayTVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        loadPlanetData()
         
         tableView.register(UINib(nibName: "PlanetCell", bundle: nil), forCellReuseIdentifier: "CustomPlanetCell")
     }
@@ -55,22 +52,5 @@ class WeightDisplayTVC: UITableViewController {
     @IBAction func dismissButtonPressed(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)
     }
-    
-    //MARK - load data from planets database
-    
-    func loadPlanetData() {
-        let request : NSFetchRequest<Planets> = Planets.fetchRequest()
-        let sortDescriptor = NSSortDescriptor(key: "position", ascending: true)
-        request.sortDescriptors = [sortDescriptor]
-        
-        do {
-            planetsContainer = try context.fetch(request)
-        } catch {
-            print("Error fetching data from context \(error)")
-        }
-        
-        tableView.reloadData()
-    }
-    
 
 }

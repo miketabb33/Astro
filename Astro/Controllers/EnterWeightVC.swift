@@ -5,6 +5,8 @@ class EnterWeightVC: UIViewController {
     @IBOutlet weak var enterWeightBar: UISearchBar!
     @IBOutlet weak var message: UILabel!
     
+    var planetsContainer = [Planets]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.enterWeightBar.delegate = self
@@ -22,6 +24,7 @@ class EnterWeightVC: UIViewController {
         let targetController = destinationNavigationController.viewControllers.first as! WeightDisplayTVC
         
         targetController.enteredWeight = Int(enterWeightBar.text!)
+        targetController.planetsContainer = planetsContainer
     }
 }
 
