@@ -23,7 +23,7 @@ class EnterWeightVC: UIViewController {
         let destinationNavigationController = segue.destination as! UINavigationController
         let targetController = destinationNavigationController.viewControllers.first as! WeightDisplayTVC
         
-        targetController.enteredWeight = Int(enterWeightBar.text!)
+        targetController.enteredWeight = Double(enterWeightBar.text!)
         targetController.planetsContainer = planetsContainer
     }
 }
@@ -34,7 +34,7 @@ extension EnterWeightVC: UISearchBarDelegate {
     }
     
     func performAction(){
-        if Int(enterWeightBar.text!) != nil {
+        if Double(enterWeightBar.text!) != nil {
             performSegue(withIdentifier: "goToPlanetWeightScreen", sender: self)
         } else {
             message.text = "Enter a number"

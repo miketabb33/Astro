@@ -7,7 +7,7 @@ class WeightDisplayTVC: UITableViewController {
     
     let decimalFormatter = NumberFormatter()
     
-    var enteredWeight : Int?
+    var enteredWeight : Double?
     
     override func viewDidLoad() {
         super.viewDidLoad()
