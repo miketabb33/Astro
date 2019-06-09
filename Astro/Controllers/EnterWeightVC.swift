@@ -10,6 +10,9 @@ class EnterWeightVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.enterWeightBar.delegate = self
+        
+        let hideKeyboardTapGesture = tapAnywhereToHideKeyboard()
+        view.addGestureRecognizer(hideKeyboardTapGesture)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -26,6 +29,7 @@ class EnterWeightVC: UIViewController {
         targetController.enteredWeight = Double(enterWeightBar.text!)
         targetController.planetsContainer = planetsContainer
     }
+    
 }
 
 extension EnterWeightVC: UISearchBarDelegate {
@@ -41,7 +45,11 @@ extension EnterWeightVC: UISearchBarDelegate {
         }
     }
     
-//    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-//        searchBar.resignFirstResponder()
-//    }
+    func tapAnywhereToHideKeyboard() -> UITapGestureRecognizer {
+        return UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+    }
+    
+    @objc func hideKeyboard() {
+        view.endEditing(true)
+    }
 }
