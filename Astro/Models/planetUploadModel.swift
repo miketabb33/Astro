@@ -8,7 +8,7 @@
 
 import UIKit
 
-class planetUpload : Codable{
+class planetUpload : Codable {
     var name : String = ""
     var relativeWeight : Int = 0
 }

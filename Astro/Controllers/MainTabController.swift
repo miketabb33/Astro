@@ -1,22 +1,28 @@
 import UIKit
+//import CoreData
 
 class MainTabController: UITabBarController {
     
     let fetchNasaDailyNewsData = FetchNasaDailyNewsData()
-    var planetData = PlanetData()
+    let planetData = PlanetData()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let planetTemperatureTVC = self.viewControllers?[0] as! PlanetTemperatureTVC
+        sendNasaDailyNewsDataToView()
+        
+        //select which tab is displayed upon opening app.
+        selectedViewController = self.viewControllers?[2]
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        sendPlanetDataToViews()
+    }
+    
+    //MARK: - Send data to views methods
+    
+    func sendNasaDailyNewsDataToView() {
         let nasaDailyNewsView = self.viewControllers?[1] as! NasaDailyNewsVC
-        let enterWeightVC = self.viewControllers?[2] as! EnterWeightVC
-        
-        planetData.loadPlanetData()
-        planetTemperatureTVC.planetsContainer = planetData.container
-        enterWeightVC.planetsContainer = planetData.container
-        
-        //Fetch Nasa Daily News
         
         let nasaDataCompletetionHandler: (Bool) -> Void = {
             if $0 {
@@ -25,9 +31,15 @@ class MainTabController: UITabBarController {
         }
         
         fetchNasaDailyNewsData.getNasaData(completion: nasaDataCompletetionHandler)
-
-        //select which tab is displayed upon opening app.
-        selectedViewController = self.viewControllers?[2]
+    }
+    
+    func sendPlanetDataToViews() {
+        planetData.loadPlanetData()
+        let planetTemperatureTVC = self.viewControllers?[0] as! PlanetTemperatureTVC
+        let enterWeightVC = self.viewControllers?[2] as! EnterWeightVC
+        
+        planetTemperatureTVC.planetsContainer = planetData.container
+        enterWeightVC.planetsContainer = planetData.container
     }
     
 }

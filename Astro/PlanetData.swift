@@ -2,7 +2,6 @@ import UIKit
 import CoreData
 
 class PlanetData {
-
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var container = [Planets]()
     

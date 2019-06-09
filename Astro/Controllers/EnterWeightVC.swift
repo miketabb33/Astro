@@ -40,4 +40,8 @@ extension EnterWeightVC: UISearchBarDelegate {
             message.text = "Enter a number"
         }
     }
+    
+//    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+//        searchBar.resignFirstResponder()
+//    }
 }
