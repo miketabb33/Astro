@@ -2,10 +2,9 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
-
 class FetchNasaDailyNewsData {
     
-    var nasaDataModel = NasaDataModel()
+    var nasaData = NasaDataModel()
     
     let api_key = "O5XtjFT6wV1o5zLwNDhhwf8giPbWhlasYL24H69p"
     let api_url = "https://api.nasa.gov/planetary/apod"
@@ -19,7 +18,6 @@ class FetchNasaDailyNewsData {
                 self.updateModelWithNasaData(json: nasaJSON, completion: completion)
             } else {
                 print("Error \(String(describing: response.result.error))")
-                //self.cityLabel.text = "Connection Issues"
             }
         }
     }
@@ -28,16 +26,16 @@ class FetchNasaDailyNewsData {
     func updateModelWithNasaData(json: JSON, completion: @escaping (Bool) -> Void) {
         //print(json)
         
-        nasaDataModel.title = json["title"].stringValue
-        nasaDataModel.description = json["explanation"].stringValue
-        nasaDataModel.imageURL = json["url"].stringValue
-        nasaDataModel.date = json["date"].stringValue
+        nasaData.title = json["title"].stringValue
+        nasaData.description = json["explanation"].stringValue
+        nasaData.imageURL = json["url"].stringValue
+        nasaData.date = json["date"].stringValue
         
         updateModelWithImageData(completion: completion)
     }
     
     func updateModelWithImageData(completion: @escaping (Bool) -> Void){
-        let imageUrlString = nasaDataModel.imageURL
+        let imageUrlString = nasaData.imageURL
         let imageUrl:URL = URL(string: imageUrlString)!
         
         DispatchQueue.global(qos: .userInitiated).async {
@@ -45,13 +43,10 @@ class FetchNasaDailyNewsData {
             let imageData:NSData = NSData(contentsOf: imageUrl)!
             
             DispatchQueue.main.async {
-                self.nasaDataModel.imageData = UIImage(data: imageData as Data)
+                self.nasaData.imageData = UIImage(data: imageData as Data)
                 completion(true)
             }
         }
     }
-    
-    
-    
     
 }

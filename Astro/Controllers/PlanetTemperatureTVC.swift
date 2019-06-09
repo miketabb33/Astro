@@ -47,8 +47,8 @@ class PlanetTemperatureTVC: UITableViewController {
         destinationVC.receivedPlanetName = self.selectedPlanetName!
     }
  
-
     //MARK - Load planet data
+    
     func loadPlanetData() {
         let request : NSFetchRequest<Planets> = Planets.fetchRequest()
         let sortDescriptor = NSSortDescriptor(key: "position", ascending: true)
@@ -62,4 +62,5 @@ class PlanetTemperatureTVC: UITableViewController {
         
         tableView.reloadData()
     }
+    
 }

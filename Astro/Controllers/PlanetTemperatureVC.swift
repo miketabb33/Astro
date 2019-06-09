@@ -2,12 +2,10 @@ import UIKit
 
 class PlanetTemperatureVC: UIViewController {
     
-    var receivedPlanetName : String?
-    
     @IBOutlet weak var planetName: UILabel!
-    
     @IBOutlet weak var planetImage: UIImageView!
     
+    var receivedPlanetName : String?
     
     override func viewDidLoad() {
         super.viewDidLoad()

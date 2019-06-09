@@ -25,7 +25,7 @@
 		4BC55CCB225E59A90079A3E5 /* PlanetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BC55CC9225E59A90079A3E5 /* PlanetCell.xib */; };
 		4BC55CF5225FB0210079A3E5 /* PlanetData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4BC55CF4225FB0210079A3E5 /* PlanetData.plist */; };
 		4BC55CF7225FD97B0079A3E5 /* planetUploadModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC55CF6225FD97B0079A3E5 /* planetUploadModel.swift */; };
-		4BE64A842299ADC2009FF9C2 /* updateNasaDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE64A832299ADC2009FF9C2 /* updateNasaDataModel.swift */; };
+		4BE64A842299ADC2009FF9C2 /* FetchNasaDailyNewsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE64A832299ADC2009FF9C2 /* FetchNasaDailyNewsData.swift */; };
 		5E13D7C415B15D376AB31CD9 /* Pods_Astro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FDA973E3FD78D118A37704B /* Pods_Astro.framework */; };
 /* End PBXBuildFile section */
 
@@ -52,7 +52,7 @@
 		4BC55CC9225E59A90079A3E5 /* PlanetCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = PlanetCell.xib; path = ../PlanetCell.xib; sourceTree = "<group>"; };
 		4BC55CF4225FB0210079A3E5 /* PlanetData.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = PlanetData.plist; sourceTree = "<group>"; };
 		4BC55CF6225FD97B0079A3E5 /* planetUploadModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = planetUploadModel.swift; sourceTree = "<group>"; };
-		4BE64A832299ADC2009FF9C2 /* updateNasaDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = updateNasaDataModel.swift; sourceTree = "<group>"; };
+		4BE64A832299ADC2009FF9C2 /* FetchNasaDailyNewsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchNasaDailyNewsData.swift; sourceTree = "<group>"; };
 		C21986F0FE38CFB8E9C2EA5C /* Pods-Astro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Astro.release.xcconfig"; path = "Target Support Files/Pods-Astro/Pods-Astro.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -117,7 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				4BC55CA9225D330B0079A3E5 /* AppDelegate.swift */,
-				4BE64A832299ADC2009FF9C2 /* updateNasaDataModel.swift */,
+				4BE64A832299ADC2009FF9C2 /* FetchNasaDailyNewsData.swift */,
 				4BC55CC2225D337B0079A3E5 /* Controllers */,
 				4BC55CBE225D33430079A3E5 /* Views */,
 				4BC55CC3225D337D0079A3E5 /* Models */,
@@ -314,7 +314,7 @@
 				4BB687C1226665AE00D423F9 /* NasaDataModel.swift in Sources */,
 				4BC55CAA225D330B0079A3E5 /* AppDelegate.swift in Sources */,
 				4BC55CF7225FD97B0079A3E5 /* planetUploadModel.swift in Sources */,
-				4BE64A842299ADC2009FF9C2 /* updateNasaDataModel.swift in Sources */,
+				4BE64A842299ADC2009FF9C2 /* FetchNasaDailyNewsData.swift in Sources */,
 				4BB687BF2266538000D423F9 /* PlanetTemperatureVC.swift in Sources */,
 				4BB687BC22664D1F00D423F9 /* PlanetTempCell.swift in Sources */,
 				4BC55CCA225E59A90079A3E5 /* PlanetWeightCell.swift in Sources */,

@@ -51,10 +51,10 @@ class WeightDisplayTVC: UITableViewController {
     }
     
     //MARK - Dismiss Nav Controller
+    
     @IBAction func dismissButtonPressed(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)
     }
-    
     
     //MARK - load data from planets database
     
