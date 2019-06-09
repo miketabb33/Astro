@@ -3,7 +3,7 @@ import Alamofire
 import SwiftyJSON
 
 
-class updateNasaDataModel {
+class FetchNasaDailyNewsData {
     
     var nasaDataModel = NasaDataModel()
     

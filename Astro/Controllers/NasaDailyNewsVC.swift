@@ -7,31 +7,22 @@ class NasaDailyNewsVC: UIViewController {
     @IBOutlet weak var nasaHeader: UILabel!
     @IBOutlet weak var nasaTitle: UILabel!
     @IBOutlet weak var nasaDescription: UILabel!
-    
-    var nasaData = updateNasaDataModel()
-    
-    let screenWidth = UIScreen.main.bounds.width
-    
-    var nasaDataLoadedTrigger : UIImage? = nil {
-        didSet{
+
+    var nasaData = NasaDataModel() {
+        didSet {
             if view.isHidden == false {
                 updateUIWithNasaData()
                 SVProgressHUD.dismiss()
             }
         }
     }
+    
+    let screenWidth = UIScreen.main.bounds.width
+    
+    //MARK: - View Status
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let nasaDataCompletetionHandler: (Bool) -> Void = {
-            if $0 {
-                SVProgressHUD.dismiss()
-                self.updateUIWithNasaData()
-            }
-        }
-        
-        nasaData.getNasaData(completion: nasaDataCompletetionHandler)
         
         nasaImageContainer.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenWidth)
         
@@ -42,14 +33,13 @@ class NasaDailyNewsVC: UIViewController {
     }
     
     override func viewDidDisappear(_ animated: Bool) {
-        //TO-DO:
         SVProgressHUD.dismiss()
     }
     
     //MARK - update UI
     
     func isNasaDataFinishedLoading() {
-        if nasaData.nasaDataModel.imageData == nil {
+        if nasaData.imageData == nil {
             SVProgressHUD.show()
         } else {
             updateUIWithNasaData()
@@ -57,10 +47,10 @@ class NasaDailyNewsVC: UIViewController {
     }
     
     func updateUIWithNasaData() {
-        nasaHeader.text = "Nasa News \(nasaData.nasaDataModel.date)"
-        nasaTitle.text = nasaData.nasaDataModel.title
-        nasaDescription.text = nasaData.nasaDataModel.description
-        nasaImageContainer.image = nasaData.nasaDataModel.imageData
+        nasaHeader.text = "Nasa News \(nasaData.date)"
+        nasaTitle.text = nasaData.title
+        nasaDescription.text = nasaData.description
+        nasaImageContainer.image = nasaData.imageData
     }
     
 }
