@@ -4,14 +4,11 @@ import SVProgressHUD
 class NasaDailyNewsVC: UIViewController {
     
     @IBOutlet weak var nasaImageContainer: UIImageView!
-    
     @IBOutlet weak var nasaHeader: UILabel!
-    
     @IBOutlet weak var nasaTitle: UILabel!
-    
     @IBOutlet weak var nasaDescription: UILabel!
     
-    var nasaDataModel = NasaDataModel()
+    var nasaData = updateNasaDataModel()
     
     let screenWidth = UIScreen.main.bounds.width
     
@@ -26,27 +23,44 @@ class NasaDailyNewsVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        isNasaDataFinishedLoading()
+        
+        let nasaDataCompletetionHandler: (Bool) -> Void = {
+            if $0 {
+                SVProgressHUD.dismiss()
+                self.updateUIWithNasaData()
+            }
+        }
+        
+        nasaData.getNasaData(completion: nasaDataCompletetionHandler)
         
         nasaImageContainer.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenWidth)
         
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        isNasaDataFinishedLoading()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        //TO-DO:
+        SVProgressHUD.dismiss()
+    }
+    
     //MARK - update UI
     
-    func isNasaDataFinishedLoading(){
-        if nasaDataModel.imageData == nil {
+    func isNasaDataFinishedLoading() {
+        if nasaData.nasaDataModel.imageData == nil {
             SVProgressHUD.show()
         } else {
             updateUIWithNasaData()
         }
     }
     
-    func updateUIWithNasaData(){
-        nasaHeader.text = "Nasa News \(nasaDataModel.date)"
-        nasaTitle.text = nasaDataModel.title
-        nasaDescription.text = nasaDataModel.description
-        nasaImageContainer.image = nasaDataModel.imageData
+    func updateUIWithNasaData() {
+        nasaHeader.text = "Nasa News \(nasaData.nasaDataModel.date)"
+        nasaTitle.text = nasaData.nasaDataModel.title
+        nasaDescription.text = nasaData.nasaDataModel.description
+        nasaImageContainer.image = nasaData.nasaDataModel.imageData
     }
     
 }

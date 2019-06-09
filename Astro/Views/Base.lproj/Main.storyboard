@@ -49,7 +49,7 @@
         <!--Info-->
         <scene sceneID="nXJ-u5-KSw">
             <objects>
-                <viewController id="b2c-Wl-Ypb" customClass="NasaDailyNewsVC" customModule="Astro" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NasaDailyNewsVC" id="b2c-Wl-Ypb" customClass="NasaDailyNewsVC" customModule="Astro" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jsh-Uu-KqH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -199,7 +199,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nhU-kQ-J6E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1086" y="27"/>
+            <point key="canvasLocation" x="1085.5999999999999" y="26.53673163418291"/>
         </scene>
         <!--Planet Selection-->
         <scene sceneID="GYH-SF-LZ4">
