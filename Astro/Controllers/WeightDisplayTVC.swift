@@ -1,11 +1,9 @@
 import UIKit
-import CoreData
 
 class WeightDisplayTVC: UITableViewController {
     
     var planetsContainer = [Planets]()
-    
-    let decimalFormatter = NumberFormatter()
+    let enterWeight = EnterWeight()
     
     var enteredWeight : Double?
     
@@ -24,20 +22,9 @@ class WeightDisplayTVC: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CustomPlanetCell", for: indexPath) as! PlanetWeightCell
         
-        decimalFormatter.numberStyle = .decimal
-        decimalFormatter.maximumFractionDigits = 2
-        
         let currentPlanet = planetsContainer[indexPath.row]
         
-        if enteredWeight != nil {
-            let weight = ((currentPlanet.relativeWeight! as Decimal) * Decimal(enteredWeight!)) as Any?
-            if let value = weight {
-                let stringWeight = decimalFormatter.string(from: value as! NSNumber)
-                cell.weightLabel.text = "\(stringWeight!) lbs"
-            }
-            
-        }
-        
+        cell.weightLabel.text = enterWeight.formatWeight(currentPlanet, enteredWeight: enteredWeight)
         cell.planetName.text = currentPlanet.name!
         cell.planetCellImage.image = UIImage(named: currentPlanet.name!)
         
@@ -47,7 +34,7 @@ class WeightDisplayTVC: UITableViewController {
         return cell
     }
     
-    //MARK - Dismiss Nav Controller
+    //MARK - Navigation
     
     @IBAction func dismissButtonPressed(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)

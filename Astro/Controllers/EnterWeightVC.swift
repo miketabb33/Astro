@@ -7,6 +7,7 @@ class EnterWeightVC: UIViewController {
     
     var planetsContainer = [Planets]()
     let keyboard = Keyboard()
+    let enterWeight = EnterWeight()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,8 +18,7 @@ class EnterWeightVC: UIViewController {
     }
     
     override func viewDidDisappear(_ animated: Bool) {
-        enterWeightBar.text = ""
-        message.text = "Enter Your Weight"
+        enterWeight.resetDisplay(searchBar: enterWeightBar, label: message)
     }
     
     //MARK - Navigation
@@ -35,15 +35,8 @@ class EnterWeightVC: UIViewController {
 
 extension EnterWeightVC: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        performAction()
+        let isValid = enterWeight.isValidChecker(enteredText: enterWeightBar.text!, label: message)
+        enterWeight.attemptSegue(isValid, SendingVC: self)
     }
-    
-    func performAction(){
-        if Double(enterWeightBar.text!) != nil {
-            performSegue(withIdentifier: "goToPlanetWeightScreen", sender: self)
-        } else {
-            message.text = "Enter a number"
-        }
-    }
-    
+
 }
