@@ -3,6 +3,7 @@ import UIKit
 class NasaDataHandler {
     let loadingAnimation = LoadingAnimation()
     let fetchNasaDailyNewsData = FetchNasaDailyNewsData()
+    let apiRequest = APIRequest()
     
     func loadDataWhenViewIsShowing(_ view: UIView, updateViewMethod: () -> Void) {
         if view.isHidden == false {
@@ -26,7 +27,7 @@ class NasaDataHandler {
             nasaDailyNewsView.nasaData = self.fetchNasaDailyNewsData.nasaData
         }
         
-        fetchNasaDailyNewsData.getNasaData(completion: nasaDataCompletetionHandler)
+        apiRequest.getData(api_url: fetchNasaDailyNewsData.api_url, api_key: fetchNasaDailyNewsData.api_key, action: fetchNasaDailyNewsData.updateModelWithNasaData, completion: nasaDataCompletetionHandler)
     }
     
 }

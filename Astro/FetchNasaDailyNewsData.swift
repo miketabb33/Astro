@@ -1,29 +1,15 @@
 import Foundation
-import Alamofire
 import SwiftyJSON
 
 class FetchNasaDailyNewsData {
-    
-    var nasaData = NasaDataModel()
+    let nasaData = NasaDataModel()
     
     let api_key = "O5XtjFT6wV1o5zLwNDhhwf8giPbWhlasYL24H69p"
     let api_url = "https://api.nasa.gov/planetary/apod"
-    
-    func getNasaData(completion: @escaping () -> Void) {
-        Alamofire.request(api_url, method: .get, parameters: ["api_key" : api_key]).responseJSON {
-            response in
-            var nasaJSON : JSON = "no data"
-            if response.result.isSuccess {
-                nasaJSON = JSON(response.result.value!)
-                self.updateModelWithNasaData(json: nasaJSON, completion: completion)
-            } else {
-                print("Error \(String(describing: response.result.error))")
-            }
-        }
-    }
+
     
     //MARK - Json parsing
-    func updateModelWithNasaData(json: JSON, completion: @escaping () -> Void) {  
+    func updateModelWithNasaData(json: JSON, completion: @escaping () -> Void) {
         nasaData.title = json["title"].stringValue
         nasaData.description = json["explanation"].stringValue
         nasaData.imageURL = json["url"].stringValue
