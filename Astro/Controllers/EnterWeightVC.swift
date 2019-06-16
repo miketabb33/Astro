@@ -6,13 +6,14 @@ class EnterWeightVC: UIViewController {
     @IBOutlet weak var message: UILabel!
     
     var planetsContainer = [Planets]()
+    let keyboard = Keyboard()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.enterWeightBar.delegate = self
-        
-        let hideKeyboardTapGesture = tapAnywhereToHideKeyboard()
-        view.addGestureRecognizer(hideKeyboardTapGesture)
+
+        keyboard.setView(view)
+        view.addGestureRecognizer(keyboard.tapAnywhereToHideKeyboard())
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -45,11 +46,4 @@ extension EnterWeightVC: UISearchBarDelegate {
         }
     }
     
-    func tapAnywhereToHideKeyboard() -> UITapGestureRecognizer {
-        return UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
-    }
-    
-    @objc func hideKeyboard() {
-        view.endEditing(true)
-    }
 }
