@@ -10,7 +10,6 @@ class PlanetTemperatureTVC: UITableViewController {
         super.viewDidLoad()
         
         tableView.register(UINib(nibName: "PlanetTempCell", bundle: nil), forCellReuseIdentifier: "CustomPlanetTempCell")
-
     }
     
     // MARK: - Table view data source

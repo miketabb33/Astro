@@ -9,7 +9,7 @@ class FetchNasaDailyNewsData {
     let api_key = "O5XtjFT6wV1o5zLwNDhhwf8giPbWhlasYL24H69p"
     let api_url = "https://api.nasa.gov/planetary/apod"
     
-    func getNasaData(completion: @escaping (Bool) -> Void) {
+    func getNasaData(completion: @escaping () -> Void) {
         Alamofire.request(api_url, method: .get, parameters: ["api_key" : api_key]).responseJSON {
             response in
             var nasaJSON : JSON = "no data"
@@ -23,9 +23,7 @@ class FetchNasaDailyNewsData {
     }
     
     //MARK - Json parsing
-    func updateModelWithNasaData(json: JSON, completion: @escaping (Bool) -> Void) {
-        //print(json)
-        
+    func updateModelWithNasaData(json: JSON, completion: @escaping () -> Void) {  
         nasaData.title = json["title"].stringValue
         nasaData.description = json["explanation"].stringValue
         nasaData.imageURL = json["url"].stringValue
@@ -34,7 +32,7 @@ class FetchNasaDailyNewsData {
         updateModelWithImageData(completion: completion)
     }
     
-    func updateModelWithImageData(completion: @escaping (Bool) -> Void){
+    func updateModelWithImageData(completion: @escaping () -> Void){
         let imageUrlString = nasaData.imageURL
         let imageUrl:URL = URL(string: imageUrlString)!
         
@@ -44,7 +42,7 @@ class FetchNasaDailyNewsData {
             
             DispatchQueue.main.async {
                 self.nasaData.imageData = UIImage(data: imageData as Data)
-                completion(true)
+                completion()
             }
         }
     }
