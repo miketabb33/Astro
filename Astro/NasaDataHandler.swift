@@ -1,18 +1,18 @@
-import Foundation
-import SVProgressHUD
+import UIKit
 
 class NasaDataHandler {
+    let loadingAnimation = LoadingAnimation()
     
     func loadDataWhenViewIsShowing(_ view: UIView, updateViewMethod: () -> Void) {
         if view.isHidden == false {
             updateViewMethod()
-            SVProgressHUD.dismiss()
+            loadingAnimation.hide()
         }
     }
     
     func isDataFinishedLoading(indicator: UIImage?, updateViewMethod: () -> Void) {
         if indicator == nil {
-            SVProgressHUD.show()
+            loadingAnimation.show()
         } else {
             updateViewMethod()
         }

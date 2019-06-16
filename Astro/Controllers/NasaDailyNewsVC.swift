@@ -1,5 +1,4 @@
 import UIKit
-import SVProgressHUD
 
 class NasaDailyNewsVC: UIViewController {
     
@@ -9,6 +8,7 @@ class NasaDailyNewsVC: UIViewController {
     @IBOutlet weak var nasaDescription: UILabel!
     
     let screenWidth = UIScreen.main.bounds.width
+    let loadingAnimation = LoadingAnimation()
     let nasaDataHandler = NasaDataHandler()
     var nasaData = NasaDataModel() {
         didSet {
@@ -27,7 +27,7 @@ class NasaDailyNewsVC: UIViewController {
     }
     
     override func viewDidDisappear(_ animated: Bool) {
-        SVProgressHUD.dismiss()
+        loadingAnimation.hide()
     }
     
     //MARK - update UI
