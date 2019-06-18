@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4B79B41B22AD5C0200D6711C /* PlanetDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B79B41A22AD5C0200D6711C /* PlanetDataHandler.swift */; };
+		4BA44E6522B92A6A009756AA /* AstroUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA44E6422B92A6A009756AA /* AstroUITests.swift */; };
+		4BA44E7322B92A93009756AA /* AstroTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA44E7222B92A93009756AA /* AstroTests.swift */; };
 		4BB687AF226519E600D423F9 /* EnterWeightVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB687AE226519E600D423F9 /* EnterWeightVC.swift */; };
 		4BB687B922664C6A00D423F9 /* PlanetTemperatureTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB687B822664C6A00D423F9 /* PlanetTemperatureTVC.swift */; };
 		4BB687BC22664D1F00D423F9 /* PlanetTempCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB687BA22664D1F00D423F9 /* PlanetTempCell.swift */; };
@@ -35,10 +37,33 @@
 		5E13D7C415B15D376AB31CD9 /* Pods_Astro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FDA973E3FD78D118A37704B /* Pods_Astro.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		4BA44E6722B92A6A009756AA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4BC55C9E225D330B0079A3E5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4BC55CA5225D330B0079A3E5;
+			remoteInfo = Astro;
+		};
+		4BA44E7522B92A93009756AA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4BC55C9E225D330B0079A3E5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4BC55CA5225D330B0079A3E5;
+			remoteInfo = Astro;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		201695E2626193813C0D7112 /* Pods-Astro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Astro.debug.xcconfig"; path = "Target Support Files/Pods-Astro/Pods-Astro.debug.xcconfig"; sourceTree = "<group>"; };
 		3FDA973E3FD78D118A37704B /* Pods_Astro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Astro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B79B41A22AD5C0200D6711C /* PlanetDataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetDataHandler.swift; sourceTree = "<group>"; };
+		4BA44E6222B92A6A009756AA /* AstroUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AstroUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4BA44E6422B92A6A009756AA /* AstroUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstroUITests.swift; sourceTree = "<group>"; };
+		4BA44E6622B92A6A009756AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4BA44E7022B92A93009756AA /* AstroTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AstroTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4BA44E7222B92A93009756AA /* AstroTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstroTests.swift; sourceTree = "<group>"; };
+		4BA44E7422B92A93009756AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4BB687AE226519E600D423F9 /* EnterWeightVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterWeightVC.swift; sourceTree = "<group>"; };
 		4BB687B822664C6A00D423F9 /* PlanetTemperatureTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetTemperatureTVC.swift; sourceTree = "<group>"; };
 		4BB687BA22664D1F00D423F9 /* PlanetTempCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetTempCell.swift; sourceTree = "<group>"; };
@@ -69,6 +94,20 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		4BA44E5F22B92A6A009756AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4BA44E6D22B92A93009756AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4BC55CA3225D330B0079A3E5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -87,6 +126,24 @@
 				C21986F0FE38CFB8E9C2EA5C /* Pods-Astro.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		4BA44E6322B92A6A009756AA /* AstroUITests */ = {
+			isa = PBXGroup;
+			children = (
+				4BA44E6422B92A6A009756AA /* AstroUITests.swift */,
+				4BA44E6622B92A6A009756AA /* Info.plist */,
+			);
+			path = AstroUITests;
+			sourceTree = "<group>";
+		};
+		4BA44E7122B92A93009756AA /* AstroTests */ = {
+			isa = PBXGroup;
+			children = (
+				4BA44E7222B92A93009756AA /* AstroTests.swift */,
+				4BA44E7422B92A93009756AA /* Info.plist */,
+			);
+			path = AstroTests;
 			sourceTree = "<group>";
 		};
 		4BB687B622664A3200D423F9 /* Cells */ = {
@@ -111,6 +168,8 @@
 			isa = PBXGroup;
 			children = (
 				4BC55CA8225D330B0079A3E5 /* Astro */,
+				4BA44E7122B92A93009756AA /* AstroTests */,
+				4BA44E6322B92A6A009756AA /* AstroUITests */,
 				4BC55CA7225D330B0079A3E5 /* Products */,
 				0A79765AE9C131D1C8370248 /* Pods */,
 				9326997725848E964D5B9BEE /* Frameworks */,
@@ -121,6 +180,8 @@
 			isa = PBXGroup;
 			children = (
 				4BC55CA6225D330B0079A3E5 /* Astro.app */,
+				4BA44E6222B92A6A009756AA /* AstroUITests.xctest */,
+				4BA44E7022B92A93009756AA /* AstroTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -199,6 +260,42 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		4BA44E6122B92A6A009756AA /* AstroUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4BA44E6922B92A6A009756AA /* Build configuration list for PBXNativeTarget "AstroUITests" */;
+			buildPhases = (
+				4BA44E5E22B92A6A009756AA /* Sources */,
+				4BA44E5F22B92A6A009756AA /* Frameworks */,
+				4BA44E6022B92A6A009756AA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4BA44E6822B92A6A009756AA /* PBXTargetDependency */,
+			);
+			name = AstroUITests;
+			productName = AstroUITests;
+			productReference = 4BA44E6222B92A6A009756AA /* AstroUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		4BA44E6F22B92A93009756AA /* AstroTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4BA44E7722B92A93009756AA /* Build configuration list for PBXNativeTarget "AstroTests" */;
+			buildPhases = (
+				4BA44E6C22B92A93009756AA /* Sources */,
+				4BA44E6D22B92A93009756AA /* Frameworks */,
+				4BA44E6E22B92A93009756AA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4BA44E7622B92A93009756AA /* PBXTargetDependency */,
+			);
+			name = AstroTests;
+			productName = AstroTests;
+			productReference = 4BA44E7022B92A93009756AA /* AstroTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		4BC55CA5225D330B0079A3E5 /* Astro */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4BC55CBB225D330D0079A3E5 /* Build configuration list for PBXNativeTarget "Astro" */;
@@ -228,6 +325,14 @@
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "Michael Tabb";
 				TargetAttributes = {
+					4BA44E6122B92A6A009756AA = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = 4BC55CA5225D330B0079A3E5;
+					};
+					4BA44E6F22B92A93009756AA = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = 4BC55CA5225D330B0079A3E5;
+					};
 					4BC55CA5225D330B0079A3E5 = {
 						CreatedOnToolsVersion = 10.2;
 					};
@@ -247,11 +352,27 @@
 			projectRoot = "";
 			targets = (
 				4BC55CA5225D330B0079A3E5 /* Astro */,
+				4BA44E6F22B92A93009756AA /* AstroTests */,
+				4BA44E6122B92A6A009756AA /* AstroUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		4BA44E6022B92A6A009756AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4BA44E6E22B92A93009756AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4BC55CA4225D330B0079A3E5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -319,6 +440,22 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		4BA44E5E22B92A6A009756AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4BA44E6522B92A6A009756AA /* AstroUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4BA44E6C22B92A93009756AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4BA44E7322B92A93009756AA /* AstroTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4BC55CA2225D330B0079A3E5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -347,6 +484,19 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		4BA44E6822B92A6A009756AA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4BC55CA5225D330B0079A3E5 /* Astro */;
+			targetProxy = 4BA44E6722B92A6A009756AA /* PBXContainerItemProxy */;
+		};
+		4BA44E7622B92A93009756AA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4BC55CA5225D330B0079A3E5 /* Astro */;
+			targetProxy = 4BA44E7522B92A93009756AA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		4BC55CAD225D330B0079A3E5 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -367,6 +517,84 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		4BA44E6A22B92A6A009756AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ASA7Y46W6W;
+				INFOPLIST_FILE = AstroUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.michael-tabb.AstroUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Astro;
+			};
+			name = Debug;
+		};
+		4BA44E6B22B92A6A009756AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ASA7Y46W6W;
+				INFOPLIST_FILE = AstroUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.michael-tabb.AstroUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Astro;
+			};
+			name = Release;
+		};
+		4BA44E7822B92A93009756AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ASA7Y46W6W;
+				INFOPLIST_FILE = AstroTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.michael-tabb.AstroTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Astro.app/Astro";
+			};
+			name = Debug;
+		};
+		4BA44E7922B92A93009756AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ASA7Y46W6W;
+				INFOPLIST_FILE = AstroTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.michael-tabb.AstroTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Astro.app/Astro";
+			};
+			name = Release;
+		};
 		4BC55CB9225D330D0079A3E5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -524,6 +752,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		4BA44E6922B92A6A009756AA /* Build configuration list for PBXNativeTarget "AstroUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4BA44E6A22B92A6A009756AA /* Debug */,
+				4BA44E6B22B92A6A009756AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4BA44E7722B92A93009756AA /* Build configuration list for PBXNativeTarget "AstroTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4BA44E7822B92A93009756AA /* Debug */,
+				4BA44E7922B92A93009756AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4BC55CA1225D330B0079A3E5 /* Build configuration list for PBXProject "Astro" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
