@@ -3,7 +3,7 @@ import UIKit
 class WeightDisplayTVC: UITableViewController {
     
     var planetsContainer = [Planets]()
-    let enterWeight = EnterWeight()
+    let enterWeight = Formatter()
     
     var enteredWeight : Double?
     

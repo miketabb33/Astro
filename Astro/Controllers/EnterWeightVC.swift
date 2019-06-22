@@ -5,9 +5,12 @@ class EnterWeightVC: UIViewController {
     @IBOutlet weak var enterWeightBar: UISearchBar!
     @IBOutlet weak var message: UILabel!
     
-    var planetsContainer = [Planets]()
     let keyboard = Keyboard()
-    let enterWeight = EnterWeight()
+    let formatter = Formatter()
+    let searchBarMethods = SearchBarMethods()
+    let navigation = Navigation()
+    
+    var planetsContainer = [Planets]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,7 +21,7 @@ class EnterWeightVC: UIViewController {
     }
     
     override func viewDidDisappear(_ animated: Bool) {
-        enterWeight.resetDisplay(searchBar: enterWeightBar, label: message)
+        searchBarMethods.resetDisplay(searchBar: enterWeightBar, label: message)
     }
     
     //MARK - Navigation
@@ -35,8 +38,8 @@ class EnterWeightVC: UIViewController {
 
 extension EnterWeightVC: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        let isValid = enterWeight.isValidChecker(enteredText: enterWeightBar.text!, label: message)
-        enterWeight.attemptSegue(isValid, SendingVC: self)
+        let isValid = searchBarMethods.isValidChecker(enteredText: enterWeightBar.text!, label: message)
+        navigation.attemptSegue(isValid, SendingVC: self)
     }
 
 }

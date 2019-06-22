@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		4B6023DE22BBBFFF00732745 /* PopulateDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6023DD22BBBFFF00732745 /* PopulateDB.swift */; };
 		4B6023E022BE76F200732745 /* PersistentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6023DF22BE76F200732745 /* PersistentData.swift */; };
+		4B6023E222BE7C6800732745 /* SearchBarMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6023E122BE7C6800732745 /* SearchBarMethods.swift */; };
+		4B6023E422BE7CB900732745 /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6023E322BE7CB900732745 /* Navigation.swift */; };
 		4B79B41B22AD5C0200D6711C /* PlanetDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B79B41A22AD5C0200D6711C /* PlanetDataHandler.swift */; };
 		4BA44E6522B92A6A009756AA /* AstroUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA44E6422B92A6A009756AA /* AstroUITests.swift */; };
 		4BA44E7322B92A93009756AA /* AstroTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA44E7222B92A93009756AA /* AstroTests.swift */; };
@@ -34,7 +36,7 @@
 		4BCA1CE822B69EA100118A1E /* LoadingAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCA1CE722B69EA100118A1E /* LoadingAnimation.swift */; };
 		4BCA1CEA22B6AA0900118A1E /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCA1CE922B6AA0900118A1E /* APIRequest.swift */; };
 		4BCA1CEC22B6B6AB00118A1E /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCA1CEB22B6B6AB00118A1E /* Keyboard.swift */; };
-		4BCA1CEE22B6BD9D00118A1E /* EnterWeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCA1CED22B6BD9D00118A1E /* EnterWeight.swift */; };
+		4BCA1CEE22B6BD9D00118A1E /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCA1CED22B6BD9D00118A1E /* Formatter.swift */; };
 		4BE64A842299ADC2009FF9C2 /* FetchNasaDailyNewsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE64A832299ADC2009FF9C2 /* FetchNasaDailyNewsData.swift */; };
 		5E13D7C415B15D376AB31CD9 /* Pods_Astro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FDA973E3FD78D118A37704B /* Pods_Astro.framework */; };
 /* End PBXBuildFile section */
@@ -61,6 +63,8 @@
 		3FDA973E3FD78D118A37704B /* Pods_Astro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Astro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B6023DD22BBBFFF00732745 /* PopulateDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopulateDB.swift; sourceTree = "<group>"; };
 		4B6023DF22BE76F200732745 /* PersistentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentData.swift; sourceTree = "<group>"; };
+		4B6023E122BE7C6800732745 /* SearchBarMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarMethods.swift; sourceTree = "<group>"; };
+		4B6023E322BE7CB900732745 /* Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
 		4B79B41A22AD5C0200D6711C /* PlanetDataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetDataHandler.swift; sourceTree = "<group>"; };
 		4BA44E6222B92A6A009756AA /* AstroUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AstroUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BA44E6422B92A6A009756AA /* AstroUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstroUITests.swift; sourceTree = "<group>"; };
@@ -92,7 +96,7 @@
 		4BCA1CE722B69EA100118A1E /* LoadingAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingAnimation.swift; sourceTree = "<group>"; };
 		4BCA1CE922B6AA0900118A1E /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		4BCA1CEB22B6B6AB00118A1E /* Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
-		4BCA1CED22B6BD9D00118A1E /* EnterWeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterWeight.swift; sourceTree = "<group>"; };
+		4BCA1CED22B6BD9D00118A1E /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
 		4BE64A832299ADC2009FF9C2 /* FetchNasaDailyNewsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchNasaDailyNewsData.swift; sourceTree = "<group>"; };
 		C21986F0FE38CFB8E9C2EA5C /* Pods-Astro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Astro.release.xcconfig"; path = "Target Support Files/Pods-Astro/Pods-Astro.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -136,7 +140,9 @@
 			isa = PBXGroup;
 			children = (
 				4BCA1CE722B69EA100118A1E /* LoadingAnimation.swift */,
-				4BCA1CED22B6BD9D00118A1E /* EnterWeight.swift */,
+				4BCA1CED22B6BD9D00118A1E /* Formatter.swift */,
+				4B6023E122BE7C6800732745 /* SearchBarMethods.swift */,
+				4B6023E322BE7CB900732745 /* Navigation.swift */,
 				4BCA1CE922B6AA0900118A1E /* APIRequest.swift */,
 				4BE64A832299ADC2009FF9C2 /* FetchNasaDailyNewsData.swift */,
 				4B79B41A22AD5C0200D6711C /* PlanetDataHandler.swift */,
@@ -482,7 +488,8 @@
 				4BCA1CE622B6984600118A1E /* NasaDataHandler.swift in Sources */,
 				4BBB94F6228308C000944506 /* NasaDailyNewsVC.swift in Sources */,
 				4BC55CC5225D35450079A3E5 /* WeightDisplayTVC.swift in Sources */,
-				4BCA1CEE22B6BD9D00118A1E /* EnterWeight.swift in Sources */,
+				4BCA1CEE22B6BD9D00118A1E /* Formatter.swift in Sources */,
+				4B6023E222BE7C6800732745 /* SearchBarMethods.swift in Sources */,
 				4BBB94F82284CE9100944506 /* MainTabController.swift in Sources */,
 				4BB687C1226665AE00D423F9 /* NasaDataModel.swift in Sources */,
 				4BC55CAA225D330B0079A3E5 /* AppDelegate.swift in Sources */,
@@ -490,6 +497,7 @@
 				4BC55CF7225FD97B0079A3E5 /* planetUploadModel.swift in Sources */,
 				4BE64A842299ADC2009FF9C2 /* FetchNasaDailyNewsData.swift in Sources */,
 				4BB687BF2266538000D423F9 /* PlanetTemperatureVC.swift in Sources */,
+				4B6023E422BE7CB900732745 /* Navigation.swift in Sources */,
 				4BB687BC22664D1F00D423F9 /* PlanetTempCell.swift in Sources */,
 				4BCA1CEA22B6AA0900118A1E /* APIRequest.swift in Sources */,
 				4BC55CCA225E59A90079A3E5 /* PlanetWeightCell.swift in Sources */,
