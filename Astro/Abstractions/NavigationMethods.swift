@@ -1,8 +1,8 @@
 import UIKit
 
 class NavigationMethods {
-    func attemptSegue(_ bool: Bool, SendingVC: UIViewController, ID: String) {
-        if bool {
+    func attemptSegue(SendingVC: UIViewController, ID: String, shouldSegue: Bool) {
+        if shouldSegue {
             SendingVC.performSegue(withIdentifier: ID, sender: self)
         }
     }
