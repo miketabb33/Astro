@@ -4,20 +4,17 @@ class FormatterMethods {
     
     let decimalFormatter = NumberFormatter()
     
-    func formatWeight(_ currentPlanet: Planets, enteredWeight: Double?) -> String {
+    func formatWeight(_ weight: Decimal) -> String {
         setToTwoDecimalPlaces()
-        var text : String?
-        if enteredWeight != nil {
-            let weight = ((currentPlanet.relativeWeight! as Decimal) * Decimal(enteredWeight!)) as Any?
-            let stringWeight = decimalFormatter.string(from: weight as! NSNumber)
-            text = "\(stringWeight!) lbs"
-        }
-        return text ?? "No Data"
+        let stringWeight = decimalFormatter.string(from: weight as NSNumber)
+        return "\(stringWeight!) lbs"
     }
     
-    func setToTwoDecimalPlaces(){
+    private func setToTwoDecimalPlaces(){
         decimalFormatter.numberStyle = .decimal
         decimalFormatter.maximumFractionDigits = 2
     }
     
 }
+
+

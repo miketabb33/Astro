@@ -4,6 +4,7 @@ class WeightDisplayTVC: UITableViewController {
     
     var planetsContainer = [Planets]()
     let formatterMethods = FormatterMethods()
+    let mathMethods = MathMethods()
     
     var enteredWeight : Double?
     
@@ -23,8 +24,9 @@ class WeightDisplayTVC: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CustomPlanetCell", for: indexPath) as! PlanetWeightCell
         
         let currentPlanet = planetsContainer[indexPath.row]
+        let relativeEnteredWeight = mathMethods.findRelativeEnteredWeightInlbs(relativeWeight: currentPlanet.relativeWeight! as Decimal, enteredWeight: enteredWeight!)
         
-        cell.weightLabel.text = formatterMethods.formatWeight(currentPlanet, enteredWeight: enteredWeight)
+        cell.weightLabel.text = formatterMethods.formatWeight(relativeEnteredWeight)
         cell.planetName.text = currentPlanet.name!
         cell.planetCellImage.image = UIImage(named: currentPlanet.name!)
         
