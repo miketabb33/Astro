@@ -3,7 +3,7 @@ import UIKit
 class WeightDisplayTVC: UITableViewController {
     
     var planetsContainer = [Planets]()
-    let enterWeight = Formatter()
+    let formatterMethods = FormatterMethods()
     
     var enteredWeight : Double?
     
@@ -24,7 +24,7 @@ class WeightDisplayTVC: UITableViewController {
         
         let currentPlanet = planetsContainer[indexPath.row]
         
-        cell.weightLabel.text = enterWeight.formatWeight(currentPlanet, enteredWeight: enteredWeight)
+        cell.weightLabel.text = formatterMethods.formatWeight(currentPlanet, enteredWeight: enteredWeight)
         cell.planetName.text = currentPlanet.name!
         cell.planetCellImage.image = UIImage(named: currentPlanet.name!)
         

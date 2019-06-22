@@ -12,7 +12,7 @@ class NasaDailyNewsVC: UIViewController {
     let nasaDataHandler = NasaDataHandler()
     var nasaData = NasaDataModel() {
         didSet {
-            nasaDataHandler.loadDataWhenViewIsShowing(view, updateViewMethod: updateUIWithNasaData)
+            nasaDataHandler.displayData(view, updateViewMethod: updateUIWithNasaData)
         }
     }
     

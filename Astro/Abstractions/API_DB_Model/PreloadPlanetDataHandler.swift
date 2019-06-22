@@ -1,7 +1,7 @@
 import UIKit
 import CoreData
 
-class PopulateDB {
+class PreloadPlanetDataHandler {
     
     let preloadedDataKey = "didPreloadedData"
     var dbPlanets = [Planets]()
@@ -9,13 +9,13 @@ class PopulateDB {
     
     lazy var persistentContainer = (UIApplication.shared.delegate as! AppDelegate).persistentContainer
     
-    func preloadData() {
+    func preloadPlanetData() {
         if userDefaults.bool(forKey: preloadedDataKey) == false {
-            attemptToLoadAndSaveContext()
+            attemptToPreloadPlanetData()
         }
     }
     
-    func attemptToLoadAndSaveContext() {
+    func attemptToPreloadPlanetData() {
         guard let urlPath = Bundle.main.url(forResource: "PlanetData", withExtension: "plist") else { fatalError() }
         let backgroundContext = persistentContainer.newBackgroundContext()
         persistentContainer.viewContext.automaticallyMergesChangesFromParent = true

@@ -1,6 +1,6 @@
 import UIKit
 
-class Keyboard {
+class KeyboardMethods {
     var view : UIView?
     
     func setView(_ view: UIView) {

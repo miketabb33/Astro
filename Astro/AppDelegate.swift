@@ -3,13 +3,13 @@ import CoreData
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    let populateDB = PopulateDB()
+    let preloadPlanetDataHandler = PreloadPlanetDataHandler()
     let persistentData = PersistentData()
     
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        populateDB.preloadData()
+        preloadPlanetDataHandler.preloadPlanetData()
         return true
     }
 

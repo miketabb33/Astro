@@ -1,14 +1,9 @@
 import Foundation
 import SwiftyJSON
 
-class FetchNasaDailyNewsData {
+class UpdateNasaModel {
     let nasaData = NasaDataModel()
     
-    let api_key = "O5XtjFT6wV1o5zLwNDhhwf8giPbWhlasYL24H69p"
-    let api_url = "https://api.nasa.gov/planetary/apod"
-
-    
-    //MARK - Json parsing
     func updateModelWithNasaData(json: JSON, completion: @escaping () -> Void) {
         nasaData.title = json["title"].stringValue
         nasaData.description = json["explanation"].stringValue

@@ -1,6 +1,6 @@
 import UIKit
 
-class Formatter {
+class FormatterMethods {
     
     let decimalFormatter = NumberFormatter()
     

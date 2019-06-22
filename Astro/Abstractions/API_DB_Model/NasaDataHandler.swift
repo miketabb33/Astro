@@ -2,10 +2,13 @@ import UIKit
 
 class NasaDataHandler {
     let loadingAnimation = LoadingAnimation()
-    let fetchNasaDailyNewsData = FetchNasaDailyNewsData()
+    let updateNasaModel = UpdateNasaModel()
     let apiRequest = APIRequest()
     
-    func loadDataWhenViewIsShowing(_ view: UIView, updateViewMethod: () -> Void) {
+    let api_key = "O5XtjFT6wV1o5zLwNDhhwf8giPbWhlasYL24H69p"
+    let api_url = "https://api.nasa.gov/planetary/apod"
+    
+    func displayData(_ view: UIView, updateViewMethod: () -> Void) {
         if view.isHidden == false {
             updateViewMethod()
             loadingAnimation.hide()
@@ -24,10 +27,10 @@ class NasaDataHandler {
         let nasaDailyNewsView = target as! NasaDailyNewsVC
         
         let nasaDataCompletetionHandler: () -> Void = {
-            nasaDailyNewsView.nasaData = self.fetchNasaDailyNewsData.nasaData
+            nasaDailyNewsView.nasaData = self.updateNasaModel.nasaData
         }
         
-        apiRequest.getData(api_url: fetchNasaDailyNewsData.api_url, api_key: fetchNasaDailyNewsData.api_key, action: fetchNasaDailyNewsData.updateModelWithNasaData, completion: nasaDataCompletetionHandler)
+        apiRequest.getData(api_url: api_url, api_key: api_key, action: updateNasaModel.updateModelWithNasaData, completion: nasaDataCompletetionHandler)
     }
     
 }

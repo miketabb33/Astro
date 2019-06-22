@@ -5,10 +5,9 @@ class EnterWeightVC: UIViewController {
     @IBOutlet weak var enterWeightBar: UISearchBar!
     @IBOutlet weak var message: UILabel!
     
-    let keyboard = Keyboard()
-    let formatter = Formatter()
+    let keyboardMethods = KeyboardMethods()
     let searchBarMethods = SearchBarMethods()
-    let navigation = Navigation()
+    let navigationMethods = NavigationMethods()
     
     var planetsContainer = [Planets]()
     
@@ -16,8 +15,8 @@ class EnterWeightVC: UIViewController {
         super.viewDidLoad()
         self.enterWeightBar.delegate = self
 
-        keyboard.setView(view)
-        view.addGestureRecognizer(keyboard.tapAnywhereToHideKeyboard())
+        keyboardMethods.setView(view)
+        view.addGestureRecognizer(keyboardMethods.tapAnywhereToHideKeyboard())
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -39,7 +38,7 @@ class EnterWeightVC: UIViewController {
 extension EnterWeightVC: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         let isValid = searchBarMethods.isValidChecker(enteredText: enterWeightBar.text!, label: message)
-        navigation.attemptSegue(isValid, SendingVC: self)
+        navigationMethods.attemptSegue(isValid, SendingVC: self, ID: "goToPlanetWeightScreen")
     }
 
 }
