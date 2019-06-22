@@ -1,11 +1,10 @@
 import UIKit
 
 class WeightDisplayTVC: UITableViewController {
-    
-    var planetsContainer = [Planets]()
     let formatterMethods = FormatterMethods()
     let mathMethods = MathMethods()
     
+    var planetsContainer = [Planets]()
     var enteredWeight : Double?
     
     override func viewDidLoad() {

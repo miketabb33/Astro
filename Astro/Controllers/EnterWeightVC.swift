@@ -1,7 +1,6 @@
 import UIKit
 
 class EnterWeightVC: UIViewController {
-    
     @IBOutlet weak var enterWeightBar: UISearchBar!
     @IBOutlet weak var message: UILabel!
     

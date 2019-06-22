@@ -2,11 +2,9 @@ import UIKit
 import CoreData
 
 class PreloadPlanetDataHandler {
-    
     let preloadedDataKey = "didPreloadedData"
     var dbPlanets = [Planets]()
     let userDefaults = UserDefaults.standard
-    
     lazy var persistentContainer = (UIApplication.shared.delegate as! AppDelegate).persistentContainer
     
     func preloadPlanetData() {

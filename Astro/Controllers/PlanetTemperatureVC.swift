@@ -1,7 +1,6 @@
 import UIKit
 
 class PlanetTemperatureVC: UIViewController {
-    
     @IBOutlet weak var planetName: UILabel!
     @IBOutlet weak var planetImage: UIImageView!
     

@@ -1,15 +1,15 @@
 import UIKit
 
 class NasaDailyNewsVC: UIViewController {
-    
     @IBOutlet weak var nasaImageContainer: UIImageView!
     @IBOutlet weak var nasaHeader: UILabel!
     @IBOutlet weak var nasaTitle: UILabel!
     @IBOutlet weak var nasaDescription: UILabel!
     
-    let screenWidth = UIScreen.main.bounds.width
     let loadingAnimation = LoadingAnimation()
     let nasaDataHandler = NasaDataHandler()
+    
+    let screenWidth = UIScreen.main.bounds.width
     var nasaData = NasaDataModel() {
         didSet {
             nasaDataHandler.displayData(view, updateViewMethod: updateUIWithNasaData)

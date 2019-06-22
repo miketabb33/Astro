@@ -1,7 +1,6 @@
 import UIKit
 
 class PlanetTemperatureTVC: UITableViewController {
-    
     var planetsContainer = [Planets]()
     var selectedPlanetName : String?
 
