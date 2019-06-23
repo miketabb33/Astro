@@ -5,9 +5,9 @@ class PlanetDataHandler {
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var container = [Planets]()
     
-    func sendPlanetDataToViews(firstView: UIViewController?, secondView: UIViewController?) {
+    func sendPlanetDataToViews(firstView: UINavigationController?, secondView: UIViewController?) {
         loadData()
-        let planetTemperatureTVC = firstView as! PlanetTemperatureTVC
+        let planetTemperatureTVC = firstView?.topViewController as! PlanetTemperatureTVC
         let enterWeightVC = secondView as! EnterWeightVC
         
         planetTemperatureTVC.planetsContainer = container

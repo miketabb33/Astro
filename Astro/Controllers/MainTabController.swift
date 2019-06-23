@@ -1,8 +1,12 @@
 import UIKit
+import CoreData
 
 class MainTabController: UITabBarController {
     let nasaDataHandler = NasaDataHandler()
     let planetDataHandler = PlanetDataHandler()
+    
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    var container = [Planets]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -14,6 +18,18 @@ class MainTabController: UITabBarController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        planetDataHandler.sendPlanetDataToViews(firstView: viewControllers?[0], secondView: viewControllers?[2])
+        planetDataHandler.sendPlanetDataToViews(firstView: viewControllers?[0] as? UINavigationController, secondView: viewControllers?[2])
+    }
+    
+    func loadData() {
+        let request : NSFetchRequest<Planets> = Planets.fetchRequest()
+        let sortDescriptor = NSSortDescriptor(key: "position", ascending: true)
+        request.sortDescriptors = [sortDescriptor]
+        
+        do {
+            container = try context.fetch(request)
+        } catch {
+            print("Error fetching data from context \(error)")
+        }
     }
 }
