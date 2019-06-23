@@ -15,7 +15,7 @@ class UpdateNasaModel {
     
     func updateModelWithImageData(completion: @escaping () -> Void){
         
-        self.nasaData.imageData = UIImage(named: "superwide")
+        self.nasaData.imageData = UIImage(named: "wide")
         completion()
         
         
