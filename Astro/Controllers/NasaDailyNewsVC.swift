@@ -6,20 +6,20 @@ class NasaDailyNewsVC: UIViewController {
     @IBOutlet weak var nasaTitle: UILabel!
     @IBOutlet weak var nasaDescription: UILabel!
     
+    let screenWidth = UIScreen.main.bounds.width
+    
     let loadingAnimation = LoadingAnimation()
     let nasaDataHandler = NasaDataHandler()
-    
-    let screenWidth = UIScreen.main.bounds.width
     var nasaData = NasaDataModel() {
         didSet {
             nasaDataHandler.displayData(view, updateViewMethod: updateUIWithNasaData)
+            nasaImageContainer = processImage(nasaImageContainer)
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        nasaImageContainer.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenWidth)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -39,5 +39,22 @@ class NasaDailyNewsVC: UIViewController {
         nasaImageContainer.image = nasaData.imageData
     }
     
+    func processImage(_ imageView: UIImageView) -> UIImageView {
+        if let image = imageView.image {
+            let width = image.size.width
+            let height = image.size.height
+            
+            let ratio = width/height
+            
+            if ratio > 1.25 {
+                imageView.contentMode = .scaleAspectFit
+            } else if ratio < 0.75 {
+                imageView.contentMode = .scaleAspectFit
+            }
+            
+            print(ratio)
+        }
+        return imageView
+    }
 }
 

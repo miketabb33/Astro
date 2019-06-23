@@ -15,8 +15,7 @@ class UpdateNasaModel {
     
     func updateModelWithImageData(completion: @escaping () -> Void){
         
-        self.nasaData.imageData = UIImage(named: "supertall")
-        processImage(self.nasaData.imageData!)
+        self.nasaData.imageData = UIImage(named: "superwide")
         completion()
         
         
@@ -30,14 +29,13 @@ class UpdateNasaModel {
 //
 //            DispatchQueue.main.async {
 //                self.nasaData.imageData = UIImage(data: imageData as Data)
+//                self.processImage(self.nasaData.imageData!)
 //                completion()
 //            }
 //        }
     }
     
     
-    func processImage(_ image: UIImage) {
-        
-    }
+
     
 }
