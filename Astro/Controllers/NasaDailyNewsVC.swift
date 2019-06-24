@@ -5,10 +5,9 @@ class NasaDailyNewsVC: UIViewController {
     @IBOutlet weak var header: UIView!
     
     var isPageLayoutApplied = false
-    
-    
+
     var nasaImageContainer = UIImageView()
-    let nasaTitle = UILabel()
+    var nasaTitle = UILabel()
     let nasaDescription = UITextView()
     
     let loadingAnimation = LoadingAnimation()
@@ -46,7 +45,14 @@ class NasaDailyNewsVC: UIViewController {
     
     func insertElementsIntoUI() {
         view.addSubview(nasaImageContainer)
+        view.addSubview(nasaTitle)
+        
+        processElements()
+    }
+    
+    func processElements() {
         nasaImageContainer = processImage(nasaImageContainer)
+        nasaTitle = processTitle(nasaTitle)
     }
     
     
@@ -54,31 +60,47 @@ class NasaDailyNewsVC: UIViewController {
         if let image = imageView.image {
             
             imageView.translatesAutoresizingMaskIntoConstraints = false
-            let safeArea = view.safeAreaLayoutGuide
             let screenWidth = UIScreen.main.bounds.width
             let width = image.size.width
             let height = image.size.height
+            let safeArea = view.safeAreaLayoutGuide
+            
+            let aspectHeight = (screenWidth/width) * height
             
             let ratio = width/height
             
-            if ratio > 1.25 {
-                NSLayoutConstraint.activate([
-                    imageView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor),
-                    imageView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor),
-                    imageView.heightAnchor.constraint(equalToConstant: 100), //Find aspect ratio formula
-                    imageView.topAnchor.constraint(equalToSystemSpacingBelow: header.bottomAnchor, multiplier: 0)
-                    ])
-                
-                print(ratio)
+            if ratio >= 1.25 {
+                addStackingConstraintTo(imageView, stackUnder: header, edges: safeArea, height: aspectHeight)
             }
-//            else if ratio < 0.75 {
-//                imageView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenWidth)
-//            } else {
-//
-//                imageView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenWidth)
-//            }
+            else if ratio <= 0.75 {
+                imageView.contentMode = .scaleAspectFit
+                addStackingConstraintTo(imageView, stackUnder: header, edges: safeArea, height: screenWidth)
+            } else {
+                imageView.contentMode = .scaleAspectFill
+                addStackingConstraintTo(imageView, stackUnder: header, edges: safeArea, height: screenWidth)
+            }
         }
         return imageView
+    }
+    
+    func processTitle(_ labelView: UILabel) -> UILabel {
+        if labelView.text != nil {
+            labelView.translatesAutoresizingMaskIntoConstraints = false
+            labelView.textColor = UIColor.white
+            let margin = view.layoutMarginsGuide
+            addStackingConstraintTo(labelView, stackUnder: nasaImageContainer, edges: margin, height: 50)
+        }
+        
+        return labelView
+    }
+    
+    func addStackingConstraintTo(_ element: UIView, stackUnder: UIView, edges: UILayoutGuide, height: CGFloat) {
+        NSLayoutConstraint.activate([
+            element.topAnchor.constraint(equalToSystemSpacingBelow: stackUnder.bottomAnchor, multiplier: 0),
+            element.leadingAnchor.constraint(equalTo: edges.leadingAnchor),
+            element.trailingAnchor.constraint(equalTo: edges.trailingAnchor),
+            element.heightAnchor.constraint(equalToConstant: height)
+        ])
     }
 }
 

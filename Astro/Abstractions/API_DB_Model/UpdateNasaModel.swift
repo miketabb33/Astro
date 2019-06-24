@@ -14,25 +14,24 @@ class UpdateNasaModel {
     }
     
     func updateModelWithImageData(completion: @escaping () -> Void){
-        
-        self.nasaData.imageData = UIImage(named: "wide")
-        completion()
-        
-        
-        
-//        let imageUrlString = nasaData.imageURL
-//        let imageUrl:URL = URL(string: imageUrlString)!
 //
-//        DispatchQueue.global(qos: .userInitiated).async {
-//
-//            let imageData:NSData = NSData(contentsOf: imageUrl)!
-//
-//            DispatchQueue.main.async {
-//                self.nasaData.imageData = UIImage(data: imageData as Data)
-//                self.processImage(self.nasaData.imageData!)
-//                completion()
-//            }
-//        }
+//        self.nasaData.imageData = UIImage(named: "superwide")
+//        completion()
+        
+        
+        
+        let imageUrlString = nasaData.imageURL
+        let imageUrl:URL = URL(string: imageUrlString)!
+
+        DispatchQueue.global(qos: .userInitiated).async {
+
+            let imageData:NSData = NSData(contentsOf: imageUrl)!
+
+            DispatchQueue.main.async {
+                self.nasaData.imageData = UIImage(data: imageData as Data)
+                completion()
+            }
+        }
     }
     
     
