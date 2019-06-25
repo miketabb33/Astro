@@ -13,13 +13,7 @@ class UpdateNasaModel {
         updateModelWithImageData(completion: completion)
     }
     
-    func updateModelWithImageData(completion: @escaping () -> Void){
-//
-//        self.nasaData.imageData = UIImage(named: "superwide")
-//        completion()
-        
-        
-        
+    func updateModelWithImageData(completion: @escaping () -> Void) {
         let imageUrlString = nasaData.imageURL
         let imageUrl:URL = URL(string: imageUrlString)!
 
