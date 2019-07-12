@@ -150,16 +150,24 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		4B52707E22D904DB00E8FBFD /* BasicUI */ = {
+			isa = PBXGroup;
+			children = (
+				4BCA1CEB22B6B6AB00118A1E /* KeyboardMethods.swift */,
+				4B6023E322BE7CB900732745 /* NavigationMethods.swift */,
+				4B98E89F22BEC9D90025B8F2 /* LabelMethods.swift */,
+				4B6023E122BE7C6800732745 /* SearchBarMethods.swift */,
+			);
+			path = BasicUI;
+			sourceTree = "<group>";
+		};
 		4B6023DC22BBBEE300732745 /* Abstractions */ = {
 			isa = PBXGroup;
 			children = (
+				4B52707E22D904DB00E8FBFD /* BasicUI */,
 				4BCA1CE722B69EA100118A1E /* LoadingAnimation.swift */,
 				4BCA1CED22B6BD9D00118A1E /* FormatterMethods.swift */,
 				4B6023E622BE90A600732745 /* MathMethods.swift */,
-				4B6023E122BE7C6800732745 /* SearchBarMethods.swift */,
-				4B98E89F22BEC9D90025B8F2 /* LabelMethods.swift */,
-				4BCA1CEB22B6B6AB00118A1E /* KeyboardMethods.swift */,
-				4B6023E322BE7CB900732745 /* NavigationMethods.swift */,
 				4B98E8A322C2B63E0025B8F2 /* Constraints.swift */,
 				4B98E8A522C2B7020025B8F2 /* NDNVCProcessing.swift */,
 				4B6023E522BE8AF300732745 /* API_DB_Model */,

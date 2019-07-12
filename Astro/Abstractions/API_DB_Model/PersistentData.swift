@@ -1,4 +1,5 @@
 import UIKit
+import CoreData
 
 class PersistentData {
     lazy var persistentContainer = (UIApplication.shared.delegate as! AppDelegate).persistentContainer
@@ -12,6 +13,14 @@ class PersistentData {
                 let nserror = error as NSError
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
+        }
+    }
+    
+    func attemptToSaveContext(_ context: NSManagedObjectContext) {
+        do {
+            try context.save()
+        } catch {
+            print("error preloading data: \(error)")
         }
     }
     
