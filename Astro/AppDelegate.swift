@@ -5,11 +5,13 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
     let preloadPlanetDataHandler = PreloadPlanetDataHandler()
     let persistentData = PersistentData()
+    let ndnApi = NDNAPI()
     
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         preloadPlanetDataHandler.preloadPlanetData()
+        ndnApi.getTodaysNasaEntry()
         return true
     }
 

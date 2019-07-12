@@ -6,7 +6,6 @@ import SwiftyJSON
 class MainTabController: UITabBarController {
     let nasaDataHandler = NasaDataHandler()
     let planetDataHandler = PlanetDataHandler()
-    let ndnApi = NDNAPI()
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
@@ -20,7 +19,6 @@ class MainTabController: UITabBarController {
         
         nasaDataHandler.sendNasaDailyNewsDataToView(viewControllers?[1])
         
-        ndnApi.getTodaysNasaEntry()
     }
     
     override func viewDidAppear(_ animated: Bool) {
