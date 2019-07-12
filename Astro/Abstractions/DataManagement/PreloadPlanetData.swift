@@ -1,19 +1,19 @@
 import UIKit
 import CoreData
 
-class PreloadPlanetDataHandler {
-    let preloadedDataKey = "didPreloadedData"
+class PreloadPlanetData {
+    let persistentData = PersistentData()
     var dbPlanets = [Planets]()
     let userDefaults = UserDefaults.standard
     lazy var persistentContainer = (UIApplication.shared.delegate as! AppDelegate).persistentContainer
     
-    func preloadPlanetData() {
-        if userDefaults.bool(forKey: preloadedDataKey) == false {
-            attemptToPreloadPlanetData()
+    func preloadUnlessAlreadyPreloaded() {
+        if userDefaults.bool(forKey: persistentData.preloadDataKey) == false {
+            preloadPlanetData()
         }
     }
     
-    func attemptToPreloadPlanetData() {
+    func preloadPlanetData() {
         guard let urlPath = Bundle.main.url(forResource: "PlanetData", withExtension: "plist") else { fatalError() }
         let backgroundContext = persistentContainer.newBackgroundContext()
         persistentContainer.viewContext.automaticallyMergesChangesFromParent = true
@@ -25,7 +25,7 @@ class PreloadPlanetDataHandler {
                 
                 backgroundContext.perform {
                     self.loadContextWithPlanetData(planetArray, backgroundContext: backgroundContext)
-                    self.attemptToSaveContext(backgroundContext)
+                    self.persistentData.savePlanetData(backgroundContext)
                 }
                 
             } catch {
@@ -44,15 +44,6 @@ class PreloadPlanetDataHandler {
             currentPlanet.position = Int16(index)
             
             self.dbPlanets.append(currentPlanet)
-        }
-    }
-    
-    func attemptToSaveContext(_ backgroundContext: NSManagedObjectContext) {
-        do {
-            try backgroundContext.save()
-            self.userDefaults.set(true, forKey: self.preloadedDataKey)
-        } catch {
-            print("error preloading data: \(error)")
         }
     }
 }

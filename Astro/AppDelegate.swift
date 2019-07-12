@@ -3,14 +3,14 @@ import CoreData
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    let preloadPlanetDataHandler = PreloadPlanetDataHandler()
+    let preloadPlanetData = PreloadPlanetData()
     let persistentData = PersistentData()
     let ndnApi = NDNAPI()
     
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        preloadPlanetDataHandler.preloadPlanetData()
+        preloadPlanetData.preloadUnlessAlreadyPreloaded()
         ndnApi.getTodaysNasaEntry()
         return true
     }
@@ -32,7 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
-        persistentData.saveContext()
+
     }
 
     lazy var persistentContainer: NSPersistentContainer = {
