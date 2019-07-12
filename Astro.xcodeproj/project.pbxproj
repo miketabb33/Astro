@@ -178,9 +178,9 @@
 		4B6023E522BE8AF300732745 /* DataManagement */ = {
 			isa = PBXGroup;
 			children = (
+				4B6023DF22BE76F200732745 /* PersistentData.swift */,
 				4BCA1CE922B6AA0900118A1E /* NDNAPI.swift */,
 				4BE64A832299ADC2009FF9C2 /* UpdateNasaModel.swift */,
-				4B6023DF22BE76F200732745 /* PersistentData.swift */,
 				4B6023DD22BBBFFF00732745 /* PreloadPlanetDataHandler.swift */,
 				4B79B41A22AD5C0200D6711C /* PlanetDataHandler.swift */,
 				4BCA1CE522B6984600118A1E /* NasaDataHandler.swift */,
