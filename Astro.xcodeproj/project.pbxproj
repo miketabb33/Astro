@@ -41,7 +41,7 @@
 		4BC55CF7225FD97B0079A3E5 /* planetUploadModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC55CF6225FD97B0079A3E5 /* planetUploadModel.swift */; };
 		4BCA1CE622B6984600118A1E /* NasaDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCA1CE522B6984600118A1E /* NasaDataHandler.swift */; };
 		4BCA1CE822B69EA100118A1E /* LoadingAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCA1CE722B69EA100118A1E /* LoadingAnimation.swift */; };
-		4BCA1CEA22B6AA0900118A1E /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCA1CE922B6AA0900118A1E /* APIRequest.swift */; };
+		4BCA1CEA22B6AA0900118A1E /* NDNAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCA1CE922B6AA0900118A1E /* NDNAPI.swift */; };
 		4BCA1CEC22B6B6AB00118A1E /* KeyboardMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCA1CEB22B6B6AB00118A1E /* KeyboardMethods.swift */; };
 		4BCA1CEE22B6BD9D00118A1E /* FormatterMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCA1CED22B6BD9D00118A1E /* FormatterMethods.swift */; };
 		4BE64A842299ADC2009FF9C2 /* UpdateNasaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE64A832299ADC2009FF9C2 /* UpdateNasaModel.swift */; };
@@ -108,7 +108,7 @@
 		4BC55CF6225FD97B0079A3E5 /* planetUploadModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = planetUploadModel.swift; sourceTree = "<group>"; };
 		4BCA1CE522B6984600118A1E /* NasaDataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaDataHandler.swift; sourceTree = "<group>"; };
 		4BCA1CE722B69EA100118A1E /* LoadingAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingAnimation.swift; sourceTree = "<group>"; };
-		4BCA1CE922B6AA0900118A1E /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
+		4BCA1CE922B6AA0900118A1E /* NDNAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NDNAPI.swift; sourceTree = "<group>"; };
 		4BCA1CEB22B6B6AB00118A1E /* KeyboardMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardMethods.swift; sourceTree = "<group>"; };
 		4BCA1CED22B6BD9D00118A1E /* FormatterMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatterMethods.swift; sourceTree = "<group>"; };
 		4BE64A832299ADC2009FF9C2 /* UpdateNasaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateNasaModel.swift; sourceTree = "<group>"; };
@@ -170,7 +170,7 @@
 		4B6023E522BE8AF300732745 /* API_DB_Model */ = {
 			isa = PBXGroup;
 			children = (
-				4BCA1CE922B6AA0900118A1E /* APIRequest.swift */,
+				4BCA1CE922B6AA0900118A1E /* NDNAPI.swift */,
 				4BE64A832299ADC2009FF9C2 /* UpdateNasaModel.swift */,
 				4B6023DF22BE76F200732745 /* PersistentData.swift */,
 				4B6023DD22BBBFFF00732745 /* PreloadPlanetDataHandler.swift */,
@@ -535,7 +535,7 @@
 				4B6023E422BE7CB900732745 /* NavigationMethods.swift in Sources */,
 				4B6023E722BE90A600732745 /* MathMethods.swift in Sources */,
 				4BB687BC22664D1F00D423F9 /* PlanetTempCell.swift in Sources */,
-				4BCA1CEA22B6AA0900118A1E /* APIRequest.swift in Sources */,
+				4BCA1CEA22B6AA0900118A1E /* NDNAPI.swift in Sources */,
 				4BC55CCA225E59A90079A3E5 /* PlanetWeightCell.swift in Sources */,
 				4BCA1CE822B69EA100118A1E /* LoadingAnimation.swift in Sources */,
 				4B6023DE22BBBFFF00732745 /* PreloadPlanetDataHandler.swift in Sources */,

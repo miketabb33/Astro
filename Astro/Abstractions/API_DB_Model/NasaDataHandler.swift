@@ -3,7 +3,7 @@ import UIKit
 class NasaDataHandler {
     let loadingAnimation = LoadingAnimation()
     let updateNasaModel = UpdateNasaModel()
-    let apiRequest = APIRequest()
+    let apiRequest = NDNAPI()
     
     let api_key = "O5XtjFT6wV1o5zLwNDhhwf8giPbWhlasYL24H69p"
     let api_url = "https://api.nasa.gov/planetary/apod"
@@ -29,8 +29,7 @@ class NasaDataHandler {
         let nasaDataCompletetionHandler: () -> Void = {
             nasaDailyNewsView.nasaData = self.updateNasaModel.nasaData
         }
-        
-        apiRequest.getData(api_url: api_url, api_key: api_key, action: updateNasaModel.updateModelWithNasaData, completion: nasaDataCompletetionHandler)
+
     }
     
 }
