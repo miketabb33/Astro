@@ -6,7 +6,7 @@ class PlanetDataHandler {
     let persistentData = PersistentData()
     
     func sendPlanetDataToViews(firstView: UINavigationController?, secondView: UIViewController?) {
-        container = persistentData.getPlanetData(planetContainer: container) ?? [Planets]()
+        container = persistentData.getPlanetData(planetContainer: container)
         
         let planetTemperatureTVC = firstView?.topViewController as! PlanetTemperatureTVC
         let enterWeightVC = secondView as! EnterWeightVC

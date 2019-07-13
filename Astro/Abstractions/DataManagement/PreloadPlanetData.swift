@@ -8,7 +8,7 @@ class PreloadPlanetData {
     lazy var persistentContainer = (UIApplication.shared.delegate as! AppDelegate).persistentContainer
     
     func preloadUnlessAlreadyPreloaded() {
-        if userDefaults.bool(forKey: persistentData.preloadDataKey) == false {
+        if userDefaults.bool(forKey: persistentData.preloadPlanetDataKey) == false {
             preloadPlanetData()
         }
     }
