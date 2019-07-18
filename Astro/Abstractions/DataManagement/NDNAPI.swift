@@ -10,9 +10,9 @@ class NDNAPI {
     
     func uploadDeviceWithNasaEntries() {
         if userDefaults.bool(forKey: persistantData.initialNasaEntryUploadCompletedKey) {
-            getTodaysNasaEntry()
+            getRecentNasaEntry()
         } else {
-           initialNasaEntryUpload()
+            initialNasaEntryUpload()
         }
     }
     
@@ -31,7 +31,7 @@ class NDNAPI {
     }
     
     
-    func getTodaysNasaEntry() {
+    func getRecentNasaEntry() {
         Alamofire.request("https://ndn-api.herokuapp.com/", method: .get).responseJSON {
             response in
             if response.result.isSuccess {

@@ -48,8 +48,3 @@ class PreloadPlanetData {
     }
 }
 
-//This next line of code turns database preloding on. Be sure to clear the database before hand
-//userDefaults.set(false, forKey: preloadedDataKey)
-
-//DB Directory
-//print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
