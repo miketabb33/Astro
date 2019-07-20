@@ -1,7 +1,7 @@
 import UIKit
 
 class NDNVCProcessing {
-    let constraints = Constaints()
+    let constraints = UIConstraints()
     
     func processImage(_ imageView: UIImageView, stackUnder topElement: UIView, edges edgeArea: UILayoutGuide) -> UIImageView {
         if let image = imageView.image {
@@ -20,24 +20,20 @@ class NDNVCProcessing {
         return imageView
     }
     
-    func processTitle(_ labelView: UILabel, stackUnder topElement: UIView, edges edgeArea: UILayoutGuide) -> UILabel {
+    func processTitle(_ labelView: UILabel, topAnchor: NSLayoutYAxisAnchor, edges edgeArea: UILayoutGuide) -> UILabel {
         if labelView.text != nil {
-            labelView.font = UIFont (name: "Palatino", size: 20)
-            labelView.textAlignment = .center
-            labelView.numberOfLines = 0
-            labelView.textColor = UIColor.white
-            labelView.translatesAutoresizingMaskIntoConstraints = false
-            constraints.addStackingConstraintTo(labelView, stackUnder: topElement, edges: edgeArea, height: 50)
+            
+            //constraints.addConstraintForTopMostElementTo(labelView, topAnchor: topAnchor, edges: edgeArea, height: 50)
         }
         
         return labelView
     }
     
-    func processDescription(_ labelView: UILabel, stackUnder topElement: UIView, edges edgeArea: UILayoutGuide) -> UILabel {
+    func processExplanation(_ labelView: UILabel, stackUnder topElement: UIView, edges edgeArea: UILayoutGuide) -> UILabel {
         if labelView.text != nil {
             labelView.font = UIFont (name: "Palatino", size: 14)
             labelView.numberOfLines = 0
-            labelView.textColor = UIColor.white
+            labelView.textColor = UIColor.black
             labelView.backgroundColor = UIColor.clear
             labelView.translatesAutoresizingMaskIntoConstraints = false
             constraints.addStackingConstraintTo(labelView, stackUnder: topElement, edges: edgeArea, height: 120)

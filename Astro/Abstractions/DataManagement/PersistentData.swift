@@ -60,4 +60,20 @@ class PersistentData {
         return container
     }
     
+    func getAlllNasaEntries() -> [NasaEntry] {
+        var container = [NasaEntry]()
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let request : NSFetchRequest<NasaEntry> = NasaEntry.fetchRequest()
+        
+        let sortDescriptor = NSSortDescriptor(key: "date", ascending: false)
+        request.sortDescriptors = [sortDescriptor]
+        
+        do {
+            container = try context.fetch(request)
+        } catch {
+            print("Error fetching data from context \(error)")
+        }
+        return container
+    }
+    
 }
