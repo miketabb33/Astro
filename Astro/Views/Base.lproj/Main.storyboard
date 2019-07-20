@@ -49,7 +49,7 @@
         <!--News-->
         <scene sceneID="sRf-j1-JeL">
             <objects>
-                <tableViewController id="xjo-cm-IXw" sceneMemberID="viewController">
+                <tableViewController id="xjo-cm-IXw" customClass="NasaDailyNewsTVC" customModule="Astro" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="xv4-Kc-0vu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
