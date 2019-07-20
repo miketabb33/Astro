@@ -25,6 +25,7 @@ class NasaDailyNewsTVC: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CustomNasaNewsEntryCell", for: indexPath) as! NasaNewsEntryCell
         
         cell.currentEntryTitle.text = allNasaEntries[indexPath.row].title!
+        cell.currentEntryImageContainer.image = UIImage(named: "Earth")
         //cell.currentEntryExplanation.text = allNasaEntries[indexPath.row].explanation!
         
         

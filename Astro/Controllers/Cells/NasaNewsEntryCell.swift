@@ -4,7 +4,7 @@ class NasaNewsEntryCell: UITableViewCell {
     let processUIComponents = NDNVCProcessing()
     let addConstraints = UIConstraints()
     
-    let currentEntryTitle:UILabel = {
+    let currentEntryTitle : UILabel = {
         let label = UILabel()
         label.font = UIFont (name: "Palatino", size: 20)
         label.textAlignment = .center
@@ -14,24 +14,28 @@ class NasaNewsEntryCell: UITableViewCell {
         return label
     }()
     
-    
     var currentEntryExplanation = UILabel()
+    
+    let currentEntryImageContainer : UIImageView = {
+        let imageView = UIImageView()
+        imageView.backgroundColor = UIColor.black
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         let margin = contentView.layoutMarginsGuide
+        let safeArea = contentView.safeAreaLayoutGuide
 
         self.contentView.addSubview(currentEntryTitle)
+        self.contentView.addSubview(currentEntryImageContainer)
         
         addConstraints.addConstraintForTopMostElementTo(currentEntryTitle, topAnchor: contentView.topAnchor, edges: margin, height: 50)
-
         
-        currentEntryTitle.topAnchor.constraint(equalTo:self.contentView.topAnchor).isActive = true
-//        currentEntryTitle.leadingAnchor.constraint(equalTo:self.contentView.trailingAnchor, constant:10).isActive = true
-//        currentEntryTitle.trailingAnchor.constraint(equalTo:self.contentView.trailingAnchor, constant:-10).isActive = true
-//        currentEntryTitle.heightAnchor.constraint(equalToConstant:40).isActive = true
-
+        addConstraints.addStackingConstraintTo(currentEntryImageContainer, stackUnder: currentEntryTitle, edges: safeArea, height: 240)
+        
         
         
         //contentView.addSubview(currentEntryExplanation)
