@@ -46,6 +46,35 @@
             </objects>
             <point key="canvasLocation" x="2889" y="27"/>
         </scene>
+        <!--News-->
+        <scene sceneID="sRf-j1-JeL">
+            <objects>
+                <tableViewController id="xjo-cm-IXw" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="xv4-Kc-0vu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="u2t-9Z-ASC">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="u2t-9Z-ASC" id="Agd-SZ-CTB">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="xjo-cm-IXw" id="BYn-Rs-Yd7"/>
+                            <outlet property="delegate" destination="xjo-cm-IXw" id="Bi7-xy-QYg"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="News" image="rocket" id="pt0-wp-Tst"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fHx-Oi-cdj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="787" y="-913"/>
+        </scene>
         <!--Info-->
         <scene sceneID="nXJ-u5-KSw">
             <objects>
@@ -92,7 +121,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xqk-VK-vgS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1085.5999999999999" y="-927.88605697151434"/>
+            <point key="canvasLocation" x="2025" y="-931"/>
         </scene>
         <!--Weight-->
         <scene sceneID="n72-n8-heC">
@@ -290,7 +319,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="8wZ-2o-Lqj" kind="relationship" relationship="viewControllers" id="0fI-zB-Eco"/>
-                        <segue destination="b2c-Wl-Ypb" kind="relationship" relationship="viewControllers" id="7M3-kR-Hln"/>
+                        <segue destination="xjo-cm-IXw" kind="relationship" relationship="viewControllers" id="kdF-Zm-Q8g"/>
                         <segue destination="tWN-vm-GRG" kind="relationship" relationship="viewControllers" id="lUy-1W-r0L"/>
                     </connections>
                 </tabBarController>

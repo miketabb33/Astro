@@ -17,7 +17,7 @@ class MainTabController: UITabBarController {
         //select which tab is displayed upon opening app.
         selectedViewController = self.viewControllers?[2]
         
-        nasaDataHandler.sendNasaDailyNewsDataToView(viewControllers?[1])
+        //nasaDataHandler.sendNasaDailyNewsDataToView(viewControllers?[1])
         
     }
     
