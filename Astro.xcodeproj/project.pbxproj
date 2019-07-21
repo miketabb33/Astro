@@ -294,11 +294,11 @@
 			children = (
 				4BBB94F72284CE9100944506 /* MainTabController.swift */,
 				4BBB94F5228308C000944506 /* NasaDailyNewsVC.swift */,
-				4BE51AD322E34D55002905ED /* NasaDailyNewsTVC.swift */,
 				4BB687B822664C6A00D423F9 /* PlanetTemperatureTVC.swift */,
 				4BB687BE2266538000D423F9 /* PlanetTemperatureVC.swift */,
 				4BB687AE226519E600D423F9 /* EnterWeightVC.swift */,
 				4BC55CC4225D35450079A3E5 /* WeightDisplayTVC.swift */,
+				4BE51AD322E34D55002905ED /* NasaDailyNewsTVC.swift */,
 				4BB687B622664A3200D423F9 /* Cells */,
 			);
 			path = Controllers;

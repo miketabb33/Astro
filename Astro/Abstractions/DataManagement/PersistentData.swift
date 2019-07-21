@@ -60,20 +60,32 @@ class PersistentData {
         return container
     }
     
+    lazy var nasaEntriesContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
     func getAlllNasaEntries() -> [NasaEntry] {
         var container = [NasaEntry]()
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         let request : NSFetchRequest<NasaEntry> = NasaEntry.fetchRequest()
         
         let sortDescriptor = NSSortDescriptor(key: "date", ascending: false)
         request.sortDescriptors = [sortDescriptor]
         
         do {
-            container = try context.fetch(request)
+            container = try nasaEntriesContext.fetch(request)
         } catch {
             print("Error fetching data from context \(error)")
         }
         return container
+    }
+    
+    func saveNasaEntries() {
+        if nasaEntriesContext.hasChanges {
+            do {
+                try nasaEntriesContext.save()
+            } catch {
+                let nserror = error as NSError
+                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+            }
+        }
     }
     
 }

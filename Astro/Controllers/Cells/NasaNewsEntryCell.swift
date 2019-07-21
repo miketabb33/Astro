@@ -16,9 +16,8 @@ class NasaNewsEntryCell: UITableViewCell {
     
     var currentEntryExplanation = UILabel()
     
-    let currentEntryImageContainer : UIImageView = {
+    let currentEntryImageView : UIImageView = {
         let imageView = UIImageView()
-        imageView.backgroundColor = UIColor.black
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
@@ -30,11 +29,11 @@ class NasaNewsEntryCell: UITableViewCell {
         let safeArea = contentView.safeAreaLayoutGuide
 
         self.contentView.addSubview(currentEntryTitle)
-        self.contentView.addSubview(currentEntryImageContainer)
+        self.contentView.addSubview(currentEntryImageView)
         
         addConstraints.addConstraintForTopMostElementTo(currentEntryTitle, topAnchor: contentView.topAnchor, edges: margin, height: 50)
         
-        addConstraints.addStackingConstraintTo(currentEntryImageContainer, stackUnder: currentEntryTitle, edges: safeArea, height: 240)
+        addConstraints.addStackingConstraintTo(currentEntryImageView, stackUnder: currentEntryTitle, edges: safeArea, height: 240)
         
         
         
