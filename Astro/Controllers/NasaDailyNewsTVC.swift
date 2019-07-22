@@ -27,36 +27,41 @@ class NasaDailyNewsTVC: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CustomNasaNewsEntryCell", for: indexPath) as! NasaNewsEntryCell
         totalHeightForCell = 0
-//        if allNasaEntries[indexPath.row].image == nil {
-//            let imageUrlString = allNasaEntries[indexPath.row].url!
-//            let imageUrl:URL = URL(string: imageUrlString)!
-//
-//            DispatchQueue.global(qos: .userInitiated).async {
-//
-//                let imageData:NSData = NSData(contentsOf: imageUrl)!
-//
-//                DispatchQueue.main.async {
-//                    self.allNasaEntries[indexPath.row].image = imageData as Data
-//                    self.persistentData.saveNasaEntries()
-//
-//                    cell.currentEntryTitle.text = self.allNasaEntries[indexPath.row].title
-//                    cell.currentEntryImageView.image = UIImage(data: self.allNasaEntries[indexPath.row].image!)
-//                    cell.currentEntryImageView = self.UIProcessing.processImage(cell.currentEntryImageView, stackUnder: cell.currentEntryTitle, edges: cell.contentView.safeAreaLayoutGuide)
-//                    print(cell.currentEntryTitle.text)
-//                    //print(cell.currentEntryImageView.image!.size.height)
-//                    self.totalHeightForCell = cell.currentEntryImageView.frame.height + cell.currentEntryTitle.frame.height
-//                }
-//            }
-//        } else {
+        
+        if allNasaEntries[indexPath.row].url!.suffix(3) != "jpg" {
+            allNasaEntries[indexPath.row].image = UIImage(named: "youtube")!.pngData()
+            persistentData.saveNasaEntries()
+        }
+        
+        if allNasaEntries[indexPath.row].image == nil {
+            let imageUrlString = allNasaEntries[indexPath.row].url!
+            let imageUrl:URL = URL(string: imageUrlString)!
+
+            DispatchQueue.global(qos: .userInitiated).async {
+
+                let imageData:NSData = NSData(contentsOf: imageUrl)!
+
+                DispatchQueue.main.async {
+                    self.allNasaEntries[indexPath.row].image = imageData as Data
+                    self.persistentData.saveNasaEntries()
+
+                    self.assignCell(cell: cell, indexPath: indexPath)
+                }
+            }
+        } else {
+            assignCell(cell: cell, indexPath: indexPath)
+        }
+    
+        //cell.currentEntryExplanation.text = allNasaEntries[indexPath.row].explanation!
+        return cell
+    }
+    
+    func assignCell(cell: NasaNewsEntryCell, indexPath: IndexPath) {
         cell.currentEntryTitle.text = self.allNasaEntries[indexPath.row].title
         cell.currentEntryImageView.image = UIImage(data: self.allNasaEntries[indexPath.row].image!)
         cell.currentEntryImageView = UIProcessing.processImage(currentCell: cell, stackUnder: cell.currentEntryTitle, edges: cell.contentView.safeAreaLayoutGuide)
-    
-        totalHeightForCell = cell.titleFrameHeight + cell.imageFrameHeight
-//        }
         
-        //cell.currentEntryExplanation.text = allNasaEntries[indexPath.row].explanation!
-        return cell
+        totalHeightForCell = cell.titleFrameHeight + cell.imageFrameHeight
     }
     
     
