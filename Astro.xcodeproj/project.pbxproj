@@ -46,6 +46,7 @@
 		4BCA1CEE22B6BD9D00118A1E /* FormatterMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCA1CED22B6BD9D00118A1E /* FormatterMethods.swift */; };
 		4BE51AD422E34D55002905ED /* NasaDailyNewsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE51AD322E34D55002905ED /* NasaDailyNewsTVC.swift */; };
 		4BE51AD722E34EB4002905ED /* NasaNewsEntryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE51AD522E34EB4002905ED /* NasaNewsEntryCell.swift */; };
+		4BE51ADC22E60EFE002905ED /* NasaNewsEntryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE51ADB22E60EFE002905ED /* NasaNewsEntryManager.swift */; };
 		4BE64A842299ADC2009FF9C2 /* UpdateNasaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE64A832299ADC2009FF9C2 /* UpdateNasaModel.swift */; };
 		4BEC669422DA6DAB00513FA9 /* NDNAPIStagingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEC669322DA6DAB00513FA9 /* NDNAPIStagingModel.swift */; };
 		5E13D7C415B15D376AB31CD9 /* Pods_Astro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FDA973E3FD78D118A37704B /* Pods_Astro.framework */; };
@@ -116,6 +117,7 @@
 		4BCA1CED22B6BD9D00118A1E /* FormatterMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatterMethods.swift; sourceTree = "<group>"; };
 		4BE51AD322E34D55002905ED /* NasaDailyNewsTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NasaDailyNewsTVC.swift; path = /Users/prime/Projects/Astro/Astro/Controllers/NasaDailyNewsTVC.swift; sourceTree = "<absolute>"; };
 		4BE51AD522E34EB4002905ED /* NasaNewsEntryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaNewsEntryCell.swift; sourceTree = "<group>"; };
+		4BE51ADB22E60EFE002905ED /* NasaNewsEntryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaNewsEntryManager.swift; sourceTree = "<group>"; };
 		4BE64A832299ADC2009FF9C2 /* UpdateNasaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateNasaModel.swift; sourceTree = "<group>"; };
 		4BEC669322DA6DAB00513FA9 /* NDNAPIStagingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NDNAPIStagingModel.swift; sourceTree = "<group>"; };
 		C21986F0FE38CFB8E9C2EA5C /* Pods-Astro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Astro.release.xcconfig"; path = "Target Support Files/Pods-Astro/Pods-Astro.release.xcconfig"; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 			children = (
 				4B6023E622BE90A600732745 /* MathMethods.swift */,
 				4BCA1CED22B6BD9D00118A1E /* FormatterMethods.swift */,
+				4BE51ADB22E60EFE002905ED /* NasaNewsEntryManager.swift */,
 				4B52707E22D904DB00E8FBFD /* BasicUI */,
 				4B6023E522BE8AF300732745 /* DataManagement */,
 			);
@@ -551,6 +554,7 @@
 				4BC55CF7225FD97B0079A3E5 /* planetUploadModel.swift in Sources */,
 				4BE64A842299ADC2009FF9C2 /* UpdateNasaModel.swift in Sources */,
 				4BB687BF2266538000D423F9 /* PlanetTemperatureVC.swift in Sources */,
+				4BE51ADC22E60EFE002905ED /* NasaNewsEntryManager.swift in Sources */,
 				4B98E8A422C2B63E0025B8F2 /* Constraints.swift in Sources */,
 				4B6023E422BE7CB900732745 /* NavigationMethods.swift in Sources */,
 				4B6023E722BE90A600732745 /* MathMethods.swift in Sources */,

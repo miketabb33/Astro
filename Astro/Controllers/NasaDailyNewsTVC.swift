@@ -2,6 +2,7 @@ import UIKit
 
 class NasaDailyNewsTVC: UITableViewController {
     let persistentData = PersistentData()
+    let nasaNewsEntryManager = NasaNewsEntryManager()
     var allNasaEntries = [NasaEntry]()
     
 
@@ -16,7 +17,7 @@ class NasaDailyNewsTVC: UITableViewController {
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return numberOfShowingEntries
+        return nasaNewsEntryManager.showingEntries
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -49,27 +50,12 @@ class NasaDailyNewsTVC: UITableViewController {
         return cell
     }
     
-    var i = 0
-    var reachedEnd = false
-    var numberOfShowingEntries = 4
-    
-    override func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        if numberOfShowingEntries <= allNasaEntries.count {
-            if tableView.contentOffset.y >= (tableView.contentSize.height - tableView.frame.size.height) {
-                numberOfShowingEntries = numberOfShowingEntries + 1
-                i = i + 1
-                print("end, \(i)")
-                if numberOfShowingEntries <= allNasaEntries.count {
-                    tableView.reloadData()
-                }
-            }
-        }
-    }
-    
-    
-    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 300
+    }
+    
+    override func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+       nasaNewsEntryManager.loadMoreEntriesWhenSrollReachesBottom(tableView: tableView, allNasaEntries: allNasaEntries)
     }
 
 }
