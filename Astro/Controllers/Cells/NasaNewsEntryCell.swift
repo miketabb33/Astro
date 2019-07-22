@@ -16,7 +16,7 @@ class NasaNewsEntryCell: UITableViewCell {
     
     var currentEntryExplanation = UILabel()
     
-    let currentEntryImageView : UIImageView = {
+    var currentEntryImageView : UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
@@ -27,15 +27,16 @@ class NasaNewsEntryCell: UITableViewCell {
         
         let margin = contentView.layoutMarginsGuide
         let safeArea = contentView.safeAreaLayoutGuide
+        
+        
 
         self.contentView.addSubview(currentEntryTitle)
         self.contentView.addSubview(currentEntryImageView)
         
         addConstraints.addConstraintForTopMostElementTo(currentEntryTitle, topAnchor: contentView.topAnchor, edges: margin, height: 50)
         
-        addConstraints.addStackingConstraintTo(currentEntryImageView, stackUnder: currentEntryTitle, edges: safeArea, height: 240)
-        
-        
+        //addConstraints.addStackingConstraintTo(currentEntryImageView, stackUnder: currentEntryTitle, edges: safeArea, height: 240)
+        //currentEntryImageView = processUIComponents.processImage(currentEntryImageView, stackUnder: currentEntryTitle, edges: safeArea)
         
         //contentView.addSubview(currentEntryExplanation)
         //currentEntryExplanation = processUIComponents.processExplanation(currentEntryExplanation, stackUnder: currentEntryTitle, edges: margin)

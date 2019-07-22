@@ -5,8 +5,7 @@ class NDNVCProcessing {
     
     func processImage(_ imageView: UIImageView, stackUnder topElement: UIView, edges edgeArea: UILayoutGuide) -> UIImageView {
         if let image = imageView.image {
-            imageView.translatesAutoresizingMaskIntoConstraints = false
-            
+
             let width = image.size.width
             let height = image.size.height
             let ratio = width/height
@@ -18,6 +17,19 @@ class NDNVCProcessing {
             
         }
         return imageView
+    }
+    
+    func configureImageView(_ imageView: UIImageView, ratio: CGFloat, topElement: UIView, edgeArea: UILayoutGuide, aspectHeight: CGFloat, screenWidth: CGFloat) {
+            if ratio >= 1.25 {
+                imageView.contentMode = .scaleToFill
+                constraints.addStackingConstraintTo(imageView, stackUnder: topElement, edges: edgeArea, height: aspectHeight)
+            } else if ratio <= 0.75 {
+                imageView.contentMode = .scaleAspectFit
+                constraints.addStackingConstraintTo(imageView, stackUnder: topElement, edges: edgeArea, height: screenWidth)
+            } else {
+                imageView.contentMode = .scaleToFill
+                constraints.addStackingConstraintTo(imageView, stackUnder: topElement, edges: edgeArea, height: screenWidth)
+            }
     }
     
     func processTitle(_ labelView: UILabel, topAnchor: NSLayoutYAxisAnchor, edges edgeArea: UILayoutGuide) -> UILabel {
@@ -41,15 +53,5 @@ class NDNVCProcessing {
         
         return labelView
     }
-    
-    func configureImageView(_ imageView: UIImageView, ratio: CGFloat, topElement: UIView, edgeArea: UILayoutGuide, aspectHeight: CGFloat, screenWidth: CGFloat) {
-        if ratio >= 1.25 {
-            constraints.addStackingConstraintTo(imageView, stackUnder: topElement, edges: edgeArea, height: aspectHeight)
-        } else if ratio <= 0.75 {
-            imageView.contentMode = .scaleAspectFit
-            constraints.addStackingConstraintTo(imageView, stackUnder: topElement, edges: edgeArea, height: screenWidth)
-        } else {
-            constraints.addStackingConstraintTo(imageView, stackUnder: topElement, edges: edgeArea, height: screenWidth)
-        }
-    }
+
 }
