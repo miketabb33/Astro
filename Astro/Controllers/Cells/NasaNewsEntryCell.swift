@@ -4,6 +4,9 @@ class NasaNewsEntryCell: UITableViewCell {
     let processUIComponents = NDNVCProcessing()
     let addConstraints = UIConstraints()
     
+    var imageFrameHeight = CGFloat()
+    var titleFrameHeight: CGFloat = 50
+    
     let currentEntryTitle : UILabel = {
         let label = UILabel()
         label.font = UIFont (name: "Palatino", size: 20)
@@ -26,21 +29,11 @@ class NasaNewsEntryCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         let margin = contentView.layoutMarginsGuide
-        let safeArea = contentView.safeAreaLayoutGuide
-        
-        
 
         self.contentView.addSubview(currentEntryTitle)
         self.contentView.addSubview(currentEntryImageView)
         
-        addConstraints.addConstraintForTopMostElementTo(currentEntryTitle, topAnchor: contentView.topAnchor, edges: margin, height: 50)
-        
-        //addConstraints.addStackingConstraintTo(currentEntryImageView, stackUnder: currentEntryTitle, edges: safeArea, height: 240)
-        //currentEntryImageView = processUIComponents.processImage(currentEntryImageView, stackUnder: currentEntryTitle, edges: safeArea)
-        
-        //contentView.addSubview(currentEntryExplanation)
-        //currentEntryExplanation = processUIComponents.processExplanation(currentEntryExplanation, stackUnder: currentEntryTitle, edges: margin)
-        
+        addConstraints.addConstraintForTopMostElementTo(currentEntryTitle, topAnchor: contentView.topAnchor, edges: margin, height: titleFrameHeight)
     }
     
     required init?(coder aDecoder: NSCoder) {

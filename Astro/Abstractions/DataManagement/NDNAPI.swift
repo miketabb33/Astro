@@ -24,6 +24,7 @@ class NDNAPI {
                 let stagedNasaData = self.digestNasaDataIntoArray(nasaData: fetchedNasaData)
                 self.insertDataIntoDatabase(stagedNasaData: stagedNasaData)
                 self.userDefaults.set(true, forKey: self.persistantData.initialNasaEntryUploadCompletedKey)
+                print("Initial Nasa Entry Upload Complete")
             } else {
                 print("Error \(String(describing: response.result.error))")
             }

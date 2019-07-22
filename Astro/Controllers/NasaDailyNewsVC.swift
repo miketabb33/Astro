@@ -53,7 +53,7 @@ class NasaDailyNewsVC: UIViewController {
     func processElements() {
         let safeArea = view.safeAreaLayoutGuide
         let margin = view.layoutMarginsGuide
-        nasaImageContainer = processUIElements.processImage(nasaImageContainer, stackUnder: header, edges: safeArea)
+        //nasaImageContainer = processUIElements.processImage(nasaImageContainer, stackUnder: header, edges: safeArea)
         //nasaTitle = processUIElements.processTitle(nasaTitle, stackUnder: nasaImageContainer, edges: margin)
         //nasaDescription = processUIElements.processDescription(nasaDescription, stackUnder: nasaTitle, edges: margin)
     }
