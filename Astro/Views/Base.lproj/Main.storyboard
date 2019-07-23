@@ -73,55 +73,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fHx-Oi-cdj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="787" y="-913"/>
-        </scene>
-        <!--Info-->
-        <scene sceneID="nXJ-u5-KSw">
-            <objects>
-                <viewController storyboardIdentifier="NasaDailyNewsVC" id="b2c-Wl-Ypb" customClass="NasaDailyNewsVC" customModule="Astro" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="jsh-Uu-KqH">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vbD-gh-bHi" userLabel="Header Container">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zA2-Ma-KCZ">
-                                        <rect key="frame" x="0.0" y="23" width="375" height="41"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="41" id="u9z-qM-8VJ"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="zA2-Ma-KCZ" secondAttribute="bottom" id="3ft-aH-FTg"/>
-                                    <constraint firstAttribute="trailing" secondItem="zA2-Ma-KCZ" secondAttribute="trailing" id="Z6s-Sk-1pK"/>
-                                    <constraint firstAttribute="height" constant="64" id="ZIH-Kj-evh"/>
-                                    <constraint firstItem="zA2-Ma-KCZ" firstAttribute="leading" secondItem="vbD-gh-bHi" secondAttribute="leading" id="vuK-qV-5oc"/>
-                                </constraints>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="vbD-gh-bHi" firstAttribute="leading" secondItem="krc-xz-gBs" secondAttribute="leading" id="EwU-KZ-Jqb"/>
-                            <constraint firstItem="vbD-gh-bHi" firstAttribute="top" secondItem="jsh-Uu-KqH" secondAttribute="top" id="R6a-IO-2Np"/>
-                            <constraint firstItem="vbD-gh-bHi" firstAttribute="trailing" secondItem="krc-xz-gBs" secondAttribute="trailing" id="fD6-bL-AJW"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="krc-xz-gBs"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Info" image="rocket" id="tiH-0v-LkA"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="header" destination="vbD-gh-bHi" id="QqS-qJ-fOt"/>
-                        <outlet property="nasaHeader" destination="zA2-Ma-KCZ" id="DrZ-me-Q0c"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xqk-VK-vgS" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2025" y="-931"/>
+            <point key="canvasLocation" x="1086" y="-913"/>
         </scene>
         <!--Weight-->
         <scene sceneID="n72-n8-heC">

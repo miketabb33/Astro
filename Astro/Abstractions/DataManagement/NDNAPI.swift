@@ -6,6 +6,7 @@ import CoreData
 class NDNAPI {
     lazy var persistentContainer = (UIApplication.shared.delegate as! AppDelegate).persistentContainer
     let persistantData = PersistentData()
+    
     let userDefaults = UserDefaults.standard
     
     func uploadDeviceWithNasaEntries() {

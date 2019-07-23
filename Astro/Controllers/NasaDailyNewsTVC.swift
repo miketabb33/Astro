@@ -5,8 +5,8 @@ class NasaDailyNewsTVC: UITableViewController {
     let nasaNewsEntryManager = NasaNewsEntryManager()
     let UIProcessing = NDNVCProcessing()
     let addConstraints = UIConstraints()
-    var allNasaEntries = [NasaEntry]()
     
+    var allNasaEntries = [NasaEntry]()
     var totalHeightForCell = CGFloat()
     
 
@@ -31,9 +31,9 @@ class NasaDailyNewsTVC: UITableViewController {
         if allNasaEntries[indexPath.row].url!.suffix(3) != "jpg" {
             allNasaEntries[indexPath.row].image = UIImage(named: "youtube")!.pngData()
             persistentData.saveNasaEntries()
-        }
-        
-        if allNasaEntries[indexPath.row].image == nil {
+            
+            assignCell(cell: cell, indexPath: indexPath)
+        } else if allNasaEntries[indexPath.row].image == nil {
             let imageUrlString = allNasaEntries[indexPath.row].url!
             let imageUrl:URL = URL(string: imageUrlString)!
 
@@ -51,17 +51,21 @@ class NasaDailyNewsTVC: UITableViewController {
         } else {
             assignCell(cell: cell, indexPath: indexPath)
         }
-    
-        //cell.currentEntryExplanation.text = allNasaEntries[indexPath.row].explanation!
+        
         return cell
     }
     
     func assignCell(cell: NasaNewsEntryCell, indexPath: IndexPath) {
-        cell.currentEntryTitle.text = self.allNasaEntries[indexPath.row].title
-        cell.currentEntryImageView.image = UIImage(data: self.allNasaEntries[indexPath.row].image!)
+        cell.currentEntryTitle.text = allNasaEntries[indexPath.row].title
+        addConstraints.addConstraintForTopMostElementTo(cell.currentEntryTitle, topAnchor: cell.contentView.topAnchor, edges: cell.contentView.layoutMarginsGuide, height: cell.frameHeight["title"]!)
+        
+        cell.currentEntryImageView.image = UIImage(data: allNasaEntries[indexPath.row].image!)
         cell.currentEntryImageView = UIProcessing.processImage(currentCell: cell, stackUnder: cell.currentEntryTitle, edges: cell.contentView.safeAreaLayoutGuide)
         
-        totalHeightForCell = cell.titleFrameHeight + cell.imageFrameHeight
+        cell.currentEntryExplanation.text = allNasaEntries[indexPath.row].explanation
+        addConstraints.addStackingConstraintTo(cell.currentEntryExplanation, stackUnder: cell.currentEntryImageView, edges: cell.contentView.layoutMarginsGuide, height: cell.frameHeight["explanation"]!)
+        
+        totalHeightForCell = cell.frameHeight["title"]! + cell.frameHeight["image"]! + cell.frameHeight["explanation"]!
     }
     
     

@@ -1,6 +1,3 @@
-//DB Directory
-//print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
-
 import UIKit
 import CoreData
 

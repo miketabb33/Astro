@@ -14,42 +14,19 @@ class NDNVCProcessing {
         
         if ratio >= 1.25 {
             currentCell.currentEntryImageView.contentMode = .scaleToFill
-            currentCell.imageFrameHeight = aspectHeight
+            currentCell.frameHeight["image"] = aspectHeight
             constraints.addStackingConstraintTo(currentCell.currentEntryImageView, stackUnder: topElement, edges: edgeArea, height: aspectHeight)
         } else if ratio <= 0.75 {
             currentCell.currentEntryImageView.contentMode = .scaleAspectFit
-            currentCell.imageFrameHeight = screenWidth
+            currentCell.frameHeight["image"] = screenWidth
             constraints.addStackingConstraintTo(currentCell.currentEntryImageView, stackUnder: topElement, edges: edgeArea, height: screenWidth)
         } else {
             currentCell.currentEntryImageView.contentMode = .scaleToFill
-            currentCell.imageFrameHeight = screenWidth
+            currentCell.frameHeight["image"] = screenWidth
             constraints.addStackingConstraintTo(currentCell.currentEntryImageView, stackUnder: topElement, edges: edgeArea, height: screenWidth)
         }
         
         return currentCell.currentEntryImageView
-    }
-
-    
-    func processTitle(_ labelView: UILabel, topAnchor: NSLayoutYAxisAnchor, edges edgeArea: UILayoutGuide) -> UILabel {
-        if labelView.text != nil {
-            
-            //constraints.addConstraintForTopMostElementTo(labelView, topAnchor: topAnchor, edges: edgeArea, height: 50)
-        }
-        
-        return labelView
-    }
-    
-    func processExplanation(_ labelView: UILabel, stackUnder topElement: UIView, edges edgeArea: UILayoutGuide) -> UILabel {
-        if labelView.text != nil {
-            labelView.font = UIFont (name: "Palatino", size: 14)
-            labelView.numberOfLines = 0
-            labelView.textColor = UIColor.black
-            labelView.backgroundColor = UIColor.clear
-            labelView.translatesAutoresizingMaskIntoConstraints = false
-            constraints.addStackingConstraintTo(labelView, stackUnder: topElement, edges: edgeArea, height: 120)
-        }
-        
-        return labelView
     }
 
 }

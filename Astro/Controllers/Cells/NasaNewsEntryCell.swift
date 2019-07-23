@@ -1,11 +1,12 @@
 import UIKit
 
 class NasaNewsEntryCell: UITableViewCell {
-    let processUIComponents = NDNVCProcessing()
-    let addConstraints = UIConstraints()
     
-    var imageFrameHeight = CGFloat()
-    var titleFrameHeight: CGFloat = 50
+    var frameHeight: [String:CGFloat] = [
+        "image": 0,
+        "title": 50,
+        "explanation": 120
+    ]
     
     let currentEntryTitle : UILabel = {
         let label = UILabel()
@@ -17,7 +18,15 @@ class NasaNewsEntryCell: UITableViewCell {
         return label
     }()
     
-    var currentEntryExplanation = UILabel()
+    var currentEntryExplanation : UILabel = {
+        let label = UILabel()
+        label.font = UIFont (name: "Palatino", size: 14)
+        label.numberOfLines = 0
+        label.textColor = UIColor.black
+        label.backgroundColor = UIColor.clear
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
     
     var currentEntryImageView : UIImageView = {
         let imageView = UIImageView()
@@ -27,13 +36,11 @@ class NasaNewsEntryCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
-        let margin = contentView.layoutMarginsGuide
 
-        self.contentView.addSubview(currentEntryTitle)
-        self.contentView.addSubview(currentEntryImageView)
+        contentView.addSubview(currentEntryTitle)
+        contentView.addSubview(currentEntryImageView)
+        contentView.addSubview(currentEntryExplanation)
         
-        addConstraints.addConstraintForTopMostElementTo(currentEntryTitle, topAnchor: contentView.topAnchor, edges: margin, height: titleFrameHeight)
     }
     
     required init?(coder aDecoder: NSCoder) {
