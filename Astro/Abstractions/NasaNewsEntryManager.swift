@@ -1,8 +1,8 @@
 import UIKit
 
 class NasaNewsEntryManager {
-    var showingEntries = 4
-    var entriesToAdd = 5
+    var showingEntries = 10
+    var entriesToAdd = 10
     
     func loadMoreEntriesWhenSrollReachesBottom(tableView: UITableView, allNasaEntries: [NasaEntry]) {
         if tableView.contentOffset.y >= (tableView.contentSize.height - tableView.frame.size.height) && showingEntries < allNasaEntries.count {
