@@ -10,6 +10,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        persistentData.cleanNasaEntryDatabase() // Delete this line
         preloadPlanetData.preloadUnlessAlreadyPreloaded()
         ndnApi.uploadDeviceWithNasaEntries()
         print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
@@ -34,6 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         persistentData.cleanNasaEntryDatabase()
+        print("Closing App...")
     }
 
     lazy var persistentContainer: NSPersistentContainer = {

@@ -15,6 +15,7 @@ class NasaDailyNewsTVC: UITableViewController {
         allNasaEntries = persistentData.getAlllNasaEntries()
         
         tableView.register(NasaNewsEntryCell.self, forCellReuseIdentifier: "CustomNasaNewsEntryCell")
+        tableView.rowHeight = 450
     }
     
 
@@ -26,13 +27,15 @@ class NasaDailyNewsTVC: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CustomNasaNewsEntryCell", for: indexPath) as! NasaNewsEntryCell
-        totalHeightForCell = 0
         
+        totalHeightForCell = 0
+
         if allNasaEntries[indexPath.row].url!.suffix(3) != "jpg" {
             allNasaEntries[indexPath.row].image = UIImage(named: "youtube")!.pngData()
             persistentData.saveNasaEntries()
-            
+
             assignCell(cell: cell, indexPath: indexPath)
+            nasaNewsEntryManager.addNextEntryToPage(tableView: tableView)
         } else if allNasaEntries[indexPath.row].image == nil {
             let imageUrlString = allNasaEntries[indexPath.row].url!
             let imageUrl:URL = URL(string: imageUrlString)!
@@ -46,10 +49,13 @@ class NasaDailyNewsTVC: UITableViewController {
                     self.persistentData.saveNasaEntries()
 
                     self.assignCell(cell: cell, indexPath: indexPath)
+                    
+                    self.nasaNewsEntryManager.addNextEntryToPage(tableView: tableView)
                 }
             }
         } else {
             assignCell(cell: cell, indexPath: indexPath)
+            nasaNewsEntryManager.addNextEntryToPage(tableView: tableView)
         }
         
         return cell

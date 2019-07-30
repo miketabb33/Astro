@@ -88,9 +88,9 @@ class PersistentData {
     func cleanNasaEntryDatabase() {
         let allNasaEntries = getAlllNasaEntries()
         for (index, entry) in allNasaEntries.enumerated() {
-            if index > 9 {
+            //if index > 9 {
                 entry.image = nil
-            }
+            //}
         }
         saveNasaEntries()
     }
