@@ -22,6 +22,7 @@ class NasaDailyNewsTVC: UITableViewController {
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print(nasaNewsEntryManager.showingEntries)
         return nasaNewsEntryManager.showingEntries
     }
     
@@ -29,14 +30,9 @@ class NasaDailyNewsTVC: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CustomNasaNewsEntryCell", for: indexPath) as! NasaNewsEntryCell
         
         totalHeightForCell = 0
-
-        if allNasaEntries[indexPath.row].url!.suffix(3) != "jpg" {
-            allNasaEntries[indexPath.row].image = UIImage(named: "youtube")!.pngData()
-            persistentData.saveNasaEntries()
-
-            assignCell(cell: cell, indexPath: indexPath)
-            nasaNewsEntryManager.addNextEntryToPage(tableView: tableView)
-        } else if allNasaEntries[indexPath.row].image == nil {
+        nasaNewsEntryManager.saveYouTubeImageIfVideo(indexPath: indexPath, allNasaEntries: allNasaEntries)
+        
+        if allNasaEntries[indexPath.row].image == nil {
             let imageUrlString = allNasaEntries[indexPath.row].url!
             let imageUrl:URL = URL(string: imageUrlString)!
 
@@ -49,7 +45,6 @@ class NasaDailyNewsTVC: UITableViewController {
                     self.persistentData.saveNasaEntries()
 
                     self.assignCell(cell: cell, indexPath: indexPath)
-                    
                     self.nasaNewsEntryManager.addNextEntryToPage(tableView: tableView)
                 }
             }
@@ -82,7 +77,7 @@ class NasaDailyNewsTVC: UITableViewController {
     }
     
     override func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-       nasaNewsEntryManager.loadMoreEntriesWhenSrollReachesBottom(tableView: tableView, allNasaEntries: allNasaEntries)
+       //nasaNewsEntryManager.loadMoreEntriesWhenSrollReachesBottom(tableView: tableView, allNasaEntries: allNasaEntries)
     }
 
 }

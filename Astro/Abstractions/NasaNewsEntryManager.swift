@@ -1,6 +1,8 @@
 import UIKit
 
 class NasaNewsEntryManager {
+    let persistentData = PersistentData()
+    
     var showingEntries = 1
     var totalEntriesOnPage = 4
     
@@ -9,9 +11,10 @@ class NasaNewsEntryManager {
     func addNextEntryToPage(tableView: UITableView) {
         if showingEntries < totalEntriesOnPage {
             showingEntries = showingEntries + 1
-            tableView.reloadData()
-            print("yoooo")
-        } 
+            DispatchQueue.main.async {
+                tableView.reloadData()
+            }
+        }
     }
     
     func loadMoreEntriesWhenSrollReachesBottom(tableView: UITableView, allNasaEntries: [NasaEntry]) {
@@ -25,6 +28,13 @@ class NasaNewsEntryManager {
         totalEntriesOnPage = totalEntriesOnPage + incrementTotalEntriesOnPage
         if totalEntriesOnPage > allNasaEntries.count {
             totalEntriesOnPage = allNasaEntries.count
+        }
+    }
+    
+    func saveYouTubeImageIfVideo(indexPath: IndexPath, allNasaEntries: [NasaEntry]) {
+        if allNasaEntries[indexPath.row].url!.suffix(3) != "jpg" {
+            allNasaEntries[indexPath.row].image = UIImage(named: "youtube")!.pngData()
+            persistentData.saveNasaEntries()
         }
     }
     
