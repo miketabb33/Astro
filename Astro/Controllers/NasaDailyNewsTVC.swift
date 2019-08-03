@@ -13,13 +13,14 @@ class NasaDailyNewsTVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         allNasaEntries = persistentData.getAlllNasaEntries()
+        nasaNewsEntryManager.loadingAnimation.show()
         
         tableView.register(NasaNewsEntryCell.self, forCellReuseIdentifier: "CustomNasaNewsEntryCell")
         tableView.rowHeight = 450
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        nasaNewsEntryManager.addNextEntryToPage(tableView: tableView)
+        nasaNewsEntryManager.addNextEntryToPageUnlessInitialLoadComplete(tableView: tableView)
     }
     
 
@@ -39,28 +40,22 @@ class NasaDailyNewsTVC: UITableViewController {
             if allNasaEntries[indexPath.row].url!.suffix(3) != "jpg" {
                 nasaNewsEntryManager.saveAsYoutubeImage(indexPath: indexPath, allNasaEntries: allNasaEntries)
                 assignCell(cell: cell, indexPath: indexPath)
-                nasaNewsEntryManager.addNextEntryToPage(tableView: tableView)
+                nasaNewsEntryManager.addNextEntryToPageUnlessInitialLoadComplete(tableView: tableView)
             } else {
                 let imageUrlString = allNasaEntries[indexPath.row].url!
                 let imageUrl:URL = URL(string: imageUrlString)!
 
-                //DispatchQueue.global(qos: .userInitiated).async {
+                let imageData:NSData = NSData(contentsOf: imageUrl)!
+                
+                self.allNasaEntries[indexPath.row].image = imageData as Data
+                self.persistentData.saveNasaEntries()
 
-                    let imageData:NSData = NSData(contentsOf: imageUrl)!
-
-                    //DispatchQueue.main.async {
-                        self.allNasaEntries[indexPath.row].image = imageData as Data
-                        self.persistentData.saveNasaEntries()
-
-                        self.assignCell(cell: cell, indexPath: indexPath)
-                        self.nasaNewsEntryManager.addNextEntryToPage(tableView: tableView)
-                        print("finished saveing image")
-                    //}
-                //}
+                self.assignCell(cell: cell, indexPath: indexPath)
+                self.nasaNewsEntryManager.addNextEntryToPageUnlessInitialLoadComplete(tableView: tableView)
             }
         } else {
             assignCell(cell: cell, indexPath: indexPath)
-            nasaNewsEntryManager.addNextEntryToPage(tableView: tableView)
+            nasaNewsEntryManager.addNextEntryToPageUnlessInitialLoadComplete(tableView: tableView)
         }
         
         return cell
@@ -87,7 +82,7 @@ class NasaDailyNewsTVC: UITableViewController {
     }
     
     override func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-       //nasaNewsEntryManager.loadMoreEntriesWhenSrollReachesBottom(tableView: tableView, allNasaEntries: allNasaEntries)
+       nasaNewsEntryManager.loadMoreEntriesWhenSrollReachesBottom(tableView: tableView, allNasaEntries: allNasaEntries)
     }
 
 }
