@@ -36,9 +36,6 @@ class NasaDailyNewsTVC: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CustomNasaNewsEntryCell", for: indexPath) as! NasaNewsEntryCell
         
-        totalHeightForCell = 0
-        
-        
         if allNasaEntries[indexPath.row].image == nil {
             if allNasaEntries[indexPath.row].url!.suffix(3) != "jpg" {
                 nasaNewsEntryManager.saveAsYoutubeImage(indexPath: indexPath, allNasaEntries: allNasaEntries)
@@ -74,14 +71,15 @@ class NasaDailyNewsTVC: UITableViewController {
         cell.currentEntryExplanation.text = allNasaEntries[indexPath.row].explanation
         addConstraints.addStackingConstraintTo(cell.currentEntryExplanation, stackUnder: cell.currentEntryImageView, edges: cell.contentView.layoutMarginsGuide, height: cell.frameHeight["explanation"]!)
         
-        totalHeightForCell = cell.frameHeight["title"]! + cell.frameHeight["image"]! + cell.frameHeight["explanation"]!
+        if allNasaEntries[indexPath.row].cellHeight == 0 {
+            allNasaEntries[indexPath.row].cellHeight = Float(cell.frameHeight["title"]! + cell.frameHeight["image"]! + cell.frameHeight["explanation"]!)
+            persistentData.saveNasaEntries()
+        }
+        
     }
     
-    
-    
-    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return totalHeightForCell
+        return CGFloat(allNasaEntries[indexPath.row].cellHeight)
     }
     
     override func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
