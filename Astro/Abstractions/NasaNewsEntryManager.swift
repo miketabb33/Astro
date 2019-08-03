@@ -17,9 +17,17 @@ class NasaNewsEntryManager {
     
     
     //MARK: - Inital Entry Load
+    func addNextEntryToPageUnlessNoEntriesExist(allNasaEntries: [NasaEntry], tableView: UITableView) {
+        if allNasaEntries.count != 0 {
+            addNextEntryToPageUnlessInitialLoadComplete(tableView: tableView)
+        }
+    }
+    
     func addNextEntryToPageUnlessInitialLoadComplete(tableView: UITableView) {
         if !initialEntryLoadComplete {
             performInitialEntryLoad(tableView: tableView)
+        }  else {
+            loadingAnimation.hide()
         }
     }
     

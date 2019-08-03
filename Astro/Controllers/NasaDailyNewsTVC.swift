@@ -12,15 +12,18 @@ class NasaDailyNewsTVC: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        allNasaEntries = persistentData.getAllNasaEntries()
         nasaNewsEntryManager.loadingAnimation.show()
-        
         tableView.register(NasaNewsEntryCell.self, forCellReuseIdentifier: "CustomNasaNewsEntryCell")
         tableView.rowHeight = 450
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        nasaNewsEntryManager.addNextEntryToPageUnlessInitialLoadComplete(tableView: tableView)
+        allNasaEntries = persistentData.getAllNasaEntries()
+        nasaNewsEntryManager.addNextEntryToPageUnlessNoEntriesExist(allNasaEntries: allNasaEntries, tableView: tableView)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        nasaNewsEntryManager.loadingAnimation.hide()
     }
     
 
