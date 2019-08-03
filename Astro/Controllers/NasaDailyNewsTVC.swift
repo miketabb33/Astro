@@ -12,7 +12,7 @@ class NasaDailyNewsTVC: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        allNasaEntries = persistentData.getAlllNasaEntries()
+        allNasaEntries = persistentData.getAllNasaEntries()
         nasaNewsEntryManager.loadingAnimation.show()
         
         tableView.register(NasaNewsEntryCell.self, forCellReuseIdentifier: "CustomNasaNewsEntryCell")

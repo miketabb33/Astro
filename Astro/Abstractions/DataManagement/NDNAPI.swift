@@ -4,7 +4,6 @@ import SwiftyJSON
 import CoreData
 
 class NDNAPI {
-    lazy var persistentContainer = (UIApplication.shared.delegate as! AppDelegate).persistentContainer
     let persistantData = PersistentData()
     
     let userDefaults = UserDefaults.standard
@@ -23,7 +22,7 @@ class NDNAPI {
             if response.result.isSuccess {
                 let fetchedNasaData = JSON(response.result.value!)
                 let stagedNasaData = self.digestNasaDataIntoArray(nasaData: fetchedNasaData)
-                self.insertDataIntoDatabase(stagedNasaData: stagedNasaData)
+                self.persistantData.insertDataIntoDatabase(stagedNasaData: stagedNasaData)
                 self.userDefaults.set(true, forKey: self.persistantData.initialNasaEntryUploadCompletedKey)
                 print("Initial Nasa Entry Upload Complete")
             } else {
@@ -44,7 +43,7 @@ class NDNAPI {
                 
                 for currentEntry in stagedNasaData {
                     if currentEntry.title != lastLocalNasaEntry[0].title! {
-                        self.insertDataIntoDatabase(stagedNasaData: [currentEntry])
+                        self.persistantData.insertDataIntoDatabase(stagedNasaData: [currentEntry])
                         print("Latest nasa entries inserted into database")
                     } else {
                         break
@@ -53,21 +52,6 @@ class NDNAPI {
             } else {
                 print("Error \(String(describing: response.result.error))")
             }
-        }
-    }
-    
-    func insertDataIntoDatabase(stagedNasaData: [NDNAPIStagingModel]) {
-        let backgroundContext = persistentContainer.newBackgroundContext()
-        backgroundContext.perform {
-            for currentEntry in stagedNasaData {
-                let container = NasaEntry(context: backgroundContext)
-                container.title = currentEntry.title
-                container.date = currentEntry.date
-                container.explanation = currentEntry.explanation
-                container.url = currentEntry.url
-                self.persistantData.saveContext(backgroundContext)
-            }
-            
         }
     }
     

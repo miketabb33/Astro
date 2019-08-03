@@ -15,6 +15,7 @@ class PersistentData {
         }
     }
     
+    //MARK: - Planet Data Methods
     func savePlanetData(_ backgroundContext: NSManagedObjectContext) {
         do {
             try backgroundContext.save()
@@ -40,26 +41,10 @@ class PersistentData {
         return container
     }
     
-    func getLastLocalNasaEntry() -> [NasaEntry] {
-        var container = [NasaEntry]()
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        let request : NSFetchRequest<NasaEntry> = NasaEntry.fetchRequest()
-        
-        let sortDescriptor = NSSortDescriptor(key: "date", ascending: false)
-        request.sortDescriptors = [sortDescriptor]
-        request.fetchLimit = 1
-        
-        do {
-            container = try context.fetch(request)
-        } catch {
-            print("Error fetching data from context \(error)")
-        }
-        return container
-    }
-    
+    //MARK: - NASA Entry Feed Data Methods
     lazy var nasaEntriesContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
-    func getAlllNasaEntries() -> [NasaEntry] {
+    func getAllNasaEntries() -> [NasaEntry] {
         var container = [NasaEntry]()
         let request : NSFetchRequest<NasaEntry> = NasaEntry.fetchRequest()
         
@@ -85,8 +70,41 @@ class PersistentData {
         }
     }
     
+    func insertDataIntoDatabase(stagedNasaData: [NDNAPIStagingModel]) {
+        let persistentContainer = (UIApplication.shared.delegate as! AppDelegate).persistentContainer
+        let backgroundContext = persistentContainer.newBackgroundContext()
+        backgroundContext.perform {
+            for currentEntry in stagedNasaData {
+                let container = NasaEntry(context: backgroundContext)
+                container.title = currentEntry.title
+                container.date = currentEntry.date
+                container.explanation = currentEntry.explanation
+                container.url = currentEntry.url
+                self.saveContext(backgroundContext)
+            }
+            
+        }
+    }
+    
+    func getLastLocalNasaEntry() -> [NasaEntry] {
+        var container = [NasaEntry]()
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let request : NSFetchRequest<NasaEntry> = NasaEntry.fetchRequest()
+        
+        let sortDescriptor = NSSortDescriptor(key: "date", ascending: false)
+        request.sortDescriptors = [sortDescriptor]
+        request.fetchLimit = 1
+        
+        do {
+            container = try context.fetch(request)
+        } catch {
+            print("Error fetching data from context \(error)")
+        }
+        return container
+    }
+    
     func cleanNasaEntryDatabase() {
-        let allNasaEntries = getAlllNasaEntries()
+        let allNasaEntries = getAllNasaEntries()
         for (index, entry) in allNasaEntries.enumerated() {
             if index > 9 {
                 entry.image = nil
