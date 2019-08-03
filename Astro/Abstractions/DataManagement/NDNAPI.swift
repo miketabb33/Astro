@@ -45,6 +45,7 @@ class NDNAPI {
                 for currentEntry in stagedNasaData {
                     if currentEntry.title != lastLocalNasaEntry[0].title! {
                         self.insertDataIntoDatabase(stagedNasaData: [currentEntry])
+                        print("Latest nasa entries inserted into database")
                     } else {
                         break
                     }

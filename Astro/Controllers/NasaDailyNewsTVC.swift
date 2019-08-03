@@ -18,11 +18,14 @@ class NasaDailyNewsTVC: UITableViewController {
         tableView.rowHeight = 450
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        nasaNewsEntryManager.addNextEntryToPage(tableView: tableView)
+    }
+    
 
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(nasaNewsEntryManager.showingEntries)
         return nasaNewsEntryManager.showingEntries
     }
     
@@ -30,23 +33,30 @@ class NasaDailyNewsTVC: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CustomNasaNewsEntryCell", for: indexPath) as! NasaNewsEntryCell
         
         totalHeightForCell = 0
-        nasaNewsEntryManager.saveYouTubeImageIfVideo(indexPath: indexPath, allNasaEntries: allNasaEntries)
+        
         
         if allNasaEntries[indexPath.row].image == nil {
-            let imageUrlString = allNasaEntries[indexPath.row].url!
-            let imageUrl:URL = URL(string: imageUrlString)!
+            if allNasaEntries[indexPath.row].url!.suffix(3) != "jpg" {
+                nasaNewsEntryManager.saveAsYoutubeImage(indexPath: indexPath, allNasaEntries: allNasaEntries)
+                assignCell(cell: cell, indexPath: indexPath)
+                nasaNewsEntryManager.addNextEntryToPage(tableView: tableView)
+            } else {
+                let imageUrlString = allNasaEntries[indexPath.row].url!
+                let imageUrl:URL = URL(string: imageUrlString)!
 
-            DispatchQueue.global(qos: .userInitiated).async {
+                //DispatchQueue.global(qos: .userInitiated).async {
 
-                let imageData:NSData = NSData(contentsOf: imageUrl)!
+                    let imageData:NSData = NSData(contentsOf: imageUrl)!
 
-                DispatchQueue.main.async {
-                    self.allNasaEntries[indexPath.row].image = imageData as Data
-                    self.persistentData.saveNasaEntries()
+                    //DispatchQueue.main.async {
+                        self.allNasaEntries[indexPath.row].image = imageData as Data
+                        self.persistentData.saveNasaEntries()
 
-                    self.assignCell(cell: cell, indexPath: indexPath)
-                    self.nasaNewsEntryManager.addNextEntryToPage(tableView: tableView)
-                }
+                        self.assignCell(cell: cell, indexPath: indexPath)
+                        self.nasaNewsEntryManager.addNextEntryToPage(tableView: tableView)
+                        print("finished saveing image")
+                    //}
+                //}
             }
         } else {
             assignCell(cell: cell, indexPath: indexPath)

@@ -3,7 +3,7 @@ import UIKit
 class NasaNewsEntryManager {
     let persistentData = PersistentData()
     
-    var showingEntries = 1
+    var showingEntries = 0
     var totalEntriesOnPage = 4
     
     let incrementTotalEntriesOnPage = 4
@@ -31,11 +31,9 @@ class NasaNewsEntryManager {
         }
     }
     
-    func saveYouTubeImageIfVideo(indexPath: IndexPath, allNasaEntries: [NasaEntry]) {
-        if allNasaEntries[indexPath.row].url!.suffix(3) != "jpg" {
-            allNasaEntries[indexPath.row].image = UIImage(named: "youtube")!.pngData()
-            persistentData.saveNasaEntries()
-        }
+    func saveAsYoutubeImage(indexPath: IndexPath, allNasaEntries: [NasaEntry]) {
+        allNasaEntries[indexPath.row].image = UIImage(named: "youtube")!.pngData()
+        persistentData.saveNasaEntries()
     }
     
 }
