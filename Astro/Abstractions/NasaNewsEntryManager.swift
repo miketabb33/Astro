@@ -44,29 +44,40 @@ class NasaNewsEntryManager {
     }
     
     //MARK: - Load More Entries on scroll
-    func loadMoreEntriesWhenSrollReachesBottom(tableView: UITableView, allNasaEntries: [NasaEntry]) {
+    func loadMoreEntriesWhenSrollReachesBottom(tableView: UITableView, allNasaEntries: [NasaEntry], isConnected: Bool) {
         if tableView.contentOffset.y >= (tableView.contentSize.height - tableView.frame.size.height) && showingEntries < allNasaEntries.count {
-            insertNextSetOfRows(tableView: tableView, allNasaEntries: allNasaEntries)
+            insertNextSetOfRows(tableView: tableView, allNasaEntries: allNasaEntries, isConnected: isConnected)
         }
     }
     
-    func insertNextSetOfRows(tableView: UITableView, allNasaEntries: [NasaEntry]) {
+    func insertNextSetOfRows(tableView: UITableView, allNasaEntries: [NasaEntry], isConnected: Bool) {
         if showingEntries <= allNasaEntries.count {
             tableView.beginUpdates()
-            insertNextRowUnlessNoMoreRowsToAdd(tableView: tableView, allNasaEntries: allNasaEntries)
+            insertNextRowUnlessNoMoreRowsToAdd(tableView: tableView, allNasaEntries: allNasaEntries, isConnected: isConnected)
             tableView.endUpdates()
         }
     }
     
     
-    func insertNextRowUnlessNoMoreRowsToAdd(tableView: UITableView, allNasaEntries: [NasaEntry]) {
+    func insertNextRowUnlessNoMoreRowsToAdd(tableView: UITableView, allNasaEntries: [NasaEntry], isConnected: Bool) {
         var i = 0
         var limiter = showingEntries
-        while i < entriesToAdd && limiter < allNasaEntries.count {
-            tableView.insertRows(at: [IndexPath(row: showingEntries + i, section: 0)], with: .automatic)
-            i = i + 1
-            limiter = limiter + 1
+        var shouldLoadNext = true
+        
+        while i < entriesToAdd && limiter < allNasaEntries.count && shouldLoadNext {
+            if allNasaEntries[showingEntries + i].image != nil {
+                tableView.insertRows(at: [IndexPath(row: showingEntries + i, section: 0)], with: .fade)
+                i = i + 1
+                limiter = limiter + 1
+            } else if allNasaEntries[showingEntries + i].image == nil && isConnected {
+                tableView.insertRows(at: [IndexPath(row: showingEntries + i, section: 0)], with: .fade)
+                i = i + 1
+                limiter = limiter + 1
+            } else {
+                shouldLoadNext = false
+            }
         }
+        
         showingEntries = showingEntries + i
     }
     

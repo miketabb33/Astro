@@ -5,6 +5,7 @@ class NasaDailyNewsTVC: UITableViewController {
     let nasaNewsEntryManager = NasaNewsEntryManager()
     let UIProcessing = NDNVCProcessing()
     let addConstraints = UIConstraints()
+    let internetConnection = InternetConnection()
     
     var allNasaEntries = [NasaEntry]()
     var totalHeightForCell = CGFloat()
@@ -15,6 +16,8 @@ class NasaDailyNewsTVC: UITableViewController {
         nasaNewsEntryManager.loadingAnimation.show()
         tableView.register(NasaNewsEntryCell.self, forCellReuseIdentifier: "CustomNasaNewsEntryCell")
         tableView.rowHeight = 450
+        
+        internetConnection.startMonitoringInternetConnection()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -44,14 +47,12 @@ class NasaDailyNewsTVC: UITableViewController {
             } else {
                 let imageUrlString = allNasaEntries[indexPath.row].url!
                 let imageUrl:URL = URL(string: imageUrlString)!
-
-                let imageData:NSData = NSData(contentsOf: imageUrl)!
                 
-                self.allNasaEntries[indexPath.row].image = imageData as Data
-                self.persistentData.saveNasaEntries()
-
-                self.assignCell(cell: cell, indexPath: indexPath)
-                self.nasaNewsEntryManager.addNextEntryToPageUnlessInitialLoadComplete(tableView: tableView)
+                let imageData:NSData = NSData(contentsOf: imageUrl)!
+                allNasaEntries[indexPath.row].image = imageData as Data
+                persistentData.saveNasaEntries()
+                assignCell(cell: cell, indexPath: indexPath)
+                nasaNewsEntryManager.addNextEntryToPageUnlessInitialLoadComplete(tableView: tableView)
             }
         } else {
             assignCell(cell: cell, indexPath: indexPath)
@@ -83,7 +84,7 @@ class NasaDailyNewsTVC: UITableViewController {
     }
     
     override func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-       nasaNewsEntryManager.loadMoreEntriesWhenSrollReachesBottom(tableView: tableView, allNasaEntries: allNasaEntries)
+        nasaNewsEntryManager.loadMoreEntriesWhenSrollReachesBottom(tableView: tableView, allNasaEntries: allNasaEntries, isConnected: internetConnection.isConnected)
     }
 
 }
