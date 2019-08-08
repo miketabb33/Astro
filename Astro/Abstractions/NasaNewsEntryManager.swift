@@ -64,17 +64,19 @@ class NasaNewsEntryManager {
         var limiter = showingEntries
         var shouldLoadNext = true
         
-        while i < entriesToAdd && limiter < allNasaEntries.count && shouldLoadNext {
-            if allNasaEntries[showingEntries + i].image != nil {
-                tableView.insertRows(at: [IndexPath(row: showingEntries + i, section: 0)], with: .fade)
-                i = i + 1
-                limiter = limiter + 1
-            } else if allNasaEntries[showingEntries + i].image == nil && isConnected {
-                tableView.insertRows(at: [IndexPath(row: showingEntries + i, section: 0)], with: .fade)
-                i = i + 1
-                limiter = limiter + 1
-            } else {
-                shouldLoadNext = false
+        while i < entriesToAdd && limiter < allNasaEntries.count {
+            if shouldLoadNext {
+                if allNasaEntries[showingEntries + i].image != nil {
+                    tableView.insertRows(at: [IndexPath(row: showingEntries + i, section: 0)], with: .fade)
+                    i = i + 1
+                    limiter = limiter + 1
+                } else if allNasaEntries[showingEntries + i].image == nil && isConnected {
+                    tableView.insertRows(at: [IndexPath(row: showingEntries + i, section: 0)], with: .fade)
+                    i = i + 1
+                    limiter = limiter + 1
+                } else {
+                    shouldLoadNext = false
+                }
             }
         }
         
