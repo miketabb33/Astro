@@ -42,7 +42,7 @@
 		4BCA1CEA22B6AA0900118A1E /* NDNAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCA1CE922B6AA0900118A1E /* NDNAPI.swift */; };
 		4BCA1CEC22B6B6AB00118A1E /* KeyboardMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCA1CEB22B6B6AB00118A1E /* KeyboardMethods.swift */; };
 		4BCA1CEE22B6BD9D00118A1E /* FormatterMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCA1CED22B6BD9D00118A1E /* FormatterMethods.swift */; };
-		4BE51AD422E34D55002905ED /* NasaDailyNewsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE51AD322E34D55002905ED /* NasaDailyNewsTVC.swift */; };
+		4BCDFBAE22FC7740003E39E8 /* NasaDailyNewsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCDFBAD22FC7740003E39E8 /* NasaDailyNewsVC.swift */; };
 		4BE51AD722E34EB4002905ED /* NasaNewsEntryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE51AD522E34EB4002905ED /* NasaNewsEntryCell.swift */; };
 		4BE51ADC22E60EFE002905ED /* NasaNewsEntryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE51ADB22E60EFE002905ED /* NasaNewsEntryManager.swift */; };
 		4BEC669422DA6DAB00513FA9 /* NDNAPIStagingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEC669322DA6DAB00513FA9 /* NDNAPIStagingModel.swift */; };
@@ -110,7 +110,7 @@
 		4BCA1CE922B6AA0900118A1E /* NDNAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NDNAPI.swift; sourceTree = "<group>"; };
 		4BCA1CEB22B6B6AB00118A1E /* KeyboardMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardMethods.swift; sourceTree = "<group>"; };
 		4BCA1CED22B6BD9D00118A1E /* FormatterMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatterMethods.swift; sourceTree = "<group>"; };
-		4BE51AD322E34D55002905ED /* NasaDailyNewsTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NasaDailyNewsTVC.swift; path = /Users/prime/Projects/Astro/Astro/Controllers/NasaDailyNewsTVC.swift; sourceTree = "<absolute>"; };
+		4BCDFBAD22FC7740003E39E8 /* NasaDailyNewsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaDailyNewsVC.swift; sourceTree = "<group>"; };
 		4BE51AD522E34EB4002905ED /* NasaNewsEntryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaNewsEntryCell.swift; sourceTree = "<group>"; };
 		4BE51ADB22E60EFE002905ED /* NasaNewsEntryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaNewsEntryManager.swift; sourceTree = "<group>"; };
 		4BEC669322DA6DAB00513FA9 /* NDNAPIStagingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NDNAPIStagingModel.swift; sourceTree = "<group>"; };
@@ -289,7 +289,7 @@
 			isa = PBXGroup;
 			children = (
 				4BBB94F72284CE9100944506 /* MainTabController.swift */,
-				4BE51AD322E34D55002905ED /* NasaDailyNewsTVC.swift */,
+				4BCDFBAD22FC7740003E39E8 /* NasaDailyNewsVC.swift */,
 				4BE51ADD22E67E6A002905ED /* Planet Tempurature */,
 				4BE51ADE22E67E80002905ED /* Weight */,
 				4BB687B622664A3200D423F9 /* Cells */,
@@ -545,9 +545,9 @@
 				4BC55CB2225D330B0079A3E5 /* Astro.xcdatamodeld in Sources */,
 				4BE51AD722E34EB4002905ED /* NasaNewsEntryCell.swift in Sources */,
 				4B79B41B22AD5C0200D6711C /* PlanetDataHandler.swift in Sources */,
+				4BCDFBAE22FC7740003E39E8 /* NasaDailyNewsVC.swift in Sources */,
 				4B1A9AEF22F723F000B88975 /* InternetConnection.swift in Sources */,
 				4BCA1CEC22B6B6AB00118A1E /* KeyboardMethods.swift in Sources */,
-				4BE51AD422E34D55002905ED /* NasaDailyNewsTVC.swift in Sources */,
 				4BC55CC5225D35450079A3E5 /* WeightDisplayTVC.swift in Sources */,
 				4BEC669422DA6DAB00513FA9 /* NDNAPIStagingModel.swift in Sources */,
 				4BCA1CEE22B6BD9D00118A1E /* FormatterMethods.swift in Sources */,

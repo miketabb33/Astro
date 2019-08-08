@@ -47,33 +47,39 @@
             <point key="canvasLocation" x="2889" y="27"/>
         </scene>
         <!--News-->
-        <scene sceneID="sRf-j1-JeL">
+        <scene sceneID="1xJ-LM-HpL">
             <objects>
-                <tableViewController id="xjo-cm-IXw" customClass="NasaDailyNewsTVC" customModule="Astro" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="xv4-Kc-0vu">
+                <viewController id="fYu-MR-EPU" customClass="NasaDailyNewsVC" customModule="Astro" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sDH-9E-Zr7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ogp-9E-5Xs">
+                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="fYu-MR-EPU" id="fsm-tG-bMv"/>
+                                    <outlet property="delegate" destination="fYu-MR-EPU" id="Pnt-7L-eU8"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CustomNasaNewsEntryCell" id="u2t-9Z-ASC">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="u2t-9Z-ASC" id="Agd-SZ-CTB">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="xjo-cm-IXw" id="BYn-Rs-Yd7"/>
-                            <outlet property="delegate" destination="xjo-cm-IXw" id="Bi7-xy-QYg"/>
-                        </connections>
-                    </tableView>
-                    <tabBarItem key="tabBarItem" title="News" image="rocket" id="pt0-wp-Tst"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fHx-Oi-cdj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <constraints>
+                            <constraint firstItem="Ogp-9E-5Xs" firstAttribute="top" secondItem="Aqv-uu-aYp" secondAttribute="top" id="144-hm-5ls"/>
+                            <constraint firstItem="Aqv-uu-aYp" firstAttribute="bottom" secondItem="Ogp-9E-5Xs" secondAttribute="bottom" id="XIV-vC-sqF"/>
+                            <constraint firstItem="Ogp-9E-5Xs" firstAttribute="leading" secondItem="Aqv-uu-aYp" secondAttribute="leading" id="cux-Ww-gy1"/>
+                            <constraint firstItem="Aqv-uu-aYp" firstAttribute="trailing" secondItem="Ogp-9E-5Xs" secondAttribute="trailing" id="f8D-co-Yfi"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Aqv-uu-aYp"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="News" image="rocket" id="iOC-zH-7by"/>
+                    <connections>
+                        <outlet property="tableView" destination="Ogp-9E-5Xs" id="4HF-c1-slx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LK4-9H-aYJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1086" y="-913"/>
+            <point key="canvasLocation" x="1086" y="-823"/>
         </scene>
         <!--Weight-->
         <scene sceneID="n72-n8-heC">
@@ -271,7 +277,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="8wZ-2o-Lqj" kind="relationship" relationship="viewControllers" id="0fI-zB-Eco"/>
-                        <segue destination="xjo-cm-IXw" kind="relationship" relationship="viewControllers" id="kdF-Zm-Q8g"/>
+                        <segue destination="fYu-MR-EPU" kind="relationship" relationship="viewControllers" id="CoU-Zs-q0k"/>
                         <segue destination="tWN-vm-GRG" kind="relationship" relationship="viewControllers" id="lUy-1W-r0L"/>
                     </connections>
                 </tabBarController>

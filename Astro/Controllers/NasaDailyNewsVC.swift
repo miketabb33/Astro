@@ -1,6 +1,9 @@
 import UIKit
 
-class NasaDailyNewsTVC: UITableViewController {
+class NasaDailyNewsVC: UIViewController {
+    
+    @IBOutlet weak var tableView: UITableView!
+    
     let persistentData = PersistentData()
     let nasaNewsEntryManager = NasaNewsEntryManager()
     let UIProcessing = NDNVCProcessing()
@@ -9,11 +12,10 @@ class NasaDailyNewsTVC: UITableViewController {
     
     var allNasaEntries = [NasaEntry]()
     var totalHeightForCell = CGFloat()
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        nasaNewsEntryManager.loadingAnimation.show()
+        
         tableView.register(NasaNewsEntryCell.self, forCellReuseIdentifier: "CustomNasaNewsEntryCell")
         tableView.rowHeight = 450
         
@@ -28,15 +30,23 @@ class NasaDailyNewsTVC: UITableViewController {
     override func viewDidDisappear(_ animated: Bool) {
         nasaNewsEntryManager.loadingAnimation.hide()
     }
-    
 
-    // MARK: - Table view data source
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        nasaNewsEntryManager.loadMoreEntriesWhenSrollReachesBottom(tableView: tableView, allNasaEntries: allNasaEntries, isConnected: internetConnection.isConnected)
+    }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+}
+
+extension NasaDailyNewsVC: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return nasaNewsEntryManager.showingEntries
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return CGFloat(allNasaEntries[indexPath.row].cellHeight)
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CustomNasaNewsEntryCell", for: indexPath) as! NasaNewsEntryCell
         
         if allNasaEntries[indexPath.row].image == nil {
@@ -62,6 +72,9 @@ class NasaDailyNewsTVC: UITableViewController {
         return cell
     }
     
+}
+
+extension NasaDailyNewsVC {
     func assignCell(cell: NasaNewsEntryCell, indexPath: IndexPath) {
         cell.currentEntryTitle.text = allNasaEntries[indexPath.row].title
         addConstraints.addConstraintForTopMostElementTo(cell.currentEntryTitle, topAnchor: cell.contentView.topAnchor, edges: cell.contentView.layoutMarginsGuide, height: cell.frameHeight["title"]!)
@@ -78,13 +91,4 @@ class NasaDailyNewsTVC: UITableViewController {
         }
         
     }
-    
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return CGFloat(allNasaEntries[indexPath.row].cellHeight)
-    }
-    
-    override func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        nasaNewsEntryManager.loadMoreEntriesWhenSrollReachesBottom(tableView: tableView, allNasaEntries: allNasaEntries, isConnected: internetConnection.isConnected)
-    }
-
 }
