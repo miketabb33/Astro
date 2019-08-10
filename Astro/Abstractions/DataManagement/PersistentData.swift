@@ -106,7 +106,7 @@ class PersistentData {
     func cleanNasaEntryDatabase() {
         let allNasaEntries = getAllNasaEntries()
         for (index, entry) in allNasaEntries.enumerated() {
-            if index > 9 {
+            if index > 19 {
                 entry.image = nil
             }
         }

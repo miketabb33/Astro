@@ -12,7 +12,6 @@ class NasaDailyNewsVC: UIViewController {
     let internetConnection = InternetConnection()
     
     var allNasaEntries = [NasaEntry]()
-    var totalHeightForCell = CGFloat()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,7 +58,6 @@ extension NasaDailyNewsVC: UITableViewDelegate, UITableViewDataSource {
             } else {
                 let imageUrlString = allNasaEntries[indexPath.row].url!
                 let imageUrl:URL = URL(string: imageUrlString)!
-                
                 let imageData:NSData = NSData(contentsOf: imageUrl)!
                 allNasaEntries[indexPath.row].image = imageData as Data
                 persistentData.saveNasaEntries()
