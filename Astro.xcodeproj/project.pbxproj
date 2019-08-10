@@ -43,6 +43,7 @@
 		4BCA1CEC22B6B6AB00118A1E /* KeyboardMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCA1CEB22B6B6AB00118A1E /* KeyboardMethods.swift */; };
 		4BCA1CEE22B6BD9D00118A1E /* FormatterMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCA1CED22B6BD9D00118A1E /* FormatterMethods.swift */; };
 		4BCDFBAE22FC7740003E39E8 /* NasaDailyNewsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCDFBAD22FC7740003E39E8 /* NasaDailyNewsVC.swift */; };
+		4BCDFC0C22FF18F4003E39E8 /* BSColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCDFC0B22FF18F4003E39E8 /* BSColors.swift */; };
 		4BE51AD722E34EB4002905ED /* NasaNewsEntryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE51AD522E34EB4002905ED /* NasaNewsEntryCell.swift */; };
 		4BE51ADC22E60EFE002905ED /* NasaNewsEntryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE51ADB22E60EFE002905ED /* NasaNewsEntryManager.swift */; };
 		4BEC669422DA6DAB00513FA9 /* NDNAPIStagingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEC669322DA6DAB00513FA9 /* NDNAPIStagingModel.swift */; };
@@ -111,6 +112,7 @@
 		4BCA1CEB22B6B6AB00118A1E /* KeyboardMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardMethods.swift; sourceTree = "<group>"; };
 		4BCA1CED22B6BD9D00118A1E /* FormatterMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatterMethods.swift; sourceTree = "<group>"; };
 		4BCDFBAD22FC7740003E39E8 /* NasaDailyNewsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaDailyNewsVC.swift; sourceTree = "<group>"; };
+		4BCDFC0B22FF18F4003E39E8 /* BSColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSColors.swift; sourceTree = "<group>"; };
 		4BE51AD522E34EB4002905ED /* NasaNewsEntryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaNewsEntryCell.swift; sourceTree = "<group>"; };
 		4BE51ADB22E60EFE002905ED /* NasaNewsEntryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaNewsEntryManager.swift; sourceTree = "<group>"; };
 		4BEC669322DA6DAB00513FA9 /* NDNAPIStagingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NDNAPIStagingModel.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 		4B6023DC22BBBEE300732745 /* Abstractions */ = {
 			isa = PBXGroup;
 			children = (
+				4BCDFC0B22FF18F4003E39E8 /* BSColors.swift */,
 				4B6023E622BE90A600732745 /* MathMethods.swift */,
 				4BCA1CED22B6BD9D00118A1E /* FormatterMethods.swift */,
 				4BE51ADB22E60EFE002905ED /* NasaNewsEntryManager.swift */,
@@ -563,6 +566,7 @@
 				4B6023E422BE7CB900732745 /* NavigationMethods.swift in Sources */,
 				4B6023E722BE90A600732745 /* MathMethods.swift in Sources */,
 				4BB687BC22664D1F00D423F9 /* PlanetTempCell.swift in Sources */,
+				4BCDFC0C22FF18F4003E39E8 /* BSColors.swift in Sources */,
 				4BCA1CEA22B6AA0900118A1E /* NDNAPI.swift in Sources */,
 				4BC55CCA225E59A90079A3E5 /* PlanetWeightCell.swift in Sources */,
 				4BCA1CE822B69EA100118A1E /* LoadingAnimation.swift in Sources */,

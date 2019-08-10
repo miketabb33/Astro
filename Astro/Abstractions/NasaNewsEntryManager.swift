@@ -51,36 +51,27 @@ class NasaNewsEntryManager {
     }
     
     func insertNextSetOfRows(tableView: UITableView, allNasaEntries: [NasaEntry], isConnected: Bool) {
-        if showingEntries <= allNasaEntries.count {
-            tableView.beginUpdates()
-            insertNextRowUnlessNoMoreRowsToAdd(tableView: tableView, allNasaEntries: allNasaEntries, isConnected: isConnected)
-            tableView.endUpdates()
-        }
-    }
-    
-    
-    func insertNextRowUnlessNoMoreRowsToAdd(tableView: UITableView, allNasaEntries: [NasaEntry], isConnected: Bool) {
+        tableView.beginUpdates()
         var i = 0
-        var limiter = showingEntries
+        var totalEntries = showingEntries
         var shouldLoadNext = true
         
-        while i < entriesToAdd && limiter < allNasaEntries.count {
-            if shouldLoadNext {
-                if allNasaEntries[showingEntries + i].image != nil {
-                    tableView.insertRows(at: [IndexPath(row: showingEntries + i, section: 0)], with: .fade)
-                    i = i + 1
-                    limiter = limiter + 1
-                } else if allNasaEntries[showingEntries + i].image == nil && isConnected {
-                    tableView.insertRows(at: [IndexPath(row: showingEntries + i, section: 0)], with: .fade)
-                    i = i + 1
-                    limiter = limiter + 1
-                } else {
-                    shouldLoadNext = false
-                }
+        while i < entriesToAdd && totalEntries < allNasaEntries.count && shouldLoadNext {
+            if allNasaEntries[showingEntries + i].image != nil {
+                tableView.insertRows(at: [IndexPath(row: showingEntries + i, section: 0)], with: .fade)
+                i = i + 1
+                totalEntries = totalEntries + 1
+            } else if allNasaEntries[showingEntries + i].image == nil && isConnected {
+                tableView.insertRows(at: [IndexPath(row: showingEntries + i, section: 0)], with: .fade)
+                i = i + 1
+                totalEntries = totalEntries + 1
+            } else {
+                shouldLoadNext = false
             }
         }
         
         showingEntries = showingEntries + i
+        tableView.endUpdates()
     }
     
 }

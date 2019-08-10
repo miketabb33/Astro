@@ -62,11 +62,24 @@
                                     <outlet property="delegate" destination="fYu-MR-EPU" id="Pnt-7L-eU8"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sde-5C-0zK">
+                                <rect key="frame" x="0.0" y="20" width="375" height="0.0"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" id="lI8-Va-cDH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Ogp-9E-5Xs" firstAttribute="top" secondItem="Aqv-uu-aYp" secondAttribute="top" id="144-hm-5ls"/>
+                            <constraint firstItem="Ogp-9E-5Xs" firstAttribute="top" secondItem="sde-5C-0zK" secondAttribute="bottom" id="A1X-rM-z4M"/>
+                            <constraint firstItem="Aqv-uu-aYp" firstAttribute="trailing" secondItem="sde-5C-0zK" secondAttribute="trailing" id="Qth-aq-9eF"/>
+                            <constraint firstItem="sde-5C-0zK" firstAttribute="top" secondItem="Aqv-uu-aYp" secondAttribute="top" id="WSo-BP-UVL"/>
                             <constraint firstItem="Aqv-uu-aYp" firstAttribute="bottom" secondItem="Ogp-9E-5Xs" secondAttribute="bottom" id="XIV-vC-sqF"/>
+                            <constraint firstItem="sde-5C-0zK" firstAttribute="leading" secondItem="Aqv-uu-aYp" secondAttribute="leading" id="Z8e-90-3c9"/>
                             <constraint firstItem="Ogp-9E-5Xs" firstAttribute="leading" secondItem="Aqv-uu-aYp" secondAttribute="leading" id="cux-Ww-gy1"/>
                             <constraint firstItem="Aqv-uu-aYp" firstAttribute="trailing" secondItem="Ogp-9E-5Xs" secondAttribute="trailing" id="f8D-co-Yfi"/>
                         </constraints>
@@ -74,12 +87,13 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="News" image="rocket" id="iOC-zH-7by"/>
                     <connections>
+                        <outlet property="messageLabel" destination="sde-5C-0zK" id="jE9-Ya-Rpr"/>
                         <outlet property="tableView" destination="Ogp-9E-5Xs" id="4HF-c1-slx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LK4-9H-aYJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1086" y="-823"/>
+            <point key="canvasLocation" x="1085.5999999999999" y="-823.53823088455783"/>
         </scene>
         <!--Weight-->
         <scene sceneID="n72-n8-heC">

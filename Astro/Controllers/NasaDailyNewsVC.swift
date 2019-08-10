@@ -3,6 +3,7 @@ import UIKit
 class NasaDailyNewsVC: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var messageLabel: UILabel!
     
     let persistentData = PersistentData()
     let nasaNewsEntryManager = NasaNewsEntryManager()
@@ -20,6 +21,7 @@ class NasaDailyNewsVC: UIViewController {
         tableView.rowHeight = 450
         
         internetConnection.startMonitoringInternetConnection()
+        internetConnection.assignComponents(messageLabel: messageLabel, parentView: self.view)
     }
     
     override func viewDidAppear(_ animated: Bool) {
