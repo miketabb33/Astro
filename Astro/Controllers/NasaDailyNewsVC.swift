@@ -27,10 +27,6 @@ class NasaDailyNewsVC: UIViewController {
         allNasaEntries = persistentData.getAllNasaEntries()
         nasaNewsEntryManager.addNextEntryToPageUnlessNoEntriesExist(allNasaEntries: allNasaEntries, tableView: tableView)
     }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        nasaNewsEntryManager.loadingAnimation.hide()
-    }
 
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         nasaNewsEntryManager.loadMoreEntriesWhenSrollReachesBottom(tableView: tableView, allNasaEntries: allNasaEntries, isConnected: internetConnection.isConnected)
@@ -85,8 +81,10 @@ extension NasaDailyNewsVC {
         cell.currentEntryExplanation.text = allNasaEntries[indexPath.row].explanation
         addConstraints.addStackingConstraintTo(cell.currentEntryExplanation, stackUnder: cell.currentEntryImageView, edges: cell.contentView.layoutMarginsGuide, height: cell.frameHeight["explanation"]!)
         
+        addConstraints.addStackingConstraintForButton(cell.currentExpandExplanationButton, stackUnder: cell.currentEntryExplanation, width: cell.frameHeight["button"]!, height: cell.frameHeight["button"]!, parentView: self.view)
+        
         if allNasaEntries[indexPath.row].cellHeight == 0 {
-            allNasaEntries[indexPath.row].cellHeight = Float(cell.frameHeight["title"]! + cell.frameHeight["image"]! + cell.frameHeight["explanation"]!)
+            allNasaEntries[indexPath.row].cellHeight = Float(cell.frameHeight["title"]! + cell.frameHeight["image"]! + cell.frameHeight["explanation"]! + cell.frameHeight["button"]!)
             persistentData.saveNasaEntries()
         }
         
