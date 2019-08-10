@@ -109,6 +109,8 @@ class PersistentData {
             if index > 19 {
                 entry.image = nil
             }
+            entry.cellHeight = 0
+            entry.expandEnabled = false
         }
         saveNasaEntries()
     }

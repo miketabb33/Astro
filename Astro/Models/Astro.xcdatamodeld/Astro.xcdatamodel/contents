@@ -3,6 +3,7 @@
     <entity name="NasaEntry" representedClassName="NasaEntry" syncable="YES" codeGenerationType="class">
         <attribute name="cellHeight" optional="YES" attributeType="Float" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="date" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="expandEnabled" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="explanation" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="image" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
@@ -14,7 +15,7 @@
         <attribute name="relativeWeight" attributeType="Decimal" defaultValueString="0" syncable="YES"/>
     </entity>
     <elements>
-        <element name="NasaEntry" positionX="-45" positionY="27" width="128" height="135"/>
+        <element name="NasaEntry" positionX="-45" positionY="27" width="128" height="150"/>
         <element name="Planets" positionX="-45" positionY="0" width="128" height="90"/>
     </elements>
 </model>

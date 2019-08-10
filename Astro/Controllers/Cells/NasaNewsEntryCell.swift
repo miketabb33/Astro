@@ -62,7 +62,12 @@ class NasaNewsEntryCell: UITableViewCell {
     }
     
     @objc func expandButtonPressed() {
-     print("hello")
+        didTapExpandButton()
     }
+    
+    var didTapExpandButton: () -> () = {
+        fatalError("Button was not assinged a function")
+    }
+    
 
 }

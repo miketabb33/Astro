@@ -79,9 +79,50 @@ extension NasaDailyNewsVC {
         cell.currentEntryImageView = UIProcessing.processImage(currentCell: cell, stackUnder: cell.currentEntryTitle, edges: cell.contentView.safeAreaLayoutGuide)
         
         cell.currentEntryExplanation.text = allNasaEntries[indexPath.row].explanation
-        addConstraints.addStackingConstraintTo(cell.currentEntryExplanation, stackUnder: cell.currentEntryImageView, edges: cell.contentView.layoutMarginsGuide, height: cell.frameHeight["explanation"]!)
+        if allNasaEntries[indexPath.row].expandEnabled == true {
+            cell.currentExpandExplanationButton.transform = CGAffineTransform(rotationAngle: .pi)
+            cell.currentEntryExplanation.numberOfLines = 0
+            cell.currentEntryExplanation.lineBreakMode = NSLineBreakMode.byWordWrapping
+            cell.currentEntryExplanation.sizeToFit()
+            self.addConstraints.addStackingConstraintTo(cell.currentEntryExplanation, stackUnder: cell.currentEntryImageView, edges: cell.contentView.layoutMarginsGuide, height: cell.currentEntryExplanation.frame.height)
+        } else {
+            cell.currentExpandExplanationButton.transform = .identity
+            cell.currentEntryExplanation.numberOfLines = 7
+            cell.currentEntryExplanation.lineBreakMode = NSLineBreakMode.byTruncatingTail
+            self.addConstraints.addStackingConstraintTo(cell.currentEntryExplanation, stackUnder: cell.currentEntryImageView, edges: cell.contentView.layoutMarginsGuide, height: cell.frameHeight["explanation"]!)
+        }
         
         addConstraints.addStackingConstraintForButton(cell.currentExpandExplanationButton, stackUnder: cell.currentEntryExplanation, width: cell.frameHeight["button"]!, height: cell.frameHeight["button"]!, parentView: self.view)
+        
+        cell.didTapExpandButton = {
+            if self.allNasaEntries[indexPath.row].expandEnabled == false {
+                UIView.animate(withDuration: 0.5) {
+                    cell.currentExpandExplanationButton.transform = CGAffineTransform(rotationAngle: .pi)
+                }
+                self.allNasaEntries[indexPath.row].expandEnabled = true
+                cell.currentEntryExplanation.numberOfLines = 0
+                cell.currentEntryExplanation.lineBreakMode = NSLineBreakMode.byWordWrapping
+                cell.currentEntryExplanation.sizeToFit()
+                self.addConstraints.addStackingConstraintTo(cell.currentEntryExplanation, stackUnder: cell.currentEntryImageView, edges: cell.contentView.layoutMarginsGuide, height: cell.currentEntryExplanation.frame.height)
+                self.allNasaEntries[indexPath.row].cellHeight = Float(cell.frameHeight["title"]! + cell.frameHeight["image"]! + cell.currentEntryExplanation.frame.height + cell.frameHeight["button"]!)
+                self.persistentData.saveNasaEntries()
+                self.tableView.beginUpdates()
+                self.tableView.endUpdates()
+            } else {
+                UIView.animate(withDuration: 0.5) {
+                    cell.currentExpandExplanationButton.transform = .identity
+                }
+                self.allNasaEntries[indexPath.row].expandEnabled = false
+                cell.currentEntryExplanation.numberOfLines = 7
+                cell.currentEntryExplanation.lineBreakMode = NSLineBreakMode.byTruncatingTail
+                self.addConstraints.addStackingConstraintTo(cell.currentEntryExplanation, stackUnder: cell.currentEntryImageView, edges: cell.contentView.layoutMarginsGuide, height: cell.frameHeight["explanation"]!)
+                self.allNasaEntries[indexPath.row].cellHeight = Float(cell.frameHeight["title"]! + cell.frameHeight["image"]! + cell.frameHeight["explanation"]! + cell.frameHeight["button"]!)
+                self.persistentData.saveNasaEntries()
+                self.tableView.beginUpdates()
+                self.tableView.endUpdates()
+            }
+            
+        }
         
         if allNasaEntries[indexPath.row].cellHeight == 0 {
             allNasaEntries[indexPath.row].cellHeight = Float(cell.frameHeight["title"]! + cell.frameHeight["image"]! + cell.frameHeight["explanation"]! + cell.frameHeight["button"]!)
