@@ -21,6 +21,8 @@ class NasaDailyNewsVC: UIViewController {
         
         internetConnection.startMonitoringInternetConnection()
         internetConnection.assignComponents(messageLabel: messageLabel, parentView: self.view)
+        
+        tableView.allowsSelection = false
     }
     
     override func viewDidAppear(_ animated: Bool) {
