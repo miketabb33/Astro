@@ -157,7 +157,6 @@
 		4B52707E22D904DB00E8FBFD /* BasicUI */ = {
 			isa = PBXGroup;
 			children = (
-				4B98E8A522C2B7020025B8F2 /* NDNVCProcessing.swift */,
 				4B98E8A322C2B63E0025B8F2 /* UIConstraints.swift */,
 				4BCA1CE722B69EA100118A1E /* LoadingAnimation.swift */,
 				4BCA1CEB22B6B6AB00118A1E /* KeyboardMethods.swift */,
@@ -216,7 +215,6 @@
 		4BB687B622664A3200D423F9 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				4BE51AD522E34EB4002905ED /* NasaNewsEntryCell.swift */,
 				4BC55CC8225E59A90079A3E5 /* PlanetWeightCell.swift */,
 				4BB687BA22664D1F00D423F9 /* PlanetTempCell.swift */,
 			);
@@ -314,8 +312,18 @@
 			children = (
 				4BCDFBAD22FC7740003E39E8 /* NasaDailyNewsVC.swift */,
 				4BE51ADB22E60EFE002905ED /* EntryInsertionManager.swift */,
+				4B98E8A522C2B7020025B8F2 /* NDNVCProcessing.swift */,
+				4BE14DC92311A8F4000FA4E8 /* Cells */,
 			);
 			path = NasaDailyNews;
+			sourceTree = "<group>";
+		};
+		4BE14DC92311A8F4000FA4E8 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				4BE51AD522E34EB4002905ED /* NasaNewsEntryCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		4BE51ADD22E67E6A002905ED /* Planet Tempurature */ = {
