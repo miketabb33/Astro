@@ -10,6 +10,7 @@ class NasaDailyNewsVC: UIViewController {
     let UIProcessing = NDNVCProcessing()
     let addConstraints = UIConstraints()
     let internetConnection = InternetConnection()
+    let expandExplanationManager = ExpandExplanationManager()
     
     var allNasaEntries = [NasaEntry]()
 
@@ -90,7 +91,7 @@ extension NasaDailyNewsVC {
             cell.currentExpandExplanationButton.transform = CGAffineTransform(rotationAngle: .pi)
             cell.currentEntryExplanation.numberOfLines = 0
             cell.currentEntryExplanation.sizeToFit()
-            self.addConstraints.addStackingConstraintTo(cell.currentEntryExplanation, stackUnder: cell.currentEntryImageView, edges: cell.contentView.layoutMarginsGuide, height: getExpandedEntryExplanationFrameHeight(rawFrameHeight: cell.currentEntryExplanation.frame.height))
+            self.addConstraints.addStackingConstraintTo(cell.currentEntryExplanation, stackUnder: cell.currentEntryImageView, edges: cell.contentView.layoutMarginsGuide, height: expandExplanationManager.getExpandedEntryExplanationFrameHeight(rawFrameHeight: cell.currentEntryExplanation.frame.height))
         } else {
             cell.currentExpandExplanationButton.transform = .identity
             cell.currentEntryExplanation.numberOfLines = 7
@@ -101,25 +102,7 @@ extension NasaDailyNewsVC {
         
         
         cell.didTapExpandButton = {
-            if self.allNasaEntries[indexPath.row].expandEnabled == false {
-                self.allNasaEntries[indexPath.row].expandEnabled = true
-                self.expandExplanationLabalAnimation(cell: cell)
-                self.addConstraints.addStackingConstraintTo(cell.currentEntryExplanation, stackUnder: cell.currentEntryImageView, edges: cell.contentView.layoutMarginsGuide, height: self.getExpandedEntryExplanationFrameHeight(rawFrameHeight: cell.currentEntryExplanation.frame.height))
-                self.allNasaEntries[indexPath.row].cellHeight = Float(cell.frameHeight["title"]! + cell.frameHeight["image"]! + self.getExpandedEntryExplanationFrameHeight(rawFrameHeight: cell.currentEntryExplanation.frame.height) + cell.frameHeight["button"]!)
-                self.persistentData.saveNasaEntries()
-                self.animateCellConstraintsForExpandExplanation(cell: cell, arrowPosition: CGAffineTransform(rotationAngle: .pi))
-                self.tableView.beginUpdates()
-                self.tableView.endUpdates()
-            } else {
-                self.allNasaEntries[indexPath.row].expandEnabled = false
-                self.collapseExplanationLabelAnimation(cell: cell)
-                self.addConstraints.addStackingConstraintTo(cell.currentEntryExplanation, stackUnder: cell.currentEntryImageView, edges: cell.contentView.layoutMarginsGuide, height: cell.frameHeight["explanation"]!)
-                self.allNasaEntries[indexPath.row].cellHeight = Float(cell.frameHeight["title"]! + cell.frameHeight["image"]! + cell.frameHeight["explanation"]! + cell.frameHeight["button"]!)
-                self.persistentData.saveNasaEntries()
-                self.animateCellConstraintsForExpandExplanation(cell: cell, arrowPosition: .identity)
-                self.tableView.beginUpdates()
-                self.tableView.endUpdates()
-            }
+            self.expandExplanationManager.toggleController(allNasaEntries: self.allNasaEntries, indexPath: indexPath, cell: cell, tableView: self.tableView)
             
         }
         
@@ -128,29 +111,5 @@ extension NasaDailyNewsVC {
             persistentData.saveNasaEntries()
         }
         
-    }
-    
-    func getExpandedEntryExplanationFrameHeight(rawFrameHeight: CGFloat) -> CGFloat {
-        return rawFrameHeight + 10
-    }
-    
-    func expandExplanationLabalAnimation(cell: NasaNewsEntryCell) {
-        UIView.transition(with: cell.currentEntryExplanation, duration: 0.3, options: [.curveLinear], animations: { () -> Void in
-            cell.currentEntryExplanation.numberOfLines = 0
-            cell.currentEntryExplanation.sizeToFit()
-        }, completion: nil)
-    }
-    
-    func animateCellConstraintsForExpandExplanation(cell: NasaNewsEntryCell, arrowPosition: CGAffineTransform) {
-        UIView.animate(withDuration: 0.3) {
-            cell.currentExpandExplanationButton.transform = arrowPosition
-            cell.layoutIfNeeded()
-        }
-    }
-    
-    func collapseExplanationLabelAnimation(cell: NasaNewsEntryCell) {
-        UIView.transition(with: cell.currentEntryExplanation, duration: 0.3, options: [.curveLinear], animations: { () -> Void in
-            cell.currentEntryExplanation.numberOfLines = 7
-        }, completion: nil)
     }
 }
