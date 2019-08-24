@@ -46,7 +46,7 @@ extension NasaDailyNewsVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CustomNasaNewsEntryCell", for: indexPath) as! NasaNewsEntryCell
         
-        entryCellManager.addCell(cell: cell, allNasaEntries: allNasaEntries, indexPath: indexPath, tableView: tableView, parent: self)
+        entryCellManager.addNextCell(cell: cell, allNasaEntries: allNasaEntries, indexPath: indexPath, tableView: tableView, parent: self)
     
         return cell
     }
