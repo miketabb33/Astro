@@ -174,7 +174,6 @@
 				4BCDFC0B22FF18F4003E39E8 /* BSColors.swift */,
 				4B6023E622BE90A600732745 /* MathMethods.swift */,
 				4BCA1CED22B6BD9D00118A1E /* FormatterMethods.swift */,
-				4BE51ADB22E60EFE002905ED /* EntryInsertionManager.swift */,
 				4B52707E22D904DB00E8FBFD /* BasicUI */,
 				4B6023E522BE8AF300732745 /* DataManagement */,
 			);
@@ -314,6 +313,7 @@
 			isa = PBXGroup;
 			children = (
 				4BCDFBAD22FC7740003E39E8 /* NasaDailyNewsVC.swift */,
+				4BE51ADB22E60EFE002905ED /* EntryInsertionManager.swift */,
 			);
 			path = NasaDailyNews;
 			sourceTree = "<group>";
