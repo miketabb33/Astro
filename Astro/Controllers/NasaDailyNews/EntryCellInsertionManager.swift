@@ -1,6 +1,6 @@
 import UIKit
 
-class EntryInsertionManager {
+class EntryCellInsertionManager {
     
     var showingEntries = 0
     var initialEntryCount = 5

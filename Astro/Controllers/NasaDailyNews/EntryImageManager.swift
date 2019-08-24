@@ -1,6 +1,6 @@
 import UIKit
 
-class NDNVCProcessing {
+class EntryImageManager {
     let constraints = UIConstraints()
     
     func processImage(currentCell: NasaNewsEntryCell, stackUnder topElement: UIView, edges edgeArea: UILayoutGuide) -> UIImageView {
