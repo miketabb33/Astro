@@ -1,20 +1,12 @@
 import UIKit
 
-class NasaNewsEntryManager {
-    let persistentData = PersistentData()
-    let loadingAnimation = LoadingAnimation()
+class EntryInsertionManager {
     
     var showingEntries = 0
     var initialEntryCount = 5
     var initialEntryLoadComplete = false
     
     let entriesToAdd = 1
-    
-    func saveAsYoutubeImage(indexPath: IndexPath, allNasaEntries: [NasaEntry]) {
-        allNasaEntries[indexPath.row].image = UIImage(named: "youtube")!.pngData()
-        persistentData.saveNasaEntries()
-    }
-    
     
     //MARK: - Inital Entry Load
     func addNextEntryToPageUnlessNoEntriesExist(allNasaEntries: [NasaEntry], tableView: UITableView) {
@@ -26,8 +18,6 @@ class NasaNewsEntryManager {
     func addNextEntryToPageUnlessInitialLoadComplete(tableView: UITableView) {
         if !initialEntryLoadComplete {
             performInitialEntryLoad(tableView: tableView)
-        }  else {
-            loadingAnimation.hide()
         }
     }
     
@@ -39,7 +29,6 @@ class NasaNewsEntryManager {
             }
         } else {
             initialEntryLoadComplete = true
-            loadingAnimation.hide()
         }
     }
     

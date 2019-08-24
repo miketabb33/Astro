@@ -6,7 +6,7 @@ class NasaDailyNewsVC: UIViewController {
     @IBOutlet weak var messageLabel: UILabel!
     
     let persistentData = PersistentData()
-    let nasaNewsEntryManager = NasaNewsEntryManager()
+    let nasaNewsEntryManager = EntryInsertionManager()
     let UIProcessing = NDNVCProcessing()
     let addConstraints = UIConstraints()
     let internetConnection = InternetConnection()
@@ -50,7 +50,7 @@ extension NasaDailyNewsVC: UITableViewDelegate, UITableViewDataSource {
         
         if allNasaEntries[indexPath.row].image == nil {
             if allNasaEntries[indexPath.row].url!.suffix(3) != "jpg" {
-                nasaNewsEntryManager.saveAsYoutubeImage(indexPath: indexPath, allNasaEntries: allNasaEntries)
+                saveAsYoutubeImage(indexPath: indexPath, allNasaEntries: allNasaEntries)
                 assignCell(cell: cell, indexPath: indexPath)
                 nasaNewsEntryManager.addNextEntryToPageUnlessInitialLoadComplete(tableView: tableView)
             } else {
@@ -68,6 +68,11 @@ extension NasaDailyNewsVC: UITableViewDelegate, UITableViewDataSource {
         }
         
         return cell
+    }
+    
+    func saveAsYoutubeImage(indexPath: IndexPath, allNasaEntries: [NasaEntry]) {
+        allNasaEntries[indexPath.row].image = UIImage(named: "youtube")!.pngData()
+        persistentData.saveNasaEntries()
     }
     
 }

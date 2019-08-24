@@ -45,7 +45,7 @@
 		4BCDFBAE22FC7740003E39E8 /* NasaDailyNewsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCDFBAD22FC7740003E39E8 /* NasaDailyNewsVC.swift */; };
 		4BCDFC0C22FF18F4003E39E8 /* BSColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCDFC0B22FF18F4003E39E8 /* BSColors.swift */; };
 		4BE51AD722E34EB4002905ED /* NasaNewsEntryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE51AD522E34EB4002905ED /* NasaNewsEntryCell.swift */; };
-		4BE51ADC22E60EFE002905ED /* NasaNewsEntryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE51ADB22E60EFE002905ED /* NasaNewsEntryManager.swift */; };
+		4BE51ADC22E60EFE002905ED /* EntryInsertionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE51ADB22E60EFE002905ED /* EntryInsertionManager.swift */; };
 		4BEC669422DA6DAB00513FA9 /* NDNAPIStagingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEC669322DA6DAB00513FA9 /* NDNAPIStagingModel.swift */; };
 		5E13D7C415B15D376AB31CD9 /* Pods_Astro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FDA973E3FD78D118A37704B /* Pods_Astro.framework */; };
 /* End PBXBuildFile section */
@@ -114,7 +114,7 @@
 		4BCDFBAD22FC7740003E39E8 /* NasaDailyNewsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaDailyNewsVC.swift; sourceTree = "<group>"; };
 		4BCDFC0B22FF18F4003E39E8 /* BSColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSColors.swift; sourceTree = "<group>"; };
 		4BE51AD522E34EB4002905ED /* NasaNewsEntryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaNewsEntryCell.swift; sourceTree = "<group>"; };
-		4BE51ADB22E60EFE002905ED /* NasaNewsEntryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaNewsEntryManager.swift; sourceTree = "<group>"; };
+		4BE51ADB22E60EFE002905ED /* EntryInsertionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryInsertionManager.swift; sourceTree = "<group>"; };
 		4BEC669322DA6DAB00513FA9 /* NDNAPIStagingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NDNAPIStagingModel.swift; sourceTree = "<group>"; };
 		C21986F0FE38CFB8E9C2EA5C /* Pods-Astro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Astro.release.xcconfig"; path = "Target Support Files/Pods-Astro/Pods-Astro.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -174,7 +174,7 @@
 				4BCDFC0B22FF18F4003E39E8 /* BSColors.swift */,
 				4B6023E622BE90A600732745 /* MathMethods.swift */,
 				4BCA1CED22B6BD9D00118A1E /* FormatterMethods.swift */,
-				4BE51ADB22E60EFE002905ED /* NasaNewsEntryManager.swift */,
+				4BE51ADB22E60EFE002905ED /* EntryInsertionManager.swift */,
 				4B52707E22D904DB00E8FBFD /* BasicUI */,
 				4B6023E522BE8AF300732745 /* DataManagement */,
 			);
@@ -292,7 +292,7 @@
 			isa = PBXGroup;
 			children = (
 				4BBB94F72284CE9100944506 /* MainTabController.swift */,
-				4BCDFBAD22FC7740003E39E8 /* NasaDailyNewsVC.swift */,
+				4BE14DC82311A696000FA4E8 /* NasaDailyNews */,
 				4BE51ADD22E67E6A002905ED /* Planet Tempurature */,
 				4BE51ADE22E67E80002905ED /* Weight */,
 				4BB687B622664A3200D423F9 /* Cells */,
@@ -308,6 +308,14 @@
 				4BEC669322DA6DAB00513FA9 /* NDNAPIStagingModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		4BE14DC82311A696000FA4E8 /* NasaDailyNews */ = {
+			isa = PBXGroup;
+			children = (
+				4BCDFBAD22FC7740003E39E8 /* NasaDailyNewsVC.swift */,
+			);
+			path = NasaDailyNews;
 			sourceTree = "<group>";
 		};
 		4BE51ADD22E67E6A002905ED /* Planet Tempurature */ = {
@@ -561,7 +569,7 @@
 				4B6023E022BE76F200732745 /* PersistentData.swift in Sources */,
 				4BC55CF7225FD97B0079A3E5 /* planetUploadModel.swift in Sources */,
 				4BB687BF2266538000D423F9 /* PlanetTemperatureVC.swift in Sources */,
-				4BE51ADC22E60EFE002905ED /* NasaNewsEntryManager.swift in Sources */,
+				4BE51ADC22E60EFE002905ED /* EntryInsertionManager.swift in Sources */,
 				4B98E8A422C2B63E0025B8F2 /* UIConstraints.swift in Sources */,
 				4B6023E422BE7CB900732745 /* NavigationMethods.swift in Sources */,
 				4B6023E722BE90A600732745 /* MathMethods.swift in Sources */,
