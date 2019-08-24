@@ -19,7 +19,7 @@
 		4B98E8A022BEC9D90025B8F2 /* LabelMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B98E89F22BEC9D90025B8F2 /* LabelMethods.swift */; };
 		4B98E8A222BED04C0025B8F2 /* LabelMethodsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B98E8A122BED04C0025B8F2 /* LabelMethodsTests.swift */; };
 		4B98E8A422C2B63E0025B8F2 /* UIConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B98E8A322C2B63E0025B8F2 /* UIConstraints.swift */; };
-		4B98E8A622C2B7020025B8F2 /* EntryImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B98E8A522C2B7020025B8F2 /* EntryImageManager.swift */; };
+		4B98E8A622C2B7020025B8F2 /* EntryImageProcessingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B98E8A522C2B7020025B8F2 /* EntryImageProcessingManager.swift */; };
 		4BA44E6522B92A6A009756AA /* AstroUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA44E6422B92A6A009756AA /* AstroUITests.swift */; };
 		4BA44E7322B92A93009756AA /* FormatterMethodsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA44E7222B92A93009756AA /* FormatterMethodsTests.swift */; };
 		4BB687AF226519E600D423F9 /* EnterWeightVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB687AE226519E600D423F9 /* EnterWeightVC.swift */; };
@@ -46,6 +46,7 @@
 		4BCDFC0C22FF18F4003E39E8 /* BSColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCDFC0B22FF18F4003E39E8 /* BSColors.swift */; };
 		4BE14DCB2311AA27000FA4E8 /* ExpandExplanationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE14DCA2311AA27000FA4E8 /* ExpandExplanationManager.swift */; };
 		4BE14DCD2311B118000FA4E8 /* EntryCellConstructor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE14DCC2311B118000FA4E8 /* EntryCellConstructor.swift */; };
+		4BE14DCF2311E22F000FA4E8 /* EntryCellManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE14DCE2311E22F000FA4E8 /* EntryCellManager.swift */; };
 		4BE51AD722E34EB4002905ED /* NasaNewsEntryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE51AD522E34EB4002905ED /* NasaNewsEntryCell.swift */; };
 		4BE51ADC22E60EFE002905ED /* EntryCellInsertionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE51ADB22E60EFE002905ED /* EntryCellInsertionManager.swift */; };
 		4BEC669422DA6DAB00513FA9 /* NDNAPIStagingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEC669322DA6DAB00513FA9 /* NDNAPIStagingModel.swift */; };
@@ -84,7 +85,7 @@
 		4B98E89F22BEC9D90025B8F2 /* LabelMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelMethods.swift; sourceTree = "<group>"; };
 		4B98E8A122BED04C0025B8F2 /* LabelMethodsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelMethodsTests.swift; sourceTree = "<group>"; };
 		4B98E8A322C2B63E0025B8F2 /* UIConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIConstraints.swift; sourceTree = "<group>"; };
-		4B98E8A522C2B7020025B8F2 /* EntryImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryImageManager.swift; sourceTree = "<group>"; };
+		4B98E8A522C2B7020025B8F2 /* EntryImageProcessingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryImageProcessingManager.swift; sourceTree = "<group>"; };
 		4BA44E6222B92A6A009756AA /* AstroUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AstroUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BA44E6422B92A6A009756AA /* AstroUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstroUITests.swift; sourceTree = "<group>"; };
 		4BA44E6622B92A6A009756AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -117,6 +118,7 @@
 		4BCDFC0B22FF18F4003E39E8 /* BSColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSColors.swift; sourceTree = "<group>"; };
 		4BE14DCA2311AA27000FA4E8 /* ExpandExplanationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandExplanationManager.swift; sourceTree = "<group>"; };
 		4BE14DCC2311B118000FA4E8 /* EntryCellConstructor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryCellConstructor.swift; sourceTree = "<group>"; };
+		4BE14DCE2311E22F000FA4E8 /* EntryCellManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryCellManager.swift; sourceTree = "<group>"; };
 		4BE51AD522E34EB4002905ED /* NasaNewsEntryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaNewsEntryCell.swift; sourceTree = "<group>"; };
 		4BE51ADB22E60EFE002905ED /* EntryCellInsertionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryCellInsertionManager.swift; sourceTree = "<group>"; };
 		4BEC669322DA6DAB00513FA9 /* NDNAPIStagingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NDNAPIStagingModel.swift; sourceTree = "<group>"; };
@@ -315,10 +317,7 @@
 			isa = PBXGroup;
 			children = (
 				4BCDFBAD22FC7740003E39E8 /* NasaDailyNewsVC.swift */,
-				4BE51ADB22E60EFE002905ED /* EntryCellInsertionManager.swift */,
-				4BE14DCC2311B118000FA4E8 /* EntryCellConstructor.swift */,
-				4BE14DCA2311AA27000FA4E8 /* ExpandExplanationManager.swift */,
-				4B98E8A522C2B7020025B8F2 /* EntryImageManager.swift */,
+				4BE14DD02311E563000FA4E8 /* EntryCellManagement */,
 				4BE14DC92311A8F4000FA4E8 /* Cells */,
 			);
 			path = NasaDailyNews;
@@ -330,6 +329,18 @@
 				4BE51AD522E34EB4002905ED /* NasaNewsEntryCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		4BE14DD02311E563000FA4E8 /* EntryCellManagement */ = {
+			isa = PBXGroup;
+			children = (
+				4BE14DCE2311E22F000FA4E8 /* EntryCellManager.swift */,
+				4BE51ADB22E60EFE002905ED /* EntryCellInsertionManager.swift */,
+				4BE14DCC2311B118000FA4E8 /* EntryCellConstructor.swift */,
+				4BE14DCA2311AA27000FA4E8 /* ExpandExplanationManager.swift */,
+				4B98E8A522C2B7020025B8F2 /* EntryImageProcessingManager.swift */,
+			);
+			path = EntryCellManagement;
 			sourceTree = "<group>";
 		};
 		4BE51ADD22E67E6A002905ED /* Planet Tempurature */ = {
@@ -579,7 +590,7 @@
 				4BEC669422DA6DAB00513FA9 /* NDNAPIStagingModel.swift in Sources */,
 				4BCA1CEE22B6BD9D00118A1E /* FormatterMethods.swift in Sources */,
 				4B6023E222BE7C6800732745 /* SearchBarMethods.swift in Sources */,
-				4B98E8A622C2B7020025B8F2 /* EntryImageManager.swift in Sources */,
+				4B98E8A622C2B7020025B8F2 /* EntryImageProcessingManager.swift in Sources */,
 				4BBB94F82284CE9100944506 /* MainTabController.swift in Sources */,
 				4BC55CAA225D330B0079A3E5 /* AppDelegate.swift in Sources */,
 				4B6023E022BE76F200732745 /* PersistentData.swift in Sources */,
@@ -594,6 +605,7 @@
 				4BCA1CEA22B6AA0900118A1E /* NDNAPI.swift in Sources */,
 				4BC55CCA225E59A90079A3E5 /* PlanetWeightCell.swift in Sources */,
 				4BCA1CE822B69EA100118A1E /* LoadingAnimation.swift in Sources */,
+				4BE14DCF2311E22F000FA4E8 /* EntryCellManager.swift in Sources */,
 				4B6023DE22BBBFFF00732745 /* PreloadPlanetData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

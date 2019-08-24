@@ -2,7 +2,7 @@ import UIKit
 
 class EntryCellConstructor {
     let addConstraints = UIConstraints()
-    let entryImageManager = EntryImageManager()
+    let entryImageManager = EntryImageProcessingManager()
     let expandExplanationManager = ExpandExplanationManager()
     let persistentData = PersistentData()
     
