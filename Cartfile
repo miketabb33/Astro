@@ -1,0 +1,6 @@
+github "Alamofire/Alamofire" ~> 4.8.1
+github "Alamofire/AlamofireImage" ~> 3.5
+
+github "SwiftyJSON/SwiftyJSON" ~> 4.0
+
+github "realm/realm-cocoa"
