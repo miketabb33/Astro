@@ -50,7 +50,6 @@
 		4BE51AD722E34EB4002905ED /* NasaNewsEntryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE51AD522E34EB4002905ED /* NasaNewsEntryCell.swift */; };
 		4BE51ADC22E60EFE002905ED /* EntryCellInsertionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE51ADB22E60EFE002905ED /* EntryCellInsertionManager.swift */; };
 		4BEC669422DA6DAB00513FA9 /* NDNAPIStagingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEC669322DA6DAB00513FA9 /* NDNAPIStagingModel.swift */; };
-		5E13D7C415B15D376AB31CD9 /* Pods_Astro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FDA973E3FD78D118A37704B /* Pods_Astro.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,8 +70,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		201695E2626193813C0D7112 /* Pods-Astro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Astro.debug.xcconfig"; path = "Target Support Files/Pods-Astro/Pods-Astro.debug.xcconfig"; sourceTree = "<group>"; };
-		3FDA973E3FD78D118A37704B /* Pods_Astro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Astro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B1A9AEE22F723F000B88975 /* InternetConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternetConnection.swift; sourceTree = "<group>"; };
 		4B6023DD22BBBFFF00732745 /* PreloadPlanetData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreloadPlanetData.swift; sourceTree = "<group>"; };
 		4B6023DF22BE76F200732745 /* PersistentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentData.swift; sourceTree = "<group>"; };
@@ -122,7 +119,6 @@
 		4BE51AD522E34EB4002905ED /* NasaNewsEntryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaNewsEntryCell.swift; sourceTree = "<group>"; };
 		4BE51ADB22E60EFE002905ED /* EntryCellInsertionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryCellInsertionManager.swift; sourceTree = "<group>"; };
 		4BEC669322DA6DAB00513FA9 /* NDNAPIStagingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NDNAPIStagingModel.swift; sourceTree = "<group>"; };
-		C21986F0FE38CFB8E9C2EA5C /* Pods-Astro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Astro.release.xcconfig"; path = "Target Support Files/Pods-Astro/Pods-Astro.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,22 +140,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E13D7C415B15D376AB31CD9 /* Pods_Astro.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0A79765AE9C131D1C8370248 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				201695E2626193813C0D7112 /* Pods-Astro.debug.xcconfig */,
-				C21986F0FE38CFB8E9C2EA5C /* Pods-Astro.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		4B52707E22D904DB00E8FBFD /* BasicUI */ = {
 			isa = PBXGroup;
 			children = (
@@ -243,7 +229,6 @@
 				4BA44E7122B92A93009756AA /* AstroTests */,
 				4BA44E6322B92A6A009756AA /* AstroUITests */,
 				4BC55CA7225D330B0079A3E5 /* Products */,
-				0A79765AE9C131D1C8370248 /* Pods */,
 				9326997725848E964D5B9BEE /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -364,7 +349,6 @@
 		9326997725848E964D5B9BEE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3FDA973E3FD78D118A37704B /* Pods_Astro.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -412,11 +396,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4BC55CBB225D330D0079A3E5 /* Build configuration list for PBXNativeTarget "Astro" */;
 			buildPhases = (
-				6438600F6446399B2889FC8D /* [CP] Check Pods Manifest.lock */,
 				4BC55CA2225D330B0079A3E5 /* Sources */,
 				4BC55CA3225D330B0079A3E5 /* Frameworks */,
 				4BC55CA4225D330B0079A3E5 /* Resources */,
-				CE7CDFD91A2AD65651839003 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -499,57 +481,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		6438600F6446399B2889FC8D /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Astro-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		CE7CDFD91A2AD65651839003 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Astro/Pods-Astro-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Astro/Pods-Astro-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4BA44E5E22B92A6A009756AA /* Sources */ = {
@@ -841,7 +772,6 @@
 		};
 		4BC55CBC225D330D0079A3E5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 201695E2626193813C0D7112 /* Pods-Astro.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -860,7 +790,6 @@
 		};
 		4BC55CBD225D330D0079A3E5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C21986F0FE38CFB8E9C2EA5C /* Pods-Astro.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
