@@ -1,16 +1,7 @@
-import Foundation
-import SVProgressHUD
+import UIKit
 
 class LoadingAnimation {
     var loadingIcon = UIActivityIndicatorView()
-    
-    func show() {
-        SVProgressHUD.show()
-    }
-    
-    func hide() {
-        SVProgressHUD.dismiss()
-    }
     
     func addLoadingNextCellAnimation(parentView: UIView) {
         loadingIcon.center = CGPoint(x: UIScreen.main.bounds.width/2, y: UIScreen.main.bounds.height - 65)

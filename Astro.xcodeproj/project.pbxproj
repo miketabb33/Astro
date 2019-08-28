@@ -22,6 +22,16 @@
 		4B98E8A622C2B7020025B8F2 /* EntryImageProcessingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B98E8A522C2B7020025B8F2 /* EntryImageProcessingManager.swift */; };
 		4BA44E6522B92A6A009756AA /* AstroUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA44E6422B92A6A009756AA /* AstroUITests.swift */; };
 		4BA44E7322B92A93009756AA /* FormatterMethodsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA44E7222B92A93009756AA /* FormatterMethodsTests.swift */; };
+		4BB2EB2F2316B2A700D16A2A /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BB2EB2A2316B2A600D16A2A /* Alamofire.framework */; };
+		4BB2EB302316B2A700D16A2A /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BB2EB2B2316B2A700D16A2A /* SwiftyJSON.framework */; };
+		4BB2EB312316B2A700D16A2A /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BB2EB2C2316B2A700D16A2A /* RealmSwift.framework */; };
+		4BB2EB322316B2A700D16A2A /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BB2EB2D2316B2A700D16A2A /* AlamofireImage.framework */; };
+		4BB2EB332316B2A700D16A2A /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BB2EB2E2316B2A700D16A2A /* Realm.framework */; };
+		4BB2EB352316B2D900D16A2A /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4BB2EB2A2316B2A600D16A2A /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4BB2EB362316B2D900D16A2A /* AlamofireImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4BB2EB2D2316B2A700D16A2A /* AlamofireImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4BB2EB372316B2D900D16A2A /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4BB2EB2E2316B2A700D16A2A /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4BB2EB382316B2D900D16A2A /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4BB2EB2C2316B2A700D16A2A /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4BB2EB392316B2D900D16A2A /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4BB2EB2B2316B2A700D16A2A /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4BB687AF226519E600D423F9 /* EnterWeightVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB687AE226519E600D423F9 /* EnterWeightVC.swift */; };
 		4BB687B922664C6A00D423F9 /* PlanetTemperatureTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB687B822664C6A00D423F9 /* PlanetTemperatureTVC.swift */; };
 		4BB687BC22664D1F00D423F9 /* PlanetTempCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB687BA22664D1F00D423F9 /* PlanetTempCell.swift */; };
@@ -69,6 +79,24 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		4BB2EB342316B2B200D16A2A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				4BB2EB352316B2D900D16A2A /* Alamofire.framework in Embed Frameworks */,
+				4BB2EB362316B2D900D16A2A /* AlamofireImage.framework in Embed Frameworks */,
+				4BB2EB372316B2D900D16A2A /* Realm.framework in Embed Frameworks */,
+				4BB2EB382316B2D900D16A2A /* RealmSwift.framework in Embed Frameworks */,
+				4BB2EB392316B2D900D16A2A /* SwiftyJSON.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		4B1A9AEE22F723F000B88975 /* InternetConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternetConnection.swift; sourceTree = "<group>"; };
 		4B6023DD22BBBFFF00732745 /* PreloadPlanetData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreloadPlanetData.swift; sourceTree = "<group>"; };
@@ -89,6 +117,11 @@
 		4BA44E7022B92A93009756AA /* AstroTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AstroTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BA44E7222B92A93009756AA /* FormatterMethodsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatterMethodsTests.swift; sourceTree = "<group>"; };
 		4BA44E7422B92A93009756AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4BB2EB2A2316B2A600D16A2A /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		4BB2EB2B2316B2A700D16A2A /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
+		4BB2EB2C2316B2A700D16A2A /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
+		4BB2EB2D2316B2A700D16A2A /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = Carthage/Build/iOS/AlamofireImage.framework; sourceTree = "<group>"; };
+		4BB2EB2E2316B2A700D16A2A /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		4BB687AE226519E600D423F9 /* EnterWeightVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterWeightVC.swift; sourceTree = "<group>"; };
 		4BB687B822664C6A00D423F9 /* PlanetTemperatureTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetTemperatureTVC.swift; sourceTree = "<group>"; };
 		4BB687BA22664D1F00D423F9 /* PlanetTempCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetTempCell.swift; sourceTree = "<group>"; };
@@ -140,6 +173,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BB2EB2F2316B2A700D16A2A /* Alamofire.framework in Frameworks */,
+				4BB2EB302316B2A700D16A2A /* SwiftyJSON.framework in Frameworks */,
+				4BB2EB312316B2A700D16A2A /* RealmSwift.framework in Frameworks */,
+				4BB2EB322316B2A700D16A2A /* AlamofireImage.framework in Frameworks */,
+				4BB2EB332316B2A700D16A2A /* Realm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,6 +387,11 @@
 		9326997725848E964D5B9BEE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4BB2EB2A2316B2A600D16A2A /* Alamofire.framework */,
+				4BB2EB2D2316B2A700D16A2A /* AlamofireImage.framework */,
+				4BB2EB2E2316B2A700D16A2A /* Realm.framework */,
+				4BB2EB2C2316B2A700D16A2A /* RealmSwift.framework */,
+				4BB2EB2B2316B2A700D16A2A /* SwiftyJSON.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -399,6 +442,7 @@
 				4BC55CA2225D330B0079A3E5 /* Sources */,
 				4BC55CA3225D330B0079A3E5 /* Frameworks */,
 				4BC55CA4225D330B0079A3E5 /* Resources */,
+				4BB2EB342316B2B200D16A2A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -776,6 +820,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ASA7Y46W6W;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/Astro/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -794,6 +842,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ASA7Y46W6W;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/Astro/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
