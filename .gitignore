@@ -18,3 +18,5 @@ DerivedData/
 xcuserdata/
 
 Carthage
+
+/Astro/Keys.swift
