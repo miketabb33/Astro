@@ -5,6 +5,9 @@ import CoreData
 
 class NDNAPI {
     let persistantData = PersistentData()
+    let key = Keys()
+    
+    lazy var url = "https://ndn-api.herokuapp.com?id=\(key.NDN_KEY)"
     
     let userDefaults = UserDefaults.standard
     
@@ -17,7 +20,7 @@ class NDNAPI {
     }
     
     func initialNasaEntryUpload() {
-        Alamofire.request("https://ndn-api.herokuapp.com/", method: .get).responseJSON {
+        Alamofire.request(url, method: .get).responseJSON {
             response in
             if response.result.isSuccess {
                 let fetchedNasaData = JSON(response.result.value!)
@@ -33,7 +36,7 @@ class NDNAPI {
     
     
     func getRecentNasaEntry() {
-        Alamofire.request("https://ndn-api.herokuapp.com/", method: .get).responseJSON {
+        Alamofire.request(url, method: .get).responseJSON {
             response in
             if response.result.isSuccess {
                 let fetchedNasaData = JSON(response.result.value!)

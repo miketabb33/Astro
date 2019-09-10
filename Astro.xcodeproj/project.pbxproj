@@ -59,6 +59,7 @@
 		4BE14DCF2311E22F000FA4E8 /* EntryCellManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE14DCE2311E22F000FA4E8 /* EntryCellManager.swift */; };
 		4BE51AD722E34EB4002905ED /* NasaNewsEntryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE51AD522E34EB4002905ED /* NasaNewsEntryCell.swift */; };
 		4BE51ADC22E60EFE002905ED /* EntryCellInsertionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE51ADB22E60EFE002905ED /* EntryCellInsertionManager.swift */; };
+		4BE9FAE3232835330095AC68 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE9FAE2232835330095AC68 /* Keys.swift */; };
 		4BEC669422DA6DAB00513FA9 /* NDNAPIStagingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEC669322DA6DAB00513FA9 /* NDNAPIStagingModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -151,6 +152,7 @@
 		4BE14DCE2311E22F000FA4E8 /* EntryCellManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryCellManager.swift; sourceTree = "<group>"; };
 		4BE51AD522E34EB4002905ED /* NasaNewsEntryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaNewsEntryCell.swift; sourceTree = "<group>"; };
 		4BE51ADB22E60EFE002905ED /* EntryCellInsertionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryCellInsertionManager.swift; sourceTree = "<group>"; };
+		4BE9FAE2232835330095AC68 /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 		4BEC669322DA6DAB00513FA9 /* NDNAPIStagingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NDNAPIStagingModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -292,6 +294,7 @@
 				4BC55CC0225D336E0079A3E5 /* Supporting Files */,
 				4BC55CB3225D330D0079A3E5 /* Assets.xcassets */,
 				4BC55CB5225D330D0079A3E5 /* LaunchScreen.storyboard */,
+				4BE9FAE2232835330095AC68 /* Keys.swift */,
 			);
 			path = Astro;
 			sourceTree = "<group>";
@@ -554,6 +557,7 @@
 				4BB687AF226519E600D423F9 /* EnterWeightVC.swift in Sources */,
 				4BE14DCB2311AA27000FA4E8 /* ExpandExplanationManager.swift in Sources */,
 				4B98E8A022BEC9D90025B8F2 /* LabelMethods.swift in Sources */,
+				4BE9FAE3232835330095AC68 /* Keys.swift in Sources */,
 				4BB687B922664C6A00D423F9 /* PlanetTemperatureTVC.swift in Sources */,
 				4BC55CB2225D330B0079A3E5 /* Astro.xcdatamodeld in Sources */,
 				4BE51AD722E34EB4002905ED /* NasaNewsEntryCell.swift in Sources */,
