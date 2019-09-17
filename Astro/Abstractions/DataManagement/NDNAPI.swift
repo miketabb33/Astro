@@ -38,6 +38,7 @@ class NDNAPI {
     func getRecentNasaEntry() {
         Alamofire.request(url, method: .get).responseJSON {
             response in
+            
             if response.result.isSuccess {
                 let fetchedNasaData = JSON(response.result.value!)
                 let stagedNasaData = self.digestNasaDataIntoArray(nasaData: fetchedNasaData)
@@ -66,14 +67,28 @@ class NDNAPI {
         while i < numberOfFetchedItems {
             let currentNasaEntry = NDNAPIStagingModel()
             currentNasaEntry.date = nasaData["items"][i]["date"].stringValue
-            currentNasaEntry.explanation = nasaData["items"][i]["explanation"].stringValue
-            currentNasaEntry.title = nasaData["items"][i]["title"].stringValue
+            currentNasaEntry.explanation = decodeString(string: nasaData["items"][i]["explanation"].stringValue)
+            currentNasaEntry.title = decodeString(string: nasaData["items"][i]["title"].stringValue)
             currentNasaEntry.url = nasaData["items"][i]["url"].stringValue
             stagedNasaData.append(currentNasaEntry)
             i = i + 1
         }
-        
         return stagedNasaData
     }
-
+    
+    func decodeString(string: String) -> String {
+        let data = string.data(using: .utf8)!
+        
+        let options: [NSAttributedString.DocumentReadingOptionKey: Any] = [
+            .documentType: NSAttributedString.DocumentType.html,
+            .characterEncoding: String.Encoding.utf8.rawValue
+        ]
+        
+        guard let attributedString = try? NSAttributedString(data: data, options: options, documentAttributes: nil) else {
+            fatalError("NDN-API data did not decode correctly")
+        }
+        
+        return attributedString.string
+    }
+    
 }
