@@ -10,9 +10,11 @@ class PreloadAstronomicalObjectData {
     }
     
     func preloadAstronomicalObjectData() {
-        guard let planetURLPath = Bundle.main.url(forResource: "PlanetData", withExtension: "plist") else { fatalError() }
+        guard let AstronomicalObjectURLPath = Bundle.main.url(forResource: "AstronomicalObjectData", withExtension: "plist") else {
+            fatalError("Unableto find astronomical object data path")
+        }
 
-        if let rawData = try? Data(contentsOf: planetURLPath) {
+        if let rawData = try? Data(contentsOf: AstronomicalObjectURLPath) {
             let decoder = PropertyListDecoder()
             do {
                 let decodedData = try decoder.decode([AstronomicalObjectUpload].self, from: rawData)
