@@ -1,4 +1,5 @@
 import UIKit
+import RealmSwift
 
 class EntryCellInsertionManager {
     
@@ -9,7 +10,7 @@ class EntryCellInsertionManager {
     let entriesToAdd = 1
     
     //MARK: - Inital Entry Load
-    func addNextEntryToPageUnlessNoEntriesExist(allNasaEntries: [NasaEntry], tableView: UITableView) {
+    func addNextEntryToPageUnlessNoEntriesExist(allNasaEntries: Results<APODEntry>, tableView: UITableView) {
         if allNasaEntries.count != 0 {
             addNextEntryToPageUnlessInitialLoadComplete(tableView: tableView)
         }
@@ -33,13 +34,13 @@ class EntryCellInsertionManager {
     }
     
     //MARK: - Load More Entries on scroll
-    func loadMoreEntriesWhenSrollReachesBottom(tableView: UITableView, allNasaEntries: [NasaEntry], isConnected: Bool) {
+    func loadMoreEntriesWhenSrollReachesBottom(tableView: UITableView, allNasaEntries: Results<APODEntry>, isConnected: Bool) {
         if tableView.contentOffset.y >= (tableView.contentSize.height - tableView.frame.size.height) && showingEntries < allNasaEntries.count {
             insertNextSetOfRows(tableView: tableView, allNasaEntries: allNasaEntries, isConnected: isConnected)
         }
     }
     
-    func insertNextSetOfRows(tableView: UITableView, allNasaEntries: [NasaEntry], isConnected: Bool) {
+    func insertNextSetOfRows(tableView: UITableView, allNasaEntries: Results<APODEntry>, isConnected: Bool) {
         tableView.beginUpdates()
         var i = 0
         var totalEntries = showingEntries

@@ -6,6 +6,9 @@ class APODEntry: Object {
     @objc dynamic var url = ""
     @objc dynamic var title = ""
     @objc dynamic var date = ""
+    @objc dynamic var image: Data? = nil
+    @objc dynamic var cellHeight = 0
+    @objc dynamic var expandEnabled = false
 }
 
 class AstronomicalObject: Object {

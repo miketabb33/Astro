@@ -1,11 +1,12 @@
 import UIKit
+import RealmSwift
 
 class ExpandExplanationManager {
     let addConstraints = UIConstraints()
     let persistentData = PersistentData()
     
     //GET TOGGLE POSITION
-    func getTogglePositionOfExplanation(cell: NasaNewsEntryCell, allNasaEntries: [NasaEntry], indexPath: IndexPath) {
+    func getTogglePositionOfExplanation(cell: NasaNewsEntryCell, allNasaEntries: Results<APODEntry>, indexPath: IndexPath) {
         if allNasaEntries[indexPath.row].expandEnabled == true {
             showExpandedExplanation(cell: cell)
         } else {
@@ -28,7 +29,7 @@ class ExpandExplanationManager {
     }
     
     //MARK: SET TOGGLE POSITION
-    func toggleController(allNasaEntries: [NasaEntry], indexPath: IndexPath, cell: NasaNewsEntryCell, tableView: UITableView) {
+    func toggleController(allNasaEntries: Results<APODEntry>, indexPath: IndexPath, cell: NasaNewsEntryCell, tableView: UITableView) {
         if allNasaEntries[indexPath.row].expandEnabled == false {
             expandExplanationLabel(allNasaEntries: allNasaEntries, indexPath: indexPath, cell: cell, tableView: tableView)
         } else {
@@ -37,12 +38,16 @@ class ExpandExplanationManager {
     }
     
     //Expand Explanation Label
-    func expandExplanationLabel(allNasaEntries: [NasaEntry], indexPath: IndexPath, cell: NasaNewsEntryCell, tableView: UITableView) {
-        allNasaEntries[indexPath.row].expandEnabled = true
+    func expandExplanationLabel(allNasaEntries: Results<APODEntry>, indexPath: IndexPath, cell: NasaNewsEntryCell, tableView: UITableView) {
+        try! persistentData.realm.write {
+            allNasaEntries[indexPath.row].expandEnabled = true
+        }
         expandExplanationLabalAnimation(cell: cell)
         addConstraints.addStackingConstraintTo(cell.currentEntryExplanation, stackUnder: cell.currentEntryImageView, edges: cell.contentView.layoutMarginsGuide, height: self.getExpandedEntryExplanationFrameHeight(rawFrameHeight: cell.currentEntryExplanation.frame.height))
-        allNasaEntries[indexPath.row].cellHeight = Float(cell.frameHeight["title"]! + cell.frameHeight["image"]! + getExpandedEntryExplanationFrameHeight(rawFrameHeight: cell.currentEntryExplanation.frame.height) + cell.frameHeight["button"]!)
-        persistentData.saveNasaEntries()
+        
+        try! persistentData.realm.write {
+            allNasaEntries[indexPath.row].cellHeight = Int(Float(cell.frameHeight["title"]! + cell.frameHeight["image"]! + getExpandedEntryExplanationFrameHeight(rawFrameHeight: cell.currentEntryExplanation.frame.height) + cell.frameHeight["button"]!))
+        }
         animateExpandLabelConstraints(cell: cell, arrowPosition: CGAffineTransform(rotationAngle: .pi))
         cellHeightAnimation(tableView: tableView)
     }
@@ -55,12 +60,19 @@ class ExpandExplanationManager {
     }
     
     //Collapse Explanation Label
-    func collapseExplanationLabel(allNasaEntries: [NasaEntry], indexPath: IndexPath, cell: NasaNewsEntryCell, tableView: UITableView) {
-        allNasaEntries[indexPath.row].expandEnabled = false
+    func collapseExplanationLabel(allNasaEntries: Results<APODEntry>, indexPath: IndexPath, cell: NasaNewsEntryCell, tableView: UITableView) {
+        
+        try! persistentData.realm.write {
+            allNasaEntries[indexPath.row].expandEnabled = false
+        }
+        
         collapseExplanationLabelAnimation(cell: cell)
         addConstraints.addStackingConstraintTo(cell.currentEntryExplanation, stackUnder: cell.currentEntryImageView, edges: cell.contentView.layoutMarginsGuide, height: cell.frameHeight["explanation"]!)
-        allNasaEntries[indexPath.row].cellHeight = Float(cell.frameHeight["title"]! + cell.frameHeight["image"]! + cell.frameHeight["explanation"]! + cell.frameHeight["button"]!)
-        persistentData.saveNasaEntries()
+        try! persistentData.realm.write {
+            allNasaEntries[indexPath.row].cellHeight = Int(Float(cell.frameHeight["title"]! + cell.frameHeight["image"]! + cell.frameHeight["explanation"]! + cell.frameHeight["button"]!))
+        }
+        
+
         animateExpandLabelConstraints(cell: cell, arrowPosition: .identity)
         cellHeightAnimation(tableView: tableView)
     }

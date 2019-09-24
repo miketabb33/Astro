@@ -25,9 +25,15 @@ class PersistentData {
         return sortedEntries.first!
     }
     
+    func getAllAPODEntries() -> Results<APODEntry> {
+        let APODEntries = realm.objects(APODEntry.self)
+        let sortedEntries = APODEntries.sorted(byKeyPath: "date",ascending: false)
+        return sortedEntries
+    }
+    
     func getAllAstronomicalObjects() -> Results<AstronomicalObject> {
         let astronomicalObjects = realm.objects(AstronomicalObject.self)
-        let sortedObjects = astronomicalObjects.sorted(byKeyPath: "position",ascending: false)
+        let sortedObjects = astronomicalObjects.sorted(byKeyPath: "position",ascending: true)
         return sortedObjects
     }
     

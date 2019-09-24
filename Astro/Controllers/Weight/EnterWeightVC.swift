@@ -10,7 +10,6 @@ class EnterWeightVC: UIViewController {
 
         KeyboardMethods().setView(view)
         view.addGestureRecognizer(KeyboardMethods().tapAnywhereToHideKeyboard())
-        print("hi")
     }
     
     override func viewDidDisappear(_ animated: Bool) {
