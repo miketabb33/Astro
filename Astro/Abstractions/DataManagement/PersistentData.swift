@@ -2,21 +2,17 @@ import UIKit
 import CoreData
 import RealmSwift
 
-class APODEntry: Object {
-    @objc dynamic var explanation = ""
-    @objc dynamic var url = ""
-    @objc dynamic var title = ""
-    @objc dynamic var date = ""
-}
-
 class PersistentData {
-    
-    let preloadPlanetDataKey = "Planet-Data-Preloaded"
-    
     //MARK: - Realm
     let realm = try! Realm()
     
     func addAPOD(data: [APODEntry]) {
+        try! realm.write {
+            realm.add(data)
+        }
+    }
+    
+    func addAstonomicalObjects(data: [AstronomicalObject]) {
         try! realm.write {
             realm.add(data)
         }
@@ -31,6 +27,7 @@ class PersistentData {
     
     //MARK: - User Defaults
     let initialAPODUploadCompletedKey = "Initial-APOD-Upload-Completed"
+    let astronomicalObjectPreloadCompletedKey = "Astronomical-Object-Preload-Completed"
     
     func setUserDefaults(data: Any, key: String) {
         UserDefaults.standard.set(data, forKey: key)
@@ -38,14 +35,6 @@ class PersistentData {
     
     func getUserDefaultsForBoolean(key: String) -> Bool {
         return UserDefaults.standard.bool(forKey: key)
-    }
-    
-    func getUserDefaultsForString(key: String) -> String? {
-        return UserDefaults.standard.string(forKey: key)
-    }
-    
-    func getUserDefaultsForArray(key: String) -> [String] {
-        return UserDefaults.standard.stringArray(forKey: key) ?? [String]()
     }
     
     //MARK: - Dead
@@ -63,7 +52,7 @@ class PersistentData {
     func savePlanetData(_ backgroundContext: NSManagedObjectContext) {
         do {
             try backgroundContext.save()
-            userDefaults.set(true, forKey: preloadPlanetDataKey)
+            userDefaults.set(true, forKey: astronomicalObjectPreloadCompletedKey)
         } catch {
             print("error preloading data: \(error)")
         }

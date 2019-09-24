@@ -18,7 +18,8 @@
 		4B484BE7233A778B00BA09AD /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4BB2EB2E2316B2A700D16A2A /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4B484BE8233A778B00BA09AD /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4BB2EB2C2316B2A700D16A2A /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4B484BE9233A778B00BA09AD /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4BB2EB2B2316B2A700D16A2A /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		4B6023DE22BBBFFF00732745 /* PreloadPlanetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6023DD22BBBFFF00732745 /* PreloadPlanetData.swift */; };
+		4B484BEB233A982600BA09AD /* RealmObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B484BEA233A982600BA09AD /* RealmObjects.swift */; };
+		4B6023DE22BBBFFF00732745 /* PreloadAstronomicalObjectData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6023DD22BBBFFF00732745 /* PreloadAstronomicalObjectData.swift */; };
 		4B6023E022BE76F200732745 /* PersistentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6023DF22BE76F200732745 /* PersistentData.swift */; };
 		4B6023E222BE7C6800732745 /* SearchBarMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6023E122BE7C6800732745 /* SearchBarMethods.swift */; };
 		4B6023E422BE7CB900732745 /* NavigationMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6023E322BE7CB900732745 /* NavigationMethods.swift */; };
@@ -47,7 +48,7 @@
 		4BC55CCA225E59A90079A3E5 /* PlanetWeightCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC55CC8225E59A90079A3E5 /* PlanetWeightCell.swift */; };
 		4BC55CCB225E59A90079A3E5 /* PlanetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BC55CC9225E59A90079A3E5 /* PlanetCell.xib */; };
 		4BC55CF5225FB0210079A3E5 /* PlanetData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4BC55CF4225FB0210079A3E5 /* PlanetData.plist */; };
-		4BC55CF7225FD97B0079A3E5 /* planetUploadModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC55CF6225FD97B0079A3E5 /* planetUploadModel.swift */; };
+		4BC55CF7225FD97B0079A3E5 /* AstronomicalObjectUpload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC55CF6225FD97B0079A3E5 /* AstronomicalObjectUpload.swift */; };
 		4BCA1CE822B69EA100118A1E /* LoadingAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCA1CE722B69EA100118A1E /* LoadingAnimation.swift */; };
 		4BCA1CEA22B6AA0900118A1E /* NDNAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCA1CE922B6AA0900118A1E /* NDNAPI.swift */; };
 		4BCA1CEC22B6B6AB00118A1E /* KeyboardMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCA1CEB22B6B6AB00118A1E /* KeyboardMethods.swift */; };
@@ -100,7 +101,8 @@
 
 /* Begin PBXFileReference section */
 		4B1A9AEE22F723F000B88975 /* InternetConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternetConnection.swift; sourceTree = "<group>"; };
-		4B6023DD22BBBFFF00732745 /* PreloadPlanetData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreloadPlanetData.swift; sourceTree = "<group>"; };
+		4B484BEA233A982600BA09AD /* RealmObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmObjects.swift; sourceTree = "<group>"; };
+		4B6023DD22BBBFFF00732745 /* PreloadAstronomicalObjectData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreloadAstronomicalObjectData.swift; sourceTree = "<group>"; };
 		4B6023DF22BE76F200732745 /* PersistentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentData.swift; sourceTree = "<group>"; };
 		4B6023E122BE7C6800732745 /* SearchBarMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarMethods.swift; sourceTree = "<group>"; };
 		4B6023E322BE7CB900732745 /* NavigationMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationMethods.swift; sourceTree = "<group>"; };
@@ -140,7 +142,7 @@
 		4BC55CC8225E59A90079A3E5 /* PlanetWeightCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetWeightCell.swift; sourceTree = "<group>"; };
 		4BC55CC9225E59A90079A3E5 /* PlanetCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = PlanetCell.xib; path = ../PlanetCell.xib; sourceTree = "<group>"; };
 		4BC55CF4225FB0210079A3E5 /* PlanetData.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = PlanetData.plist; sourceTree = "<group>"; };
-		4BC55CF6225FD97B0079A3E5 /* planetUploadModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = planetUploadModel.swift; sourceTree = "<group>"; };
+		4BC55CF6225FD97B0079A3E5 /* AstronomicalObjectUpload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronomicalObjectUpload.swift; sourceTree = "<group>"; };
 		4BCA1CE722B69EA100118A1E /* LoadingAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingAnimation.swift; sourceTree = "<group>"; };
 		4BCA1CE922B6AA0900118A1E /* NDNAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NDNAPI.swift; sourceTree = "<group>"; };
 		4BCA1CEB22B6B6AB00118A1E /* KeyboardMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardMethods.swift; sourceTree = "<group>"; };
@@ -216,7 +218,7 @@
 			children = (
 				4B6023DF22BE76F200732745 /* PersistentData.swift */,
 				4BCA1CE922B6AA0900118A1E /* NDNAPI.swift */,
-				4B6023DD22BBBFFF00732745 /* PreloadPlanetData.swift */,
+				4B6023DD22BBBFFF00732745 /* PreloadAstronomicalObjectData.swift */,
 				4B79B41A22AD5C0200D6711C /* PlanetDataHandler.swift */,
 				4B1A9AEE22F723F000B88975 /* InternetConnection.swift */,
 			);
@@ -334,8 +336,9 @@
 			isa = PBXGroup;
 			children = (
 				4BC55CB0225D330B0079A3E5 /* Astro.xcdatamodeld */,
-				4BC55CF6225FD97B0079A3E5 /* planetUploadModel.swift */,
+				4BC55CF6225FD97B0079A3E5 /* AstronomicalObjectUpload.swift */,
 				4BEC669322DA6DAB00513FA9 /* NDNAPIStagingModel.swift */,
+				4B484BEA233A982600BA09AD /* RealmObjects.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -554,6 +557,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B484BEB233A982600BA09AD /* RealmObjects.swift in Sources */,
 				4BE14DCD2311B118000FA4E8 /* EntryCellConstructor.swift in Sources */,
 				4BB687AF226519E600D423F9 /* EnterWeightVC.swift in Sources */,
 				4BE14DCB2311AA27000FA4E8 /* ExpandExplanationManager.swift in Sources */,
@@ -574,7 +578,7 @@
 				4BBB94F82284CE9100944506 /* MainTabController.swift in Sources */,
 				4BC55CAA225D330B0079A3E5 /* AppDelegate.swift in Sources */,
 				4B6023E022BE76F200732745 /* PersistentData.swift in Sources */,
-				4BC55CF7225FD97B0079A3E5 /* planetUploadModel.swift in Sources */,
+				4BC55CF7225FD97B0079A3E5 /* AstronomicalObjectUpload.swift in Sources */,
 				4BB687BF2266538000D423F9 /* PlanetTemperatureVC.swift in Sources */,
 				4BE51ADC22E60EFE002905ED /* EntryCellInsertionManager.swift in Sources */,
 				4B98E8A422C2B63E0025B8F2 /* UIConstraints.swift in Sources */,
@@ -586,7 +590,7 @@
 				4BC55CCA225E59A90079A3E5 /* PlanetWeightCell.swift in Sources */,
 				4BCA1CE822B69EA100118A1E /* LoadingAnimation.swift in Sources */,
 				4BE14DCF2311E22F000FA4E8 /* EntryCellManager.swift in Sources */,
-				4B6023DE22BBBFFF00732745 /* PreloadPlanetData.swift in Sources */,
+				4B6023DE22BBBFFF00732745 /* PreloadAstronomicalObjectData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

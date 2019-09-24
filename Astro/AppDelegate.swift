@@ -3,17 +3,15 @@ import CoreData
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    let preloadPlanetData = PreloadPlanetData()
     let persistentData = PersistentData()
-    let ndnApi = NDNAPI()
     
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
         persistentData.cleanNasaEntryDatabase()
-        preloadPlanetData.preloadUnlessAlreadyPreloaded()
-        ndnApi.updateAPODEntries(initialUploadCompleted: persistentData.getUserDefaultsForBoolean(key: persistentData.initialAPODUploadCompletedKey))
+        PreloadAstronomicalObjectData().preloadAstronomicalObjectsUnlessCompleted()
+        NDNAPI().updateAPODEntries(initialUploadCompleted: persistentData.getUserDefaultsForBoolean(key: persistentData.initialAPODUploadCompletedKey))
         return true
     }
 

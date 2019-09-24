@@ -1,7 +1,6 @@
 import Foundation
 import Alamofire
 import SwiftyJSON
-import CoreData
 
 class NDNAPI {
     let persistantData = PersistentData()
@@ -9,15 +8,13 @@ class NDNAPI {
     
     lazy var url = "https://ndn-api.herokuapp.com?id=\(key.NDN_KEY)"
     
-    let userDefaults = UserDefaults.standard
-    
     func updateAPODEntries(initialUploadCompleted: Bool) {
         Alamofire.request(url, method: .get).responseJSON {
             response in
             
             if response.result.isSuccess {
-                let rawData = JSON(response.result.value!)
-                let stagedEntries = self.digestAPODData(data: rawData)
+                let jsonData = JSON(response.result.value!)
+                let stagedEntries = self.digestAPODData(data: jsonData)
                 
                 self.saveEntries(initialUploadCompleted: initialUploadCompleted, stagedEntries: stagedEntries)
                 
