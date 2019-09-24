@@ -1,26 +1,21 @@
 import UIKit
-import RealmSwift
 
 class EnterWeightVC: UIViewController {
     @IBOutlet weak var enterWeightBar: UISearchBar!
     @IBOutlet weak var message: UILabel!
     
-    let keyboardMethods = KeyboardMethods()
-    let searchBarMethods = SearchBarMethods()
-    let navigationMethods = NavigationMethods()
-    let labelMethods = LabelMethods()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.enterWeightBar.delegate = self
 
-        keyboardMethods.setView(view)
-        view.addGestureRecognizer(keyboardMethods.tapAnywhereToHideKeyboard())
+        KeyboardMethods().setView(view)
+        view.addGestureRecognizer(KeyboardMethods().tapAnywhereToHideKeyboard())
+        print("hi")
     }
     
     override func viewDidDisappear(_ animated: Bool) {
-        enterWeightBar = searchBarMethods.resetSearchBar(enterWeightBar)
-        message = labelMethods.attemptToUpdateLabel(message, withText: "Enter Your Weight", shouldUpdate: true)
+        enterWeightBar = SearchBarMethods().resetSearchBar(enterWeightBar)
+        message = LabelMethods().attemptToUpdateLabel(message, withText: "Enter Your Weight", shouldUpdate: true)
     }
     
     //MARK - Navigation
@@ -37,8 +32,8 @@ class EnterWeightVC: UIViewController {
 extension EnterWeightVC: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         let isValid = Double(enterWeightBar.text!) != nil
-        message = labelMethods.attemptToUpdateLabel(message, withText: "Enter a number", shouldUpdate: !isValid)
-        navigationMethods.attemptSegue(SendingVC: self, ID: "goToPlanetWeightScreen", shouldSegue: isValid)
+        message = LabelMethods().attemptToUpdateLabel(message, withText: "Enter a number", shouldUpdate: !isValid)
+        NavigationMethods().attemptSegue(SendingVC: self, ID: "goToPlanetWeightScreen", shouldSegue: isValid)
     }
 
 }
