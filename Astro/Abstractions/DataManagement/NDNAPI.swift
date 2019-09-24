@@ -12,7 +12,7 @@ class NDNAPI {
     let userDefaults = UserDefaults.standard
     
     func uploadDeviceWithNasaEntries() {
-        if userDefaults.bool(forKey: persistantData.initialNasaEntryUploadCompletedKey) {
+        if userDefaults.bool(forKey: persistantData.initialAPODUploadCompletedKey) {
             getRecentNasaEntry()
         } else {
             initialNasaEntryUpload()
@@ -28,7 +28,7 @@ class NDNAPI {
                 
                 self.persistantData.addAPOD(data: stagedData)
                 
-                self.userDefaults.set(true, forKey: self.persistantData.initialNasaEntryUploadCompletedKey)
+                self.persistantData.setUserDefaults(data: true, key: self.persistantData.initialAPODUploadCompletedKey)
                 print("Initial Nasa Entry Upload Complete")
             } else {
                 print("Error \(String(describing: response.result.error))")

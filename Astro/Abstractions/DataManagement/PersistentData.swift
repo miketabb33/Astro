@@ -13,17 +13,33 @@ class PersistentData {
     let realm = try! Realm()
     
     let preloadPlanetDataKey = "Planet-Data-Preloaded"
-    let initialNasaEntryUploadCompletedKey = "Initial-Nasa-Entry-Upload-Completed"
+    let initialAPODUploadCompletedKey = "Initial-APOD-Upload-Completed"
     
+    //MARK: - Realm
     func addAPOD(data: [APODEntry]) {
         try! realm.write {
             realm.add(data)
         }
     }
     
+    //MARK: - User Defaults
+    func setUserDefaults(data: Any, key: String) {
+        UserDefaults.standard.set(data, forKey: key)
+    }
     
+    func getUserDefaultsForBoolean(key: String) -> Bool {
+        return UserDefaults.standard.bool(forKey: key)
+    }
     
+    func getUserDefaultsForString(key: String) -> String? {
+        return UserDefaults.standard.string(forKey: key)
+    }
     
+    func getUserDefaultsForArray(key: String) -> [String] {
+        return UserDefaults.standard.stringArray(forKey: key) ?? [String]()
+    }
+    
+    //MARK: - Dead
     let userDefaults = UserDefaults.standard
     
     func saveContext(_ context: NSManagedObjectContext) {
