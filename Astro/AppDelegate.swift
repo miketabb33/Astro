@@ -13,7 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
         persistentData.cleanNasaEntryDatabase()
         preloadPlanetData.preloadUnlessAlreadyPreloaded()
-        ndnApi.uploadDeviceWithNasaEntries()
+        ndnApi.updateAPODEntries(initialUploadCompleted: persistentData.getUserDefaultsForBoolean(key: persistentData.initialAPODUploadCompletedKey))
         return true
     }
 

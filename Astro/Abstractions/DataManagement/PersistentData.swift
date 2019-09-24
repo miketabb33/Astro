@@ -10,19 +10,28 @@ class APODEntry: Object {
 }
 
 class PersistentData {
-    let realm = try! Realm()
     
     let preloadPlanetDataKey = "Planet-Data-Preloaded"
-    let initialAPODUploadCompletedKey = "Initial-APOD-Upload-Completed"
     
     //MARK: - Realm
+    let realm = try! Realm()
+    
     func addAPOD(data: [APODEntry]) {
         try! realm.write {
             realm.add(data)
         }
     }
     
+    func getLastAPODEntry() -> APODEntry {
+        let entries = realm.objects(APODEntry.self)
+        let sortedEntries = entries.sorted(byKeyPath: "date",ascending: false)
+        
+        return sortedEntries.first!
+    }
+    
     //MARK: - User Defaults
+    let initialAPODUploadCompletedKey = "Initial-APOD-Upload-Completed"
+    
     func setUserDefaults(data: Any, key: String) {
         UserDefaults.standard.set(data, forKey: key)
     }
@@ -121,22 +130,7 @@ class PersistentData {
         }
     }
     
-    func getLastLocalNasaEntry() -> [NasaEntry] {
-        var container = [NasaEntry]()
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        let request : NSFetchRequest<NasaEntry> = NasaEntry.fetchRequest()
-        
-        let sortDescriptor = NSSortDescriptor(key: "date", ascending: false)
-        request.sortDescriptors = [sortDescriptor]
-        request.fetchLimit = 1
-        
-        do {
-            container = try context.fetch(request)
-        } catch {
-            print("Error fetching data from context \(error)")
-        }
-        return container
-    }
+
     
     func cleanNasaEntryDatabase() {
         let allNasaEntries = getAllNasaEntries()

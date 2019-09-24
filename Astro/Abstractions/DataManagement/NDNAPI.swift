@@ -11,54 +11,55 @@ class NDNAPI {
     
     let userDefaults = UserDefaults.standard
     
-    func uploadDeviceWithNasaEntries() {
-        if userDefaults.bool(forKey: persistantData.initialAPODUploadCompletedKey) {
-            getRecentNasaEntry()
-        } else {
-            initialNasaEntryUpload()
-        }
-    }
-    
-    func initialNasaEntryUpload() {
-        Alamofire.request(url, method: .get).responseJSON {
-            response in
-            if response.result.isSuccess {
-                let rawData = JSON(response.result.value!)
-                let stagedData = self.digestAPODData(data: rawData)
-                
-                self.persistantData.addAPOD(data: stagedData)
-                
-                self.persistantData.setUserDefaults(data: true, key: self.persistantData.initialAPODUploadCompletedKey)
-                print("Initial Nasa Entry Upload Complete")
-            } else {
-                print("Error \(String(describing: response.result.error))")
-            }
-        }
-    }
-    
-    
-    func getRecentNasaEntry() {
+    func updateAPODEntries(initialUploadCompleted: Bool) {
         Alamofire.request(url, method: .get).responseJSON {
             response in
             
             if response.result.isSuccess {
                 let rawData = JSON(response.result.value!)
-                let stagedData = self.digestAPODData(data: rawData)
+                let stagedEntries = self.digestAPODData(data: rawData)
                 
-                let lastLocalNasaEntry = self.persistantData.getLastLocalNasaEntry()
+                self.saveEntries(initialUploadCompleted: initialUploadCompleted, stagedEntries: stagedEntries)
                 
-                for currentEntry in stagedData {
-                    if currentEntry.title != lastLocalNasaEntry[0].title! {
-//                        self.persistantData.insertDataIntoDatabase(stagedNasaData: [currentEntry])
-                        print("Latest nasa entries inserted into database")
-                    } else {
-                        break
-                    }
-                }
             } else {
                 print("Error \(String(describing: response.result.error))")
             }
         }
+    }
+    
+    func saveEntries(initialUploadCompleted: Bool, stagedEntries: [APODEntry]) {
+        if initialUploadCompleted {
+            saveLatestUnsavedEntries(stagedEntries: stagedEntries)
+        } else {
+            saveAllEntries(stagedEntries: stagedEntries)
+        }
+    }
+    
+    func saveAllEntries(stagedEntries: [APODEntry]) {
+        persistantData.addAPOD(data: stagedEntries)
+        persistantData.setUserDefaults(data: true, key: self.persistantData.initialAPODUploadCompletedKey)
+        print("Initial APOD Upload Complete")
+    }
+    
+    func saveLatestUnsavedEntries(stagedEntries: [APODEntry]) {
+        let unsavedEntries = self.getUnsavedEntries(stagedEntries: stagedEntries)
+        persistantData.addAPOD(data: unsavedEntries)
+        print("\(unsavedEntries.count) new APOD entries saved")
+    }
+    
+    func getUnsavedEntries(stagedEntries: [APODEntry]) -> [APODEntry] {
+        let lastestEntry = persistantData.getLastAPODEntry()
+        var unsavedEntries = [APODEntry]()
+        
+        for currentEntry in stagedEntries {
+            if currentEntry.title != lastestEntry.title {
+                unsavedEntries.append(currentEntry)
+            } else {
+                break
+            }
+        }
+        
+        return unsavedEntries
     }
     
     func digestAPODData(data: JSON) -> [APODEntry] {
