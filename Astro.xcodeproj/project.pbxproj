@@ -25,7 +25,6 @@
 		4B6023E422BE7CB900732745 /* NavigationMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6023E322BE7CB900732745 /* NavigationMethods.swift */; };
 		4B6023E722BE90A600732745 /* MathMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6023E622BE90A600732745 /* MathMethods.swift */; };
 		4B6023E922BE95FA00732745 /* MathMethodsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6023E822BE95FA00732745 /* MathMethodsTests.swift */; };
-		4B79B41B22AD5C0200D6711C /* PlanetDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B79B41A22AD5C0200D6711C /* PlanetDataHandler.swift */; };
 		4B98E89E22BEC8A10025B8F2 /* SearchBarMethodsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B98E89D22BEC8A10025B8F2 /* SearchBarMethodsTests.swift */; };
 		4B98E8A022BEC9D90025B8F2 /* LabelMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B98E89F22BEC9D90025B8F2 /* LabelMethods.swift */; };
 		4B98E8A222BED04C0025B8F2 /* LabelMethodsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B98E8A122BED04C0025B8F2 /* LabelMethodsTests.swift */; };
@@ -108,7 +107,6 @@
 		4B6023E322BE7CB900732745 /* NavigationMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationMethods.swift; sourceTree = "<group>"; };
 		4B6023E622BE90A600732745 /* MathMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathMethods.swift; sourceTree = "<group>"; };
 		4B6023E822BE95FA00732745 /* MathMethodsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathMethodsTests.swift; sourceTree = "<group>"; };
-		4B79B41A22AD5C0200D6711C /* PlanetDataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetDataHandler.swift; sourceTree = "<group>"; };
 		4B98E89D22BEC8A10025B8F2 /* SearchBarMethodsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarMethodsTests.swift; sourceTree = "<group>"; };
 		4B98E89F22BEC9D90025B8F2 /* LabelMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelMethods.swift; sourceTree = "<group>"; };
 		4B98E8A122BED04C0025B8F2 /* LabelMethodsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelMethodsTests.swift; sourceTree = "<group>"; };
@@ -219,7 +217,6 @@
 				4B6023DF22BE76F200732745 /* PersistentData.swift */,
 				4BCA1CE922B6AA0900118A1E /* NDNAPI.swift */,
 				4B6023DD22BBBFFF00732745 /* PreloadAstronomicalObjectData.swift */,
-				4B79B41A22AD5C0200D6711C /* PlanetDataHandler.swift */,
 				4B1A9AEE22F723F000B88975 /* InternetConnection.swift */,
 			);
 			path = DataManagement;
@@ -566,7 +563,6 @@
 				4BB687B922664C6A00D423F9 /* PlanetTemperatureTVC.swift in Sources */,
 				4BC55CB2225D330B0079A3E5 /* Astro.xcdatamodeld in Sources */,
 				4BE51AD722E34EB4002905ED /* NasaNewsEntryCell.swift in Sources */,
-				4B79B41B22AD5C0200D6711C /* PlanetDataHandler.swift in Sources */,
 				4BCDFBAE22FC7740003E39E8 /* NasaDailyNewsVC.swift in Sources */,
 				4B1A9AEF22F723F000B88975 /* InternetConnection.swift in Sources */,
 				4BCA1CEC22B6B6AB00118A1E /* KeyboardMethods.swift in Sources */,

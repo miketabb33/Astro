@@ -1,4 +1,5 @@
 import UIKit
+import RealmSwift
 
 class EnterWeightVC: UIViewController {
     @IBOutlet weak var enterWeightBar: UISearchBar!
@@ -8,8 +9,6 @@ class EnterWeightVC: UIViewController {
     let searchBarMethods = SearchBarMethods()
     let navigationMethods = NavigationMethods()
     let labelMethods = LabelMethods()
-    
-    var planetsContainer = [Planets]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +30,6 @@ class EnterWeightVC: UIViewController {
         let targetController = destinationNavigationController.viewControllers.first as! WeightDisplayTVC
         
         targetController.enteredWeight = Double(enterWeightBar.text!)
-        targetController.planetsContainer = planetsContainer
     }
     
 }

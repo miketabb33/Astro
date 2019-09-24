@@ -25,6 +25,12 @@ class PersistentData {
         return sortedEntries.first!
     }
     
+    func getAllAstronomicalObjects() -> Results<AstronomicalObject> {
+        let astronomicalObjects = realm.objects(AstronomicalObject.self)
+        let sortedObjects = astronomicalObjects.sorted(byKeyPath: "position",ascending: false)
+        return sortedObjects
+    }
+    
     //MARK: - User Defaults
     let initialAPODUploadCompletedKey = "Initial-APOD-Upload-Completed"
     let astronomicalObjectPreloadCompletedKey = "Astronomical-Object-Preload-Completed"
@@ -48,7 +54,6 @@ class PersistentData {
         }
     }
     
-    //MARK: - Planet Data Methods
     func savePlanetData(_ backgroundContext: NSManagedObjectContext) {
         do {
             try backgroundContext.save()

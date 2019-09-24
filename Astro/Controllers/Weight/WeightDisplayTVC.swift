@@ -1,14 +1,18 @@
 import UIKit
+import RealmSwift
 
 class WeightDisplayTVC: UITableViewController {
     let formatterMethods = FormatterMethods()
     let mathMethods = MathMethods()
+    let persistentData = PersistentData()
     
-    var planetsContainer = [Planets]()
+    var planetsContainer: Results<AstronomicalObject>?
     var enteredWeight : Double?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        planetsContainer = persistentData.getAllAstronomicalObjects()
         
         tableView.register(UINib(nibName: "PlanetCell", bundle: nil), forCellReuseIdentifier: "CustomPlanetCell")
     }
@@ -16,18 +20,18 @@ class WeightDisplayTVC: UITableViewController {
     //MARK - Table View Data Source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return planetsContainer.count
+        return planetsContainer!.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CustomPlanetCell", for: indexPath) as! PlanetWeightCell
         
-        let currentPlanet = planetsContainer[indexPath.row]
-        let relativeEnteredWeight = mathMethods.findRelativeEnteredWeightInlbs(relativeWeight: currentPlanet.relativeWeight! as Decimal, enteredWeight: enteredWeight!)
+        let currentPlanet = planetsContainer![indexPath.row]
+        let relativeEnteredWeight = mathMethods.findRelativeEnteredWeightInlbs(relativeWeight: currentPlanet.relativeWeight, enteredWeight: enteredWeight!)
         
         cell.weightLabel.text = formatterMethods.formatWeight(relativeEnteredWeight)
-        cell.planetName.text = currentPlanet.name!
-        cell.planetCellImage.image = UIImage(named: currentPlanet.name!)
+        cell.planetName.text = currentPlanet.name
+        cell.planetCellImage.image = UIImage(named: currentPlanet.name)
         
         tableView.rowHeight = 80
         tableView.allowsSelection = false

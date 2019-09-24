@@ -1,8 +1,8 @@
 import Foundation
 
 class MathMethods {
-    func findRelativeEnteredWeightInlbs(relativeWeight: Decimal, enteredWeight: Double) -> Decimal {
-        return relativeWeight * Decimal(enteredWeight)
+    func findRelativeEnteredWeightInlbs(relativeWeight: Double, enteredWeight: Double) -> Double {
+        return relativeWeight * enteredWeight
     }
 }
 
