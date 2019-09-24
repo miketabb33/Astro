@@ -23,9 +23,11 @@ class NDNAPI {
         Alamofire.request(url, method: .get).responseJSON {
             response in
             if response.result.isSuccess {
-                let fetchedNasaData = JSON(response.result.value!)
-                let stagedNasaData = self.digestNasaDataIntoArray(nasaData: fetchedNasaData)
-                self.persistantData.insertDataIntoDatabase(stagedNasaData: stagedNasaData)
+                let rawData = JSON(response.result.value!)
+                let stagedData = self.digestAPODData(data: rawData)
+                
+                self.persistantData.addAPOD(data: stagedData)
+                
                 self.userDefaults.set(true, forKey: self.persistantData.initialNasaEntryUploadCompletedKey)
                 print("Initial Nasa Entry Upload Complete")
             } else {
@@ -40,14 +42,14 @@ class NDNAPI {
             response in
             
             if response.result.isSuccess {
-                let fetchedNasaData = JSON(response.result.value!)
-                let stagedNasaData = self.digestNasaDataIntoArray(nasaData: fetchedNasaData)
+                let rawData = JSON(response.result.value!)
+                let stagedData = self.digestAPODData(data: rawData)
                 
                 let lastLocalNasaEntry = self.persistantData.getLastLocalNasaEntry()
                 
-                for currentEntry in stagedNasaData {
+                for currentEntry in stagedData {
                     if currentEntry.title != lastLocalNasaEntry[0].title! {
-                        self.persistantData.insertDataIntoDatabase(stagedNasaData: [currentEntry])
+//                        self.persistantData.insertDataIntoDatabase(stagedNasaData: [currentEntry])
                         print("Latest nasa entries inserted into database")
                     } else {
                         break
@@ -59,21 +61,21 @@ class NDNAPI {
         }
     }
     
-    func digestNasaDataIntoArray(nasaData: JSON) -> [NDNAPIStagingModel] {
-        let numberOfFetchedItems = nasaData["totalItems"].intValue
-        var stagedNasaData = [NDNAPIStagingModel]()
+    func digestAPODData(data: JSON) -> [APODEntry] {
+        let numberOfFetchedItems = data["totalItems"].intValue
+        var APODEntries = [APODEntry]()
         var i = 0
         
         while i < numberOfFetchedItems {
-            let currentNasaEntry = NDNAPIStagingModel()
-            currentNasaEntry.date = nasaData["items"][i]["date"].stringValue
-            currentNasaEntry.explanation = decodeString(string: nasaData["items"][i]["explanation"].stringValue)
-            currentNasaEntry.title = decodeString(string: nasaData["items"][i]["title"].stringValue)
-            currentNasaEntry.url = nasaData["items"][i]["url"].stringValue
-            stagedNasaData.append(currentNasaEntry)
+            let currentEntry = APODEntry()
+            currentEntry.date = data["items"][i]["date"].stringValue
+            currentEntry.explanation = decodeString(string: data["items"][i]["explanation"].stringValue)
+            currentEntry.title = decodeString(string: data["items"][i]["title"].stringValue)
+            currentEntry.url = data["items"][i]["url"].stringValue
+            APODEntries.append(currentEntry)
             i = i + 1
         }
-        return stagedNasaData
+        return APODEntries
     }
     
     func decodeString(string: String) -> String {

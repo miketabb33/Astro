@@ -1,9 +1,28 @@
 import UIKit
 import CoreData
+import RealmSwift
+
+class APODEntry: Object {
+    @objc dynamic var explanation = ""
+    @objc dynamic var url = ""
+    @objc dynamic var title = ""
+    @objc dynamic var date = ""
+}
 
 class PersistentData {
+    let realm = try! Realm()
+    
     let preloadPlanetDataKey = "Planet-Data-Preloaded"
     let initialNasaEntryUploadCompletedKey = "Initial-Nasa-Entry-Upload-Completed"
+    
+    func addAPOD(data: [APODEntry]) {
+        try! realm.write {
+            realm.add(data)
+        }
+    }
+    
+    
+    
     
     let userDefaults = UserDefaults.standard
     
