@@ -8,7 +8,6 @@ class EntryCellConstructor {
     let persistentData = PersistentData()
     
     func assignCell(cell: NasaNewsEntryCell, indexPath: IndexPath, allNasaEntries: Results<APODEntry>, tableView: UITableView, parent: UIViewController) {
-        
         titleConfiguration(cell: cell, allNasaEntries: allNasaEntries, indexPath: indexPath)
         imageConfiguration(cell: cell, allNasaEntries: allNasaEntries, indexPath: indexPath)
         explanationConfiguration(cell: cell, allNasaEntries: allNasaEntries, indexPath: indexPath)
@@ -44,8 +43,9 @@ class EntryCellConstructor {
     //MARK: - Calculate cell height
     func calculateCellHeightUnlessAlreadyCalculated(cell: NasaNewsEntryCell, allNasaEntries: Results<APODEntry>, indexPath: IndexPath) {
         if allNasaEntries[indexPath.row].cellHeight == 0 {
-            allNasaEntries[indexPath.row].cellHeight = Int(Float(cell.frameHeight["title"]! + cell.frameHeight["image"]! + cell.frameHeight["explanation"]! + cell.frameHeight["button"]!))
-            persistentData.saveNasaEntries()
+            try! persistentData.realm.write {
+                allNasaEntries[indexPath.row].cellHeight = Int(Float(cell.frameHeight["title"]! + cell.frameHeight["image"]! + cell.frameHeight["explanation"]! + cell.frameHeight["button"]!))
+            }
         }
     }
 }

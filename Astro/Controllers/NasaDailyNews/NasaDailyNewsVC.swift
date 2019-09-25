@@ -14,7 +14,6 @@ class NasaDailyNewsVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("yooooo")
         
         tableView.register(NasaNewsEntryCell.self, forCellReuseIdentifier: "CustomNasaNewsEntryCell")
         tableView.rowHeight = 450
