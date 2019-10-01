@@ -213,6 +213,7 @@
 				4B6023E322BE7CB900732745 /* NavigationMethods.swift */,
 				4B98E89F22BEC9D90025B8F2 /* LabelMethods.swift */,
 				4B6023E122BE7C6800732745 /* SearchBarMethods.swift */,
+				4B1A9AEE22F723F000B88975 /* InternetDetection.swift */,
 			);
 			path = BasicUI;
 			sourceTree = "<group>";
@@ -234,7 +235,6 @@
 			children = (
 				4B47DDA62343B6B8005F736F /* DataInjection */,
 				4B47DDA52343B492005F736F /* PersistentData */,
-				4B1A9AEE22F723F000B88975 /* InternetDetection.swift */,
 			);
 			path = DataManagement;
 			sourceTree = "<group>";
