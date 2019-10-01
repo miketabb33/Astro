@@ -6,7 +6,7 @@ class ExpandExplanationManager {
     let realmMethods = RealmMethods()
     
     //GET TOGGLE POSITION
-    func getTogglePositionOfExplanation(cell: NasaNewsEntryCell, allNasaEntries: Results<APODEntry>, indexPath: IndexPath) {
+    func getTogglePositionOfExplanation(cell: APODEntryCell, allNasaEntries: Results<APODEntry>, indexPath: IndexPath) {
         if allNasaEntries[indexPath.row].expandEnabled == true {
             showExpandedExplanation(cell: cell)
         } else {
@@ -15,21 +15,21 @@ class ExpandExplanationManager {
     }
     
     //Getter Methods
-    func showExpandedExplanation(cell: NasaNewsEntryCell) {
+    func showExpandedExplanation(cell: APODEntryCell) {
         cell.currentExpandExplanationButton.transform = CGAffineTransform(rotationAngle: .pi)
         cell.currentEntryExplanation.numberOfLines = 0
         cell.currentEntryExplanation.sizeToFit()
         self.addConstraints.addStackingConstraintTo(cell.currentEntryExplanation, stackUnder: cell.currentEntryImageView, edges: cell.contentView.layoutMarginsGuide, height: getExpandedEntryExplanationFrameHeight(rawFrameHeight: cell.currentEntryExplanation.frame.height))
     }
     
-    func showCollapsedExplanation(cell: NasaNewsEntryCell) {
+    func showCollapsedExplanation(cell: APODEntryCell) {
         cell.currentExpandExplanationButton.transform = .identity
         cell.currentEntryExplanation.numberOfLines = 7
         self.addConstraints.addStackingConstraintTo(cell.currentEntryExplanation, stackUnder: cell.currentEntryImageView, edges: cell.contentView.layoutMarginsGuide, height: cell.frameHeight["explanation"]!)
     }
     
     //MARK: SET TOGGLE POSITION
-    func toggleController(allNasaEntries: Results<APODEntry>, indexPath: IndexPath, cell: NasaNewsEntryCell, tableView: UITableView) {
+    func toggleController(allNasaEntries: Results<APODEntry>, indexPath: IndexPath, cell: APODEntryCell, tableView: UITableView) {
         if allNasaEntries[indexPath.row].expandEnabled == false {
             expandExplanationLabel(allNasaEntries: allNasaEntries, indexPath: indexPath, cell: cell, tableView: tableView)
         } else {
@@ -38,7 +38,7 @@ class ExpandExplanationManager {
     }
     
     //Expand Explanation Label
-    func expandExplanationLabel(allNasaEntries: Results<APODEntry>, indexPath: IndexPath, cell: NasaNewsEntryCell, tableView: UITableView) {
+    func expandExplanationLabel(allNasaEntries: Results<APODEntry>, indexPath: IndexPath, cell: APODEntryCell, tableView: UITableView) {
         try! realmMethods.realm.write {
             allNasaEntries[indexPath.row].expandEnabled = true
         }
@@ -52,7 +52,7 @@ class ExpandExplanationManager {
         cellHeightAnimation(tableView: tableView)
     }
     
-    func expandExplanationLabalAnimation(cell: NasaNewsEntryCell) {
+    func expandExplanationLabalAnimation(cell: APODEntryCell) {
         UIView.transition(with: cell.currentEntryExplanation, duration: 0.3, options: [.curveLinear], animations: { () -> Void in
             cell.currentEntryExplanation.numberOfLines = 0
             cell.currentEntryExplanation.sizeToFit()
@@ -60,7 +60,7 @@ class ExpandExplanationManager {
     }
     
     //Collapse Explanation Label
-    func collapseExplanationLabel(allNasaEntries: Results<APODEntry>, indexPath: IndexPath, cell: NasaNewsEntryCell, tableView: UITableView) {
+    func collapseExplanationLabel(allNasaEntries: Results<APODEntry>, indexPath: IndexPath, cell: APODEntryCell, tableView: UITableView) {
         
         try! realmMethods.realm.write {
             allNasaEntries[indexPath.row].expandEnabled = false
@@ -77,14 +77,14 @@ class ExpandExplanationManager {
         cellHeightAnimation(tableView: tableView)
     }
     
-    func collapseExplanationLabelAnimation(cell: NasaNewsEntryCell) {
+    func collapseExplanationLabelAnimation(cell: APODEntryCell) {
         UIView.transition(with: cell.currentEntryExplanation, duration: 0.3, options: [.curveLinear], animations: { () -> Void in
             cell.currentEntryExplanation.numberOfLines = 7
         }, completion: nil)
     }
 
     //Setter Methods
-    func animateExpandLabelConstraints(cell: NasaNewsEntryCell, arrowPosition: CGAffineTransform) {
+    func animateExpandLabelConstraints(cell: APODEntryCell, arrowPosition: CGAffineTransform) {
         UIView.animate(withDuration: 0.3) {
             cell.currentExpandExplanationButton.transform = arrowPosition
             cell.layoutIfNeeded()

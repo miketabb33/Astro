@@ -5,12 +5,14 @@ class WeightDisplayTVC: UITableViewController {
     var planetsContainer: Results<AstronomicalObject>?
     var enteredWeight : Double?
     
+    let cellID = "RelativeWeightCell"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         planetsContainer = RealmMethods().getAllAstronomicalObjects()
         
-        tableView.register(UINib(nibName: "PlanetCell", bundle: nil), forCellReuseIdentifier: "CustomPlanetCell")
+        tableView.register(UINib(nibName: cellID, bundle: nil), forCellReuseIdentifier: cellID)
     }
     
     //MARK - Table View Data Source
@@ -20,7 +22,7 @@ class WeightDisplayTVC: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CustomPlanetCell", for: indexPath) as! PlanetWeightCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! RelativeWeightCell
         
         let currentPlanet = planetsContainer![indexPath.row]
         let relativeEnteredWeight = MathMethods().findRelativeEnteredWeightInlbs(relativeWeight: currentPlanet.relativeWeight, enteredWeight: enteredWeight!)

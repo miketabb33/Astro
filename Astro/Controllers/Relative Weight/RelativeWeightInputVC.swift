@@ -1,6 +1,6 @@
 import UIKit
 
-class EnterWeightVC: UIViewController {
+class RelativeWeightInputVC: UIViewController {
     @IBOutlet weak var enterWeightBar: UISearchBar!
     @IBOutlet weak var message: UILabel!
     
@@ -28,7 +28,7 @@ class EnterWeightVC: UIViewController {
     
 }
 
-extension EnterWeightVC: UISearchBarDelegate {
+extension RelativeWeightInputVC: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         let isValid = Double(enterWeightBar.text!) != nil
         message = LabelMethods().attemptToUpdateLabel(message, withText: "Enter a number", shouldUpdate: !isValid)

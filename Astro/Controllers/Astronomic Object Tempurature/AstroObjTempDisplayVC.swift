@@ -1,6 +1,6 @@
 import UIKit
 
-class PlanetTemperatureVC: UIViewController {
+class AstroObjTempDisplayVC: UIViewController {
     @IBOutlet weak var planetName: UILabel!
     @IBOutlet weak var planetImage: UIImageView!
     

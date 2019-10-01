@@ -4,7 +4,7 @@ import RealmSwift
 class EntryCellManager {
     let entryCellInsertionManager = EntryCellInsertionManager()
     
-    func addNextCell(cell: NasaNewsEntryCell, allNasaEntries: Results<APODEntry>, indexPath: IndexPath, tableView: UITableView, parent: UIViewController) {
+    func addNextCell(cell: APODEntryCell, allNasaEntries: Results<APODEntry>, indexPath: IndexPath, tableView: UITableView, parent: UIViewController) {
         if allNasaEntries[indexPath.row].image == nil {
             fetchImageAndRenderEntry(cell: cell, allNasaEntries: allNasaEntries, indexPath: indexPath, tableView: tableView, parent: parent)
         } else {
@@ -13,7 +13,7 @@ class EntryCellManager {
     }
     
     //MARK: - Fetch Image Methods
-    func fetchImageAndRenderEntry(cell: NasaNewsEntryCell, allNasaEntries: Results<APODEntry>, indexPath: IndexPath, tableView: UITableView, parent: UIViewController) {
+    func fetchImageAndRenderEntry(cell: APODEntryCell, allNasaEntries: Results<APODEntry>, indexPath: IndexPath, tableView: UITableView, parent: UIViewController) {
         if allNasaEntries[indexPath.row].url.suffix(3) != "jpg" {
             saveYouTubeImageUnlessPictureAndRenderEntry(cell: cell, allNasaEntries: allNasaEntries, indexPath: indexPath, tableView: tableView, parent: parent)
         } else {
@@ -21,14 +21,14 @@ class EntryCellManager {
         }
     }
     
-    func saveYouTubeImageUnlessPictureAndRenderEntry(cell: NasaNewsEntryCell, allNasaEntries: Results<APODEntry>, indexPath: IndexPath, tableView: UITableView, parent: UIViewController) {
+    func saveYouTubeImageUnlessPictureAndRenderEntry(cell: APODEntryCell, allNasaEntries: Results<APODEntry>, indexPath: IndexPath, tableView: UITableView, parent: UIViewController) {
         try! RealmMethods().realm.write {
             allNasaEntries[indexPath.row].image = UIImage(named: "youtube")!.pngData()
         }
         renderEntry(cell: cell, allNasaEntries: allNasaEntries, indexPath: indexPath, tableView: tableView, parent: parent)
     }
     
-    func fetchImageFromInternetAndRenderEntry(cell: NasaNewsEntryCell, allNasaEntries: Results<APODEntry>, indexPath: IndexPath, tableView: UITableView, parent: UIViewController) {
+    func fetchImageFromInternetAndRenderEntry(cell: APODEntryCell, allNasaEntries: Results<APODEntry>, indexPath: IndexPath, tableView: UITableView, parent: UIViewController) {
         let imageUrlString = allNasaEntries[indexPath.row].url
         let imageUrl:URL = URL(string: imageUrlString)!
         let imageData:NSData = NSData(contentsOf: imageUrl)!
@@ -39,7 +39,7 @@ class EntryCellManager {
     }
     
     //MARK: - Render Entry Method
-    func renderEntry(cell: NasaNewsEntryCell, allNasaEntries: Results<APODEntry>, indexPath: IndexPath, tableView: UITableView, parent: UIViewController) {
+    func renderEntry(cell: APODEntryCell, allNasaEntries: Results<APODEntry>, indexPath: IndexPath, tableView: UITableView, parent: UIViewController) {
         EntryCellConstructor().assignCell(cell: cell, indexPath: indexPath, allNasaEntries: allNasaEntries, tableView: tableView, parent: parent)
         entryCellInsertionManager.addNextEntryToPageUnlessInitialLoadComplete(tableView: tableView)
     }

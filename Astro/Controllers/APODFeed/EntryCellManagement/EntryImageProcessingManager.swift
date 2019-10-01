@@ -3,7 +3,7 @@ import UIKit
 class EntryImageProcessingManager {
     let constraints = UIConstraints()
     
-    func processImage(currentCell: NasaNewsEntryCell, stackUnder topElement: UIView, edges edgeArea: UILayoutGuide) -> UIImageView {
+    func processImage(currentCell: APODEntryCell, stackUnder topElement: UIView, edges edgeArea: UILayoutGuide) -> UIImageView {
 
         let width = currentCell.currentEntryImageView.image!.size.width
         let height = currentCell.currentEntryImageView.image!.size.height

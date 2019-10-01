@@ -1,6 +1,6 @@
 import UIKit
 
-class NasaNewsEntryCell: UITableViewCell {
+class APODEntryCell: UITableViewCell {
     
     var frameHeight: [String:CGFloat] = [
         "image": 0,

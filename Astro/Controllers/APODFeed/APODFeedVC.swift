@@ -10,12 +10,14 @@ class APODFeedVC: UIViewController {
     let entryCellManager = EntryCellManager()
     let entryCellInsertionManager = EntryCellInsertionManager()
     
+    let cellID = "APODEntryCell"
+    
     var allAPODEntries: Results<APODEntry>?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.register(NasaNewsEntryCell.self, forCellReuseIdentifier: "CustomNasaNewsEntryCell")
+        tableView.register(APODEntryCell.self, forCellReuseIdentifier: cellID)
         tableView.rowHeight = 450
         
         internetConnection.startMonitoringInternetConnection()
@@ -45,7 +47,7 @@ extension APODFeedVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CustomNasaNewsEntryCell", for: indexPath) as! NasaNewsEntryCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! APODEntryCell
         
         entryCellManager.addNextCell(cell: cell, allNasaEntries: allAPODEntries!, indexPath: indexPath, tableView: tableView, parent: self)
     

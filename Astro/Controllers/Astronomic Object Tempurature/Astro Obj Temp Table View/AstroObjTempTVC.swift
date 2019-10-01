@@ -1,16 +1,18 @@
 import UIKit
 import RealmSwift
 
-class PlanetTemperatureTVC: UITableViewController {
+class AstroObjTempTVC: UITableViewController {
     var planetsContainer: Results<AstronomicalObject>?
     var selectedPlanetName : String?
+    
+    let cellID = "AstroObjTempCell"
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         planetsContainer = RealmMethods().getAllAstronomicalObjects()
         
-        tableView.register(UINib(nibName: "PlanetTempCell", bundle: nil), forCellReuseIdentifier: "CustomPlanetTempCell")
+        tableView.register(UINib(nibName: cellID, bundle: nil), forCellReuseIdentifier: cellID)
     }
     
     // MARK: - Table view data source
@@ -20,7 +22,7 @@ class PlanetTemperatureTVC: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CustomPlanetTempCell", for: indexPath) as! PlanetTempCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! AstroObjTempCell
         
         cell.planetCellImage.image = UIImage(named: planetsContainer![indexPath.row].name)
         cell.planetName.text = planetsContainer![indexPath.row].name
@@ -38,7 +40,7 @@ class PlanetTemperatureTVC: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destinationVC = segue.destination as! PlanetTemperatureVC
+        let destinationVC = segue.destination as! AstroObjTempDisplayVC
         
         destinationVC.receivedPlanetName = self.selectedPlanetName!
     }
