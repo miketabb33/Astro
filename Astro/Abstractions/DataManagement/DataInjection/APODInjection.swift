@@ -6,7 +6,7 @@ class APODInjection {
     let realmMethods = RealmMethods()
     let userDefaultsMethods = UserDefaultsMethods()
     
-    lazy var url = "https://ndn-api.herokuapp.com?id=\(Keys().NDN_KEY)"
+    lazy var url = "https://ndn-api.herokuapp.com?id=\(Keys().APOD_API_KEY)"
     
     func updateAPODEntries(initialUploadCompleted: Bool) {
         Alamofire.request(url, method: .get).responseJSON {
@@ -67,8 +67,8 @@ class APODInjection {
         while i < numberOfFetchedItems {
             let currentEntry = APODEntry()
             currentEntry.date = data["items"][i]["date"].stringValue
-            currentEntry.explanation = decodeString(string: data["items"][i]["explanation"].stringValue)
-            currentEntry.title = decodeString(string: data["items"][i]["title"].stringValue)
+            currentEntry.explanation = decodeWithUTF8(string: data["items"][i]["explanation"].stringValue)
+            currentEntry.title = decodeWithUTF8(string: data["items"][i]["title"].stringValue)
             currentEntry.url = data["items"][i]["url"].stringValue
             APODEntries.append(currentEntry)
             i = i + 1
@@ -76,7 +76,7 @@ class APODInjection {
         return APODEntries
     }
     
-    func decodeString(string: String) -> String {
+    func decodeWithUTF8(string: String) -> String {
         let data = string.data(using: .utf8)!
         
         let options: [NSAttributedString.DocumentReadingOptionKey: Any] = [
@@ -85,7 +85,7 @@ class APODInjection {
         ]
         
         guard let attributedString = try? NSAttributedString(data: data, options: options, documentAttributes: nil) else {
-            fatalError("NDN-API data did not decode correctly")
+            fatalError("APOD-API data did not decode correctly")
         }
         
         return attributedString.string

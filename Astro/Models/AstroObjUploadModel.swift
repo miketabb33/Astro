@@ -1,6 +1,6 @@
 import UIKit
 
-class AstronomicalObjectUpload : Codable {
+class AstroObjUploadModel : Codable {
     var name  = ""
     var relativeWeight = 0
 }

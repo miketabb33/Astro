@@ -48,7 +48,7 @@
 		4BC55CCA225E59A90079A3E5 /* RelativeWeightCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC55CC8225E59A90079A3E5 /* RelativeWeightCell.swift */; };
 		4BC55CCB225E59A90079A3E5 /* RelativeWeightCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BC55CC9225E59A90079A3E5 /* RelativeWeightCell.xib */; };
 		4BC55CF5225FB0210079A3E5 /* AstronomicalObjectData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4BC55CF4225FB0210079A3E5 /* AstronomicalObjectData.plist */; };
-		4BC55CF7225FD97B0079A3E5 /* AstronomicalObjectUpload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC55CF6225FD97B0079A3E5 /* AstronomicalObjectUpload.swift */; };
+		4BC55CF7225FD97B0079A3E5 /* AstroObjUploadModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC55CF6225FD97B0079A3E5 /* AstroObjUploadModel.swift */; };
 		4BCA1CE822B69EA100118A1E /* LoadingAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCA1CE722B69EA100118A1E /* LoadingAnimation.swift */; };
 		4BCA1CEA22B6AA0900118A1E /* APODInjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCA1CE922B6AA0900118A1E /* APODInjection.swift */; };
 		4BCA1CEC22B6B6AB00118A1E /* KeyboardMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCA1CEB22B6B6AB00118A1E /* KeyboardMethods.swift */; };
@@ -60,7 +60,6 @@
 		4BE14DCF2311E22F000FA4E8 /* EntryCellManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE14DCE2311E22F000FA4E8 /* EntryCellManager.swift */; };
 		4BE51AD722E34EB4002905ED /* APODEntryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE51AD522E34EB4002905ED /* APODEntryCell.swift */; };
 		4BE51ADC22E60EFE002905ED /* EntryCellInsertionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE51ADB22E60EFE002905ED /* EntryCellInsertionManager.swift */; };
-		4BEC669422DA6DAB00513FA9 /* NDNAPIStagingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEC669322DA6DAB00513FA9 /* NDNAPIStagingModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -141,7 +140,7 @@
 		4BC55CC8225E59A90079A3E5 /* RelativeWeightCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelativeWeightCell.swift; sourceTree = "<group>"; };
 		4BC55CC9225E59A90079A3E5 /* RelativeWeightCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RelativeWeightCell.xib; sourceTree = "<group>"; };
 		4BC55CF4225FB0210079A3E5 /* AstronomicalObjectData.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = AstronomicalObjectData.plist; sourceTree = "<group>"; };
-		4BC55CF6225FD97B0079A3E5 /* AstronomicalObjectUpload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronomicalObjectUpload.swift; sourceTree = "<group>"; };
+		4BC55CF6225FD97B0079A3E5 /* AstroObjUploadModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstroObjUploadModel.swift; sourceTree = "<group>"; };
 		4BCA1CE722B69EA100118A1E /* LoadingAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingAnimation.swift; sourceTree = "<group>"; };
 		4BCA1CE922B6AA0900118A1E /* APODInjection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODInjection.swift; sourceTree = "<group>"; };
 		4BCA1CEB22B6B6AB00118A1E /* KeyboardMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardMethods.swift; sourceTree = "<group>"; };
@@ -153,7 +152,6 @@
 		4BE14DCE2311E22F000FA4E8 /* EntryCellManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryCellManager.swift; sourceTree = "<group>"; };
 		4BE51AD522E34EB4002905ED /* APODEntryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODEntryCell.swift; sourceTree = "<group>"; };
 		4BE51ADB22E60EFE002905ED /* EntryCellInsertionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryCellInsertionManager.swift; sourceTree = "<group>"; };
-		4BEC669322DA6DAB00513FA9 /* NDNAPIStagingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NDNAPIStagingModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -365,8 +363,7 @@
 		4BC55CC3225D337D0079A3E5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				4BC55CF6225FD97B0079A3E5 /* AstronomicalObjectUpload.swift */,
-				4BEC669322DA6DAB00513FA9 /* NDNAPIStagingModel.swift */,
+				4BC55CF6225FD97B0079A3E5 /* AstroObjUploadModel.swift */,
 				4B484BEA233A982600BA09AD /* RealmObjects.swift */,
 			);
 			path = Models;
@@ -599,14 +596,13 @@
 				4B1A9AEF22F723F000B88975 /* InternetDetection.swift in Sources */,
 				4BCA1CEC22B6B6AB00118A1E /* KeyboardMethods.swift in Sources */,
 				4BC55CC5225D35450079A3E5 /* WeightDisplayTVC.swift in Sources */,
-				4BEC669422DA6DAB00513FA9 /* NDNAPIStagingModel.swift in Sources */,
 				4BCA1CEE22B6BD9D00118A1E /* FormatterMethods.swift in Sources */,
 				4B6023E222BE7C6800732745 /* SearchBarMethods.swift in Sources */,
 				4B98E8A622C2B7020025B8F2 /* EntryImageProcessingManager.swift in Sources */,
 				4BBB94F82284CE9100944506 /* MainTabController.swift in Sources */,
 				4BC55CAA225D330B0079A3E5 /* AppDelegate.swift in Sources */,
 				4B6023E022BE76F200732745 /* UserDefaultsMethods.swift in Sources */,
-				4BC55CF7225FD97B0079A3E5 /* AstronomicalObjectUpload.swift in Sources */,
+				4BC55CF7225FD97B0079A3E5 /* AstroObjUploadModel.swift in Sources */,
 				4BB687BF2266538000D423F9 /* AstroObjTempDisplayVC.swift in Sources */,
 				4BE51ADC22E60EFE002905ED /* EntryCellInsertionManager.swift in Sources */,
 				4B98E8A422C2B63E0025B8F2 /* UIConstraints.swift in Sources */,

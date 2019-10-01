@@ -17,7 +17,7 @@ class AstronomicalObjectInjection {
         if let rawData = try? Data(contentsOf: AstronomicalObjectURLPath) {
             let decoder = PropertyListDecoder()
             do {
-                let decodedData = try decoder.decode([AstronomicalObjectUpload].self, from: rawData)
+                let decodedData = try decoder.decode([AstroObjUploadModel].self, from: rawData)
                 
                 let astronomicalObjects = digestAstronomicalObjectData(decodedData: decodedData)
                 
@@ -30,7 +30,7 @@ class AstronomicalObjectInjection {
         }
     }
 
-    func digestAstronomicalObjectData(decodedData: [AstronomicalObjectUpload]) -> [AstronomicalObject] {
+    func digestAstronomicalObjectData(decodedData: [AstroObjUploadModel]) -> [AstronomicalObject] {
         var astronomicalObjects = [AstronomicalObject]()
 
         for (index, object) in decodedData.enumerated() {
