@@ -4,7 +4,7 @@ import RealmSwift
 class EntryCellManager {
     let entryCellInsertionManager = EntryCellInsertionManager()
     let entryCellConstructor = EntryCellConstructor()
-    let persistentData = PersistentData()
+    let persistentData = ()
     
     func addNextCell(cell: NasaNewsEntryCell, allNasaEntries: Results<APODEntry>, indexPath: IndexPath, tableView: UITableView, parent: UIViewController) {
         if allNasaEntries[indexPath.row].image == nil {

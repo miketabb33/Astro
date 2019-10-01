@@ -1,8 +1,7 @@
-import UIKit
-import CoreData
+import Foundation
 import RealmSwift
 
-class PersistentData {
+class RealmMethods {
     //MARK: - Realm
     let realm = try! Realm()
     
@@ -37,19 +36,7 @@ class PersistentData {
         return sortedObjects
     }
     
-    //MARK: - User Defaults
-    let initialAPODUploadCompletedKey = "Initial-APOD-Upload-Completed"
-    let astronomicalObjectPreloadCompletedKey = "Astronomical-Object-Preload-Completed"
-    
-    func setUserDefaults(data: Any, key: String) {
-        UserDefaults.standard.set(data, forKey: key)
-    }
-    
-    func getUserDefaultsForBoolean(key: String) -> Bool {
-        return UserDefaults.standard.bool(forKey: key)
-    }
-    
-    func cleanNasaEntryDatabase() {
+    func cleanAPODDatabase() {
         let allAPODEntries = getAllAPODEntries()
         for (index, entry) in allAPODEntries.enumerated() {
             try! realm.write {
@@ -61,5 +48,4 @@ class PersistentData {
             }
         }
     }
-    
 }

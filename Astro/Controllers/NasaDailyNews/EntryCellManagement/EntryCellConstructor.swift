@@ -5,7 +5,7 @@ class EntryCellConstructor {
     let addConstraints = UIConstraints()
     let entryImageManager = EntryImageProcessingManager()
     let expandExplanationManager = ExpandExplanationManager()
-    let persistentData = PersistentData()
+    let persistentData = ()
     
     func assignCell(cell: NasaNewsEntryCell, indexPath: IndexPath, allNasaEntries: Results<APODEntry>, tableView: UITableView, parent: UIViewController) {
         titleConfiguration(cell: cell, allNasaEntries: allNasaEntries, indexPath: indexPath)

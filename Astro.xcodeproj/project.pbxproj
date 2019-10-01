@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4B1A9AEF22F723F000B88975 /* InternetConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1A9AEE22F723F000B88975 /* InternetConnection.swift */; };
+		4B47DDA42343A50F005F736F /* RealmMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B47DDA32343A50F005F736F /* RealmMethods.swift */; };
 		4B484BE0233A778300BA09AD /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BB2EB2A2316B2A600D16A2A /* Alamofire.framework */; };
 		4B484BE1233A778300BA09AD /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BB2EB2D2316B2A700D16A2A /* AlamofireImage.framework */; };
 		4B484BE2233A778300BA09AD /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BB2EB2E2316B2A700D16A2A /* Realm.framework */; };
@@ -20,7 +21,7 @@
 		4B484BE9233A778B00BA09AD /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4BB2EB2B2316B2A700D16A2A /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4B484BEB233A982600BA09AD /* RealmObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B484BEA233A982600BA09AD /* RealmObjects.swift */; };
 		4B6023DE22BBBFFF00732745 /* PreloadAstronomicalObjectData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6023DD22BBBFFF00732745 /* PreloadAstronomicalObjectData.swift */; };
-		4B6023E022BE76F200732745 /* PersistentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6023DF22BE76F200732745 /* PersistentData.swift */; };
+		4B6023E022BE76F200732745 /* UserDefaultsMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6023DF22BE76F200732745 /* UserDefaultsMethods.swift */; };
 		4B6023E222BE7C6800732745 /* SearchBarMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6023E122BE7C6800732745 /* SearchBarMethods.swift */; };
 		4B6023E422BE7CB900732745 /* NavigationMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6023E322BE7CB900732745 /* NavigationMethods.swift */; };
 		4B6023E722BE90A600732745 /* MathMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6023E622BE90A600732745 /* MathMethods.swift */; };
@@ -100,9 +101,10 @@
 
 /* Begin PBXFileReference section */
 		4B1A9AEE22F723F000B88975 /* InternetConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternetConnection.swift; sourceTree = "<group>"; };
+		4B47DDA32343A50F005F736F /* RealmMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmMethods.swift; sourceTree = "<group>"; };
 		4B484BEA233A982600BA09AD /* RealmObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmObjects.swift; sourceTree = "<group>"; };
 		4B6023DD22BBBFFF00732745 /* PreloadAstronomicalObjectData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreloadAstronomicalObjectData.swift; sourceTree = "<group>"; };
-		4B6023DF22BE76F200732745 /* PersistentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentData.swift; sourceTree = "<group>"; };
+		4B6023DF22BE76F200732745 /* UserDefaultsMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsMethods.swift; sourceTree = "<group>"; };
 		4B6023E122BE7C6800732745 /* SearchBarMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarMethods.swift; sourceTree = "<group>"; };
 		4B6023E322BE7CB900732745 /* NavigationMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationMethods.swift; sourceTree = "<group>"; };
 		4B6023E622BE90A600732745 /* MathMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathMethods.swift; sourceTree = "<group>"; };
@@ -214,10 +216,11 @@
 		4B6023E522BE8AF300732745 /* DataManagement */ = {
 			isa = PBXGroup;
 			children = (
-				4B6023DF22BE76F200732745 /* PersistentData.swift */,
+				4B6023DF22BE76F200732745 /* UserDefaultsMethods.swift */,
 				4BCA1CE922B6AA0900118A1E /* NDNAPI.swift */,
 				4B6023DD22BBBFFF00732745 /* PreloadAstronomicalObjectData.swift */,
 				4B1A9AEE22F723F000B88975 /* InternetConnection.swift */,
+				4B47DDA32343A50F005F736F /* RealmMethods.swift */,
 			);
 			path = DataManagement;
 			sourceTree = "<group>";
@@ -554,6 +557,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B47DDA42343A50F005F736F /* RealmMethods.swift in Sources */,
 				4B484BEB233A982600BA09AD /* RealmObjects.swift in Sources */,
 				4BE14DCD2311B118000FA4E8 /* EntryCellConstructor.swift in Sources */,
 				4BB687AF226519E600D423F9 /* EnterWeightVC.swift in Sources */,
@@ -573,7 +577,7 @@
 				4B98E8A622C2B7020025B8F2 /* EntryImageProcessingManager.swift in Sources */,
 				4BBB94F82284CE9100944506 /* MainTabController.swift in Sources */,
 				4BC55CAA225D330B0079A3E5 /* AppDelegate.swift in Sources */,
-				4B6023E022BE76F200732745 /* PersistentData.swift in Sources */,
+				4B6023E022BE76F200732745 /* UserDefaultsMethods.swift in Sources */,
 				4BC55CF7225FD97B0079A3E5 /* AstronomicalObjectUpload.swift in Sources */,
 				4BB687BF2266538000D423F9 /* PlanetTemperatureVC.swift in Sources */,
 				4BE51ADC22E60EFE002905ED /* EntryCellInsertionManager.swift in Sources */,

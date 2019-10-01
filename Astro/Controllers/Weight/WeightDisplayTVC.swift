@@ -4,7 +4,7 @@ import RealmSwift
 class WeightDisplayTVC: UITableViewController {
     let formatterMethods = FormatterMethods()
     let mathMethods = MathMethods()
-    let persistentData = PersistentData()
+    let persistentData = ()
     
     var planetsContainer: Results<AstronomicalObject>?
     var enteredWeight : Double?

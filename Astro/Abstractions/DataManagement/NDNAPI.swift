@@ -3,7 +3,7 @@ import Alamofire
 import SwiftyJSON
 
 class NDNAPI {
-    let persistantData = PersistentData()
+    let persistantData = ()
     let key = Keys()
     
     lazy var url = "https://ndn-api.herokuapp.com?id=\(key.NDN_KEY)"

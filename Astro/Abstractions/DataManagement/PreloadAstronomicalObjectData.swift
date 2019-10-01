@@ -1,7 +1,7 @@
 import Foundation
 
 class PreloadAstronomicalObjectData {
-    let persistentData = PersistentData()
+    let persistentData = ()
     
     func preloadAstronomicalObjectsUnlessCompleted() {
         if !persistentData.getUserDefaultsForBoolean(key: persistentData.astronomicalObjectPreloadCompletedKey) {

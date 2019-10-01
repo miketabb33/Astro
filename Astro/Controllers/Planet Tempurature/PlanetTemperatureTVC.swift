@@ -2,7 +2,7 @@ import UIKit
 import RealmSwift
 
 class PlanetTemperatureTVC: UITableViewController {
-    let persistentData = PersistentData()
+    let persistentData = ()
     
     var planetsContainer: Results<AstronomicalObject>?
     var selectedPlanetName : String?

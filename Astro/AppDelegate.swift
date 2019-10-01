@@ -3,7 +3,7 @@ import CoreData
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    let persistentData = PersistentData()
+    let persistentData = ()
     
     var window: UIWindow?
 

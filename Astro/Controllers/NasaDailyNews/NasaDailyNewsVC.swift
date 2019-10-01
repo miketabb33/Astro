@@ -6,7 +6,7 @@ class NasaDailyNewsVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var messageLabel: UILabel!
     
-    let persistentData = PersistentData()
+    let persistentData = ()
     let internetConnection = InternetConnection()
     let entryCellManager = EntryCellManager()
     
