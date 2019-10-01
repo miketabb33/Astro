@@ -3,7 +3,7 @@ import Network
 
 class InternetDetection {
     let monitor = NWPathMonitor()
-    let bsColors = BSColors()
+    let bsColors = BootStrapColors()
     
     var isConnected = false {
         willSet {
