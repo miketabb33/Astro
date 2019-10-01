@@ -6,8 +6,8 @@ class ExpandExplanationManager {
     let realmMethods = RealmMethods()
     
     //GET TOGGLE POSITION
-    func getTogglePositionOfExplanation(cell: APODEntryCell, allNasaEntries: Results<APODEntry>, indexPath: IndexPath) {
-        if allNasaEntries[indexPath.row].expandEnabled == true {
+    func getTogglePositionOfExplanation(cell: APODEntryCell, allAPODEntries: Results<APODEntry>, indexPath: IndexPath) {
+        if allAPODEntries[indexPath.row].expandEnabled == true {
             showExpandedExplanation(cell: cell)
         } else {
             showCollapsedExplanation(cell: cell)
@@ -29,24 +29,24 @@ class ExpandExplanationManager {
     }
     
     //MARK: SET TOGGLE POSITION
-    func toggleController(allNasaEntries: Results<APODEntry>, indexPath: IndexPath, cell: APODEntryCell, tableView: UITableView) {
-        if allNasaEntries[indexPath.row].expandEnabled == false {
-            expandExplanationLabel(allNasaEntries: allNasaEntries, indexPath: indexPath, cell: cell, tableView: tableView)
+    func toggleController(allAPODEntries: Results<APODEntry>, indexPath: IndexPath, cell: APODEntryCell, tableView: UITableView) {
+        if allAPODEntries[indexPath.row].expandEnabled == false {
+            expandExplanationLabel(allAPODEntries: allAPODEntries, indexPath: indexPath, cell: cell, tableView: tableView)
         } else {
-            collapseExplanationLabel(allNasaEntries: allNasaEntries, indexPath: indexPath, cell: cell, tableView: tableView)
+            collapseExplanationLabel(allAPODEntries: allAPODEntries, indexPath: indexPath, cell: cell, tableView: tableView)
         }
     }
     
     //Expand Explanation Label
-    func expandExplanationLabel(allNasaEntries: Results<APODEntry>, indexPath: IndexPath, cell: APODEntryCell, tableView: UITableView) {
+    func expandExplanationLabel(allAPODEntries: Results<APODEntry>, indexPath: IndexPath, cell: APODEntryCell, tableView: UITableView) {
         try! realmMethods.realm.write {
-            allNasaEntries[indexPath.row].expandEnabled = true
+            allAPODEntries[indexPath.row].expandEnabled = true
         }
         expandExplanationLabalAnimation(cell: cell)
         addConstraints.addStackingConstraintTo(cell.currentEntryExplanation, stackUnder: cell.currentEntryImageView, edges: cell.contentView.layoutMarginsGuide, height: self.getExpandedEntryExplanationFrameHeight(rawFrameHeight: cell.currentEntryExplanation.frame.height))
         
         try! realmMethods.realm.write {
-            allNasaEntries[indexPath.row].cellHeight = Int(Float(cell.frameHeight["title"]! + cell.frameHeight["image"]! + getExpandedEntryExplanationFrameHeight(rawFrameHeight: cell.currentEntryExplanation.frame.height) + cell.frameHeight["button"]!))
+            allAPODEntries[indexPath.row].cellHeight = Int(Float(cell.frameHeight["title"]! + cell.frameHeight["image"]! + getExpandedEntryExplanationFrameHeight(rawFrameHeight: cell.currentEntryExplanation.frame.height) + cell.frameHeight["button"]!))
         }
         animateExpandLabelConstraints(cell: cell, arrowPosition: CGAffineTransform(rotationAngle: .pi))
         cellHeightAnimation(tableView: tableView)
@@ -60,16 +60,16 @@ class ExpandExplanationManager {
     }
     
     //Collapse Explanation Label
-    func collapseExplanationLabel(allNasaEntries: Results<APODEntry>, indexPath: IndexPath, cell: APODEntryCell, tableView: UITableView) {
+    func collapseExplanationLabel(allAPODEntries: Results<APODEntry>, indexPath: IndexPath, cell: APODEntryCell, tableView: UITableView) {
         
         try! realmMethods.realm.write {
-            allNasaEntries[indexPath.row].expandEnabled = false
+            allAPODEntries[indexPath.row].expandEnabled = false
         }
         
         collapseExplanationLabelAnimation(cell: cell)
         addConstraints.addStackingConstraintTo(cell.currentEntryExplanation, stackUnder: cell.currentEntryImageView, edges: cell.contentView.layoutMarginsGuide, height: cell.frameHeight["explanation"]!)
         try! realmMethods.realm.write {
-            allNasaEntries[indexPath.row].cellHeight = Int(Float(cell.frameHeight["title"]! + cell.frameHeight["image"]! + cell.frameHeight["explanation"]! + cell.frameHeight["button"]!))
+            allAPODEntries[indexPath.row].cellHeight = Int(Float(cell.frameHeight["title"]! + cell.frameHeight["image"]! + cell.frameHeight["explanation"]! + cell.frameHeight["button"]!))
         }
         
 

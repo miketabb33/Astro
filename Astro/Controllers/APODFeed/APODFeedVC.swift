@@ -28,11 +28,11 @@ class APODFeedVC: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         allAPODEntries = RealmMethods().getAllAPODEntries()
-        entryCellInsertionManager.addNextEntryToPageUnlessNoEntriesExist(allNasaEntries: allAPODEntries!, tableView: tableView)
+        entryCellInsertionManager.addNextEntryToPageUnlessNoEntriesExist(allAPODEntries: allAPODEntries!, tableView: tableView)
     }
 
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        entryCellInsertionManager.loadMoreEntriesWhenSrollReachesBottom(tableView: tableView, allNasaEntries: allAPODEntries!, isConnected: internetConnection.isConnected)
+        entryCellInsertionManager.loadMoreEntriesWhenSrollReachesBottom(tableView: tableView, allAPODEntries: allAPODEntries!, isConnected: internetConnection.isConnected)
     }
 
 }
@@ -49,7 +49,7 @@ extension APODFeedVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! APODEntryCell
         
-        entryCellManager.addNextCell(cell: cell, allNasaEntries: allAPODEntries!, indexPath: indexPath, tableView: tableView, parent: self)
+        entryCellManager.addNextCell(cell: cell, allAPODEntries: allAPODEntries!, indexPath: indexPath, tableView: tableView, parent: self)
     
         return cell
     }

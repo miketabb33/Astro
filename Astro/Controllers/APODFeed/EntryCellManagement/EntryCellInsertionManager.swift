@@ -9,8 +9,8 @@ class EntryCellInsertionManager {
     let entriesToAdd = 1
     
     //MARK: - Inital Entry Load
-    func addNextEntryToPageUnlessNoEntriesExist(allNasaEntries: Results<APODEntry>, tableView: UITableView) {
-        if allNasaEntries.count != 0 {
+    func addNextEntryToPageUnlessNoEntriesExist(allAPODEntries: Results<APODEntry>, tableView: UITableView) {
+        if allAPODEntries.count != 0 {
             addNextEntryToPageUnlessInitialLoadComplete(tableView: tableView)
         }
     }
@@ -33,24 +33,24 @@ class EntryCellInsertionManager {
     }
     
     //MARK: - Load More Entries on scroll
-    func loadMoreEntriesWhenSrollReachesBottom(tableView: UITableView, allNasaEntries: Results<APODEntry>, isConnected: Bool) {
-        if tableView.contentOffset.y >= (tableView.contentSize.height - tableView.frame.size.height) && showingEntries < allNasaEntries.count {
-            insertNextSetOfRows(tableView: tableView, allNasaEntries: allNasaEntries, isConnected: isConnected)
+    func loadMoreEntriesWhenSrollReachesBottom(tableView: UITableView, allAPODEntries: Results<APODEntry>, isConnected: Bool) {
+        if tableView.contentOffset.y >= (tableView.contentSize.height - tableView.frame.size.height) && showingEntries < allAPODEntries.count {
+            insertNextSetOfRows(tableView: tableView, allAPODEntries: allAPODEntries, isConnected: isConnected)
         }
     }
     
-    func insertNextSetOfRows(tableView: UITableView, allNasaEntries: Results<APODEntry>, isConnected: Bool) {
+    func insertNextSetOfRows(tableView: UITableView, allAPODEntries: Results<APODEntry>, isConnected: Bool) {
         tableView.beginUpdates()
         var i = 0
         var totalEntries = showingEntries
         var shouldLoadNext = true
         
-        while i < entriesToAdd && totalEntries < allNasaEntries.count && shouldLoadNext {
-            if allNasaEntries[showingEntries + i].image != nil {
+        while i < entriesToAdd && totalEntries < allAPODEntries.count && shouldLoadNext {
+            if allAPODEntries[showingEntries + i].image != nil {
                 tableView.insertRows(at: [IndexPath(row: showingEntries + i, section: 0)], with: .fade)
                 i = i + 1
                 totalEntries = totalEntries + 1
-            } else if allNasaEntries[showingEntries + i].image == nil && isConnected {
+            } else if allAPODEntries[showingEntries + i].image == nil && isConnected {
                 tableView.insertRows(at: [IndexPath(row: showingEntries + i, section: 0)], with: .fade)
                 i = i + 1
                 totalEntries = totalEntries + 1
