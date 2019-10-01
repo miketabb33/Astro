@@ -52,7 +52,7 @@
 		4BCA1CEA22B6AA0900118A1E /* APODInjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCA1CE922B6AA0900118A1E /* APODInjection.swift */; };
 		4BCA1CEC22B6B6AB00118A1E /* KeyboardMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCA1CEB22B6B6AB00118A1E /* KeyboardMethods.swift */; };
 		4BCA1CEE22B6BD9D00118A1E /* FormatterMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCA1CED22B6BD9D00118A1E /* FormatterMethods.swift */; };
-		4BCDFBAE22FC7740003E39E8 /* NasaDailyNewsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCDFBAD22FC7740003E39E8 /* NasaDailyNewsVC.swift */; };
+		4BCDFBAE22FC7740003E39E8 /* APODFeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCDFBAD22FC7740003E39E8 /* APODFeedVC.swift */; };
 		4BCDFC0C22FF18F4003E39E8 /* BSColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCDFC0B22FF18F4003E39E8 /* BSColors.swift */; };
 		4BE14DCB2311AA27000FA4E8 /* ExpandExplanationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE14DCA2311AA27000FA4E8 /* ExpandExplanationManager.swift */; };
 		4BE14DCD2311B118000FA4E8 /* EntryCellConstructor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE14DCC2311B118000FA4E8 /* EntryCellConstructor.swift */; };
@@ -145,7 +145,7 @@
 		4BCA1CE922B6AA0900118A1E /* APODInjection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODInjection.swift; sourceTree = "<group>"; };
 		4BCA1CEB22B6B6AB00118A1E /* KeyboardMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardMethods.swift; sourceTree = "<group>"; };
 		4BCA1CED22B6BD9D00118A1E /* FormatterMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatterMethods.swift; sourceTree = "<group>"; };
-		4BCDFBAD22FC7740003E39E8 /* NasaDailyNewsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaDailyNewsVC.swift; sourceTree = "<group>"; };
+		4BCDFBAD22FC7740003E39E8 /* APODFeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODFeedVC.swift; sourceTree = "<group>"; };
 		4BCDFC0B22FF18F4003E39E8 /* BSColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSColors.swift; sourceTree = "<group>"; };
 		4BE14DCA2311AA27000FA4E8 /* ExpandExplanationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandExplanationManager.swift; sourceTree = "<group>"; };
 		4BE14DCC2311B118000FA4E8 /* EntryCellConstructor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryCellConstructor.swift; sourceTree = "<group>"; };
@@ -338,7 +338,7 @@
 			isa = PBXGroup;
 			children = (
 				4BBB94F72284CE9100944506 /* MainTabController.swift */,
-				4BE14DC82311A696000FA4E8 /* NasaDailyNews */,
+				4BE14DC82311A696000FA4E8 /* APODFeed */,
 				4BE51ADD22E67E6A002905ED /* Planet Tempurature */,
 				4BE51ADE22E67E80002905ED /* Weight */,
 				4BB687B622664A3200D423F9 /* Cells */,
@@ -356,14 +356,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		4BE14DC82311A696000FA4E8 /* NasaDailyNews */ = {
+		4BE14DC82311A696000FA4E8 /* APODFeed */ = {
 			isa = PBXGroup;
 			children = (
-				4BCDFBAD22FC7740003E39E8 /* NasaDailyNewsVC.swift */,
+				4BCDFBAD22FC7740003E39E8 /* APODFeedVC.swift */,
 				4BE14DD02311E563000FA4E8 /* EntryCellManagement */,
 				4BE14DC92311A8F4000FA4E8 /* Cells */,
 			);
-			path = NasaDailyNews;
+			path = APODFeed;
 			sourceTree = "<group>";
 		};
 		4BE14DC92311A8F4000FA4E8 /* Cells */ = {
@@ -579,7 +579,7 @@
 				4BE9FAE3232835330095AC68 /* Keys.swift in Sources */,
 				4BB687B922664C6A00D423F9 /* PlanetTemperatureTVC.swift in Sources */,
 				4BE51AD722E34EB4002905ED /* NasaNewsEntryCell.swift in Sources */,
-				4BCDFBAE22FC7740003E39E8 /* NasaDailyNewsVC.swift in Sources */,
+				4BCDFBAE22FC7740003E39E8 /* APODFeedVC.swift in Sources */,
 				4B1A9AEF22F723F000B88975 /* InternetDetection.swift in Sources */,
 				4BCA1CEC22B6B6AB00118A1E /* KeyboardMethods.swift in Sources */,
 				4BC55CC5225D35450079A3E5 /* WeightDisplayTVC.swift in Sources */,

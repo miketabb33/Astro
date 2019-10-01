@@ -1,7 +1,7 @@
 import UIKit
 import RealmSwift
 
-class NasaDailyNewsVC: UIViewController {
+class APODFeedVC: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var messageLabel: UILabel!
@@ -35,7 +35,7 @@ class NasaDailyNewsVC: UIViewController {
 
 }
 
-extension NasaDailyNewsVC: UITableViewDelegate, UITableViewDataSource {
+extension APODFeedVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return entryCellInsertionManager.showingEntries
     }
