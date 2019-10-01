@@ -25,9 +25,8 @@ class WeightDisplayTVC: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! RelativeWeightCell
         
         let currentPlanet = planetsContainer![indexPath.row]
-        let relativeEnteredWeight = MathMethods().findRelativeEnteredWeightInlbs(relativeWeight: currentPlanet.relativeWeight, enteredWeight: enteredWeight!)
         
-        cell.weightLabel.text = FormatterMethods().formatWeight(relativeEnteredWeight)
+        cell.weightLabel.text = FormatterMethods().getRelativeWeight(objectRelativeWeight: currentPlanet.relativeWeight, enteredWeight: enteredWeight!)
         cell.planetName.text = currentPlanet.name
         cell.planetCellImage.image = UIImage(named: currentPlanet.name)
         

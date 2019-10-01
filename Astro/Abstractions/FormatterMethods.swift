@@ -2,17 +2,14 @@ import UIKit
 
 class FormatterMethods {
     
-    let decimalFormatter = NumberFormatter()
-    
-    func formatWeight(_ weight: Double) -> String {
-        setToTwoDecimalPlaces()
-        let stringWeight = decimalFormatter.string(from: weight as NSNumber)
-        return "\(stringWeight!) lbs"
-    }
-    
-    private func setToTwoDecimalPlaces(){
+    func getRelativeWeight(objectRelativeWeight: Double, enteredWeight: Double) -> String {
+        let decimalFormatter = NumberFormatter()
         decimalFormatter.numberStyle = .decimal
         decimalFormatter.maximumFractionDigits = 2
+
+        let relativeWeight = objectRelativeWeight * enteredWeight
+        let stringWeight = decimalFormatter.string(from: relativeWeight as NSNumber)
+        return "\(stringWeight!) lbs"
     }
     
 }

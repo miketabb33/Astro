@@ -25,7 +25,6 @@
 		4B6023E022BE76F200732745 /* UserDefaultsMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6023DF22BE76F200732745 /* UserDefaultsMethods.swift */; };
 		4B6023E222BE7C6800732745 /* SearchBarMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6023E122BE7C6800732745 /* SearchBarMethods.swift */; };
 		4B6023E422BE7CB900732745 /* NavigationMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6023E322BE7CB900732745 /* NavigationMethods.swift */; };
-		4B6023E722BE90A600732745 /* MathMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6023E622BE90A600732745 /* MathMethods.swift */; };
 		4B6023E922BE95FA00732745 /* MathMethodsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6023E822BE95FA00732745 /* MathMethodsTests.swift */; };
 		4B98E89E22BEC8A10025B8F2 /* SearchBarMethodsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B98E89D22BEC8A10025B8F2 /* SearchBarMethodsTests.swift */; };
 		4B98E8A022BEC9D90025B8F2 /* LabelMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B98E89F22BEC9D90025B8F2 /* LabelMethods.swift */; };
@@ -106,7 +105,6 @@
 		4B6023DF22BE76F200732745 /* UserDefaultsMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsMethods.swift; sourceTree = "<group>"; };
 		4B6023E122BE7C6800732745 /* SearchBarMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarMethods.swift; sourceTree = "<group>"; };
 		4B6023E322BE7CB900732745 /* NavigationMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationMethods.swift; sourceTree = "<group>"; };
-		4B6023E622BE90A600732745 /* MathMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathMethods.swift; sourceTree = "<group>"; };
 		4B6023E822BE95FA00732745 /* MathMethodsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathMethodsTests.swift; sourceTree = "<group>"; };
 		4B98E89D22BEC8A10025B8F2 /* SearchBarMethodsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarMethodsTests.swift; sourceTree = "<group>"; };
 		4B98E89F22BEC9D90025B8F2 /* LabelMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelMethods.swift; sourceTree = "<group>"; };
@@ -256,7 +254,6 @@
 			isa = PBXGroup;
 			children = (
 				4BCDFC0B22FF18F4003E39E8 /* BootStrapColors.swift */,
-				4B6023E622BE90A600732745 /* MathMethods.swift */,
 				4BCA1CED22B6BD9D00118A1E /* FormatterMethods.swift */,
 				4B52707E22D904DB00E8FBFD /* BasicUI */,
 				4B6023E522BE8AF300732745 /* DataManagement */,
@@ -607,7 +604,6 @@
 				4BE51ADC22E60EFE002905ED /* EntryCellInsertionManager.swift in Sources */,
 				4B98E8A422C2B63E0025B8F2 /* UIConstraints.swift in Sources */,
 				4B6023E422BE7CB900732745 /* NavigationMethods.swift in Sources */,
-				4B6023E722BE90A600732745 /* MathMethods.swift in Sources */,
 				4BB687BC22664D1F00D423F9 /* AstroObjTempCell.swift in Sources */,
 				4BCDFC0C22FF18F4003E39E8 /* BootStrapColors.swift in Sources */,
 				4BCA1CEA22B6AA0900118A1E /* APODInjection.swift in Sources */,
