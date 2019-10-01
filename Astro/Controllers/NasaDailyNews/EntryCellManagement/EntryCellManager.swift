@@ -2,6 +2,8 @@ import UIKit
 import RealmSwift
 
 class EntryCellManager {
+    let entryCellInsertionManager = EntryCellInsertionManager()
+    
     func addNextCell(cell: NasaNewsEntryCell, allNasaEntries: Results<APODEntry>, indexPath: IndexPath, tableView: UITableView, parent: UIViewController) {
         if allNasaEntries[indexPath.row].image == nil {
             fetchImageAndRenderEntry(cell: cell, allNasaEntries: allNasaEntries, indexPath: indexPath, tableView: tableView, parent: parent)
@@ -39,7 +41,7 @@ class EntryCellManager {
     //MARK: - Render Entry Method
     func renderEntry(cell: NasaNewsEntryCell, allNasaEntries: Results<APODEntry>, indexPath: IndexPath, tableView: UITableView, parent: UIViewController) {
         EntryCellConstructor().assignCell(cell: cell, indexPath: indexPath, allNasaEntries: allNasaEntries, tableView: tableView, parent: parent)
-        EntryCellInsertionManager().addNextEntryToPageUnlessInitialLoadComplete(tableView: tableView)
+        entryCellInsertionManager.addNextEntryToPageUnlessInitialLoadComplete(tableView: tableView)
     }
     
 }
