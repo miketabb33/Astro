@@ -2,7 +2,6 @@ import Foundation
 import RealmSwift
 
 class RealmMethods {
-    //MARK: - Realm
     let realm = try! Realm()
     
     func addAPOD(data: [APODEntry]) {

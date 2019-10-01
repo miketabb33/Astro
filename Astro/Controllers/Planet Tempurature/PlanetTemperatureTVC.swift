@@ -2,15 +2,13 @@ import UIKit
 import RealmSwift
 
 class PlanetTemperatureTVC: UITableViewController {
-    let persistentData = ()
-    
     var planetsContainer: Results<AstronomicalObject>?
     var selectedPlanetName : String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        planetsContainer = persistentData.getAllAstronomicalObjects()
+        planetsContainer = RealmMethods().getAllAstronomicalObjects()
         
         tableView.register(UINib(nibName: "PlanetTempCell", bundle: nil), forCellReuseIdentifier: "CustomPlanetTempCell")
     }

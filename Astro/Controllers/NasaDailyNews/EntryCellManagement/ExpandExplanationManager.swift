@@ -3,7 +3,7 @@ import RealmSwift
 
 class ExpandExplanationManager {
     let addConstraints = UIConstraints()
-    let persistentData = ()
+    let realmMethods = RealmMethods()
     
     //GET TOGGLE POSITION
     func getTogglePositionOfExplanation(cell: NasaNewsEntryCell, allNasaEntries: Results<APODEntry>, indexPath: IndexPath) {
@@ -39,13 +39,13 @@ class ExpandExplanationManager {
     
     //Expand Explanation Label
     func expandExplanationLabel(allNasaEntries: Results<APODEntry>, indexPath: IndexPath, cell: NasaNewsEntryCell, tableView: UITableView) {
-        try! persistentData.realm.write {
+        try! realmMethods.realm.write {
             allNasaEntries[indexPath.row].expandEnabled = true
         }
         expandExplanationLabalAnimation(cell: cell)
         addConstraints.addStackingConstraintTo(cell.currentEntryExplanation, stackUnder: cell.currentEntryImageView, edges: cell.contentView.layoutMarginsGuide, height: self.getExpandedEntryExplanationFrameHeight(rawFrameHeight: cell.currentEntryExplanation.frame.height))
         
-        try! persistentData.realm.write {
+        try! realmMethods.realm.write {
             allNasaEntries[indexPath.row].cellHeight = Int(Float(cell.frameHeight["title"]! + cell.frameHeight["image"]! + getExpandedEntryExplanationFrameHeight(rawFrameHeight: cell.currentEntryExplanation.frame.height) + cell.frameHeight["button"]!))
         }
         animateExpandLabelConstraints(cell: cell, arrowPosition: CGAffineTransform(rotationAngle: .pi))
@@ -62,13 +62,13 @@ class ExpandExplanationManager {
     //Collapse Explanation Label
     func collapseExplanationLabel(allNasaEntries: Results<APODEntry>, indexPath: IndexPath, cell: NasaNewsEntryCell, tableView: UITableView) {
         
-        try! persistentData.realm.write {
+        try! realmMethods.realm.write {
             allNasaEntries[indexPath.row].expandEnabled = false
         }
         
         collapseExplanationLabelAnimation(cell: cell)
         addConstraints.addStackingConstraintTo(cell.currentEntryExplanation, stackUnder: cell.currentEntryImageView, edges: cell.contentView.layoutMarginsGuide, height: cell.frameHeight["explanation"]!)
-        try! persistentData.realm.write {
+        try! realmMethods.realm.write {
             allNasaEntries[indexPath.row].cellHeight = Int(Float(cell.frameHeight["title"]! + cell.frameHeight["image"]! + cell.frameHeight["explanation"]! + cell.frameHeight["button"]!))
         }
         

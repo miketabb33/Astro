@@ -2,10 +2,6 @@ import UIKit
 import RealmSwift
 
 class EntryCellManager {
-    let entryCellInsertionManager = EntryCellInsertionManager()
-    let entryCellConstructor = EntryCellConstructor()
-    let persistentData = ()
-    
     func addNextCell(cell: NasaNewsEntryCell, allNasaEntries: Results<APODEntry>, indexPath: IndexPath, tableView: UITableView, parent: UIViewController) {
         if allNasaEntries[indexPath.row].image == nil {
             fetchImageAndRenderEntry(cell: cell, allNasaEntries: allNasaEntries, indexPath: indexPath, tableView: tableView, parent: parent)
@@ -24,7 +20,7 @@ class EntryCellManager {
     }
     
     func saveYouTubeImageUnlessPictureAndRenderEntry(cell: NasaNewsEntryCell, allNasaEntries: Results<APODEntry>, indexPath: IndexPath, tableView: UITableView, parent: UIViewController) {
-        try! persistentData.realm.write {
+        try! RealmMethods().realm.write {
             allNasaEntries[indexPath.row].image = UIImage(named: "youtube")!.pngData()
         }
         renderEntry(cell: cell, allNasaEntries: allNasaEntries, indexPath: indexPath, tableView: tableView, parent: parent)
@@ -34,7 +30,7 @@ class EntryCellManager {
         let imageUrlString = allNasaEntries[indexPath.row].url
         let imageUrl:URL = URL(string: imageUrlString)!
         let imageData:NSData = NSData(contentsOf: imageUrl)!
-        try! persistentData.realm.write {
+        try! RealmMethods().realm.write {
             allNasaEntries[indexPath.row].image = imageData as Data
         }
         renderEntry(cell: cell, allNasaEntries: allNasaEntries, indexPath: indexPath, tableView: tableView, parent: parent)
@@ -42,8 +38,8 @@ class EntryCellManager {
     
     //MARK: - Render Entry Method
     func renderEntry(cell: NasaNewsEntryCell, allNasaEntries: Results<APODEntry>, indexPath: IndexPath, tableView: UITableView, parent: UIViewController) {
-        entryCellConstructor.assignCell(cell: cell, indexPath: indexPath, allNasaEntries: allNasaEntries, tableView: tableView, parent: parent)
-        entryCellInsertionManager.addNextEntryToPageUnlessInitialLoadComplete(tableView: tableView)
+        EntryCellConstructor().assignCell(cell: cell, indexPath: indexPath, allNasaEntries: allNasaEntries, tableView: tableView, parent: parent)
+        EntryCellInsertionManager().addNextEntryToPageUnlessInitialLoadComplete(tableView: tableView)
     }
     
 }

@@ -2,17 +2,13 @@ import UIKit
 import RealmSwift
 
 class WeightDisplayTVC: UITableViewController {
-    let formatterMethods = FormatterMethods()
-    let mathMethods = MathMethods()
-    let persistentData = ()
-    
     var planetsContainer: Results<AstronomicalObject>?
     var enteredWeight : Double?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        planetsContainer = persistentData.getAllAstronomicalObjects()
+        planetsContainer = RealmMethods().getAllAstronomicalObjects()
         
         tableView.register(UINib(nibName: "PlanetCell", bundle: nil), forCellReuseIdentifier: "CustomPlanetCell")
     }
@@ -27,9 +23,9 @@ class WeightDisplayTVC: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CustomPlanetCell", for: indexPath) as! PlanetWeightCell
         
         let currentPlanet = planetsContainer![indexPath.row]
-        let relativeEnteredWeight = mathMethods.findRelativeEnteredWeightInlbs(relativeWeight: currentPlanet.relativeWeight, enteredWeight: enteredWeight!)
+        let relativeEnteredWeight = MathMethods().findRelativeEnteredWeightInlbs(relativeWeight: currentPlanet.relativeWeight, enteredWeight: enteredWeight!)
         
-        cell.weightLabel.text = formatterMethods.formatWeight(relativeEnteredWeight)
+        cell.weightLabel.text = FormatterMethods().formatWeight(relativeEnteredWeight)
         cell.planetName.text = currentPlanet.name
         cell.planetCellImage.image = UIImage(named: currentPlanet.name)
         

@@ -1,17 +1,16 @@
 import UIKit
-import CoreData
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    let persistentData = ()
+    let userDefaultsMethods = UserDefaultsMethods()
     
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
-        persistentData.cleanNasaEntryDatabase()
+        RealmMethods().cleanAPODDatabase()
         PreloadAstronomicalObjectData().preloadAstronomicalObjectsUnlessCompleted()
-        NDNAPI().updateAPODEntries(initialUploadCompleted: persistentData.getUserDefaultsForBoolean(key: persistentData.initialAPODUploadCompletedKey))
+        NDNAPI().updateAPODEntries(initialUploadCompleted: userDefaultsMethods.getUserDefaultsForBoolean(key: userDefaultsMethods.initialAPODUploadCompletedKey))
         return true
     }
 
@@ -32,20 +31,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
-        persistentData.cleanNasaEntryDatabase()
+        RealmMethods().cleanAPODDatabase()
     }
-
-    lazy var persistentContainer: NSPersistentContainer = {
-
-        let container = NSPersistentContainer(name: "Astro")
-        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
-            if let error = error as NSError? {
-
-                fatalError("Unresolved error \(error), \(error.userInfo)")
-            }
-        })
-        return container
-    }()
 
 }
 

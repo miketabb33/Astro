@@ -3,10 +3,10 @@ import Alamofire
 import SwiftyJSON
 
 class NDNAPI {
-    let persistantData = ()
-    let key = Keys()
+    let realmMethods = RealmMethods()
+    let userDefaultsMethods = UserDefaultsMethods()
     
-    lazy var url = "https://ndn-api.herokuapp.com?id=\(key.NDN_KEY)"
+    lazy var url = "https://ndn-api.herokuapp.com?id=\(Keys().NDN_KEY)"
     
     func updateAPODEntries(initialUploadCompleted: Bool) {
         Alamofire.request(url, method: .get).responseJSON {
@@ -33,19 +33,19 @@ class NDNAPI {
     }
     
     func saveAllEntries(stagedEntries: [APODEntry]) {
-        persistantData.addAPOD(data: stagedEntries)
-        persistantData.setUserDefaults(data: true, key: self.persistantData.initialAPODUploadCompletedKey)
+        realmMethods.addAPOD(data: stagedEntries)
+        userDefaultsMethods.setUserDefaults(data: true, key: userDefaultsMethods.initialAPODUploadCompletedKey)
         print("Initial APOD Upload Complete")
     }
     
     func saveLatestUnsavedEntries(stagedEntries: [APODEntry]) {
         let unsavedEntries = self.getUnsavedEntries(stagedEntries: stagedEntries)
-        persistantData.addAPOD(data: unsavedEntries)
+        realmMethods.addAPOD(data: unsavedEntries)
         print("\(unsavedEntries.count) new APOD entries saved")
     }
     
     func getUnsavedEntries(stagedEntries: [APODEntry]) -> [APODEntry] {
-        let lastestEntry = persistantData.getLastAPODEntry()
+        let lastestEntry = realmMethods.getLastAPODEntry()
         var unsavedEntries = [APODEntry]()
         
         for currentEntry in stagedEntries {

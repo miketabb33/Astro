@@ -41,7 +41,6 @@
 		4BBB94F82284CE9100944506 /* MainTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBB94F72284CE9100944506 /* MainTabController.swift */; };
 		4BC55CAA225D330B0079A3E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC55CA9225D330B0079A3E5 /* AppDelegate.swift */; };
 		4BC55CAF225D330B0079A3E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BC55CAD225D330B0079A3E5 /* Main.storyboard */; };
-		4BC55CB2225D330B0079A3E5 /* Astro.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4BC55CB0225D330B0079A3E5 /* Astro.xcdatamodeld */; };
 		4BC55CB4225D330D0079A3E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BC55CB3225D330D0079A3E5 /* Assets.xcassets */; };
 		4BC55CB7225D330D0079A3E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BC55CB5225D330D0079A3E5 /* LaunchScreen.storyboard */; };
 		4BC55CC5225D35450079A3E5 /* WeightDisplayTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC55CC4225D35450079A3E5 /* WeightDisplayTVC.swift */; };
@@ -134,7 +133,6 @@
 		4BC55CA6225D330B0079A3E5 /* Astro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Astro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BC55CA9225D330B0079A3E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4BC55CAE225D330B0079A3E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		4BC55CB1225D330B0079A3E5 /* Astro.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Astro.xcdatamodel; sourceTree = "<group>"; };
 		4BC55CB3225D330D0079A3E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4BC55CB6225D330D0079A3E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4BC55CB8225D330D0079A3E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -335,7 +333,6 @@
 		4BC55CC3225D337D0079A3E5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				4BC55CB0225D330B0079A3E5 /* Astro.xcdatamodeld */,
 				4BC55CF6225FD97B0079A3E5 /* AstronomicalObjectUpload.swift */,
 				4BEC669322DA6DAB00513FA9 /* NDNAPIStagingModel.swift */,
 				4B484BEA233A982600BA09AD /* RealmObjects.swift */,
@@ -565,7 +562,6 @@
 				4B98E8A022BEC9D90025B8F2 /* LabelMethods.swift in Sources */,
 				4BE9FAE3232835330095AC68 /* Keys.swift in Sources */,
 				4BB687B922664C6A00D423F9 /* PlanetTemperatureTVC.swift in Sources */,
-				4BC55CB2225D330B0079A3E5 /* Astro.xcdatamodeld in Sources */,
 				4BE51AD722E34EB4002905ED /* NasaNewsEntryCell.swift in Sources */,
 				4BCDFBAE22FC7740003E39E8 /* NasaDailyNewsVC.swift in Sources */,
 				4B1A9AEF22F723F000B88975 /* InternetConnection.swift in Sources */,
@@ -909,19 +905,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		4BC55CB0225D330B0079A3E5 /* Astro.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				4BC55CB1225D330B0079A3E5 /* Astro.xcdatamodel */,
-			);
-			currentVersion = 4BC55CB1225D330B0079A3E5 /* Astro.xcdatamodel */;
-			path = Astro.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 4BC55C9E225D330B0079A3E5 /* Project object */;
 }

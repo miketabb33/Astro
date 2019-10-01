@@ -1,10 +1,10 @@
 import Foundation
 
 class PreloadAstronomicalObjectData {
-    let persistentData = ()
+    let userDefaultMethods = UserDefaultsMethods()
     
     func preloadAstronomicalObjectsUnlessCompleted() {
-        if !persistentData.getUserDefaultsForBoolean(key: persistentData.astronomicalObjectPreloadCompletedKey) {
+        if !userDefaultMethods.getUserDefaultsForBoolean(key: userDefaultMethods.astronomicalObjectPreloadCompletedKey) {
             preloadAstronomicalObjectData()
         }
     }
@@ -21,8 +21,8 @@ class PreloadAstronomicalObjectData {
                 
                 let astronomicalObjects = digestAstronomicalObjectData(decodedData: decodedData)
                 
-                persistentData.addAstonomicalObjects(data: astronomicalObjects)
-                persistentData.setUserDefaults(data: true, key: persistentData.astronomicalObjectPreloadCompletedKey)
+                RealmMethods().addAstonomicalObjects(data: astronomicalObjects)
+                userDefaultMethods.setUserDefaults(data: true, key: userDefaultMethods.astronomicalObjectPreloadCompletedKey)
                 
             } catch {
                 print("Error decoding planet info plist: \(error)")

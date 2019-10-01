@@ -6,7 +6,6 @@ class NasaDailyNewsVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var messageLabel: UILabel!
     
-    let persistentData = ()
     let internetConnection = InternetConnection()
     let entryCellManager = EntryCellManager()
     
@@ -25,7 +24,7 @@ class NasaDailyNewsVC: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        allAPODEntries = persistentData.getAllAPODEntries()
+        allAPODEntries = RealmMethods().getAllAPODEntries()
         entryCellManager.entryCellInsertionManager.addNextEntryToPageUnlessNoEntriesExist(allNasaEntries: allAPODEntries!, tableView: tableView)
     }
 

@@ -2,7 +2,6 @@ import UIKit
 import RealmSwift
 
 class EntryCellInsertionManager {
-    
     var showingEntries = 0
     var initialEntryCount = 5
     var initialEntryLoadComplete = false
