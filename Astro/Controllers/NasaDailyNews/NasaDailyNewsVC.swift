@@ -6,8 +6,9 @@ class NasaDailyNewsVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var messageLabel: UILabel!
     
-    let internetConnection = InternetConnection()
+    let internetConnection = InternetDetection()
     let entryCellManager = EntryCellManager()
+    let entryCellInsertionManager = EntryCellInsertionManager()
     
     var allAPODEntries: Results<APODEntry>?
 
@@ -25,18 +26,18 @@ class NasaDailyNewsVC: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         allAPODEntries = RealmMethods().getAllAPODEntries()
-        entryCellManager.entryCellInsertionManager.addNextEntryToPageUnlessNoEntriesExist(allNasaEntries: allAPODEntries!, tableView: tableView)
+        entryCellInsertionManager.addNextEntryToPageUnlessNoEntriesExist(allNasaEntries: allAPODEntries!, tableView: tableView)
     }
 
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        entryCellManager.entryCellInsertionManager.loadMoreEntriesWhenSrollReachesBottom(tableView: tableView, allNasaEntries: allAPODEntries!, isConnected: internetConnection.isConnected)
+        entryCellInsertionManager.loadMoreEntriesWhenSrollReachesBottom(tableView: tableView, allNasaEntries: allAPODEntries!, isConnected: internetConnection.isConnected)
     }
 
 }
 
 extension NasaDailyNewsVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return entryCellManager.entryCellInsertionManager.showingEntries
+        return entryCellInsertionManager.showingEntries
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

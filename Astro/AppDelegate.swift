@@ -9,8 +9,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
         RealmMethods().cleanAPODDatabase()
-        PreloadAstronomicalObjectData().preloadAstronomicalObjectsUnlessCompleted()
-        NDNAPI().updateAPODEntries(initialUploadCompleted: userDefaultsMethods.getUserDefaultsForBoolean(key: userDefaultsMethods.initialAPODUploadCompletedKey))
+        AstronomicalObjectInjection().preloadAstronomicalObjectsUnlessCompleted()
+        APODInjection().updateAPODEntries(initialUploadCompleted: userDefaultsMethods.getUserDefaultsForBoolean(key: userDefaultsMethods.initialAPODUploadCompletedKey))
         return true
     }
 

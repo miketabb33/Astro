@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4B1A9AEF22F723F000B88975 /* InternetConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1A9AEE22F723F000B88975 /* InternetConnection.swift */; };
+		4B1A9AEF22F723F000B88975 /* InternetDetection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1A9AEE22F723F000B88975 /* InternetDetection.swift */; };
 		4B47DDA42343A50F005F736F /* RealmMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B47DDA32343A50F005F736F /* RealmMethods.swift */; };
 		4B484BE0233A778300BA09AD /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BB2EB2A2316B2A600D16A2A /* Alamofire.framework */; };
 		4B484BE1233A778300BA09AD /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BB2EB2D2316B2A700D16A2A /* AlamofireImage.framework */; };
@@ -20,7 +20,7 @@
 		4B484BE8233A778B00BA09AD /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4BB2EB2C2316B2A700D16A2A /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4B484BE9233A778B00BA09AD /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4BB2EB2B2316B2A700D16A2A /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4B484BEB233A982600BA09AD /* RealmObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B484BEA233A982600BA09AD /* RealmObjects.swift */; };
-		4B6023DE22BBBFFF00732745 /* PreloadAstronomicalObjectData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6023DD22BBBFFF00732745 /* PreloadAstronomicalObjectData.swift */; };
+		4B6023DE22BBBFFF00732745 /* AstronomicalObjectInjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6023DD22BBBFFF00732745 /* AstronomicalObjectInjection.swift */; };
 		4B6023E022BE76F200732745 /* UserDefaultsMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6023DF22BE76F200732745 /* UserDefaultsMethods.swift */; };
 		4B6023E222BE7C6800732745 /* SearchBarMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6023E122BE7C6800732745 /* SearchBarMethods.swift */; };
 		4B6023E422BE7CB900732745 /* NavigationMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6023E322BE7CB900732745 /* NavigationMethods.swift */; };
@@ -49,7 +49,7 @@
 		4BC55CF5225FB0210079A3E5 /* AstronomicalObjectData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4BC55CF4225FB0210079A3E5 /* AstronomicalObjectData.plist */; };
 		4BC55CF7225FD97B0079A3E5 /* AstronomicalObjectUpload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC55CF6225FD97B0079A3E5 /* AstronomicalObjectUpload.swift */; };
 		4BCA1CE822B69EA100118A1E /* LoadingAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCA1CE722B69EA100118A1E /* LoadingAnimation.swift */; };
-		4BCA1CEA22B6AA0900118A1E /* NDNAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCA1CE922B6AA0900118A1E /* NDNAPI.swift */; };
+		4BCA1CEA22B6AA0900118A1E /* APODInjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCA1CE922B6AA0900118A1E /* APODInjection.swift */; };
 		4BCA1CEC22B6B6AB00118A1E /* KeyboardMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCA1CEB22B6B6AB00118A1E /* KeyboardMethods.swift */; };
 		4BCA1CEE22B6BD9D00118A1E /* FormatterMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCA1CED22B6BD9D00118A1E /* FormatterMethods.swift */; };
 		4BCDFBAE22FC7740003E39E8 /* NasaDailyNewsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCDFBAD22FC7740003E39E8 /* NasaDailyNewsVC.swift */; };
@@ -99,10 +99,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		4B1A9AEE22F723F000B88975 /* InternetConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternetConnection.swift; sourceTree = "<group>"; };
+		4B1A9AEE22F723F000B88975 /* InternetDetection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternetDetection.swift; sourceTree = "<group>"; };
 		4B47DDA32343A50F005F736F /* RealmMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmMethods.swift; sourceTree = "<group>"; };
 		4B484BEA233A982600BA09AD /* RealmObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmObjects.swift; sourceTree = "<group>"; };
-		4B6023DD22BBBFFF00732745 /* PreloadAstronomicalObjectData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreloadAstronomicalObjectData.swift; sourceTree = "<group>"; };
+		4B6023DD22BBBFFF00732745 /* AstronomicalObjectInjection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronomicalObjectInjection.swift; sourceTree = "<group>"; };
 		4B6023DF22BE76F200732745 /* UserDefaultsMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsMethods.swift; sourceTree = "<group>"; };
 		4B6023E122BE7C6800732745 /* SearchBarMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarMethods.swift; sourceTree = "<group>"; };
 		4B6023E322BE7CB900732745 /* NavigationMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationMethods.swift; sourceTree = "<group>"; };
@@ -142,7 +142,7 @@
 		4BC55CF4225FB0210079A3E5 /* AstronomicalObjectData.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = AstronomicalObjectData.plist; sourceTree = "<group>"; };
 		4BC55CF6225FD97B0079A3E5 /* AstronomicalObjectUpload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronomicalObjectUpload.swift; sourceTree = "<group>"; };
 		4BCA1CE722B69EA100118A1E /* LoadingAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingAnimation.swift; sourceTree = "<group>"; };
-		4BCA1CE922B6AA0900118A1E /* NDNAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NDNAPI.swift; sourceTree = "<group>"; };
+		4BCA1CE922B6AA0900118A1E /* APODInjection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODInjection.swift; sourceTree = "<group>"; };
 		4BCA1CEB22B6B6AB00118A1E /* KeyboardMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardMethods.swift; sourceTree = "<group>"; };
 		4BCA1CED22B6BD9D00118A1E /* FormatterMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatterMethods.swift; sourceTree = "<group>"; };
 		4BCDFBAD22FC7740003E39E8 /* NasaDailyNewsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaDailyNewsVC.swift; sourceTree = "<group>"; };
@@ -152,7 +152,7 @@
 		4BE14DCE2311E22F000FA4E8 /* EntryCellManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryCellManager.swift; sourceTree = "<group>"; };
 		4BE51AD522E34EB4002905ED /* NasaNewsEntryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaNewsEntryCell.swift; sourceTree = "<group>"; };
 		4BE51ADB22E60EFE002905ED /* EntryCellInsertionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryCellInsertionManager.swift; sourceTree = "<group>"; };
-		4BE9FAE2232835330095AC68 /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
+		4BE9FAE2232835330095AC68 /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Keys.swift; path = ../Keys.swift; sourceTree = "<group>"; };
 		4BEC669322DA6DAB00513FA9 /* NDNAPIStagingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NDNAPIStagingModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -186,6 +186,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4B47DDA52343B492005F736F /* PersistentData */ = {
+			isa = PBXGroup;
+			children = (
+				4B47DDA32343A50F005F736F /* RealmMethods.swift */,
+				4B6023DF22BE76F200732745 /* UserDefaultsMethods.swift */,
+			);
+			path = PersistentData;
+			sourceTree = "<group>";
+		};
+		4B47DDA62343B6B8005F736F /* DataInjection */ = {
+			isa = PBXGroup;
+			children = (
+				4BCA1CE922B6AA0900118A1E /* APODInjection.swift */,
+				4B6023DD22BBBFFF00732745 /* AstronomicalObjectInjection.swift */,
+			);
+			path = DataInjection;
+			sourceTree = "<group>";
+		};
 		4B52707E22D904DB00E8FBFD /* BasicUI */ = {
 			isa = PBXGroup;
 			children = (
@@ -214,11 +232,9 @@
 		4B6023E522BE8AF300732745 /* DataManagement */ = {
 			isa = PBXGroup;
 			children = (
-				4B6023DF22BE76F200732745 /* UserDefaultsMethods.swift */,
-				4BCA1CE922B6AA0900118A1E /* NDNAPI.swift */,
-				4B6023DD22BBBFFF00732745 /* PreloadAstronomicalObjectData.swift */,
-				4B1A9AEE22F723F000B88975 /* InternetConnection.swift */,
-				4B47DDA32343A50F005F736F /* RealmMethods.swift */,
+				4B47DDA62343B6B8005F736F /* DataInjection */,
+				4B47DDA52343B492005F736F /* PersistentData */,
+				4B1A9AEE22F723F000B88975 /* InternetDetection.swift */,
 			);
 			path = DataManagement;
 			sourceTree = "<group>";
@@ -295,7 +311,6 @@
 				4BC55CC0225D336E0079A3E5 /* Supporting Files */,
 				4BC55CB3225D330D0079A3E5 /* Assets.xcassets */,
 				4BC55CB5225D330D0079A3E5 /* LaunchScreen.storyboard */,
-				4BE9FAE2232835330095AC68 /* Keys.swift */,
 			);
 			path = Astro;
 			sourceTree = "<group>";
@@ -312,6 +327,7 @@
 		4BC55CC0225D336E0079A3E5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4BE9FAE2232835330095AC68 /* Keys.swift */,
 				4BC55CB8225D330D0079A3E5 /* Info.plist */,
 				4BC55CF4225FB0210079A3E5 /* AstronomicalObjectData.plist */,
 			);
@@ -564,7 +580,7 @@
 				4BB687B922664C6A00D423F9 /* PlanetTemperatureTVC.swift in Sources */,
 				4BE51AD722E34EB4002905ED /* NasaNewsEntryCell.swift in Sources */,
 				4BCDFBAE22FC7740003E39E8 /* NasaDailyNewsVC.swift in Sources */,
-				4B1A9AEF22F723F000B88975 /* InternetConnection.swift in Sources */,
+				4B1A9AEF22F723F000B88975 /* InternetDetection.swift in Sources */,
 				4BCA1CEC22B6B6AB00118A1E /* KeyboardMethods.swift in Sources */,
 				4BC55CC5225D35450079A3E5 /* WeightDisplayTVC.swift in Sources */,
 				4BEC669422DA6DAB00513FA9 /* NDNAPIStagingModel.swift in Sources */,
@@ -582,11 +598,11 @@
 				4B6023E722BE90A600732745 /* MathMethods.swift in Sources */,
 				4BB687BC22664D1F00D423F9 /* PlanetTempCell.swift in Sources */,
 				4BCDFC0C22FF18F4003E39E8 /* BSColors.swift in Sources */,
-				4BCA1CEA22B6AA0900118A1E /* NDNAPI.swift in Sources */,
+				4BCA1CEA22B6AA0900118A1E /* APODInjection.swift in Sources */,
 				4BC55CCA225E59A90079A3E5 /* PlanetWeightCell.swift in Sources */,
 				4BCA1CE822B69EA100118A1E /* LoadingAnimation.swift in Sources */,
 				4BE14DCF2311E22F000FA4E8 /* EntryCellManager.swift in Sources */,
-				4B6023DE22BBBFFF00732745 /* PreloadAstronomicalObjectData.swift in Sources */,
+				4B6023DE22BBBFFF00732745 /* AstronomicalObjectInjection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

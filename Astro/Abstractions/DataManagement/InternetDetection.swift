@@ -1,7 +1,7 @@
 import UIKit
 import Network
 
-class InternetConnection {
+class InternetDetection {
     let monitor = NWPathMonitor()
     let bsColors = BSColors()
     

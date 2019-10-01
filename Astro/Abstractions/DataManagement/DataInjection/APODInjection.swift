@@ -2,7 +2,7 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
-class NDNAPI {
+class APODInjection {
     let realmMethods = RealmMethods()
     let userDefaultsMethods = UserDefaultsMethods()
     

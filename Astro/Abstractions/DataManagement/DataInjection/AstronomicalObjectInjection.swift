@@ -1,6 +1,6 @@
 import Foundation
 
-class PreloadAstronomicalObjectData {
+class AstronomicalObjectInjection {
     let userDefaultMethods = UserDefaultsMethods()
     
     func preloadAstronomicalObjectsUnlessCompleted() {
