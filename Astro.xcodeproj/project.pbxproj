@@ -191,13 +191,13 @@
 			path = PersistentData;
 			sourceTree = "<group>";
 		};
-		4B47DDA62343B6B8005F736F /* DataInjection */ = {
+		4B47DDA62343B6B8005F736F /* DatabaseInjection */ = {
 			isa = PBXGroup;
 			children = (
 				4BCA1CE922B6AA0900118A1E /* APODInjection.swift */,
 				4B6023DD22BBBFFF00732745 /* AstronomicalObjectInjection.swift */,
 			);
-			path = DataInjection;
+			path = DatabaseInjection;
 			sourceTree = "<group>";
 		};
 		4B47DDA72343D10E005F736F /* Astro Obj Temp Table View */ = {
@@ -264,7 +264,7 @@
 		4B6023E522BE8AF300732745 /* DataManagement */ = {
 			isa = PBXGroup;
 			children = (
-				4B47DDA62343B6B8005F736F /* DataInjection */,
+				4B47DDA62343B6B8005F736F /* DatabaseInjection */,
 				4B47DDA52343B492005F736F /* PersistentData */,
 			);
 			path = DataManagement;
@@ -778,7 +778,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -833,7 +833,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -854,7 +854,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Astro/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -877,7 +877,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Astro/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
