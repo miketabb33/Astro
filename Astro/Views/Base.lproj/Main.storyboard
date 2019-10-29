@@ -160,8 +160,8 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Weight" image="globe_earth" id="5xO-dy-l22"/>
                     <connections>
-                        <outlet property="enterWeightBar" destination="uGz-xR-84N" id="mBw-Lb-4HL"/>
-                        <outlet property="message" destination="AD6-cQ-Udx" id="dhH-9a-yYR"/>
+                        <outlet property="label" destination="AD6-cQ-Udx" id="dhH-9a-yYR"/>
+                        <outlet property="searchBar" destination="uGz-xR-84N" id="mBw-Lb-4HL"/>
                         <segue destination="LUs-hS-8T0" kind="show" identifier="goToPlanetWeightScreen" id="uUH-Da-ymc"/>
                     </connections>
                 </viewController>
