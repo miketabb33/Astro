@@ -23,12 +23,10 @@ class APODFeedVC: UIViewController {
         internetConnection.startMonitoringInternetConnection()
         internetConnection.assignComponents(messageLabel: messageLabel, parentView: self.view)
         
-        tableView.allowsSelection = false
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
         allAPODEntries = RealmMethods().getAllAPODEntries()
         entryCellInsertionManager.addNextEntryToPageUnlessNoEntriesExist(allAPODEntries: allAPODEntries!, tableView: tableView)
+        
+        tableView.allowsSelection = false
     }
 
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {

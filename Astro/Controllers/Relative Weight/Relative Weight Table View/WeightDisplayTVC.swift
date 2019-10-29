@@ -14,9 +14,14 @@ class WeightDisplayTVC: UITableViewController {
         
         tableView.register(UINib(nibName: cellID, bundle: nil), forCellReuseIdentifier: cellID)
     }
-    
-    //MARK - Table View Data Source
 
+    @IBAction func dismissButtonPressed(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true, completion: nil)
+    }
+}
+
+extension WeightDisplayTVC {
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return planetsContainer!.count
     }
@@ -35,11 +40,4 @@ class WeightDisplayTVC: UITableViewController {
         
         return cell
     }
-    
-    //MARK - Navigation
-    
-    @IBAction func dismissButtonPressed(_ sender: UIBarButtonItem) {
-        self.dismiss(animated: true, completion: nil)
-    }
-
 }

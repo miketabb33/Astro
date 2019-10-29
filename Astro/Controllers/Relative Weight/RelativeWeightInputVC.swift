@@ -6,18 +6,11 @@ class RelativeWeightInputVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.enterWeightBar.delegate = self
+        enterWeightBar.delegate = self
 
         KeyboardMethods().setView(view)
         view.addGestureRecognizer(KeyboardMethods().tapAnywhereToHideKeyboard())
     }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        enterWeightBar = SearchBarMethods().resetSearchBar(enterWeightBar)
-        message = LabelMethods().attemptToUpdateLabel(message, withText: "Enter Your Weight", shouldUpdate: true)
-    }
-    
-    //MARK - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destinationNavigationController = segue.destination as! UINavigationController
@@ -31,7 +24,7 @@ class RelativeWeightInputVC: UIViewController {
 extension RelativeWeightInputVC: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         let isValid = Double(enterWeightBar.text!) != nil
-        message = LabelMethods().attemptToUpdateLabel(message, withText: "Enter a number", shouldUpdate: !isValid)
+        message.text = LabelMethods().updateLabel(userInput: enterWeightBar.text, withText: "Enter a number")
         NavigationMethods().attemptSegue(SendingVC: self, ID: "goToPlanetWeightScreen", shouldSegue: isValid)
     }
 
