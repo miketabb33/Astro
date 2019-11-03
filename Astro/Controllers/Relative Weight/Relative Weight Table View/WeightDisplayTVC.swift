@@ -2,7 +2,7 @@ import UIKit
 import RealmSwift
 
 class WeightDisplayTVC: UITableViewController {
-    var planetsContainer: Results<AstronomicalObject>?
+    var astronomicalObjContainer: Results<AstronomicalObject>?
     var enteredWeight : Double?
     
     let cellID = "RelativeWeightCell"
@@ -10,7 +10,7 @@ class WeightDisplayTVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        planetsContainer = RealmMethods().getAllAstronomicalObjects()
+        astronomicalObjContainer = RealmMethods().getAllAstronomicalObjects()
         
         tableView.register(UINib(nibName: cellID, bundle: nil), forCellReuseIdentifier: cellID)
     }
@@ -23,17 +23,20 @@ class WeightDisplayTVC: UITableViewController {
 extension WeightDisplayTVC {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return planetsContainer!.count
+        return astronomicalObjContainer!.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! RelativeWeightCell
         
-        let currentPlanet = planetsContainer![indexPath.row]
+        let currentObject = astronomicalObjContainer![indexPath.row]
         
-        cell.weightLabel.text = FormatterMethods().getRelativeWeight(objectRelativeWeight: currentPlanet.relativeWeight, enteredWeight: enteredWeight!)
-        cell.planetName.text = currentPlanet.name
-        cell.planetCellImage.image = UIImage(named: currentPlanet.name)
+        let userWeightOnThisObj = currentObject.relativeWeight * enteredWeight!
+        let formattedUserWeight = FormatterMethods().roundTo2DecimalPlaces(weight: userWeightOnThisObj)
+        cell.weightLabel.text = "\(formattedUserWeight) lbs"
+        
+        cell.objectName.text = currentObject.name
+        cell.objectImage.image = UIImage(named: currentObject.name)
         
         tableView.rowHeight = 80
         tableView.allowsSelection = false
