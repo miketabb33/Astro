@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4B1A9AEF22F723F000B88975 /* InternetDetection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1A9AEE22F723F000B88975 /* InternetDetection.swift */; };
+		4B2F6EC7236F1C3D00F8D890 /* SearchBarMethodsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2F6EC6236F1C3D00F8D890 /* SearchBarMethodsTests.swift */; };
 		4B47DDA42343A50F005F736F /* RealmMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B47DDA32343A50F005F736F /* RealmMethods.swift */; };
 		4B47DDAD2343D7FD005F736F /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B47DDAC2343D7FD005F736F /* Keys.swift */; };
 		4B484BE0233A778300BA09AD /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BB2EB2A2316B2A600D16A2A /* Alamofire.framework */; };
@@ -96,6 +97,7 @@
 
 /* Begin PBXFileReference section */
 		4B1A9AEE22F723F000B88975 /* InternetDetection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternetDetection.swift; sourceTree = "<group>"; };
+		4B2F6EC6236F1C3D00F8D890 /* SearchBarMethodsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarMethodsTests.swift; sourceTree = "<group>"; };
 		4B47DDA32343A50F005F736F /* RealmMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmMethods.swift; sourceTree = "<group>"; };
 		4B47DDAC2343D7FD005F736F /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 		4B484BEA233A982600BA09AD /* RealmObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmObjects.swift; sourceTree = "<group>"; };
@@ -280,6 +282,7 @@
 				4BA44E7222B92A93009756AA /* FormatterMethodsTests.swift */,
 				4B6023E822BE95FA00732745 /* MathMethodsTests.swift */,
 				4B98E8A122BED04C0025B8F2 /* LabelMethodsTests.swift */,
+				4B2F6EC6236F1C3D00F8D890 /* SearchBarMethodsTests.swift */,
 				4BA44E7422B92A93009756AA /* Info.plist */,
 			);
 			path = AstroTests;
@@ -563,6 +566,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B2F6EC7236F1C3D00F8D890 /* SearchBarMethodsTests.swift in Sources */,
 				4B98E8A222BED04C0025B8F2 /* LabelMethodsTests.swift in Sources */,
 				4B6023E922BE95FA00732745 /* MathMethodsTests.swift in Sources */,
 				4BA44E7322B92A93009756AA /* FormatterMethodsTests.swift in Sources */,
