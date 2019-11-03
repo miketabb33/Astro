@@ -25,7 +25,7 @@
 		4B6023E022BE76F200732745 /* UserDefaultsMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6023DF22BE76F200732745 /* UserDefaultsMethods.swift */; };
 		4B6023E422BE7CB900732745 /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6023E322BE7CB900732745 /* Navigation.swift */; };
 		4B6023E922BE95FA00732745 /* MathMethodsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6023E822BE95FA00732745 /* MathMethodsTests.swift */; };
-		4B98E8A022BEC9D90025B8F2 /* SearchBarValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B98E89F22BEC9D90025B8F2 /* SearchBarValidation.swift */; };
+		4B98E8A022BEC9D90025B8F2 /* SearchBarMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B98E89F22BEC9D90025B8F2 /* SearchBarMethods.swift */; };
 		4B98E8A222BED04C0025B8F2 /* LabelMethodsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B98E8A122BED04C0025B8F2 /* LabelMethodsTests.swift */; };
 		4B98E8A422C2B63E0025B8F2 /* UIConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B98E8A322C2B63E0025B8F2 /* UIConstraints.swift */; };
 		4B98E8A622C2B7020025B8F2 /* EntryImageProcessingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B98E8A522C2B7020025B8F2 /* EntryImageProcessingManager.swift */; };
@@ -103,7 +103,7 @@
 		4B6023DF22BE76F200732745 /* UserDefaultsMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsMethods.swift; sourceTree = "<group>"; };
 		4B6023E322BE7CB900732745 /* Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
 		4B6023E822BE95FA00732745 /* MathMethodsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathMethodsTests.swift; sourceTree = "<group>"; };
-		4B98E89F22BEC9D90025B8F2 /* SearchBarValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarValidation.swift; sourceTree = "<group>"; };
+		4B98E89F22BEC9D90025B8F2 /* SearchBarMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarMethods.swift; sourceTree = "<group>"; };
 		4B98E8A122BED04C0025B8F2 /* LabelMethodsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelMethodsTests.swift; sourceTree = "<group>"; };
 		4B98E8A322C2B63E0025B8F2 /* UIConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIConstraints.swift; sourceTree = "<group>"; };
 		4B98E8A522C2B7020025B8F2 /* EntryImageProcessingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryImageProcessingManager.swift; sourceTree = "<group>"; };
@@ -239,7 +239,7 @@
 				4BCA1CE722B69EA100118A1E /* LoadingAnimation.swift */,
 				4BCA1CEB22B6B6AB00118A1E /* KeyboardMethods.swift */,
 				4B6023E322BE7CB900732745 /* Navigation.swift */,
-				4B98E89F22BEC9D90025B8F2 /* SearchBarValidation.swift */,
+				4B98E89F22BEC9D90025B8F2 /* SearchBarMethods.swift */,
 				4B1A9AEE22F723F000B88975 /* InternetDetection.swift */,
 			);
 			path = BasicUI;
@@ -579,7 +579,7 @@
 				4BE14DCD2311B118000FA4E8 /* EntryCellConstructor.swift in Sources */,
 				4BB687AF226519E600D423F9 /* RelativeWeightInputVC.swift in Sources */,
 				4BE14DCB2311AA27000FA4E8 /* ExpandExplanationManager.swift in Sources */,
-				4B98E8A022BEC9D90025B8F2 /* SearchBarValidation.swift in Sources */,
+				4B98E8A022BEC9D90025B8F2 /* SearchBarMethods.swift in Sources */,
 				4BB687B922664C6A00D423F9 /* AstroObjTempTVC.swift in Sources */,
 				4BE51AD722E34EB4002905ED /* APODEntryCell.swift in Sources */,
 				4BCDFBAE22FC7740003E39E8 /* APODFeedVC.swift in Sources */,

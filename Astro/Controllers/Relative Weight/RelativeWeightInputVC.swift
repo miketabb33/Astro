@@ -22,7 +22,7 @@ class RelativeWeightInputVC: UIViewController {
 
 extension RelativeWeightInputVC: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        label.text = SearchBarValidation(searchBar: searchBar).validateDouble(onSuccess: "Enter Your Weight", onFailure: "Enter a number")
+        label.text = SearchBarMethods(searchBar).getValidationMessageForDouble(onSuccess: "Enter Your Weight", onFailure: "Enter a number")
         Navigation().segueUnlessNil(SendingVC: self, segueID: "goToPlanetWeightScreen", data: Double(searchBar.text!))
     }
 
