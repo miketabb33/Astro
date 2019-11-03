@@ -2,7 +2,7 @@ import UIKit
 import RealmSwift
 
 class EntryCellConstructor {
-    let addConstraints = UIConstraints()
+    let addConstraints = EntryCellConstraints()
     let expandExplanationManager = ExpandExplanationManager()
     
     func assignCell(cell: APODEntryCell, indexPath: IndexPath, allAPODEntries: Results<APODEntry>, tableView: UITableView, parent: UIViewController) {

@@ -26,7 +26,7 @@
 		4B6023E022BE76F200732745 /* UserDefaultsMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6023DF22BE76F200732745 /* UserDefaultsMethods.swift */; };
 		4B6023E422BE7CB900732745 /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6023E322BE7CB900732745 /* Navigation.swift */; };
 		4B98E8A022BEC9D90025B8F2 /* SearchBarMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B98E89F22BEC9D90025B8F2 /* SearchBarMethods.swift */; };
-		4B98E8A422C2B63E0025B8F2 /* UIConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B98E8A322C2B63E0025B8F2 /* UIConstraints.swift */; };
+		4B98E8A422C2B63E0025B8F2 /* EntryCellConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B98E8A322C2B63E0025B8F2 /* EntryCellConstraints.swift */; };
 		4B98E8A622C2B7020025B8F2 /* EntryImageProcessingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B98E8A522C2B7020025B8F2 /* EntryImageProcessingManager.swift */; };
 		4BA44E6522B92A6A009756AA /* AstroUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA44E6422B92A6A009756AA /* AstroUITests.swift */; };
 		4BA44E7322B92A93009756AA /* FormatterMethodsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA44E7222B92A93009756AA /* FormatterMethodsTests.swift */; };
@@ -103,7 +103,7 @@
 		4B6023DF22BE76F200732745 /* UserDefaultsMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsMethods.swift; sourceTree = "<group>"; };
 		4B6023E322BE7CB900732745 /* Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
 		4B98E89F22BEC9D90025B8F2 /* SearchBarMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarMethods.swift; sourceTree = "<group>"; };
-		4B98E8A322C2B63E0025B8F2 /* UIConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIConstraints.swift; sourceTree = "<group>"; };
+		4B98E8A322C2B63E0025B8F2 /* EntryCellConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryCellConstraints.swift; sourceTree = "<group>"; };
 		4B98E8A522C2B7020025B8F2 /* EntryImageProcessingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryImageProcessingManager.swift; sourceTree = "<group>"; };
 		4BA44E6222B92A6A009756AA /* AstroUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AstroUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BA44E6422B92A6A009756AA /* AstroUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstroUITests.swift; sourceTree = "<group>"; };
@@ -377,7 +377,7 @@
 		4BE14DD02311E563000FA4E8 /* EntryCellManagement */ = {
 			isa = PBXGroup;
 			children = (
-				4B98E8A322C2B63E0025B8F2 /* UIConstraints.swift */,
+				4B98E8A322C2B63E0025B8F2 /* EntryCellConstraints.swift */,
 				4BE14DCE2311E22F000FA4E8 /* EntryCellManager.swift */,
 				4BE51ADB22E60EFE002905ED /* EntryCellInsertionManager.swift */,
 				4BE14DCC2311B118000FA4E8 /* EntryCellConstructor.swift */,
@@ -590,7 +590,7 @@
 				4BC55CF7225FD97B0079A3E5 /* AstroObjUploadModel.swift in Sources */,
 				4BB687BF2266538000D423F9 /* AstroObjTempDisplayVC.swift in Sources */,
 				4BE51ADC22E60EFE002905ED /* EntryCellInsertionManager.swift in Sources */,
-				4B98E8A422C2B63E0025B8F2 /* UIConstraints.swift in Sources */,
+				4B98E8A422C2B63E0025B8F2 /* EntryCellConstraints.swift in Sources */,
 				4B6023E422BE7CB900732745 /* Navigation.swift in Sources */,
 				4BB687BC22664D1F00D423F9 /* AstroObjTempCell.swift in Sources */,
 				4BCDFC0C22FF18F4003E39E8 /* BootStrapColors.swift in Sources */,

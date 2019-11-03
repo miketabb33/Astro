@@ -1,6 +1,6 @@
 import UIKit
 
-class UIConstraints {
+class EntryCellConstraints {
     func addStackingConstraintTo(_ element: UIView, stackUnder topElement: UIView, edges: UILayoutGuide, height: CGFloat) {
         element.removeConstraints(element.constraints)
         NSLayoutConstraint.activate([

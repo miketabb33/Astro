@@ -2,7 +2,7 @@ import UIKit
 import RealmSwift
 
 class ExpandExplanationManager {
-    let addConstraints = UIConstraints()
+    let addConstraints = EntryCellConstraints()
     let realmMethods = RealmMethods()
     
     //GET TOGGLE POSITION

@@ -1,7 +1,7 @@
 import UIKit
 
 class EntryImageProcessingManager {
-    let constraints = UIConstraints()
+    let constraints = EntryCellConstraints()
     
     func processImage(currentCell: APODEntryCell, stackUnder topElement: UIView, edges edgeArea: UILayoutGuide) -> UIImageView {
 
