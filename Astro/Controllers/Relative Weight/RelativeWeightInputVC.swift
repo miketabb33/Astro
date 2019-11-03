@@ -7,6 +7,8 @@ class RelativeWeightInputVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBar.delegate = self
+        
+        InternetDetection().addMessage(parent: self)
 
         view.addGestureRecognizer(KeyboardMethods(view: view).tapAnywhereToHideKeyboard())
     }

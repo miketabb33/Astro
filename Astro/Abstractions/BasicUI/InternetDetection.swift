@@ -5,6 +5,12 @@ class InternetDetection {
     let monitor = NWPathMonitor()
     let bsColors = BootStrapColors()
     
+    func addMessage(parent: UIViewController) {
+        let it = UIView()
+        it.backgroundColor = .black
+        parent.view.addSubview(it)
+    }
+    
     var isConnected = false {
         willSet {
             if newValue == true {
