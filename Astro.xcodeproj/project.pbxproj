@@ -23,10 +23,8 @@
 		4B484BEB233A982600BA09AD /* RealmObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B484BEA233A982600BA09AD /* RealmObjects.swift */; };
 		4B6023DE22BBBFFF00732745 /* AstronomicalObjectInjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6023DD22BBBFFF00732745 /* AstronomicalObjectInjection.swift */; };
 		4B6023E022BE76F200732745 /* UserDefaultsMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6023DF22BE76F200732745 /* UserDefaultsMethods.swift */; };
-		4B6023E222BE7C6800732745 /* SearchBarMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6023E122BE7C6800732745 /* SearchBarMethods.swift */; };
 		4B6023E422BE7CB900732745 /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6023E322BE7CB900732745 /* Navigation.swift */; };
 		4B6023E922BE95FA00732745 /* MathMethodsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6023E822BE95FA00732745 /* MathMethodsTests.swift */; };
-		4B98E89E22BEC8A10025B8F2 /* SearchBarMethodsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B98E89D22BEC8A10025B8F2 /* SearchBarMethodsTests.swift */; };
 		4B98E8A022BEC9D90025B8F2 /* SearchBarValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B98E89F22BEC9D90025B8F2 /* SearchBarValidation.swift */; };
 		4B98E8A222BED04C0025B8F2 /* LabelMethodsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B98E8A122BED04C0025B8F2 /* LabelMethodsTests.swift */; };
 		4B98E8A422C2B63E0025B8F2 /* UIConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B98E8A322C2B63E0025B8F2 /* UIConstraints.swift */; };
@@ -103,10 +101,8 @@
 		4B484BEA233A982600BA09AD /* RealmObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmObjects.swift; sourceTree = "<group>"; };
 		4B6023DD22BBBFFF00732745 /* AstronomicalObjectInjection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronomicalObjectInjection.swift; sourceTree = "<group>"; };
 		4B6023DF22BE76F200732745 /* UserDefaultsMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsMethods.swift; sourceTree = "<group>"; };
-		4B6023E122BE7C6800732745 /* SearchBarMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarMethods.swift; sourceTree = "<group>"; };
 		4B6023E322BE7CB900732745 /* Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
 		4B6023E822BE95FA00732745 /* MathMethodsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathMethodsTests.swift; sourceTree = "<group>"; };
-		4B98E89D22BEC8A10025B8F2 /* SearchBarMethodsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarMethodsTests.swift; sourceTree = "<group>"; };
 		4B98E89F22BEC9D90025B8F2 /* SearchBarValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarValidation.swift; sourceTree = "<group>"; };
 		4B98E8A122BED04C0025B8F2 /* LabelMethodsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelMethodsTests.swift; sourceTree = "<group>"; };
 		4B98E8A322C2B63E0025B8F2 /* UIConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIConstraints.swift; sourceTree = "<group>"; };
@@ -244,7 +240,6 @@
 				4BCA1CEB22B6B6AB00118A1E /* KeyboardMethods.swift */,
 				4B6023E322BE7CB900732745 /* Navigation.swift */,
 				4B98E89F22BEC9D90025B8F2 /* SearchBarValidation.swift */,
-				4B6023E122BE7C6800732745 /* SearchBarMethods.swift */,
 				4B1A9AEE22F723F000B88975 /* InternetDetection.swift */,
 			);
 			path = BasicUI;
@@ -284,7 +279,6 @@
 			children = (
 				4BA44E7222B92A93009756AA /* FormatterMethodsTests.swift */,
 				4B6023E822BE95FA00732745 /* MathMethodsTests.swift */,
-				4B98E89D22BEC8A10025B8F2 /* SearchBarMethodsTests.swift */,
 				4B98E8A122BED04C0025B8F2 /* LabelMethodsTests.swift */,
 				4BA44E7422B92A93009756AA /* Info.plist */,
 			);
@@ -569,7 +563,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B98E89E22BEC8A10025B8F2 /* SearchBarMethodsTests.swift in Sources */,
 				4B98E8A222BED04C0025B8F2 /* LabelMethodsTests.swift in Sources */,
 				4B6023E922BE95FA00732745 /* MathMethodsTests.swift in Sources */,
 				4BA44E7322B92A93009756AA /* FormatterMethodsTests.swift in Sources */,
@@ -594,7 +587,6 @@
 				4BCA1CEC22B6B6AB00118A1E /* KeyboardMethods.swift in Sources */,
 				4BC55CC5225D35450079A3E5 /* WeightDisplayTVC.swift in Sources */,
 				4BCA1CEE22B6BD9D00118A1E /* FormatterMethods.swift in Sources */,
-				4B6023E222BE7C6800732745 /* SearchBarMethods.swift in Sources */,
 				4B98E8A622C2B7020025B8F2 /* EntryImageProcessingManager.swift in Sources */,
 				4BBB94F82284CE9100944506 /* MainTabController.swift in Sources */,
 				4BC55CAA225D330B0079A3E5 /* AppDelegate.swift in Sources */,
