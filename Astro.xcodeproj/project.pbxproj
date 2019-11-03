@@ -233,7 +233,6 @@
 		4B52707E22D904DB00E8FBFD /* BasicUI */ = {
 			isa = PBXGroup;
 			children = (
-				4B98E8A322C2B63E0025B8F2 /* UIConstraints.swift */,
 				4BCA1CE722B69EA100118A1E /* LoadingAnimation.swift */,
 				4BCA1CEB22B6B6AB00118A1E /* KeyboardMethods.swift */,
 				4B6023E322BE7CB900732745 /* Navigation.swift */,
@@ -378,6 +377,7 @@
 		4BE14DD02311E563000FA4E8 /* EntryCellManagement */ = {
 			isa = PBXGroup;
 			children = (
+				4B98E8A322C2B63E0025B8F2 /* UIConstraints.swift */,
 				4BE14DCE2311E22F000FA4E8 /* EntryCellManager.swift */,
 				4BE51ADB22E60EFE002905ED /* EntryCellInsertionManager.swift */,
 				4BE14DCC2311B118000FA4E8 /* EntryCellConstructor.swift */,

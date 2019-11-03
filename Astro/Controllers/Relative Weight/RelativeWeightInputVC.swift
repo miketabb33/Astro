@@ -17,7 +17,6 @@ class RelativeWeightInputVC: UIViewController {
         
         targetController.enteredWeight = Double(searchBar.text!)
     }
-    
 }
 
 extension RelativeWeightInputVC: UISearchBarDelegate {
