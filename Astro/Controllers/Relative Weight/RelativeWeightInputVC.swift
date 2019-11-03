@@ -8,7 +8,7 @@ class RelativeWeightInputVC: UIViewController {
         super.viewDidLoad()
         searchBar.delegate = self
         
-        InternetDetection().addMessage(parent: self)
+        DropDownAlertManager().addAlertToScreen(parentVC: self, message: "Hiiiii", backgroundColor: UIColor(red: 0.3, green: 0.5, blue: 0.9, alpha: 0.4))
 
         view.addGestureRecognizer(KeyboardMethods(view: view).tapAnywhereToHideKeyboard())
     }

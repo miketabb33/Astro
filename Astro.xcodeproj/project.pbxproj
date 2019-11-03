@@ -12,6 +12,8 @@
 		4B384B8A236F327A00C3FD59 /* DropDownAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B384B89236F327A00C3FD59 /* DropDownAlertVC.swift */; };
 		4B384B8C236F329200C3FD59 /* DropDownAlert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B384B8B236F329200C3FD59 /* DropDownAlert.storyboard */; };
 		4B384B8F236F32C900C3FD59 /* DropDownAlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B384B8E236F32C900C3FD59 /* DropDownAlertManager.swift */; };
+		4B384B91236F351A00C3FD59 /* ComponentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B384B90236F351A00C3FD59 /* ComponentManager.swift */; };
+		4B384B93236F376900C3FD59 /* ComponentConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B384B92236F376900C3FD59 /* ComponentConstraints.swift */; };
 		4B47DDA42343A50F005F736F /* RealmMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B47DDA32343A50F005F736F /* RealmMethods.swift */; };
 		4B47DDAD2343D7FD005F736F /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B47DDAC2343D7FD005F736F /* Keys.swift */; };
 		4B484BE0233A778300BA09AD /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BB2EB2A2316B2A600D16A2A /* Alamofire.framework */; };
@@ -102,6 +104,8 @@
 		4B384B89236F327A00C3FD59 /* DropDownAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownAlertVC.swift; sourceTree = "<group>"; };
 		4B384B8B236F329200C3FD59 /* DropDownAlert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DropDownAlert.storyboard; sourceTree = "<group>"; };
 		4B384B8E236F32C900C3FD59 /* DropDownAlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownAlertManager.swift; sourceTree = "<group>"; };
+		4B384B90236F351A00C3FD59 /* ComponentManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentManager.swift; sourceTree = "<group>"; };
+		4B384B92236F376900C3FD59 /* ComponentConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentConstraints.swift; sourceTree = "<group>"; };
 		4B47DDA32343A50F005F736F /* RealmMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmMethods.swift; sourceTree = "<group>"; };
 		4B47DDAC2343D7FD005F736F /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 		4B484BEA233A982600BA09AD /* RealmObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmObjects.swift; sourceTree = "<group>"; };
@@ -185,6 +189,8 @@
 		4B384B88236F321F00C3FD59 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				4B384B90236F351A00C3FD59 /* ComponentManager.swift */,
+				4B384B92236F376900C3FD59 /* ComponentConstraints.swift */,
 				4B384B8D236F329E00C3FD59 /* DropDownAlert */,
 			);
 			path = Components;
@@ -193,9 +199,9 @@
 		4B384B8D236F329E00C3FD59 /* DropDownAlert */ = {
 			isa = PBXGroup;
 			children = (
-				4B384B8B236F329200C3FD59 /* DropDownAlert.storyboard */,
-				4B384B89236F327A00C3FD59 /* DropDownAlertVC.swift */,
 				4B384B8E236F32C900C3FD59 /* DropDownAlertManager.swift */,
+				4B384B89236F327A00C3FD59 /* DropDownAlertVC.swift */,
+				4B384B8B236F329200C3FD59 /* DropDownAlert.storyboard */,
 			);
 			path = DropDownAlert;
 			sourceTree = "<group>";
@@ -330,9 +336,9 @@
 		4BC55CA8225D330B0079A3E5 /* Astro */ = {
 			isa = PBXGroup;
 			children = (
-				4B384B88236F321F00C3FD59 /* Components */,
 				4BC55CA9225D330B0079A3E5 /* AppDelegate.swift */,
 				4B6023DC22BBBEE300732745 /* Abstractions */,
+				4B384B88236F321F00C3FD59 /* Components */,
 				4BC55CC2225D337B0079A3E5 /* Controllers */,
 				4BC55CBE225D33430079A3E5 /* Views */,
 				4BC55CC3225D337D0079A3E5 /* Models */,
@@ -600,6 +606,7 @@
 				4B484BEB233A982600BA09AD /* RealmObjects.swift in Sources */,
 				4BE14DCD2311B118000FA4E8 /* EntryCellConstructor.swift in Sources */,
 				4BB687AF226519E600D423F9 /* RelativeWeightInputVC.swift in Sources */,
+				4B384B91236F351A00C3FD59 /* ComponentManager.swift in Sources */,
 				4BE14DCB2311AA27000FA4E8 /* ExpandExplanationManager.swift in Sources */,
 				4B98E8A022BEC9D90025B8F2 /* SearchBarMethods.swift in Sources */,
 				4BB687B922664C6A00D423F9 /* AstroObjTempTVC.swift in Sources */,
@@ -624,6 +631,7 @@
 				4BCDFC0C22FF18F4003E39E8 /* BootStrapColors.swift in Sources */,
 				4BCA1CEA22B6AA0900118A1E /* APODInjection.swift in Sources */,
 				4BC55CCA225E59A90079A3E5 /* RelativeWeightCell.swift in Sources */,
+				4B384B93236F376900C3FD59 /* ComponentConstraints.swift in Sources */,
 				4BCA1CE822B69EA100118A1E /* LoadingAnimation.swift in Sources */,
 				4BE14DCF2311E22F000FA4E8 /* EntryCellManager.swift in Sources */,
 				4B6023DE22BBBFFF00732745 /* AstronomicalObjectInjection.swift in Sources */,
