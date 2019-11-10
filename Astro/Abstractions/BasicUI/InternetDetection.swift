@@ -2,15 +2,11 @@ import UIKit
 import Network
 
 class InternetDetection {
-    let dropDownAlertManager = DropDownAlertManager()
-    
     let monitor = NWPathMonitor()
-    let bsColors = BootStrapColors()
     
     var alertVC: DropDownAlertVC?
     
     var parentVC: UIViewController
-    
     init(parentVC: UIViewController) {
         self.parentVC = parentVC
     }
@@ -41,11 +37,11 @@ class InternetDetection {
     func toggleAlert(newValue: Bool, oldValue: Bool) {
         if newValue == true {
             DispatchQueue.main.async {
-                self.alertVC = self.dropDownAlertManager.removeAlertFromScreen(alertVC: self.alertVC)
+                self.alertVC = DropDownAlertManager().removeAlertFromScreen(alertVC: self.alertVC)
             }
         } else if newValue == false && newValue != oldValue {
             DispatchQueue.main.async {
-                self.alertVC = self.dropDownAlertManager.createAndAddAlertToScreen(parentVC: self.parentVC, message: "No Internet", backgroundColor: .red)
+                self.alertVC = DropDownAlertManager().createAndAddAlertToScreen(parentVC: self.parentVC, message: "No Internet", backgroundColor: .red)
             }
         }
     }
