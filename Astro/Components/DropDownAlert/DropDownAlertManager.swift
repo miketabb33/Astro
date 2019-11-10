@@ -2,7 +2,7 @@ import UIKit
 
 class DropDownAlertManager {
     let alertHeight: CGFloat = 50
-    let animationDuration: Double = 1.0
+    let animationDuration: Double = 0.25
     
     func createAndAddAlertToScreen(parentVC: UIViewController, message: String, backgroundColor: UIColor) -> DropDownAlertVC {
         
@@ -21,12 +21,15 @@ class DropDownAlertManager {
 
     }
     
-    func removeAlertFromScreen(alertVC: DropDownAlertVC) {
-        UIView.animate(withDuration: animationDuration, animations: {
-            alertVC.view.transform = CGAffineTransform(translationX: 0, y: 0 - self.alertHeight)
-        }) { (finished) in
-            ComponentManager().removeComponentFromView(componentVC: alertVC)
+    func removeAlertFromScreen(alertVC: DropDownAlertVC?) -> DropDownAlertVC? {
+        if let VC = alertVC {
+            UIView.animate(withDuration: animationDuration, animations: {
+                VC.view.transform = CGAffineTransform(translationX: 0, y: 0 - self.alertHeight)
+            }) { (finished) in
+                ComponentManager().removeComponentFromView(componentVC: VC)
+            }
         }
+        return nil
     }
     
     

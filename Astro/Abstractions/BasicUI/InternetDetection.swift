@@ -2,33 +2,33 @@ import UIKit
 import Network
 
 class InternetDetection {
+    let dropDownAlertManager = DropDownAlertManager()
+    
     let monitor = NWPathMonitor()
     let bsColors = BootStrapColors()
     
-    let alertVC = DropDownAlertVC?
+    var alertVC: DropDownAlertVC?
     
-    func addMessage(parent: UIViewController) {
-        let it = UIView()
-        it.backgroundColor = .black
-        parent.view.addSubview(it)
+    var parentVC: UIViewController
+    
+    init(parentVC: UIViewController) {
+        self.parentVC = parentVC
     }
     
     var isConnected = false {
         willSet {
             if newValue == true {
-                removeNoInternetMessage()
-            } else {
-                addNoInternetMessage()
+                print("connected")
+                DispatchQueue.main.async {
+                    self.alertVC = self.dropDownAlertManager.removeAlertFromScreen(alertVC: self.alertVC)
+                }
+            } else if newValue == false && newValue != self.isConnected {
+                print("disconnected")
+                DispatchQueue.main.async {
+                    self.alertVC = self.dropDownAlertManager.createAndAddAlertToScreen(parentVC: self.parentVC, message: "No Internet", backgroundColor: .red)
+                }
             }
         }
-    }
-    
-    var messageLabel = UILabel()
-    var parentView = UIView()
-    
-    func assignComponents(messageLabel: UILabel, parentView: UIView) {
-        self.messageLabel = messageLabel
-        self.parentView = parentView
     }
     
     func startMonitoringInternetConnection() {
@@ -45,28 +45,6 @@ class InternetDetection {
             isConnected = true
         } else {
             isConnected = false
-        }
-    }
-    
-    func removeNoInternetMessage() {
-        DispatchQueue.main.async {
-            self.messageLabel.removeConstraints(self.messageLabel.constraints)
-            self.messageLabel.heightAnchor.constraint(equalToConstant: 0).isActive = true
-            UIView.animate(withDuration: 0.3, animations: {
-                self.parentView.layoutIfNeeded()
-            })
-        }
-    }
-    
-    func addNoInternetMessage() {
-        DispatchQueue.main.async {
-            self.messageLabel.backgroundColor = self.bsColors.danger
-            self.messageLabel.text = "No Internet"
-            self.messageLabel.removeConstraints(self.messageLabel.constraints)
-            self.messageLabel.heightAnchor.constraint(equalToConstant: 44).isActive = true
-            UIView.animate(withDuration: 0.3, animations: {
-                self.parentView.layoutIfNeeded()
-            })
         }
     }
 }

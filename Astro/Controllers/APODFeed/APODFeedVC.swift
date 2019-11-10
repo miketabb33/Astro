@@ -4,9 +4,8 @@ import RealmSwift
 class APODFeedVC: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var messageLabel: UILabel!
     
-    let internetConnection = InternetDetection()
+    var internetConnection: InternetDetection?
     let entryCellManager = EntryCellManager()
     let entryCellInsertionManager = EntryCellInsertionManager()
     
@@ -17,11 +16,12 @@ class APODFeedVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        internetConnection = InternetDetection(parentVC: self)
+        
         tableView.register(APODEntryCell.self, forCellReuseIdentifier: cellID)
         tableView.rowHeight = 450
         
-        internetConnection.startMonitoringInternetConnection()
-        internetConnection.assignComponents(messageLabel: messageLabel, parentView: self.view)
+        internetConnection?.startMonitoringInternetConnection()
         
         allAPODEntries = RealmMethods().getAllAPODEntries()
         entryCellInsertionManager.addNextEntryToPageUnlessNoEntriesExist(allAPODEntries: allAPODEntries!, tableView: tableView)
@@ -30,7 +30,7 @@ class APODFeedVC: UIViewController {
     }
 
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        entryCellInsertionManager.loadMoreEntriesWhenSrollReachesBottom(tableView: tableView, allAPODEntries: allAPODEntries!, isConnected: internetConnection.isConnected)
+        entryCellInsertionManager.loadMoreEntriesWhenSrollReachesBottom(tableView: tableView, allAPODEntries: allAPODEntries!, isConnected: internetConnection!.isConnected)
     }
 
 }
