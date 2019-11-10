@@ -17,7 +17,6 @@ class APODFeedVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         tableView.register(APODEntryCell.self, forCellReuseIdentifier: cellID)
         tableView.rowHeight = 450
         

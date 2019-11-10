@@ -5,6 +5,8 @@ class InternetDetection {
     let monitor = NWPathMonitor()
     let bsColors = BootStrapColors()
     
+    let alertVC = DropDownAlertVC?
+    
     func addMessage(parent: UIViewController) {
         let it = UIView()
         it.backgroundColor = .black

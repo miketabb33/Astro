@@ -1,7 +1,10 @@
 import UIKit
 
 class DropDownAlertManager {
-    func addAlertToScreen(parentVC: UIViewController, message: String, backgroundColor: UIColor) {
+    let alertHeight: CGFloat = 50
+    let animationDuration: Double = 1.0
+    
+    func createAndAddAlertToScreen(parentVC: UIViewController, message: String, backgroundColor: UIColor) -> DropDownAlertVC {
         
         let dropDownAlertVC = ComponentManager().instantiateComponent(storyBoardID: "DropDownAlert") as! DropDownAlertVC
         
@@ -9,17 +12,41 @@ class DropDownAlertManager {
         
         dropDownAlertVC.label.text = message
         dropDownAlertVC.view.backgroundColor = backgroundColor
+
+        configureWidthAndHeightOfAlert(alertVC: dropDownAlertVC)
+        setInitialPositionOfAlert(alertVC: dropDownAlertVC)
+        animateAlertIntoView(alertVC: dropDownAlertVC)
         
-        
-        dropDownAlertVC.view.translatesAutoresizingMaskIntoConstraints = false
-        dropDownAlertVC.view.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width).isActive = true
-        var height = dropDownAlertVC.view.heightAnchor.constraint(equalToConstant: 1)
-        height.isActive = true
-        height.isActive = false
-        UIView.animate(withDuration: 5) {
-            dropDownAlertVC.view.heightAnchor.constraint(equalToConstant: 60).isActive = true
-            dropDownAlertVC.view.layoutIfNeeded()
+        return dropDownAlertVC
+
+    }
+    
+    func removeAlertFromScreen(alertVC: DropDownAlertVC) {
+        UIView.animate(withDuration: animationDuration, animations: {
+            alertVC.view.transform = CGAffineTransform(translationX: 0, y: 0 - self.alertHeight)
+        }) { (finished) in
+            ComponentManager().removeComponentFromView(componentVC: alertVC)
         }
     }
     
+    
+    
+    func configureWidthAndHeightOfAlert(alertVC: DropDownAlertVC) {
+        alertVC.view.translatesAutoresizingMaskIntoConstraints = false
+        let widthFullScreen = alertVC.view.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width)
+        let height = alertVC.view.heightAnchor.constraint(equalToConstant: alertHeight)
+        
+        widthFullScreen.isActive = true
+        height.isActive = true
+    }
+    
+    func animateAlertIntoView(alertVC: DropDownAlertVC) {
+        UIView.animate(withDuration: animationDuration) {
+            alertVC.view.transform = CGAffineTransform(translationX: 0, y: UIApplication.shared.windows[0].safeAreaInsets.top)
+        }
+    }
+    
+    func setInitialPositionOfAlert(alertVC: DropDownAlertVC) {
+        alertVC.view.transform = CGAffineTransform(translationX: 0, y: 0 - alertHeight)
+    }
 }
