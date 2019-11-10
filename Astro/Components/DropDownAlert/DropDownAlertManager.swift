@@ -11,7 +11,8 @@ class DropDownAlertManager {
         ComponentManager().insertComponentIntoView(componentVC: dropDownAlertVC, parentVC: parentVC)
         
         dropDownAlertVC.label.text = message
-        dropDownAlertVC.view.backgroundColor = backgroundColor
+
+        dropDownAlertVC.backgroundColor = backgroundColor
 
         configureWidthAndHeightOfAlert(alertVC: dropDownAlertVC)
         setInitialPositionOfAlert(alertVC: dropDownAlertVC)

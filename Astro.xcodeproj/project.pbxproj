@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4B1A9AEF22F723F000B88975 /* InternetDetection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1A9AEE22F723F000B88975 /* InternetDetection.swift */; };
+		4B20CC672378A32A0057FEB8 /* TextColorSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B20CC662378A32A0057FEB8 /* TextColorSelector.swift */; };
+		4B20CC6A2378A7AD0057FEB8 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B20CC692378A7AD0057FEB8 /* UIColor.swift */; };
 		4B2F6EC7236F1C3D00F8D890 /* SearchBarMethodsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2F6EC6236F1C3D00F8D890 /* SearchBarMethodsTests.swift */; };
 		4B384B8A236F327A00C3FD59 /* DropDownAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B384B89236F327A00C3FD59 /* DropDownAlertVC.swift */; };
 		4B384B8C236F329200C3FD59 /* DropDownAlert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B384B8B236F329200C3FD59 /* DropDownAlert.storyboard */; };
@@ -100,6 +102,8 @@
 
 /* Begin PBXFileReference section */
 		4B1A9AEE22F723F000B88975 /* InternetDetection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternetDetection.swift; sourceTree = "<group>"; };
+		4B20CC662378A32A0057FEB8 /* TextColorSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextColorSelector.swift; sourceTree = "<group>"; };
+		4B20CC692378A7AD0057FEB8 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		4B2F6EC6236F1C3D00F8D890 /* SearchBarMethodsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarMethodsTests.swift; sourceTree = "<group>"; };
 		4B384B89236F327A00C3FD59 /* DropDownAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownAlertVC.swift; sourceTree = "<group>"; };
 		4B384B8B236F329200C3FD59 /* DropDownAlert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DropDownAlert.storyboard; sourceTree = "<group>"; };
@@ -186,6 +190,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4B20CC682378A7940057FEB8 /* NativeClassExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				4B20CC692378A7AD0057FEB8 /* UIColor.swift */,
+			);
+			path = NativeClassExtensions;
+			sourceTree = "<group>";
+		};
 		4B384B88236F321F00C3FD59 /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -276,6 +288,7 @@
 			isa = PBXGroup;
 			children = (
 				4BCDFC0B22FF18F4003E39E8 /* BootStrapColors.swift */,
+				4B20CC662378A32A0057FEB8 /* TextColorSelector.swift */,
 				4BCA1CED22B6BD9D00118A1E /* FormatterMethods.swift */,
 				4B52707E22D904DB00E8FBFD /* BasicUI */,
 				4B6023E522BE8AF300732745 /* DataManagement */,
@@ -336,6 +349,7 @@
 		4BC55CA8225D330B0079A3E5 /* Astro */ = {
 			isa = PBXGroup;
 			children = (
+				4B20CC682378A7940057FEB8 /* NativeClassExtensions */,
 				4BC55CA9225D330B0079A3E5 /* AppDelegate.swift */,
 				4B6023DC22BBBEE300732745 /* Abstractions */,
 				4B384B88236F321F00C3FD59 /* Components */,
@@ -614,6 +628,7 @@
 				4BCDFBAE22FC7740003E39E8 /* APODFeedVC.swift in Sources */,
 				4B384B8A236F327A00C3FD59 /* DropDownAlertVC.swift in Sources */,
 				4B1A9AEF22F723F000B88975 /* InternetDetection.swift in Sources */,
+				4B20CC6A2378A7AD0057FEB8 /* UIColor.swift in Sources */,
 				4BCA1CEC22B6B6AB00118A1E /* KeyboardMethods.swift in Sources */,
 				4BC55CC5225D35450079A3E5 /* WeightDisplayTVC.swift in Sources */,
 				4BCA1CEE22B6BD9D00118A1E /* FormatterMethods.swift in Sources */,
@@ -623,6 +638,7 @@
 				4B6023E022BE76F200732745 /* UserDefaultsMethods.swift in Sources */,
 				4BC55CF7225FD97B0079A3E5 /* AstroObjUploadModel.swift in Sources */,
 				4BB687BF2266538000D423F9 /* AstroObjTempDisplayVC.swift in Sources */,
+				4B20CC672378A32A0057FEB8 /* TextColorSelector.swift in Sources */,
 				4B384B8F236F32C900C3FD59 /* DropDownAlertManager.swift in Sources */,
 				4BE51ADC22E60EFE002905ED /* EntryCellInsertionManager.swift in Sources */,
 				4B98E8A422C2B63E0025B8F2 /* EntryCellConstraints.swift in Sources */,
