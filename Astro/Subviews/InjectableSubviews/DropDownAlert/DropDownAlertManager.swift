@@ -6,12 +6,11 @@ class DropDownAlertManager {
     
     func createAndAddAlertToScreen(parentVC: UIViewController, message: String, backgroundColor: UIColor) -> DropDownAlertVC {
         
-        let dropDownAlertVC = ComponentManager().instantiateComponent(storyBoardID: "DropDownAlert") as! DropDownAlertVC
+        let dropDownAlertVC = InjectableSubviewManager().instantiateSubview(storyBoardID: "DropDownAlert") as! DropDownAlertVC
         
-        ComponentManager().insertComponentIntoView(componentVC: dropDownAlertVC, parentVC: parentVC)
+        InjectableSubviewManager().injectSubviewIntoParent(subviewVC: dropDownAlertVC, parentVC: parentVC)
         
         dropDownAlertVC.label.text = message
-
         dropDownAlertVC.backgroundColor = backgroundColor
 
         configureWidthAndHeightOfAlert(alertVC: dropDownAlertVC)
@@ -27,7 +26,7 @@ class DropDownAlertManager {
             UIView.animate(withDuration: animationDuration, animations: {
                 VC.view.transform = CGAffineTransform(translationX: 0, y: 0 - self.alertHeight)
             }) { (finished) in
-                ComponentManager().removeComponentFromView(componentVC: VC)
+                InjectableSubviewManager().removeSubviewFromParent(subviewVC: VC)
             }
         }
         return nil

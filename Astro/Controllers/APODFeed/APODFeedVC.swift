@@ -5,7 +5,7 @@ class APODFeedVC: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var internetConnection: InternetDetection?
+    var internetDetection: InternetDetection?
     let entryCellManager = EntryCellManager()
     let entryCellInsertionManager = EntryCellInsertionManager()
     
@@ -16,12 +16,11 @@ class APODFeedVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        internetConnection = InternetDetection(parentVC: self)
-        
         tableView.register(APODEntryCell.self, forCellReuseIdentifier: cellID)
         tableView.rowHeight = 450
         
-        internetConnection?.startMonitoringInternetConnection()
+        internetDetection = InternetDetection(parentVC: self)
+        internetDetection?.startMonitoringInternetConnection()
         
         allAPODEntries = RealmMethods().getAllAPODEntries()
         entryCellInsertionManager.addNextEntryToPageUnlessNoEntriesExist(allAPODEntries: allAPODEntries!, tableView: tableView)
@@ -30,7 +29,7 @@ class APODFeedVC: UIViewController {
     }
 
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        entryCellInsertionManager.loadMoreEntriesWhenSrollReachesBottom(tableView: tableView, allAPODEntries: allAPODEntries!, isConnected: internetConnection!.isConnected!)
+        entryCellInsertionManager.loadMoreEntriesWhenSrollReachesBottom(tableView: tableView, allAPODEntries: allAPODEntries!, isConnected: internetDetection!.isConnected!)
     }
 
 }
