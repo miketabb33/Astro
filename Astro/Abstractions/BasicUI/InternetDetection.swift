@@ -17,17 +17,7 @@ class InternetDetection {
     
     var isConnected = false {
         willSet {
-            if newValue == true {
-                print("connected")
-                DispatchQueue.main.async {
-                    self.alertVC = self.dropDownAlertManager.removeAlertFromScreen(alertVC: self.alertVC)
-                }
-            } else if newValue == false && newValue != self.isConnected {
-                print("disconnected")
-                DispatchQueue.main.async {
-                    self.alertVC = self.dropDownAlertManager.createAndAddAlertToScreen(parentVC: self.parentVC, message: "No Internet", backgroundColor: .red)
-                }
-            }
+            toggleAlert(newValue: newValue, oldValue: self.isConnected)
         }
     }
     
@@ -45,6 +35,18 @@ class InternetDetection {
             isConnected = true
         } else {
             isConnected = false
+        }
+    }
+    
+    func toggleAlert(newValue: Bool, oldValue: Bool) {
+        if newValue == true {
+            DispatchQueue.main.async {
+                self.alertVC = self.dropDownAlertManager.removeAlertFromScreen(alertVC: self.alertVC)
+            }
+        } else if newValue == false && newValue != oldValue {
+            DispatchQueue.main.async {
+                self.alertVC = self.dropDownAlertManager.createAndAddAlertToScreen(parentVC: self.parentVC, message: "No Internet", backgroundColor: .red)
+            }
         }
     }
 }
