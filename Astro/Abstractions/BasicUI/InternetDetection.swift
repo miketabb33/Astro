@@ -11,9 +11,9 @@ class InternetDetection {
         self.parentVC = parentVC
     }
     
-    var isConnected = false {
-        willSet {
-            toggleAlert(newValue: newValue, oldValue: self.isConnected)
+    var isConnected: Bool? = nil {
+        didSet {
+            toggleAlert(newValue: self.isConnected, oldValue: oldValue)
         }
     }
     
@@ -34,14 +34,14 @@ class InternetDetection {
         }
     }
     
-    func toggleAlert(newValue: Bool, oldValue: Bool) {
-        if newValue == true {
+    func toggleAlert(newValue: Bool?, oldValue: Bool?) {
+        if newValue == true && newValue != oldValue {
             DispatchQueue.main.async {
                 self.alertVC = DropDownAlertManager().removeAlertFromScreen(alertVC: self.alertVC)
             }
         } else if newValue == false && newValue != oldValue {
             DispatchQueue.main.async {
-                self.alertVC = DropDownAlertManager().createAndAddAlertToScreen(parentVC: self.parentVC, message: "No Internet", backgroundColor: .red)
+                self.alertVC = DropDownAlertManager().createAndAddAlertToScreen(parentVC: self.parentVC, message: "No Internet", backgroundColor: BootStrapColors().danger(alpha: 0.93))
             }
         }
     }
