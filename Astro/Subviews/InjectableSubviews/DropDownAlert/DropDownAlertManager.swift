@@ -21,19 +21,6 @@ class DropDownAlertManager {
 
     }
     
-    func removeAlertFromScreen(alertVC: DropDownAlertVC?) -> DropDownAlertVC? {
-        if let VC = alertVC {
-            UIView.animate(withDuration: animationDuration, animations: {
-                VC.view.transform = CGAffineTransform(translationX: 0, y: 0 - self.alertHeight)
-            }) { (finished) in
-                InjectableSubviewManager().removeSubviewFromParent(subviewVC: VC)
-            }
-        }
-        return nil
-    }
-    
-    
-    
     func configureWidthAndHeightOfAlert(alertVC: DropDownAlertVC) {
         alertVC.view.translatesAutoresizingMaskIntoConstraints = false
         let widthFullScreen = alertVC.view.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width)
@@ -43,13 +30,26 @@ class DropDownAlertManager {
         height.isActive = true
     }
     
+    func setInitialPositionOfAlert(alertVC: DropDownAlertVC) {
+        alertVC.view.transform = CGAffineTransform(translationX: 0, y: 0 - alertHeight)
+    }
+    
     func animateAlertIntoView(alertVC: DropDownAlertVC) {
         UIView.animate(withDuration: animationDuration) {
             alertVC.view.transform = CGAffineTransform(translationX: 0, y: UIApplication.shared.windows[0].safeAreaInsets.top)
         }
     }
     
-    func setInitialPositionOfAlert(alertVC: DropDownAlertVC) {
-        alertVC.view.transform = CGAffineTransform(translationX: 0, y: 0 - alertHeight)
+    
+    
+    func removeAlertFromScreen(alertVC: DropDownAlertVC?) -> DropDownAlertVC? {
+        if let VC = alertVC {
+            UIView.animate(withDuration: animationDuration, animations: {
+                VC.view.transform = .identity
+            }) { (finished) in
+                InjectableSubviewManager().removeSubviewFromParent(subviewVC: VC)
+            }
+        }
+        return nil
     }
 }

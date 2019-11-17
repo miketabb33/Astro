@@ -15,5 +15,4 @@ class DropDownAlertVC: UIViewController {
         view.backgroundColor = backgroundColor
         label.textColor = TextColorSelector().getTextColor(backgroundColor: backgroundColor!)
     }
-
 }
