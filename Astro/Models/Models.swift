@@ -1,6 +1,6 @@
 import Foundation
 
-struct APODItemsModel: Decodable {
+struct APODEntriesModel: Decodable {
     var entries: [APODEntryModel]
 }
 
@@ -10,4 +10,9 @@ struct APODEntryModel: Decodable {
     var explanation: String
     var date: String
     var title: String
+}
+
+class AstroObjUploadModel : Codable {
+    var name  = ""
+    var relativeWeight = 0
 }

@@ -9,7 +9,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         RealmMethods().cleanAPODDatabase()
         AstronomicalObjectInjection().preloadAstronomicalObjectsUnlessCompleted()
-        APODInjection().SyncronizeAPODEntries()
+        APODEntryDBInjection().SyncronizeAPODEntries()
         
         //Line below prints location of realm Database
         print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))

@@ -4,15 +4,16 @@ import RealmSwift
 class RealmMethods {
     let realm = try! Realm()
     
-    func addAPOD(data: [APODEntryRealm]) {
+    func createAPODEntry(entry: APODEntryModel) {
+        let newApodEntry = APODEntryRealm()
+        newApodEntry.id = Int(entry.id)!
+        newApodEntry.title = DecoderMethods().decodeWithUTF8(string: entry.title)
+        newApodEntry.explanation = DecoderMethods().decodeWithUTF8(string: entry.explanation)
+        newApodEntry.date = entry.date
+        newApodEntry.image_url = entry.image_url
+        
         try! realm.write {
-            realm.add(data)
-        }
-    }
-    
-    func addAPODEntry(entry: APODEntryRealm) {
-        try! realm.write {
-            realm.add(entry)
+            realm.add(newApodEntry)
         }
     }
     
@@ -22,7 +23,7 @@ class RealmMethods {
         }
     }
     
-    func getLastAPODEntryID() -> Int {
+    func getLastSavedAPODEntryID() -> Int {
         let entries = realm.objects(APODEntryRealm.self)
         let sortedEntries = entries.sorted(byKeyPath: "id",ascending: false)
         
