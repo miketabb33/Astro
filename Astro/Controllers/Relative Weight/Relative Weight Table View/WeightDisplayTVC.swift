@@ -2,7 +2,7 @@ import UIKit
 import RealmSwift
 
 class WeightDisplayTVC: UITableViewController {
-    var astronomicalObjContainer: Results<AstronomicalObject>?
+    var astronomicalObjContainer: Results<AstronomicalObjectRealm>?
     var enteredWeight : Double?
     
     let cellID = "RelativeWeightCell"

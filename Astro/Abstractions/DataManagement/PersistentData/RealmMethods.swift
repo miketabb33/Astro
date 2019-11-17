@@ -4,33 +4,39 @@ import RealmSwift
 class RealmMethods {
     let realm = try! Realm()
     
-    func addAPOD(data: [APODEntry]) {
+    func addAPOD(data: [APODEntryRealm]) {
         try! realm.write {
             realm.add(data)
         }
     }
     
-    func addAstonomicalObjects(data: [AstronomicalObject]) {
+    func addAPODEntry(entry: APODEntryRealm) {
+        try! realm.write {
+            realm.add(entry)
+        }
+    }
+    
+    func addAstonomicalObjects(data: [AstronomicalObjectRealm]) {
         try! realm.write {
             realm.add(data)
         }
     }
     
-    func getLastAPODEntry() -> APODEntry {
-        let entries = realm.objects(APODEntry.self)
-        let sortedEntries = entries.sorted(byKeyPath: "date",ascending: false)
+    func getLastAPODEntryID() -> Int {
+        let entries = realm.objects(APODEntryRealm.self)
+        let sortedEntries = entries.sorted(byKeyPath: "id",ascending: false)
         
-        return sortedEntries.first!
+        return sortedEntries.first?.id ?? 0
     }
     
-    func getAllAPODEntries() -> Results<APODEntry> {
-        let APODEntries = realm.objects(APODEntry.self)
+    func getAllAPODEntries() -> Results<APODEntryRealm> {
+        let APODEntries = realm.objects(APODEntryRealm.self)
         let sortedEntries = APODEntries.sorted(byKeyPath: "date",ascending: false)
         return sortedEntries
     }
     
-    func getAllAstronomicalObjects() -> Results<AstronomicalObject> {
-        let astronomicalObjects = realm.objects(AstronomicalObject.self)
+    func getAllAstronomicalObjects() -> Results<AstronomicalObjectRealm> {
+        let astronomicalObjects = realm.objects(AstronomicalObjectRealm.self)
         let sortedObjects = astronomicalObjects.sorted(byKeyPath: "position",ascending: true)
         return sortedObjects
     }

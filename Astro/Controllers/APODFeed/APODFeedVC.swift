@@ -11,7 +11,7 @@ class APODFeedVC: UIViewController {
     
     let cellID = "APODEntryCell"
     
-    var allAPODEntries: Results<APODEntry>?
+    var allAPODEntries: Results<APODEntryRealm>?
 
     override func viewDidLoad() {
         super.viewDidLoad()

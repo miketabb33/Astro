@@ -2,7 +2,7 @@ import UIKit
 import RealmSwift
 
 class AstroObjTempTVC: UITableViewController {
-    var planetsContainer: Results<AstronomicalObject>?
+    var planetsContainer: Results<AstronomicalObjectRealm>?
     var selectedPlanetName : String?
     
     let cellID = "AstroObjTempCell"

@@ -30,12 +30,12 @@ class AstronomicalObjectInjection {
         }
     }
 
-    func digestAstronomicalObjectData(decodedData: [AstroObjUploadModel]) -> [AstronomicalObject] {
-        var astronomicalObjects = [AstronomicalObject]()
+    func digestAstronomicalObjectData(decodedData: [AstroObjUploadModel]) -> [AstronomicalObjectRealm] {
+        var astronomicalObjects = [AstronomicalObjectRealm]()
 
         for (index, object) in decodedData.enumerated() {
             let convertableWeight : Double = Double(object.relativeWeight)/1000000
-            let astronomicalObject = AstronomicalObject()
+            let astronomicalObject = AstronomicalObjectRealm()
 
             astronomicalObject.name = object.name
             astronomicalObject.relativeWeight = convertableWeight

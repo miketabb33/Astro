@@ -9,7 +9,7 @@ class EntryCellInsertionManager {
     let entriesToAdd = 1
     
     //MARK: - Inital Entry Load
-    func addNextEntryToPageUnlessNoEntriesExist(allAPODEntries: Results<APODEntry>, tableView: UITableView) {
+    func addNextEntryToPageUnlessNoEntriesExist(allAPODEntries: Results<APODEntryRealm>, tableView: UITableView) {
         if allAPODEntries.count != 0 {
             addNextEntryToPageUnlessInitialLoadComplete(tableView: tableView)
         }
@@ -33,13 +33,13 @@ class EntryCellInsertionManager {
     }
     
     //MARK: - Load More Entries on scroll
-    func loadMoreEntriesWhenSrollReachesBottom(tableView: UITableView, allAPODEntries: Results<APODEntry>, isConnected: Bool) {
+    func loadMoreEntriesWhenSrollReachesBottom(tableView: UITableView, allAPODEntries: Results<APODEntryRealm>, isConnected: Bool) {
         if tableView.contentOffset.y >= (tableView.contentSize.height - tableView.frame.size.height) && showingEntries < allAPODEntries.count {
             insertNextSetOfRows(tableView: tableView, allAPODEntries: allAPODEntries, isConnected: isConnected)
         }
     }
     
-    func insertNextSetOfRows(tableView: UITableView, allAPODEntries: Results<APODEntry>, isConnected: Bool) {
+    func insertNextSetOfRows(tableView: UITableView, allAPODEntries: Results<APODEntryRealm>, isConnected: Bool) {
         tableView.beginUpdates()
         var i = 0
         var totalEntries = showingEntries
