@@ -25,7 +25,7 @@ class APODEntryDBInjection {
         let lastSavedEntryID = RealmMethods().getLastSavedAPODEntryID()
         for result in results.entries {
             if Int(result.id)! > lastSavedEntryID {
-                RealmMethods().createAPODEntry(entry: result)
+                RealmMethods().createAPODEntry(apodEntry: result)
             } else {
                 break
             }

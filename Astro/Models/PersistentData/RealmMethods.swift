@@ -4,24 +4,36 @@ import RealmSwift
 class RealmMethods {
     let realm = try! Realm()
     
-    func createAPODEntry(entry: APODEntryModel) {
+    func createAPODEntry(apodEntry: APODEntryModel) {
         let newApodEntry = APODEntryRealm()
-        newApodEntry.id = Int(entry.id)!
-        newApodEntry.title = DecoderMethods().decodeWithUTF8(string: entry.title)
-        newApodEntry.explanation = DecoderMethods().decodeWithUTF8(string: entry.explanation)
-        newApodEntry.date = entry.date
-        newApodEntry.image_url = entry.image_url
+        newApodEntry.id = Int(apodEntry.id)!
+        newApodEntry.title = DecoderMethods().decodeWithUTF8(string: apodEntry.title)
+        newApodEntry.explanation = DecoderMethods().decodeWithUTF8(string: apodEntry.explanation)
+        newApodEntry.date = apodEntry.date
+        newApodEntry.image_url = apodEntry.image_url
         
         try! realm.write {
             realm.add(newApodEntry)
         }
     }
     
-    func addAstonomicalObjects(data: [AstronomicalObjectRealm]) {
+    func createAstronomicalObject(object: AstroObjUploadModel, listPosition: Int) {
+        let newAstronomicalObject = AstronomicalObjectRealm()
+        newAstronomicalObject.name = object.name
+        newAstronomicalObject.relativeWeight = Double(object.relativeWeight)/1000000
+        newAstronomicalObject.position = listPosition
+        
         try! realm.write {
-            realm.add(data)
+            realm.add(newAstronomicalObject)
         }
     }
+    
+    func createSetOfAstonomicalObjects(set: [AstroObjUploadModel]) {
+        for (index, object) in set.enumerated() {
+            createAstronomicalObject(object: object, listPosition: index)
+        }
+    }
+    
     
     func getLastSavedAPODEntryID() -> Int {
         let entries = realm.objects(APODEntryRealm.self)

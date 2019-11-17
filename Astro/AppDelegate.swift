@@ -8,7 +8,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         RealmMethods().cleanAPODDatabase()
-        AstronomicalObjectInjection().preloadAstronomicalObjectsUnlessCompleted()
+        AstronomicalObjectDBInjection().uploadAstronomicalObjectsUnlessCompleted()
         APODEntryDBInjection().SyncronizeAPODEntries()
         
         //Line below prints location of realm Database
