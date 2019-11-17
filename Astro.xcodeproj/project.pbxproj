@@ -260,27 +260,19 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		4B52707E22D904DB00E8FBFD /* BasicUI */ = {
+		4B6023DC22BBBEE300732745 /* Bin - needs home */ = {
 			isa = PBXGroup;
 			children = (
+				4BCDFC0B22FF18F4003E39E8 /* BootStrapColors.swift */,
+				4B20CC662378A32A0057FEB8 /* TextColorSelector.swift */,
+				4BCA1CED22B6BD9D00118A1E /* FormatterMethods.swift */,
 				4BCA1CE722B69EA100118A1E /* LoadingAnimation.swift */,
 				4BCA1CEB22B6B6AB00118A1E /* KeyboardMethods.swift */,
 				4B6023E322BE7CB900732745 /* Navigation.swift */,
 				4B98E89F22BEC9D90025B8F2 /* SearchBarMethods.swift */,
 				4B1A9AEE22F723F000B88975 /* InternetDetection.swift */,
 			);
-			path = BasicUI;
-			sourceTree = "<group>";
-		};
-		4B6023DC22BBBEE300732745 /* Abstractions */ = {
-			isa = PBXGroup;
-			children = (
-				4BCDFC0B22FF18F4003E39E8 /* BootStrapColors.swift */,
-				4B20CC662378A32A0057FEB8 /* TextColorSelector.swift */,
-				4BCA1CED22B6BD9D00118A1E /* FormatterMethods.swift */,
-				4B52707E22D904DB00E8FBFD /* BasicUI */,
-			);
-			path = Abstractions;
+			path = "Bin - needs home";
 			sourceTree = "<group>";
 		};
 		4B7577F4238202FD00A05151 /* InitialLaunchDataInjection */ = {
@@ -340,7 +332,7 @@
 			children = (
 				4BC55CA9225D330B0079A3E5 /* AppDelegate.swift */,
 				4B20CC682378A7940057FEB8 /* NativeClassExtensions */,
-				4B6023DC22BBBEE300732745 /* Abstractions */,
+				4B6023DC22BBBEE300732745 /* Bin - needs home */,
 				4B384B88236F321F00C3FD59 /* Subviews */,
 				4BC55CC2225D337B0079A3E5 /* Controllers */,
 				4BC55CBE225D33430079A3E5 /* Views */,
