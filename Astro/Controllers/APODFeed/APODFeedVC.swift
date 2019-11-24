@@ -11,8 +11,11 @@ class APODFeedVC: UIViewController {
     
     let cellID = "APODEntryCell"
     
-    var APODEntries = [APODEntryModel]()
-    var showingEntryCount = 10
+    var APODEntries = [APODEntryModel]() {
+        didSet {
+            print(APODEntries.count)
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,10 +25,9 @@ class APODFeedVC: UIViewController {
         internetDetection = InternetDetection(parentVC: self)
         internetDetection?.startMonitoringInternetConnection()
         
-        APODEntries = APODEntryMethods().get(amount: showingEntryCount)
-        
         //entryCellInsertionManager.addNextEntryToPageUnlessNoEntriesExist(allAPODEntries: allAPODEntries, tableView: tableView)
         tableView.allowsSelection = false
+        tableView.reloadData()
     }
 
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
@@ -48,7 +50,7 @@ extension APODFeedVC: UITableViewDelegate, UITableViewDataSource {
         var entry = APODEntries[indexPath.row]
         entry.image = UIImage(named: "youtube")!.pngData()
         
-        //EntryCellConstructor().assignCell(cell: cell, indexPath: indexPath, allAPODEntries: APODEntries, tableView: tableView, parent: self)
+        
         
         //entryCellManager.addNextCell(cell: cell, allAPODEntries: allAPODEntries, indexPath: indexPath, tableView: tableView, parent: self)
     
