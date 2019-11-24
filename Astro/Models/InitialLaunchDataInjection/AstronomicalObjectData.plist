@@ -3,60 +3,80 @@
 <plist version="1.0">
 <array>
 	<dict>
+		<key>position</key>
+		<integer>1</integer>
 		<key>name</key>
 		<string>Moon</string>
 		<key>relativeWeight</key>
 		<real>165556</real>
 	</dict>
 	<dict>
+		<key>position</key>
+		<integer>2</integer>
 		<key>name</key>
 		<string>Sun</string>
 		<key>relativeWeight</key>
 		<real>27071667</real>
 	</dict>
 	<dict>
+		<key>position</key>
+		<integer>3</integer>
 		<key>name</key>
 		<string>Mercury</string>
 		<key>relativeWeight</key>
 		<real>377778</real>
 	</dict>
 	<dict>
+		<key>position</key>
+		<integer>4</integer>
 		<key>name</key>
 		<string>Venus</string>
 		<key>relativeWeight</key>
 		<real>906667</real>
 	</dict>
 	<dict>
+		<key>position</key>
+		<integer>5</integer>
 		<key>name</key>
 		<string>Mars</string>
 		<key>relativeWeight</key>
 		<real>376667</real>
 	</dict>
 	<dict>
+		<key>position</key>
+		<integer>6</integer>
 		<key>name</key>
 		<string>Jupiter</string>
 		<key>relativeWeight</key>
 		<real>2527778</real>
 	</dict>
 	<dict>
+		<key>position</key>
+		<integer>7</integer>
 		<key>name</key>
 		<string>Saturn</string>
 		<key>relativeWeight</key>
 		<real>1063889</real>
 	</dict>
 	<dict>
+		<key>position</key>
+		<integer>8</integer>
 		<key>name</key>
 		<string>Uranus</string>
 		<key>relativeWeight</key>
 		<real>888889</real>
 	</dict>
 	<dict>
+		<key>position</key>
+		<integer>9</integer>
 		<key>name</key>
 		<string>Neptune</string>
 		<key>relativeWeight</key>
 		<real>1125000</real>
 	</dict>
 	<dict>
+		<key>position</key>
+		<integer>10</integer>
 		<key>name</key>
 		<string>Pluto</string>
 		<key>relativeWeight</key>

@@ -279,8 +279,8 @@
 			isa = PBXGroup;
 			children = (
 				4B6023DD22BBBFFF00732745 /* AstronomicalObjectDBInjection.swift */,
-				4BC55CF4225FB0210079A3E5 /* AstronomicalObjectData.plist */,
 				4B7577F5238203F500A05151 /* AstroObjUploadModel.swift */,
+				4BC55CF4225FB0210079A3E5 /* AstronomicalObjectData.plist */,
 			);
 			path = InitialLaunchDataInjection;
 			sourceTree = "<group>";
