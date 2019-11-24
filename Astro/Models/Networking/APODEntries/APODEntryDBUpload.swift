@@ -1,4 +1,4 @@
-import UIKit
+import UIKit // switch to foundation after class bottom class removal
 
 class APODEntryDBUpload {
     func SyncronizeAPODEntries() {
@@ -35,7 +35,7 @@ class APODEntryDBUpload {
             
             if resultID > lastSavedEntryID {
                 APODEntryMethods().create(id: newEntry.id, title: newEntry.title, explanation: newEntry.explanation, date: newEntry.date, imageURL: newEntry.image_url)
-                newAPODEntryDispatcher.collectEntriesAndDispatch(entry: newEntry)
+                newAPODEntryDispatcher.observeAndDispatch()
             } else {
                 newAPODEntryDispatcher.sendAPODEntriesToFeed()
                 break
@@ -45,23 +45,27 @@ class APODEntryDBUpload {
 }
 
 class NewAPODEntryDispatcher {
-    var container = [APODEntryModel]()
+    var limit = 0
     var APODEntriesDispatched = false
     
-    func collectEntriesAndDispatch(entry: APODEntryModel) {
-        if container.count < 10 {
-            container.append(APODEntryModel(id: entry.id, title: entry.title, explanation: entry.title, date: entry.date, image_url: entry.image_url))
-        } else if container.count == 10 && !APODEntriesDispatched {
+    func observeAndDispatch() {
+        if limit < 10 {
+            limit += 1
+        } else if limit == 10 && !APODEntriesDispatched {
             sendAPODEntriesToFeed()
             APODEntriesDispatched = true
         }
     }
     
     func sendAPODEntriesToFeed() {
+        let entries = APODEntryMethods().get(amount: 10)
+        
+        
+        
         DispatchQueue.main.async {
             let rootVC = UIApplication.shared.windows.first!.rootViewController as! MainTabController
             let feedVC = rootVC.viewControllers?[1] as! APODFeedVC
-            feedVC.APODEntries = self.container
+            feedVC.APODEntries = entries
         }
     }
 }

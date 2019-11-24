@@ -13,7 +13,7 @@ class APODFeedVC: UIViewController {
     
     var APODEntries = [APODEntryModel]() {
         didSet {
-            print(APODEntries.count)
+            //print(APODEntries)
         }
     }
 
