@@ -11,7 +11,8 @@ class APODFeedVC: UIViewController {
     
     let cellID = "APODEntryCell"
     
-    var allAPODEntries: Results<APODEntry>?
+    var APODEntries = [APODEntryModel]()
+    var showingEntryCount = 10
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,31 +23,38 @@ class APODFeedVC: UIViewController {
         internetDetection = InternetDetection(parentVC: self)
         internetDetection?.startMonitoringInternetConnection()
         
-        allAPODEntries = APODEntryMethods().getAll()
-        entryCellInsertionManager.addNextEntryToPageUnlessNoEntriesExist(allAPODEntries: allAPODEntries!, tableView: tableView)
+        APODEntries = APODEntryMethods().get(amount: showingEntryCount)
+        for entry in APODEntries {
+            
+        }
         
+        //entryCellInsertionManager.addNextEntryToPageUnlessNoEntriesExist(allAPODEntries: allAPODEntries, tableView: tableView)
         tableView.allowsSelection = false
     }
 
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        entryCellInsertionManager.loadMoreEntriesWhenSrollReachesBottom(tableView: tableView, allAPODEntries: allAPODEntries!, isConnected: internetDetection!.isConnected!)
+        //entryCellInsertionManager.loadMoreEntriesWhenSrollReachesBottom(tableView: tableView, allAPODEntries: allAPODEntries, isConnected: internetDetection!.isConnected!)
     }
 
 }
 
 extension APODFeedVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return entryCellInsertionManager.showingEntries
+        return APODEntries.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return CGFloat(allAPODEntries![indexPath.row].cellHeight)
+        return CGFloat(APODEntries[indexPath.row].cellHeight ?? 450)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! APODEntryCell
+        var entry = APODEntries[indexPath.row]
+        entry.image = UIImage(named: "youtube")!.pngData()
         
-        entryCellManager.addNextCell(cell: cell, allAPODEntries: allAPODEntries!, indexPath: indexPath, tableView: tableView, parent: self)
+        //EntryCellConstructor().assignCell(cell: cell, indexPath: indexPath, allAPODEntries: APODEntries, tableView: tableView, parent: self)
+        
+        //entryCellManager.addNextCell(cell: cell, allAPODEntries: allAPODEntries, indexPath: indexPath, tableView: tableView, parent: self)
     
         return cell
     }

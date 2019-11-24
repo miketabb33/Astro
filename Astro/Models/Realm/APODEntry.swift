@@ -7,9 +7,6 @@ class APODEntry: Object {
     @objc dynamic var image_url = ""
     @objc dynamic var title = ""
     @objc dynamic var date = Date()
-    @objc dynamic var image: Data? = nil
-    @objc dynamic var cellHeight = 0
-    @objc dynamic var expandEnabled = false
 }
 
 class APODEntryMethods: RealmPath {
@@ -33,24 +30,40 @@ class APODEntryMethods: RealmPath {
         return sortedEntries.first?.id ?? 0
     }
     
-    func getAll() -> Results<APODEntry> {
-        let APODEntries = realm.objects(APODEntry.self)
-        let sortedEntries = APODEntries.sorted(byKeyPath: "date",ascending: false)
-        return sortedEntries
+    func getAll() -> [APODEntryModel] {
+        let APODEntries = realm.objects(APODEntry.self).sorted(byKeyPath: "date",ascending: false)
+        
+        return APODEntries.map{
+            APODEntryModel(id: $0.id, title: $0.title, explanation: $0.explanation, date: $0.date, image_url: $0.image_url)
+        }
+    }
+    
+    func get(amount: Int) -> [APODEntryModel] {
+        let APODEntries = realm.objects(APODEntry.self).sorted(byKeyPath: "date",ascending: false)
+        var container = [APODEntryModel]()
+        
+        var i = 0
+        while i < amount {
+            let entry = APODEntries[i]
+            container.append(APODEntryModel(id: entry.id, title: entry.title, explanation: entry.explanation, date: entry.date, image_url: entry.image_url))
+            
+            i += 1
+        }
+        return container
     }
     
     
     func cleanAPODDatabase() {
-        let allAPODEntries = getAll()
-        for (index, entry) in allAPODEntries.enumerated() {
-            try! realm.write {
-                if index > 19 {
-                    entry.image = nil
-                }
-                entry.cellHeight = 0
-                entry.expandEnabled = false
-            }
-        }
+//        let allAPODEntries = getAll()
+//        for (index, entry) in allAPODEntries.enumerated() {
+//            try! realm.write {
+//                if index > 19 {
+//                    entry.image = nil
+//                }
+//                entry.cellHeight = 0
+//                entry.expandEnabled = false
+//            }
+//        }
     }
     
 }

@@ -6,6 +6,9 @@ struct APODEntryModel {
     var explanation: String
     var date: Date
     var image_url: String
+    var image: Data?
+    var cellHeight: Int?
+    var expandEnabled: Bool?
 }
 
 struct AstronomicalObjectModel: Decodable {
