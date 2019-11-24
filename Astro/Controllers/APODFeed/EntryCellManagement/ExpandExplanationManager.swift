@@ -6,7 +6,7 @@ class ExpandExplanationManager {
     let realmMethods = RealmMethods()
     
     //GET TOGGLE POSITION
-    func getTogglePositionOfExplanation(cell: APODEntryCell, allAPODEntries: Results<APODEntryRealm>, indexPath: IndexPath) {
+    func getTogglePositionOfExplanation(cell: APODEntryCell, allAPODEntries: Results<APODEntry>, indexPath: IndexPath) {
         if allAPODEntries[indexPath.row].expandEnabled == true {
             showExpandedExplanation(cell: cell)
         } else {
@@ -29,7 +29,7 @@ class ExpandExplanationManager {
     }
     
     //MARK: SET TOGGLE POSITION
-    func toggleController(allAPODEntries: Results<APODEntryRealm>, indexPath: IndexPath, cell: APODEntryCell, tableView: UITableView) {
+    func toggleController(allAPODEntries: Results<APODEntry>, indexPath: IndexPath, cell: APODEntryCell, tableView: UITableView) {
         if allAPODEntries[indexPath.row].expandEnabled == false {
             expandExplanationLabel(allAPODEntries: allAPODEntries, indexPath: indexPath, cell: cell, tableView: tableView)
         } else {
@@ -38,7 +38,7 @@ class ExpandExplanationManager {
     }
     
     //Expand Explanation Label
-    func expandExplanationLabel(allAPODEntries: Results<APODEntryRealm>, indexPath: IndexPath, cell: APODEntryCell, tableView: UITableView) {
+    func expandExplanationLabel(allAPODEntries: Results<APODEntry>, indexPath: IndexPath, cell: APODEntryCell, tableView: UITableView) {
         try! realmMethods.realm.write {
             allAPODEntries[indexPath.row].expandEnabled = true
         }
@@ -60,7 +60,7 @@ class ExpandExplanationManager {
     }
     
     //Collapse Explanation Label
-    func collapseExplanationLabel(allAPODEntries: Results<APODEntryRealm>, indexPath: IndexPath, cell: APODEntryCell, tableView: UITableView) {
+    func collapseExplanationLabel(allAPODEntries: Results<APODEntry>, indexPath: IndexPath, cell: APODEntryCell, tableView: UITableView) {
         
         try! realmMethods.realm.write {
             allAPODEntries[indexPath.row].expandEnabled = false

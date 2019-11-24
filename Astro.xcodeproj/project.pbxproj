@@ -59,6 +59,9 @@
 		4BE51AD722E34EB4002905ED /* APODEntryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE51AD522E34EB4002905ED /* APODEntryCell.swift */; };
 		4BE51ADC22E60EFE002905ED /* EntryCellInsertionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE51ADB22E60EFE002905ED /* EntryCellInsertionManager.swift */; };
 		4BEC2F772381B80400395CA4 /* InjectableSubviewManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEC2F762381B80400395CA4 /* InjectableSubviewManagerTests.swift */; };
+		4BEE114B238ADD9C00379D6E /* RealmPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEE114A238ADD9C00379D6E /* RealmPath.swift */; };
+		4BEE114D238ADDDF00379D6E /* APODEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEE114C238ADDDF00379D6E /* APODEntry.swift */; };
+		4BEE1150238AE20400379D6E /* APODEntryJSONModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEE114F238AE20400379D6E /* APODEntryJSONModels.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -149,6 +152,9 @@
 		4BE51AD522E34EB4002905ED /* APODEntryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODEntryCell.swift; sourceTree = "<group>"; };
 		4BE51ADB22E60EFE002905ED /* EntryCellInsertionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryCellInsertionManager.swift; sourceTree = "<group>"; };
 		4BEC2F762381B80400395CA4 /* InjectableSubviewManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjectableSubviewManagerTests.swift; sourceTree = "<group>"; };
+		4BEE114A238ADD9C00379D6E /* RealmPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmPath.swift; sourceTree = "<group>"; };
+		4BEE114C238ADDDF00379D6E /* APODEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODEntry.swift; sourceTree = "<group>"; };
+		4BEE114F238AE20400379D6E /* APODEntryJSONModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODEntryJSONModels.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,15 +217,6 @@
 				4B384B8B236F329200C3FD59 /* DropDownAlert.storyboard */,
 			);
 			path = DropDownAlert;
-			sourceTree = "<group>";
-		};
-		4B47DDA52343B492005F736F /* PersistentData */ = {
-			isa = PBXGroup;
-			children = (
-				4B47DDA32343A50F005F736F /* RealmMethods.swift */,
-				4B6023DF22BE76F200732745 /* UserDefaultsMethods.swift */,
-			);
-			path = PersistentData;
 			sourceTree = "<group>";
 		};
 		4B47DDA72343D10E005F736F /* Astro Obj Temp Table View */ = {
@@ -372,11 +369,13 @@
 		4BC55CC3225D337D0079A3E5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				4B47DDA52343B492005F736F /* PersistentData */,
+				4B6023DF22BE76F200732745 /* UserDefaultsMethods.swift */,
+				4BD39AFB2381D7DF00B70DC3 /* ApplicationModels.swift */,
+				4BEE1149238ADD5B00379D6E /* Realm */,
 				4B7577F4238202FD00A05151 /* InitialLaunchDataInjection */,
 				4BD39B082381FB9000B70DC3 /* Networking */,
+				4B47DDA32343A50F005F736F /* RealmMethods.swift */,
 				4B484BEA233A982600BA09AD /* RealmObjects.swift */,
-				4BD39AFB2381D7DF00B70DC3 /* ApplicationModels.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -385,7 +384,7 @@
 			isa = PBXGroup;
 			children = (
 				4BD39B092381FC1600B70DC3 /* NetworkManager.swift */,
-				4BCA1CE922B6AA0900118A1E /* APODEntryDBInjection.swift */,
+				4BEE114E238AE1E600379D6E /* APODEntries */,
 				4BD39B062381F56200B70DC3 /* DecoderMethods.swift */,
 			);
 			path = Networking;
@@ -454,6 +453,24 @@
 				4BEC2F762381B80400395CA4 /* InjectableSubviewManagerTests.swift */,
 			);
 			path = InjectableSubviewa;
+			sourceTree = "<group>";
+		};
+		4BEE1149238ADD5B00379D6E /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				4BEE114A238ADD9C00379D6E /* RealmPath.swift */,
+				4BEE114C238ADDDF00379D6E /* APODEntry.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
+		4BEE114E238AE1E600379D6E /* APODEntries */ = {
+			isa = PBXGroup;
+			children = (
+				4BCA1CE922B6AA0900118A1E /* APODEntryDBInjection.swift */,
+				4BEE114F238AE20400379D6E /* APODEntryJSONModels.swift */,
+			);
+			path = APODEntries;
 			sourceTree = "<group>";
 		};
 		9326997725848E964D5B9BEE /* Frameworks */ = {
@@ -624,7 +641,9 @@
 				4B484BEB233A982600BA09AD /* RealmObjects.swift in Sources */,
 				4BE14DCD2311B118000FA4E8 /* EntryCellConstructor.swift in Sources */,
 				4BB687AF226519E600D423F9 /* RelativeWeightInputVC.swift in Sources */,
+				4BEE1150238AE20400379D6E /* APODEntryJSONModels.swift in Sources */,
 				4B384B91236F351A00C3FD59 /* InjectableSubviewManager.swift in Sources */,
+				4BEE114B238ADD9C00379D6E /* RealmPath.swift in Sources */,
 				4BE14DCB2311AA27000FA4E8 /* ExpandExplanationManager.swift in Sources */,
 				4B98E8A022BEC9D90025B8F2 /* SearchBarMethods.swift in Sources */,
 				4BB687B922664C6A00D423F9 /* AstroObjTempTVC.swift in Sources */,
@@ -656,6 +675,7 @@
 				4BCA1CE822B69EA100118A1E /* LoadingAnimation.swift in Sources */,
 				4BE14DCF2311E22F000FA4E8 /* EntryCellManager.swift in Sources */,
 				4B6023DE22BBBFFF00732745 /* AstronomicalObjectDBInjection.swift in Sources */,
+				4BEE114D238ADDDF00379D6E /* APODEntry.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

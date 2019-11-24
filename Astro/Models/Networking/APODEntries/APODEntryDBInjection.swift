@@ -13,7 +13,7 @@ class APODEntryDBInjection {
         let decoder = JSONDecoder()
         if let safeData = data {
             do {
-                let results = try decoder.decode(APODEntriesModel.self, from: safeData)
+                let results = try decoder.decode(APODEntriesUploadModel.self, from: safeData)
                 addUnsavedAPODEntries(results)
             } catch {
                 print("Error decoding NDN-API Response")
@@ -21,11 +21,11 @@ class APODEntryDBInjection {
         }
     }
     
-    func addUnsavedAPODEntries(_ results: APODEntriesModel) {
-        let lastSavedEntryID = RealmMethods().getLastSavedAPODEntryID()
+    func addUnsavedAPODEntries(_ results: APODEntriesUploadModel) {
+        let lastSavedEntryID = APODEntryMethods().getLastID()
         for result in results.entries {
             if Int(result.id)! > lastSavedEntryID {
-                RealmMethods().createAPODEntry(apodEntry: result)
+                APODEntryMethods().create(id: Int(result.id)!, title: result.title, explanation: result.explanation, date: result.date, imageURL: result.image_url)
             } else {
                 break
             }

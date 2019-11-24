@@ -7,7 +7,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        RealmMethods().cleanAPODDatabase()
+        APODEntryMethods().cleanAPODDatabase()
         AstronomicalObjectDBInjection().uploadAstronomicalObjectsUnlessCompleted(isCompleted: UserDefaultsMethods().getUserDefaultsForBoolean(key: UserDefaultsMethods().astronomicalObjectPreloadCompletedKey))
         APODEntryDBInjection().SyncronizeAPODEntries()
         

@@ -1,18 +1,14 @@
 import Foundation
 
-struct APODEntriesModel: Decodable {
-    var entries: [APODEntryModel]
-}
-
-struct APODEntryModel: Decodable {
-    var id: String
-    var image_url: String
+struct APODEntryModel {
+    var id: Int
+    var title: String
     var explanation: String
     var date: String
-    var title: String
+    var image_url: String
 }
 
-struct AstroObjUploadModel: Decodable {
+struct AstronomicalObjectModel: Decodable {
     var position: Int
     var name: String
     var relativeWeight: Int

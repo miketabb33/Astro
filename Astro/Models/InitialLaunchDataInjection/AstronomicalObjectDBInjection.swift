@@ -12,7 +12,7 @@ class AstronomicalObjectDBInjection {
             if let AstronomicalObjectFileData = try? Data(contentsOf: AstronomicalObjectURLPath) {
                 let decoder = PropertyListDecoder()
                 do {
-                    let results = try decoder.decode([AstroObjUploadModel].self, from: AstronomicalObjectFileData)
+                    let results = try decoder.decode([AstronomicalObjectModel].self, from: AstronomicalObjectFileData)
                     RealmMethods().createSetOfAstonomicalObjects(set: results)
                     
                     userDefaultMethods.setUserDefaults(data: true, key: userDefaultMethods.astronomicalObjectPreloadCompletedKey)

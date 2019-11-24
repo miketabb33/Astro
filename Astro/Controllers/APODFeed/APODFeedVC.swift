@@ -11,7 +11,7 @@ class APODFeedVC: UIViewController {
     
     let cellID = "APODEntryCell"
     
-    var allAPODEntries: Results<APODEntryRealm>?
+    var allAPODEntries: Results<APODEntry>?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +22,7 @@ class APODFeedVC: UIViewController {
         internetDetection = InternetDetection(parentVC: self)
         internetDetection?.startMonitoringInternetConnection()
         
-        allAPODEntries = RealmMethods().getAllAPODEntries()
+        allAPODEntries = APODEntryMethods().getAll()
         entryCellInsertionManager.addNextEntryToPageUnlessNoEntriesExist(allAPODEntries: allAPODEntries!, tableView: tableView)
         
         tableView.allowsSelection = false
