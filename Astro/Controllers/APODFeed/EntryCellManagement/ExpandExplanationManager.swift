@@ -3,7 +3,7 @@ import RealmSwift
 
 class ExpandExplanationManager {
     let addConstraints = EntryCellConstraints()
-    let realmMethods = RealmMethods()
+    let realmMethods = RealmPath()
     
     //GET TOGGLE POSITION
     func getTogglePositionOfExplanation(cell: APODEntryCell, allAPODEntries: Results<APODEntry>, indexPath: IndexPath) {

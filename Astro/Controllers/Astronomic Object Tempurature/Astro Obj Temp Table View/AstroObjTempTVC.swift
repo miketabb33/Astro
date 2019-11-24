@@ -10,7 +10,7 @@ class AstroObjTempTVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        planetsContainer = RealmMethods().getAllAstronomicalObjects()
+        planetsContainer = AstronomicalObjectMethods().getAllAstronomicalObjects()
         
         tableView.register(UINib(nibName: cellID, bundle: nil), forCellReuseIdentifier: cellID)
     }

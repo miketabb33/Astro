@@ -1,11 +1,13 @@
 import Foundation
 import RealmSwift
 
-class RealmMethods {
-    let realm = try! Realm()
-    
+class AstronomicalObjectRealm: Object {
+    @objc dynamic var name = ""
+    @objc dynamic var position = 0
+    @objc dynamic var relativeWeight = 0.0
+}
 
-    
+class AstronomicalObjectMethods: RealmPath {
     func createAstronomicalObject(position: Int, name: String, relativeWeight: Int) {
         let newAstronomicalObject = AstronomicalObjectRealm()
         newAstronomicalObject.position = position
@@ -29,6 +31,4 @@ class RealmMethods {
         let sortedObjects = astronomicalObjects.sorted(byKeyPath: "position",ascending: true)
         return sortedObjects
     }
-    
-
 }

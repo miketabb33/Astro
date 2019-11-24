@@ -15,9 +15,7 @@
 		4B384B8C236F329200C3FD59 /* DropDownAlert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B384B8B236F329200C3FD59 /* DropDownAlert.storyboard */; };
 		4B384B8F236F32C900C3FD59 /* DropDownAlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B384B8E236F32C900C3FD59 /* DropDownAlertManager.swift */; };
 		4B384B91236F351A00C3FD59 /* InjectableSubviewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B384B90236F351A00C3FD59 /* InjectableSubviewManager.swift */; };
-		4B47DDA42343A50F005F736F /* RealmMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B47DDA32343A50F005F736F /* RealmMethods.swift */; };
 		4B47DDAD2343D7FD005F736F /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B47DDAC2343D7FD005F736F /* Keys.swift */; };
-		4B484BEB233A982600BA09AD /* RealmObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B484BEA233A982600BA09AD /* RealmObjects.swift */; };
 		4B6023DE22BBBFFF00732745 /* AstronomicalObjectDBInjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6023DD22BBBFFF00732745 /* AstronomicalObjectDBInjection.swift */; };
 		4B6023E022BE76F200732745 /* UserDefaultsMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6023DF22BE76F200732745 /* UserDefaultsMethods.swift */; };
 		4B6023E422BE7CB900732745 /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6023E322BE7CB900732745 /* Navigation.swift */; };
@@ -62,6 +60,7 @@
 		4BEE114B238ADD9C00379D6E /* RealmPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEE114A238ADD9C00379D6E /* RealmPath.swift */; };
 		4BEE114D238ADDDF00379D6E /* APODEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEE114C238ADDDF00379D6E /* APODEntry.swift */; };
 		4BEE1150238AE20400379D6E /* APODEntryJSONModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEE114F238AE20400379D6E /* APODEntryJSONModels.swift */; };
+		4BEE1152238AE43300379D6E /* AstronomicalObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEE1151238AE43300379D6E /* AstronomicalObjects.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,9 +103,7 @@
 		4B384B8B236F329200C3FD59 /* DropDownAlert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DropDownAlert.storyboard; sourceTree = "<group>"; };
 		4B384B8E236F32C900C3FD59 /* DropDownAlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownAlertManager.swift; sourceTree = "<group>"; };
 		4B384B90236F351A00C3FD59 /* InjectableSubviewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjectableSubviewManager.swift; sourceTree = "<group>"; };
-		4B47DDA32343A50F005F736F /* RealmMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmMethods.swift; sourceTree = "<group>"; };
 		4B47DDAC2343D7FD005F736F /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
-		4B484BEA233A982600BA09AD /* RealmObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmObjects.swift; sourceTree = "<group>"; };
 		4B6023DD22BBBFFF00732745 /* AstronomicalObjectDBInjection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronomicalObjectDBInjection.swift; sourceTree = "<group>"; };
 		4B6023DF22BE76F200732745 /* UserDefaultsMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsMethods.swift; sourceTree = "<group>"; };
 		4B6023E322BE7CB900732745 /* Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
@@ -155,6 +152,7 @@
 		4BEE114A238ADD9C00379D6E /* RealmPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmPath.swift; sourceTree = "<group>"; };
 		4BEE114C238ADDDF00379D6E /* APODEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODEntry.swift; sourceTree = "<group>"; };
 		4BEE114F238AE20400379D6E /* APODEntryJSONModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODEntryJSONModels.swift; sourceTree = "<group>"; };
+		4BEE1151238AE43300379D6E /* AstronomicalObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronomicalObjects.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -374,8 +372,6 @@
 				4BEE1149238ADD5B00379D6E /* Realm */,
 				4B7577F4238202FD00A05151 /* InitialLaunchDataInjection */,
 				4BD39B082381FB9000B70DC3 /* Networking */,
-				4B47DDA32343A50F005F736F /* RealmMethods.swift */,
-				4B484BEA233A982600BA09AD /* RealmObjects.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -460,6 +456,7 @@
 			children = (
 				4BEE114A238ADD9C00379D6E /* RealmPath.swift */,
 				4BEE114C238ADDDF00379D6E /* APODEntry.swift */,
+				4BEE1151238AE43300379D6E /* AstronomicalObjects.swift */,
 			);
 			path = Realm;
 			sourceTree = "<group>";
@@ -637,8 +634,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B47DDAD2343D7FD005F736F /* Keys.swift in Sources */,
-				4B47DDA42343A50F005F736F /* RealmMethods.swift in Sources */,
-				4B484BEB233A982600BA09AD /* RealmObjects.swift in Sources */,
 				4BE14DCD2311B118000FA4E8 /* EntryCellConstructor.swift in Sources */,
 				4BB687AF226519E600D423F9 /* RelativeWeightInputVC.swift in Sources */,
 				4BEE1150238AE20400379D6E /* APODEntryJSONModels.swift in Sources */,
@@ -654,6 +649,7 @@
 				4B1A9AEF22F723F000B88975 /* InternetDetection.swift in Sources */,
 				4B20CC6A2378A7AD0057FEB8 /* UIColor.swift in Sources */,
 				4BCA1CEC22B6B6AB00118A1E /* KeyboardMethods.swift in Sources */,
+				4BEE1152238AE43300379D6E /* AstronomicalObjects.swift in Sources */,
 				4BC55CC5225D35450079A3E5 /* WeightDisplayTVC.swift in Sources */,
 				4BCA1CEE22B6BD9D00118A1E /* FormatterMethods.swift in Sources */,
 				4B98E8A622C2B7020025B8F2 /* EntryImageProcessingManager.swift in Sources */,

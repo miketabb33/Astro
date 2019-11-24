@@ -41,7 +41,7 @@ class EntryCellConstructor {
     //MARK: - Calculate cell height
     func calculateCellHeightUnlessAlreadyCalculated(cell: APODEntryCell, allAPODEntries: Results<APODEntry>, indexPath: IndexPath) {
         if allAPODEntries[indexPath.row].cellHeight == 0 {
-            try! RealmMethods().realm.write {
+            try! RealmPath().realm.write {
                 allAPODEntries[indexPath.row].cellHeight = Int(Float(cell.frameHeight["title"]! + cell.frameHeight["image"]! + cell.frameHeight["explanation"]! + cell.frameHeight["button"]!))
             }
         }

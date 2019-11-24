@@ -22,7 +22,7 @@ class EntryCellManager {
     }
     
     func saveYouTubeImageUnlessPictureAndRenderEntry(cell: APODEntryCell, allAPODEntries: Results<APODEntry>, indexPath: IndexPath, tableView: UITableView, parent: UIViewController) {
-        try! RealmMethods().realm.write {
+        try! RealmPath().realm.write {
             allAPODEntries[indexPath.row].image = UIImage(named: "youtube")!.pngData()
         }
         renderEntry(cell: cell, allAPODEntries: allAPODEntries, indexPath: indexPath, tableView: tableView, parent: parent)
@@ -32,7 +32,7 @@ class EntryCellManager {
         let imageUrlString = allAPODEntries[indexPath.row].image_url
         let imageUrl:URL = URL(string: imageUrlString)!
         let imageData:NSData = NSData(contentsOf: imageUrl)!
-        try! RealmMethods().realm.write {
+        try! RealmPath().realm.write {
             allAPODEntries[indexPath.row].image = imageData as Data
         }
         renderEntry(cell: cell, allAPODEntries: allAPODEntries, indexPath: indexPath, tableView: tableView, parent: parent)

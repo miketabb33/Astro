@@ -13,7 +13,7 @@ class AstronomicalObjectDBInjection {
                 let decoder = PropertyListDecoder()
                 do {
                     let results = try decoder.decode([AstronomicalObjectModel].self, from: AstronomicalObjectFileData)
-                    RealmMethods().createSetOfAstonomicalObjects(set: results)
+                    AstronomicalObjectMethods().createSetOfAstonomicalObjects(set: results)
                     
                     userDefaultMethods.setUserDefaults(data: true, key: userDefaultMethods.astronomicalObjectPreloadCompletedKey)
                     

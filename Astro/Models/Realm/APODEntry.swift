@@ -6,14 +6,14 @@ class APODEntry: Object {
     @objc dynamic var explanation = ""
     @objc dynamic var image_url = ""
     @objc dynamic var title = ""
-    @objc dynamic var date = ""
+    @objc dynamic var date = Date()
     @objc dynamic var image: Data? = nil
     @objc dynamic var cellHeight = 0
     @objc dynamic var expandEnabled = false
 }
 
 class APODEntryMethods: RealmPath {
-    func create(id: Int, title: String, explanation: String, date: String, imageURL: String) {
+    func create(id: Int, title: String, explanation: String, date: Date, imageURL: String) {
         let newApodEntry = APODEntry()
         newApodEntry.id = id
         newApodEntry.title = title

@@ -4,7 +4,7 @@ struct APODEntryModel {
     var id: Int
     var title: String
     var explanation: String
-    var date: String
+    var date: Date
     var image_url: String
 }
 
