@@ -1,6 +1,6 @@
 import Foundation
 
-class APODEntryDBInjection {
+class APODEntryDBUpload {
     func SyncronizeAPODEntries() {
         let urlString = "https://ndn-api.herokuapp.com?id=\(Keys().APOD_API_KEY)"
         let url = URL(string: urlString)!
@@ -28,7 +28,7 @@ class APODEntryDBInjection {
             let resultTitle = DecoderMethods().decodeWithUTF8(string: result.title)
             let resultExplanation = DecoderMethods().decodeWithUTF8(string: result.explanation)
             let resultDate = FormatterMethods().convertToDate(yyyyMMdd: result.date)
-            
+            print(resultID)
             if resultID > lastSavedEntryID {
                 APODEntryMethods().create(id: Int(result.id)!, title: resultTitle, explanation: resultExplanation, date: resultDate, imageURL: result.image_url)
             } else {

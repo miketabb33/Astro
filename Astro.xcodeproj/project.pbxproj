@@ -39,7 +39,7 @@
 		4BC55CCB225E59A90079A3E5 /* RelativeWeightCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BC55CC9225E59A90079A3E5 /* RelativeWeightCell.xib */; };
 		4BC55CF5225FB0210079A3E5 /* AstronomicalObjectData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4BC55CF4225FB0210079A3E5 /* AstronomicalObjectData.plist */; };
 		4BCA1CE822B69EA100118A1E /* LoadingAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCA1CE722B69EA100118A1E /* LoadingAnimation.swift */; };
-		4BCA1CEA22B6AA0900118A1E /* APODEntryDBInjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCA1CE922B6AA0900118A1E /* APODEntryDBInjection.swift */; };
+		4BCA1CEA22B6AA0900118A1E /* APODEntryDBUpload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCA1CE922B6AA0900118A1E /* APODEntryDBUpload.swift */; };
 		4BCA1CEC22B6B6AB00118A1E /* KeyboardMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCA1CEB22B6B6AB00118A1E /* KeyboardMethods.swift */; };
 		4BCA1CEE22B6BD9D00118A1E /* FormatterMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCA1CED22B6BD9D00118A1E /* FormatterMethods.swift */; };
 		4BCDFBAE22FC7740003E39E8 /* APODFeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCDFBAD22FC7740003E39E8 /* APODFeedVC.swift */; };
@@ -136,7 +136,7 @@
 		4BC55CC9225E59A90079A3E5 /* RelativeWeightCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RelativeWeightCell.xib; sourceTree = "<group>"; };
 		4BC55CF4225FB0210079A3E5 /* AstronomicalObjectData.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = AstronomicalObjectData.plist; sourceTree = "<group>"; };
 		4BCA1CE722B69EA100118A1E /* LoadingAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingAnimation.swift; sourceTree = "<group>"; };
-		4BCA1CE922B6AA0900118A1E /* APODEntryDBInjection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODEntryDBInjection.swift; sourceTree = "<group>"; };
+		4BCA1CE922B6AA0900118A1E /* APODEntryDBUpload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODEntryDBUpload.swift; sourceTree = "<group>"; };
 		4BCA1CEB22B6B6AB00118A1E /* KeyboardMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardMethods.swift; sourceTree = "<group>"; };
 		4BCA1CED22B6BD9D00118A1E /* FormatterMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatterMethods.swift; sourceTree = "<group>"; };
 		4BCDFBAD22FC7740003E39E8 /* APODFeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODFeedVC.swift; sourceTree = "<group>"; };
@@ -467,7 +467,7 @@
 		4BEE114E238AE1E600379D6E /* APODEntries */ = {
 			isa = PBXGroup;
 			children = (
-				4BCA1CE922B6AA0900118A1E /* APODEntryDBInjection.swift */,
+				4BCA1CE922B6AA0900118A1E /* APODEntryDBUpload.swift */,
 				4BEE114F238AE20400379D6E /* APODEntryJSONModels.swift */,
 			);
 			path = APODEntries;
@@ -670,7 +670,7 @@
 				4B6023E422BE7CB900732745 /* Navigation.swift in Sources */,
 				4BB687BC22664D1F00D423F9 /* AstroObjTempCell.swift in Sources */,
 				4BCDFC0C22FF18F4003E39E8 /* BootStrapColors.swift in Sources */,
-				4BCA1CEA22B6AA0900118A1E /* APODEntryDBInjection.swift in Sources */,
+				4BCA1CEA22B6AA0900118A1E /* APODEntryDBUpload.swift in Sources */,
 				4BC55CCA225E59A90079A3E5 /* RelativeWeightCell.swift in Sources */,
 				4BCA1CE822B69EA100118A1E /* LoadingAnimation.swift in Sources */,
 				4BE14DCF2311E22F000FA4E8 /* EntryCellManager.swift in Sources */,

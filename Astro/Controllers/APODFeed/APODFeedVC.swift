@@ -18,15 +18,11 @@ class APODFeedVC: UIViewController {
         super.viewDidLoad()
         
         tableView.register(APODEntryCell.self, forCellReuseIdentifier: cellID)
-        tableView.rowHeight = 450
         
         internetDetection = InternetDetection(parentVC: self)
         internetDetection?.startMonitoringInternetConnection()
         
         APODEntries = APODEntryMethods().get(amount: showingEntryCount)
-        for entry in APODEntries {
-            
-        }
         
         //entryCellInsertionManager.addNextEntryToPageUnlessNoEntriesExist(allAPODEntries: allAPODEntries, tableView: tableView)
         tableView.allowsSelection = false
