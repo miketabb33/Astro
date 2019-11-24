@@ -11,3 +11,9 @@ struct APODEntryModel: Decodable {
     var date: String
     var title: String
 }
+
+struct AstroObjUploadModel: Decodable {
+    var position: Int
+    var name: String
+    var relativeWeight: Int
+}

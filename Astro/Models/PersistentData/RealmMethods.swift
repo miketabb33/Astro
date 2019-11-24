@@ -17,11 +17,11 @@ class RealmMethods {
         }
     }
     
-    func createAstronomicalObject(object: AstroObjUploadModel, listPosition: Int) {
+    func createAstronomicalObject(position: Int, name: String, relativeWeight: Int) {
         let newAstronomicalObject = AstronomicalObjectRealm()
-        newAstronomicalObject.name = object.name
-        newAstronomicalObject.relativeWeight = Double(object.relativeWeight)/1000000
-        newAstronomicalObject.position = listPosition
+        newAstronomicalObject.position = position
+        newAstronomicalObject.name = name
+        newAstronomicalObject.relativeWeight = Double(relativeWeight)/1000000
         
         try! realm.write {
             realm.add(newAstronomicalObject)
@@ -29,8 +29,8 @@ class RealmMethods {
     }
     
     func createSetOfAstonomicalObjects(set: [AstroObjUploadModel]) {
-        for (index, object) in set.enumerated() {
-            createAstronomicalObject(object: object, listPosition: index)
+        for item in set {
+            createAstronomicalObject(position: item.position, name: item.name, relativeWeight: item.relativeWeight)
         }
     }
     
