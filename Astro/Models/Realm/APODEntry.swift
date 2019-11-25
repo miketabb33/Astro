@@ -7,6 +7,8 @@ class APODEntry: Object {
     @objc dynamic var image_url = ""
     @objc dynamic var title = ""
     @objc dynamic var date = Date()
+    @objc dynamic var image = Data()
+    @objc dynamic var cellHeight = 0
 }
 
 class APODEntryMethods: RealmPath {

@@ -61,7 +61,6 @@
 		4BEE114D238ADDDF00379D6E /* APODEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEE114C238ADDDF00379D6E /* APODEntry.swift */; };
 		4BEE1150238AE20400379D6E /* APODEntryJSONModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEE114F238AE20400379D6E /* APODEntryJSONModels.swift */; };
 		4BEE1152238AE43300379D6E /* AstronomicalObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEE1151238AE43300379D6E /* AstronomicalObjects.swift */; };
-		4BEE1154238B046800379D6E /* APODFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEE1153238B046800379D6E /* APODFeed.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -154,7 +153,6 @@
 		4BEE114C238ADDDF00379D6E /* APODEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODEntry.swift; sourceTree = "<group>"; };
 		4BEE114F238AE20400379D6E /* APODEntryJSONModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODEntryJSONModels.swift; sourceTree = "<group>"; };
 		4BEE1151238AE43300379D6E /* AstronomicalObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronomicalObjects.swift; sourceTree = "<group>"; };
-		4BEE1153238B046800379D6E /* APODFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODFeed.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -459,7 +457,6 @@
 				4BEE114A238ADD9C00379D6E /* RealmPath.swift */,
 				4BEE114C238ADDDF00379D6E /* APODEntry.swift */,
 				4BEE1151238AE43300379D6E /* AstronomicalObjects.swift */,
-				4BEE1153238B046800379D6E /* APODFeed.swift */,
 			);
 			path = Realm;
 			sourceTree = "<group>";
@@ -661,7 +658,6 @@
 				4BBB94F82284CE9100944506 /* MainTabController.swift in Sources */,
 				4BC55CAA225D330B0079A3E5 /* AppDelegate.swift in Sources */,
 				4B6023E022BE76F200732745 /* UserDefaultsMethods.swift in Sources */,
-				4BEE1154238B046800379D6E /* APODFeed.swift in Sources */,
 				4BB687BF2266538000D423F9 /* AstroObjTempDisplayVC.swift in Sources */,
 				4B20CC672378A32A0057FEB8 /* TextColorSelector.swift in Sources */,
 				4B384B8F236F32C900C3FD59 /* DropDownAlertManager.swift in Sources */,

@@ -60,7 +60,23 @@ class NewAPODEntryDispatcher {
     func sendAPODEntriesToFeed() {
         let entries = APODEntryMethods().get(amount: 10)
         
+        var entriesWithImages = [APODEntryModel]()
         
+        for entry in entries {
+            if entry.image == nil {
+                var image: Data?
+                if entry.image_url.suffix(3) != "jpg" {
+                    image = UIImage(named: "youtube")!.pngData()
+                } else {
+                    let imageUrl:URL = URL(string: entry.image_url)!
+                    let imageData:NSData = NSData(contentsOf: imageUrl)!
+                    image = imageData as Data
+                }
+                entriesWithImages.append(APODEntryModel(id: entry.id, title: entry.title, explanation: entry.explanation, date: entry.date, image_url: entry.image_url, image: image))
+            } else {
+                entriesWithImages.append(entry)
+            }
+        }
         
         DispatchQueue.main.async {
             let rootVC = UIApplication.shared.windows.first!.rootViewController as! MainTabController
