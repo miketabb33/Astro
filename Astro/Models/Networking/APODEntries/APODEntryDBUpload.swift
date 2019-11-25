@@ -58,8 +58,21 @@ class NewAPODEntryDispatcher {
     }
     
     func sendAPODEntriesToFeed() {
-        let entries = APODEntryMethods().get(amount: 10)
+        let entries = APODEntryMethods().getPastEntries(amount: 10)
         
+        let entriesWithImages = APODImages().getImagesForAPODEntries(entries)
+        APODEntryMethods().saveCollectionOfImageData(entries: entriesWithImages)
+        
+        DispatchQueue.main.async {
+            let rootVC = UIApplication.shared.windows.first!.rootViewController as! MainTabController
+            let feedVC = rootVC.viewControllers?[1] as! APODFeedVC
+            feedVC.APODEntries = entriesWithImages
+        }
+    }
+}
+
+class APODImages {
+    func getImagesForAPODEntries(_ entries: [APODEntryModel]) -> [APODEntryModel] {
         var entriesWithImages = [APODEntryModel]()
         
         for entry in entries {
@@ -78,10 +91,6 @@ class NewAPODEntryDispatcher {
             }
         }
         
-        DispatchQueue.main.async {
-            let rootVC = UIApplication.shared.windows.first!.rootViewController as! MainTabController
-            let feedVC = rootVC.viewControllers?[1] as! APODFeedVC
-            feedVC.APODEntries = entries
-        }
+        return entriesWithImages
     }
 }

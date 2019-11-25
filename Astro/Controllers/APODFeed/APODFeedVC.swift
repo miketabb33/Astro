@@ -13,6 +13,9 @@ class APODFeedVC: UIViewController {
     
     var APODEntries = [APODEntryModel]() {
         didSet {
+            if tableView != nil {
+                tableView.reloadData()
+            }
             print(APODEntries)
         }
     }

@@ -40,7 +40,7 @@ class APODEntryMethods: RealmPath {
         }
     }
     
-    func get(amount: Int) -> [APODEntryModel] {
+    func getPastEntries(amount: Int) -> [APODEntryModel] {
         let APODEntries = realm.objects(APODEntry.self).sorted(byKeyPath: "date",ascending: false)
         var container = [APODEntryModel]()
         
@@ -52,6 +52,25 @@ class APODEntryMethods: RealmPath {
             i += 1
         }
         return container
+    }
+    
+    func realmGet(id: Int) -> APODEntry? {
+        let entry = realm.objects(APODEntry.self).filter("id = \(id)").first
+        return entry
+    }
+    
+    func saveImageData(entry: APODEntryModel) {
+        let realmObj = realmGet(id: entry.id)
+        
+        try! realm.write {
+            realmObj?.image = entry.image!
+        }
+    }
+    
+    func saveCollectionOfImageData(entries: [APODEntryModel]) {
+        for entry in entries {
+            saveImageData(entry: entry)
+        }
     }
     
     
