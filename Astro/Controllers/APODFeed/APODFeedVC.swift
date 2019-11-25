@@ -47,20 +47,13 @@ extension APODFeedVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let entry = APODEntries[indexPath.row]
-        if entry.cellHeight == 0 {
-            return 450
-        } else {
-            return CGFloat(entry.cellHeight!)
-        }
+        return CGFloat(APODEntries[indexPath.row].cellHeight!)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! APODEntryCell
         let entry = APODEntries[indexPath.row]
-        
         EntryCellConstructor().assignCell(cell: cell, entry: entry, tableView: tableView, parent: self)
-        
     
         return cell
     }

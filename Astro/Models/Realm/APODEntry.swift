@@ -7,7 +7,7 @@ class APODEntry: Object {
     @objc dynamic var image_url = ""
     @objc dynamic var title = ""
     @objc dynamic var date = Date()
-    @objc dynamic var image = Data()
+    @objc dynamic var image: Data?
     @objc dynamic var cellHeight = 0
 }
 
@@ -59,17 +59,23 @@ class APODEntryMethods: RealmPath {
         return entry
     }
     
-    func saveImageData(entry: APODEntryModel) {
-        let realmObj = realmGet(id: entry.id)
-        
+    func saveImageData(realmObj: APODEntry, entry: APODEntryModel) {
         try! realm.write {
-            realmObj?.image = entry.image!
+            realmObj.image = entry.image!
         }
     }
     
-    func saveCollectionOfImageData(entries: [APODEntryModel]) {
+    func saveCellHeight(realmObj: APODEntry, entry: APODEntryModel) {
+        try! realm.write {
+            realmObj.cellHeight = entry.cellHeight!
+        }
+    }
+    
+    func saveCollectionOfImageDataAndCellHeight(entries: [APODEntryModel]) {
         for entry in entries {
-            saveImageData(entry: entry)
+            let realmObj = realmGet(id: entry.id)!
+            saveImageData(realmObj: realmObj, entry: entry)
+            saveCellHeight(realmObj: realmObj, entry: entry)
         }
     }
     

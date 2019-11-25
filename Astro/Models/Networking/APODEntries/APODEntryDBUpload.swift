@@ -32,7 +32,6 @@ class APODEntryDBUpload {
             let resultDate = FormatterMethods().convertToDate(yyyyMMdd: result.date)
             
             let newEntry = APODEntryModel(id: resultID, title: resultTitle, explanation: resultExplanation, date: resultDate, image_url: result.image_url)
-            sleep(4)
             if resultID > lastSavedEntryID {
                 APODEntryMethods().create(id: newEntry.id, title: newEntry.title, explanation: newEntry.explanation, date: newEntry.date, imageURL: newEntry.image_url)
                 newAPODEntryDispatcher.observeAndDispatch()
@@ -58,15 +57,18 @@ class NewAPODEntryDispatcher {
     }
     
     func sendAPODEntriesToFeed() {
-        let entries = APODEntryMethods().getPastEntries(amount: 10)
-        
-        let entriesWithImages = APODImages().getImagesForAPODEntries(entries)
-        APODEntryMethods().saveCollectionOfImageData(entries: entriesWithImages)
-        
-        DispatchQueue.main.async {
-            let rootVC = UIApplication.shared.windows.first!.rootViewController as! MainTabController
-            let feedVC = rootVC.viewControllers?[1] as! APODFeedVC
-            feedVC.APODEntries = entriesWithImages
+        DispatchQueue.global(qos: .background).async {
+            let entries = APODEntryMethods().getPastEntries(amount: 10)
+            
+            let entriesWithImages = APODImages().getImagesForAPODEntries(entries)
+            
+            APODEntryMethods().saveCollectionOfImageDataAndCellHeight(entries: entriesWithImages)
+            
+            DispatchQueue.main.async {
+                let rootVC = UIApplication.shared.windows.first!.rootViewController as! MainTabController
+                let feedVC = rootVC.viewControllers?[1] as! APODFeedVC
+                feedVC.APODEntries = entriesWithImages
+            }
         }
     }
 }
@@ -74,23 +76,52 @@ class NewAPODEntryDispatcher {
 class APODImages {
     func getImagesForAPODEntries(_ entries: [APODEntryModel]) -> [APODEntryModel] {
         var entriesWithImages = [APODEntryModel]()
-        
+
         for entry in entries {
             if entry.image == nil {
+                var cellHeight = Int()
                 var image: Data?
                 if entry.image_url.suffix(3) != "jpg" {
                     image = UIImage(named: "youtube")!.pngData()
+                    cellHeight = getCellHeight(imageData: image)
                 } else {
                     let imageUrl:URL = URL(string: entry.image_url)!
                     let imageData:NSData = NSData(contentsOf: imageUrl)!
                     image = imageData as Data
+                    cellHeight = getCellHeight(imageData: image)
                 }
-                entriesWithImages.append(APODEntryModel(id: entry.id, title: entry.title, explanation: entry.explanation, date: entry.date, image_url: entry.image_url, image: image))
+                entriesWithImages.append(APODEntryModel(id: entry.id, title: entry.title, explanation: entry.explanation, date: entry.date, image_url: entry.image_url, image: image, cellHeight: cellHeight))
             } else {
                 entriesWithImages.append(entry)
             }
+            
+            
         }
         
         return entriesWithImages
+    }
+    
+    func getCellHeight(imageData: Data?) -> Int {
+        let image = UIImage(data: imageData!)
+        let imageHeight = getImageDisplayHeight(image: image!)
+        return Int(50 + imageHeight + 120 + 20)
+    }
+    
+    func getImageDisplayHeight(image: UIImage) -> CGFloat {
+        let width = image.size.width
+        let height = image.size.height
+        let ratio = width/height
+        
+        let screenWidth = UIScreen.main.bounds.width
+        let aspectHeight = (screenWidth/width) * height
+        
+        if ratio >= 1.25 {
+            return aspectHeight
+        } else if ratio <= 0.75 {
+            return screenWidth
+        } else {
+            return screenWidth
+        }
+        
     }
 }

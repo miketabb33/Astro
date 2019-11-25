@@ -10,8 +10,6 @@ class EntryCellConstructor {
         imageConfiguration(cell: cell, entry: entry)
         explanationConfiguration(cell: cell, entry: entry)
         expandButtonConfiguration(cell: cell, entry: entry, tableView: tableView, parent: parent)
-        
-        calculateCellHeightUnlessAlreadyCalculated(cell: cell, entry: entry)
     }
     
     //MARK: - Configure parts of entry cell
@@ -38,12 +36,4 @@ class EntryCellConstructor {
         }
     }
     
-    //MARK: - Calculate cell height
-    func calculateCellHeightUnlessAlreadyCalculated(cell: APODEntryCell, entry: APODEntryModel) {
-        if entry.cellHeight == 0 {
-//            try! RealmPath().realm.write {
-//                entry.cellHeight = Int(Float(cell.frameHeight["title"]! + cell.frameHeight["image"]! + cell.frameHeight["explanation"]! + cell.frameHeight["button"]!))
-//            }
-        }
-    }
 }
