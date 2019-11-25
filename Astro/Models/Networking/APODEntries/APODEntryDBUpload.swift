@@ -32,7 +32,7 @@ class APODEntryDBUpload {
             let resultDate = FormatterMethods().convertToDate(yyyyMMdd: result.date)
             
             let newEntry = APODEntryModel(id: resultID, title: resultTitle, explanation: resultExplanation, date: resultDate, image_url: result.image_url)
-            
+            sleep(4)
             if resultID > lastSavedEntryID {
                 APODEntryMethods().create(id: newEntry.id, title: newEntry.title, explanation: newEntry.explanation, date: newEntry.date, imageURL: newEntry.image_url)
                 newAPODEntryDispatcher.observeAndDispatch()

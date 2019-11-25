@@ -16,7 +16,7 @@ class APODFeedVC: UIViewController {
             if tableView != nil {
                 tableView.reloadData()
             }
-            print(APODEntries)
+            print("APOD sata from launch process sent")
         }
     }
 
@@ -28,9 +28,11 @@ class APODFeedVC: UIViewController {
         internetDetection = InternetDetection(parentVC: self)
         internetDetection?.startMonitoringInternetConnection()
         
+        //APODEntries = APODEntryMethods().getPastEntries(amount: 10)
+        
         //entryCellInsertionManager.addNextEntryToPageUnlessNoEntriesExist(allAPODEntries: allAPODEntries, tableView: tableView)
         tableView.allowsSelection = false
-        tableView.reloadData()
+        //tableView.reloadData()
     }
 
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
@@ -45,17 +47,20 @@ extension APODFeedVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return CGFloat(APODEntries[indexPath.row].cellHeight ?? 450)
+        let entry = APODEntries[indexPath.row]
+        if entry.cellHeight == 0 {
+            return 450
+        } else {
+            return CGFloat(entry.cellHeight!)
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! APODEntryCell
-        var entry = APODEntries[indexPath.row]
-        entry.image = UIImage(named: "youtube")!.pngData()
+        let entry = APODEntries[indexPath.row]
         
+        EntryCellConstructor().assignCell(cell: cell, entry: entry, tableView: tableView, parent: self)
         
-        
-        //entryCellManager.addNextCell(cell: cell, allAPODEntries: allAPODEntries, indexPath: indexPath, tableView: tableView, parent: self)
     
         return cell
     }

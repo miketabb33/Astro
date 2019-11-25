@@ -36,7 +36,7 @@ class APODEntryMethods: RealmPath {
         let APODEntries = realm.objects(APODEntry.self).sorted(byKeyPath: "date",ascending: false)
         
         return APODEntries.map{
-            APODEntryModel(id: $0.id, title: $0.title, explanation: $0.explanation, date: $0.date, image_url: $0.image_url)
+            APODEntryModel(id: $0.id, title: $0.title, explanation: $0.explanation, date: $0.date, image_url: $0.image_url, image: $0.image, cellHeight: $0.cellHeight)
         }
     }
     
@@ -47,7 +47,7 @@ class APODEntryMethods: RealmPath {
         var i = 0
         while i < amount {
             let entry = APODEntries[i]
-            container.append(APODEntryModel(id: entry.id, title: entry.title, explanation: entry.explanation, date: entry.date, image_url: entry.image_url))
+            container.append(APODEntryModel(id: entry.id, title: entry.title, explanation: entry.explanation, date: entry.date, image_url: entry.image_url, image: entry.image, cellHeight: entry.cellHeight))
             
             i += 1
         }
