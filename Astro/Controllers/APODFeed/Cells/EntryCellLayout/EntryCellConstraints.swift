@@ -1,6 +1,7 @@
 import UIKit
 
 class EntryCellConstraints {
+    
     func addStackingConstraintTo(_ element: UIView, stackUnder topElement: UIView, edges: UILayoutGuide, height: CGFloat) {
         element.removeConstraints(element.constraints)
         NSLayoutConstraint.activate([
@@ -29,5 +30,25 @@ class EntryCellConstraints {
             element.trailingAnchor.constraint(equalTo: edges.trailingAnchor),
             element.heightAnchor.constraint(equalToConstant: height)
             ])
+    }
+    
+    
+    func getTogglePositionOfExplanation(cell: APODEntryCell, entry: APODEntryModel) {
+        var explanationHeight: CGFloat = 0
+        if entry.expandEnabled == true {
+            explanationHeight = cell.currentEntryExplanation.frame.height
+            
+            showExplanation(cell: cell, numberOfLines: 0, height: explanationHeight, arrowPosition: CGAffineTransform(rotationAngle: .pi))
+        } else {
+            explanationHeight = cell.componentHeight["explanation"]!
+            
+            showExplanation(cell: cell, numberOfLines: 7, height: explanationHeight, arrowPosition: .identity)
+        }
+    }
+    
+    func showExplanation(cell: APODEntryCell, numberOfLines: Int, height: CGFloat, arrowPosition: CGAffineTransform) {
+        cell.currentExpandExplanationButton.transform = arrowPosition
+        cell.currentEntryExplanation.numberOfLines = numberOfLines
+        addStackingConstraintTo(cell.currentEntryExplanation, stackUnder: cell.currentEntryImageView, edges: cell.contentView.layoutMarginsGuide, height: height)
     }
 }

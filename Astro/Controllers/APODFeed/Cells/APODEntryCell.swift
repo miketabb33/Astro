@@ -9,11 +9,11 @@ class APODEntryCell: UITableViewCell {
     var delegate: APODEntryCellDelegate?
     var index: Int?
     
-    var frameHeight: [String:CGFloat] = [
+    var componentHeight: [String:CGFloat] = [
         "image": 0,
-        "title": 50,
-        "explanation": 120,
-        "button": 20
+        "title": APODEntryComponentDefaultHeights().title,
+        "explanation": APODEntryComponentDefaultHeights().explanation,
+        "button": APODEntryComponentDefaultHeights().button
     ]
     
     let currentExpandExplanationButton : UIButton = {

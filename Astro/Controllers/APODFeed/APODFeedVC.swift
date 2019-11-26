@@ -18,15 +18,9 @@ class APODFeedVC: UIViewController {
         internetDetection = InternetDetection(parentVC: self)
         internetDetection?.startMonitoringInternetConnection()
         
-        //APODEntries = APODEntryMethods().getPastEntries(amount: 10)
-        
-        //entryCellInsertionManager.addNextEntryToPageUnlessNoEntriesExist(allAPODEntries: allAPODEntries, tableView: tableView)
-        tableView.allowsSelection = false
-        //tableView.reloadData()
-    }
+        entries = APODEntryMethods().getPastEntries(amount: 10)
 
-    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        //entryCellInsertionManager.loadMoreEntriesWhenSrollReachesBottom(tableView: tableView, allAPODEntries: allAPODEntries, isConnected: internetDetection!.isConnected!)
+        tableView.allowsSelection = false
     }
 
 }

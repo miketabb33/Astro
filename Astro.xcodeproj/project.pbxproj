@@ -15,6 +15,7 @@
 		4B384B8C236F329200C3FD59 /* DropDownAlert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B384B8B236F329200C3FD59 /* DropDownAlert.storyboard */; };
 		4B384B8F236F32C900C3FD59 /* DropDownAlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B384B8E236F32C900C3FD59 /* DropDownAlertManager.swift */; };
 		4B384B91236F351A00C3FD59 /* InjectableSubviewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B384B90236F351A00C3FD59 /* InjectableSubviewManager.swift */; };
+		4B3A4FBA238CD37A00ED5779 /* APODEntryComponentDefaultHeights.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3A4FB9238CD37A00ED5779 /* APODEntryComponentDefaultHeights.swift */; };
 		4B47DDAD2343D7FD005F736F /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B47DDAC2343D7FD005F736F /* Keys.swift */; };
 		4B6023DE22BBBFFF00732745 /* AstronomicalObjectDBInjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6023DD22BBBFFF00732745 /* AstronomicalObjectDBInjection.swift */; };
 		4B6023E022BE76F200732745 /* UserDefaultsMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6023DF22BE76F200732745 /* UserDefaultsMethods.swift */; };
@@ -101,6 +102,7 @@
 		4B384B8B236F329200C3FD59 /* DropDownAlert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DropDownAlert.storyboard; sourceTree = "<group>"; };
 		4B384B8E236F32C900C3FD59 /* DropDownAlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownAlertManager.swift; sourceTree = "<group>"; };
 		4B384B90236F351A00C3FD59 /* InjectableSubviewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjectableSubviewManager.swift; sourceTree = "<group>"; };
+		4B3A4FB9238CD37A00ED5779 /* APODEntryComponentDefaultHeights.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODEntryComponentDefaultHeights.swift; sourceTree = "<group>"; };
 		4B47DDAC2343D7FD005F736F /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 		4B6023DD22BBBFFF00732745 /* AstronomicalObjectDBInjection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronomicalObjectDBInjection.swift; sourceTree = "<group>"; };
 		4B6023DF22BE76F200732745 /* UserDefaultsMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsMethods.swift; sourceTree = "<group>"; };
@@ -211,6 +213,17 @@
 				4B384B8B236F329200C3FD59 /* DropDownAlert.storyboard */,
 			);
 			path = DropDownAlert;
+			sourceTree = "<group>";
+		};
+		4B3A4FB6238CD0E800ED5779 /* EntryCellLayout */ = {
+			isa = PBXGroup;
+			children = (
+				4BE14DCC2311B118000FA4E8 /* EntryCellConstructor.swift */,
+				4B98E8A522C2B7020025B8F2 /* EntryImageProcessingManager.swift */,
+				4B98E8A322C2B63E0025B8F2 /* EntryCellConstraints.swift */,
+				4B3A4FB9238CD37A00ED5779 /* APODEntryComponentDefaultHeights.swift */,
+			);
+			path = EntryCellLayout;
 			sourceTree = "<group>";
 		};
 		4B47DDA72343D10E005F736F /* Astro Obj Temp Table View */ = {
@@ -386,7 +399,6 @@
 			isa = PBXGroup;
 			children = (
 				4BCDFBAD22FC7740003E39E8 /* APODFeedVC.swift */,
-				4BE14DD02311E563000FA4E8 /* EntryCellManagement */,
 				4BE14DC92311A8F4000FA4E8 /* Cells */,
 			);
 			path = APODFeed;
@@ -396,19 +408,10 @@
 			isa = PBXGroup;
 			children = (
 				4BE51AD522E34EB4002905ED /* APODEntryCell.swift */,
+				4BE14DCA2311AA27000FA4E8 /* ExpandExplanationManager.swift */,
+				4B3A4FB6238CD0E800ED5779 /* EntryCellLayout */,
 			);
 			path = Cells;
-			sourceTree = "<group>";
-		};
-		4BE14DD02311E563000FA4E8 /* EntryCellManagement */ = {
-			isa = PBXGroup;
-			children = (
-				4BE14DCC2311B118000FA4E8 /* EntryCellConstructor.swift */,
-				4BE14DCA2311AA27000FA4E8 /* ExpandExplanationManager.swift */,
-				4B98E8A522C2B7020025B8F2 /* EntryImageProcessingManager.swift */,
-				4B98E8A322C2B63E0025B8F2 /* EntryCellConstraints.swift */,
-			);
-			path = EntryCellManagement;
 			sourceTree = "<group>";
 		};
 		4BE51ADD22E67E6A002905ED /* Astronomic Object Tempurature */ = {
@@ -627,6 +630,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B3A4FBA238CD37A00ED5779 /* APODEntryComponentDefaultHeights.swift in Sources */,
 				4B47DDAD2343D7FD005F736F /* Keys.swift in Sources */,
 				4BE14DCD2311B118000FA4E8 /* EntryCellConstructor.swift in Sources */,
 				4BB687AF226519E600D423F9 /* RelativeWeightInputVC.swift in Sources */,

@@ -105,9 +105,11 @@ class APODImages {
     }
     
     func getCellHeight(imageData: Data?) -> Int {
+        let componantHeight = APODEntryComponentDefaultHeights()
+        
         let image = UIImage(data: imageData!)
         let imageHeight = getImageDisplayHeight(image: image!)
-        return Int(50 + imageHeight + 120 + 20)
+        return Int(componantHeight.title + imageHeight + componantHeight.explanation + componantHeight.button)
     }
     
     func getImageDisplayHeight(image: UIImage) -> CGFloat {
