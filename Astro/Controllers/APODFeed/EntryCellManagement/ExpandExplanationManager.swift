@@ -1,5 +1,4 @@
 import UIKit
-import RealmSwift
 
 class ExpandExplanationManager {
     let addConstraints = EntryCellConstraints()

@@ -53,9 +53,7 @@
 		4BD39B0A2381FC1600B70DC3 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD39B092381FC1600B70DC3 /* NetworkManager.swift */; };
 		4BE14DCB2311AA27000FA4E8 /* ExpandExplanationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE14DCA2311AA27000FA4E8 /* ExpandExplanationManager.swift */; };
 		4BE14DCD2311B118000FA4E8 /* EntryCellConstructor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE14DCC2311B118000FA4E8 /* EntryCellConstructor.swift */; };
-		4BE14DCF2311E22F000FA4E8 /* EntryCellManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE14DCE2311E22F000FA4E8 /* EntryCellManager.swift */; };
 		4BE51AD722E34EB4002905ED /* APODEntryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE51AD522E34EB4002905ED /* APODEntryCell.swift */; };
-		4BE51ADC22E60EFE002905ED /* EntryCellInsertionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE51ADB22E60EFE002905ED /* EntryCellInsertionManager.swift */; };
 		4BEC2F772381B80400395CA4 /* InjectableSubviewManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEC2F762381B80400395CA4 /* InjectableSubviewManagerTests.swift */; };
 		4BEE114B238ADD9C00379D6E /* RealmPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEE114A238ADD9C00379D6E /* RealmPath.swift */; };
 		4BEE114D238ADDDF00379D6E /* APODEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEE114C238ADDDF00379D6E /* APODEntry.swift */; };
@@ -145,9 +143,7 @@
 		4BD39B092381FC1600B70DC3 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		4BE14DCA2311AA27000FA4E8 /* ExpandExplanationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandExplanationManager.swift; sourceTree = "<group>"; };
 		4BE14DCC2311B118000FA4E8 /* EntryCellConstructor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryCellConstructor.swift; sourceTree = "<group>"; };
-		4BE14DCE2311E22F000FA4E8 /* EntryCellManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryCellManager.swift; sourceTree = "<group>"; };
 		4BE51AD522E34EB4002905ED /* APODEntryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODEntryCell.swift; sourceTree = "<group>"; };
-		4BE51ADB22E60EFE002905ED /* EntryCellInsertionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryCellInsertionManager.swift; sourceTree = "<group>"; };
 		4BEC2F762381B80400395CA4 /* InjectableSubviewManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjectableSubviewManagerTests.swift; sourceTree = "<group>"; };
 		4BEE114A238ADD9C00379D6E /* RealmPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmPath.swift; sourceTree = "<group>"; };
 		4BEE114C238ADDDF00379D6E /* APODEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODEntry.swift; sourceTree = "<group>"; };
@@ -407,8 +403,6 @@
 		4BE14DD02311E563000FA4E8 /* EntryCellManagement */ = {
 			isa = PBXGroup;
 			children = (
-				4BE14DCE2311E22F000FA4E8 /* EntryCellManager.swift */,
-				4BE51ADB22E60EFE002905ED /* EntryCellInsertionManager.swift */,
 				4BE14DCC2311B118000FA4E8 /* EntryCellConstructor.swift */,
 				4BE14DCA2311AA27000FA4E8 /* ExpandExplanationManager.swift */,
 				4B98E8A522C2B7020025B8F2 /* EntryImageProcessingManager.swift */,
@@ -661,7 +655,6 @@
 				4BB687BF2266538000D423F9 /* AstroObjTempDisplayVC.swift in Sources */,
 				4B20CC672378A32A0057FEB8 /* TextColorSelector.swift in Sources */,
 				4B384B8F236F32C900C3FD59 /* DropDownAlertManager.swift in Sources */,
-				4BE51ADC22E60EFE002905ED /* EntryCellInsertionManager.swift in Sources */,
 				4B98E8A422C2B63E0025B8F2 /* EntryCellConstraints.swift in Sources */,
 				4B6023E422BE7CB900732745 /* Navigation.swift in Sources */,
 				4BB687BC22664D1F00D423F9 /* AstroObjTempCell.swift in Sources */,
@@ -669,7 +662,6 @@
 				4BCA1CEA22B6AA0900118A1E /* APODEntryDBUpload.swift in Sources */,
 				4BC55CCA225E59A90079A3E5 /* RelativeWeightCell.swift in Sources */,
 				4BCA1CE822B69EA100118A1E /* LoadingAnimation.swift in Sources */,
-				4BE14DCF2311E22F000FA4E8 /* EntryCellManager.swift in Sources */,
 				4B6023DE22BBBFFF00732745 /* AstronomicalObjectDBInjection.swift in Sources */,
 				4BEE114D238ADDDF00379D6E /* APODEntry.swift in Sources */,
 			);

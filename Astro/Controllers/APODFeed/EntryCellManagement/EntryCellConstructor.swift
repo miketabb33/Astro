@@ -1,5 +1,4 @@
 import UIKit
-import RealmSwift
 
 class EntryCellConstructor {
     let addConstraints = EntryCellConstraints()
