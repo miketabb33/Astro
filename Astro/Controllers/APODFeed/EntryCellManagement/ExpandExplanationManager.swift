@@ -5,25 +5,22 @@ class ExpandExplanationManager {
     
     //GET TOGGLE POSITION
     func getTogglePositionOfExplanation(cell: APODEntryCell, entry: APODEntryModel) {
+        var explanationHeight: CGFloat = 0
         if entry.expandEnabled == true {
-            showExpandedExplanation(cell: cell)
+            explanationHeight = cell.currentEntryExplanation.frame.height
+            
+            showExplanation(cell: cell, numberOfLines: 0, height: explanationHeight, arrowPosition: CGAffineTransform(rotationAngle: .pi))
         } else {
-            showCollapsedExplanation(cell: cell)
+            explanationHeight = cell.frameHeight["explanation"]!
+            
+            showExplanation(cell: cell, numberOfLines: 7, height: explanationHeight, arrowPosition: .identity)
         }
     }
     
-    //Getter Methods
-    func showExpandedExplanation(cell: APODEntryCell) {
-        cell.currentExpandExplanationButton.transform = CGAffineTransform(rotationAngle: .pi)
-        cell.currentEntryExplanation.numberOfLines = 0
-        cell.currentEntryExplanation.sizeToFit()
-        self.addConstraints.addStackingConstraintTo(cell.currentEntryExplanation, stackUnder: cell.currentEntryImageView, edges: cell.contentView.layoutMarginsGuide, height: getExpandedEntryExplanationFrameHeight(rawFrameHeight: cell.currentEntryExplanation.frame.height))
-    }
-    
-    func showCollapsedExplanation(cell: APODEntryCell) {
-        cell.currentExpandExplanationButton.transform = .identity
-        cell.currentEntryExplanation.numberOfLines = 7
-        self.addConstraints.addStackingConstraintTo(cell.currentEntryExplanation, stackUnder: cell.currentEntryImageView, edges: cell.contentView.layoutMarginsGuide, height: cell.frameHeight["explanation"]!)
+    func showExplanation(cell: APODEntryCell, numberOfLines: Int, height: CGFloat, arrowPosition: CGAffineTransform) {
+        cell.currentExpandExplanationButton.transform = arrowPosition
+        cell.currentEntryExplanation.numberOfLines = numberOfLines
+        addConstraints.addStackingConstraintTo(cell.currentEntryExplanation, stackUnder: cell.currentEntryImageView, edges: cell.contentView.layoutMarginsGuide, height: height)
     }
     
     //MARK: SET TOGGLE POSITION

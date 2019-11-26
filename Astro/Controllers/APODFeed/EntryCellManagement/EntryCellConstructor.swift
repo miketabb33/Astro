@@ -24,7 +24,6 @@ class EntryCellConstructor {
     func explanationConfiguration(cell: APODEntryCell, entry: APODEntryModel) {
         cell.currentEntryExplanation.text = entry.explanation
         ExpandExplanationManager().getTogglePositionOfExplanation(cell: cell, entry: entry)
-        addConstraints.addStackingConstraintTo(cell.currentEntryExplanation, stackUnder: cell.currentEntryImageView, edges: cell.contentView.layoutMarginsGuide, height: cell.frameHeight["explanation"]!)
     }
     
     func expandButtonConfiguration(cell: APODEntryCell, entry: APODEntryModel, tableView: UITableView, parent: UIViewController) {
