@@ -1,6 +1,13 @@
 import UIKit
 
+protocol APODEntryCellDelegate {
+    func didTapExpandButton(index: Int)
+}
+
 class APODEntryCell: UITableViewCell {
+    
+    var delegate: APODEntryCellDelegate?
+    var index: Int?
     
     var frameHeight: [String:CGFloat] = [
         "image": 0,
@@ -62,12 +69,7 @@ class APODEntryCell: UITableViewCell {
     }
     
     @objc func expandButtonPressed() {
-        didTapExpandButton()
+        delegate?.didTapExpandButton(index: index!)
     }
-    
-    var didTapExpandButton: () -> () = {
-        fatalError("Button was not assinged a function")
-    }
-    
 
 }

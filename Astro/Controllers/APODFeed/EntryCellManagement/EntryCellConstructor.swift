@@ -3,7 +3,6 @@ import RealmSwift
 
 class EntryCellConstructor {
     let addConstraints = EntryCellConstraints()
-    let expandExplanationManager = ExpandExplanationManager()
     
     func assignCell(cell: APODEntryCell, entry: APODEntryModel, tableView: UITableView, parent: UIViewController) {
         titleConfiguration(cell: cell, entry: entry)
@@ -25,15 +24,11 @@ class EntryCellConstructor {
     
     func explanationConfiguration(cell: APODEntryCell, entry: APODEntryModel) {
         cell.currentEntryExplanation.text = entry.explanation
-        expandExplanationManager.getTogglePositionOfExplanation(cell: cell, entry: entry)
+        ExpandExplanationManager().getTogglePositionOfExplanation(cell: cell, entry: entry)
     }
     
     func expandButtonConfiguration(cell: APODEntryCell, entry: APODEntryModel, tableView: UITableView, parent: UIViewController) {
         addConstraints.addStackingConstraintForButton(cell.currentExpandExplanationButton, stackUnder: cell.currentEntryExplanation, width: cell.frameHeight["button"]!, height: cell.frameHeight["button"]!, parentView: parent.view)
-        
-        cell.didTapExpandButton = {
-            self.expandExplanationManager.toggleController(entry: entry, cell: cell, tableView: tableView)
-        }
     }
     
 }

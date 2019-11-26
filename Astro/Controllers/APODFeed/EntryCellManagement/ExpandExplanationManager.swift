@@ -29,27 +29,26 @@ class ExpandExplanationManager {
     }
     
     //MARK: SET TOGGLE POSITION
-    func toggleController(entry: APODEntryModel, cell: APODEntryCell, tableView: UITableView) {
+    func toggleController(entry: APODEntryModel, cell: APODEntryCell, tableView: UITableView) -> (Bool, Int) {
         if entry.expandEnabled == false {
-            expandExplanationLabel(entry: entry, cell: cell, tableView: tableView)
+            return expandExplanationLabel(entry: entry, cell: cell, tableView: tableView)
         } else {
-            collapseExplanationLabel(entry: entry, cell: cell, tableView: tableView)
+            return collapseExplanationLabel(entry: entry, cell: cell, tableView: tableView)
         }
     }
     
     //Expand Explanation Label
-    func expandExplanationLabel(entry: APODEntryModel, cell: APODEntryCell, tableView: UITableView) {
-//        try! realmMethods.realm.write {
-//            allAPODEntries[indexPath.row].expandEnabled = true
-//        }
+    func expandExplanationLabel(entry: APODEntryModel, cell: APODEntryCell, tableView: UITableView) -> (Bool, Int) {
         expandExplanationLabalAnimation(cell: cell)
         addConstraints.addStackingConstraintTo(cell.currentEntryExplanation, stackUnder: cell.currentEntryImageView, edges: cell.contentView.layoutMarginsGuide, height: self.getExpandedEntryExplanationFrameHeight(rawFrameHeight: cell.currentEntryExplanation.frame.height))
         
-//        try! realmMethods.realm.write {
-//            allAPODEntries[indexPath.row].cellHeight = Int(Float(cell.frameHeight["title"]! + cell.frameHeight["image"]! + getExpandedEntryExplanationFrameHeight(rawFrameHeight: cell.currentEntryExplanation.frame.height) + cell.frameHeight["button"]!))
-//        }
+        let isExpanded = true
+        let newExplanationHeight = Int(Float(cell.frameHeight["title"]! + cell.frameHeight["image"]! + getExpandedEntryExplanationFrameHeight(rawFrameHeight: cell.currentEntryExplanation.frame.height) + cell.frameHeight["button"]!))
+        
         animateExpandLabelConstraints(cell: cell, arrowPosition: CGAffineTransform(rotationAngle: .pi))
         cellHeightAnimation(tableView: tableView)
+        
+        return (isExpanded, newExplanationHeight)
     }
     
     func expandExplanationLabalAnimation(cell: APODEntryCell) {
@@ -60,21 +59,17 @@ class ExpandExplanationManager {
     }
     
     //Collapse Explanation Label
-    func collapseExplanationLabel(entry: APODEntryModel, cell: APODEntryCell, tableView: UITableView) {
-        
-//        try! realmMethods.realm.write {
-//            allAPODEntries[indexPath.row].expandEnabled = false
-//        }
-        
+    func collapseExplanationLabel(entry: APODEntryModel, cell: APODEntryCell, tableView: UITableView) -> (Bool, Int) {
         collapseExplanationLabelAnimation(cell: cell)
         addConstraints.addStackingConstraintTo(cell.currentEntryExplanation, stackUnder: cell.currentEntryImageView, edges: cell.contentView.layoutMarginsGuide, height: cell.frameHeight["explanation"]!)
-//        try! realmMethods.realm.write {
-//            allAPODEntries[indexPath.row].cellHeight = Int(Float(cell.frameHeight["title"]! + cell.frameHeight["image"]! + cell.frameHeight["explanation"]! + cell.frameHeight["button"]!))
-//        }
         
+        let isExpanded = true
+        let newExplanationHeight = Int(Float(cell.frameHeight["title"]! + cell.frameHeight["image"]! + cell.frameHeight["explanation"]! + cell.frameHeight["button"]!))
 
         animateExpandLabelConstraints(cell: cell, arrowPosition: .identity)
         cellHeightAnimation(tableView: tableView)
+        
+        return (isExpanded, newExplanationHeight)
     }
     
     func collapseExplanationLabelAnimation(cell: APODEntryCell) {

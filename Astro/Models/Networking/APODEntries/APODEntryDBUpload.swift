@@ -90,9 +90,9 @@ class APODImages {
                     image = imageData as Data
                     cellHeight = getCellHeight(imageData: image)
                 }
-                entriesWithImages.append(APODEntryModel(id: entry.id, title: entry.title, explanation: entry.explanation, date: entry.date, image_url: entry.image_url, image: image, cellHeight: cellHeight))
+                entriesWithImages.append(APODEntryModel(id: entry.id, title: entry.title, explanation: entry.explanation, date: entry.date, image_url: entry.image_url, image: image, cellHeight: cellHeight, expandEnabled: false))
             } else {
-                entriesWithImages.append(entry)
+                entriesWithImages.append(APODEntryModel(id: entry.id, title: entry.title, explanation: entry.explanation, date: entry.date, image_url: entry.image_url, image: entry.image, cellHeight: entry.cellHeight, expandEnabled: false))
             }
             
             

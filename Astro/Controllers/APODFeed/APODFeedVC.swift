@@ -6,8 +6,6 @@ class APODFeedVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var internetDetection: InternetDetection?
-    let entryCellManager = EntryCellManager()
-    let entryCellInsertionManager = EntryCellInsertionManager()
     
     let cellID = "APODEntryCell"
     
@@ -53,9 +51,18 @@ extension APODFeedVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! APODEntryCell
         let entry = APODEntries[indexPath.row]
+        
+        cell.delegate = self
+        cell.index = indexPath.row
         EntryCellConstructor().assignCell(cell: cell, entry: entry, tableView: tableView, parent: self)
     
         return cell
     }
     
+}
+
+extension APODFeedVC: APODEntryCellDelegate {
+    func didTapExpandButton(index: Int) {
+        print(APODEntries[index].title)
+    }
 }
