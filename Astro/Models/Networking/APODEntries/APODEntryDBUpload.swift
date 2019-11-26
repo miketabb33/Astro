@@ -108,25 +108,9 @@ class APODImages {
         let componantHeight = APODEntryComponentDefaultHeights()
         
         let image = UIImage(data: imageData!)
-        let imageHeight = getImageDisplayHeight(image: image!)
+        let imageHeight = ImageProcessing(image: image!).getImageDisplayHeight()
         return Int(componantHeight.title + imageHeight + componantHeight.explanation + componantHeight.button)
     }
     
-    func getImageDisplayHeight(image: UIImage) -> CGFloat {
-        let width = image.size.width
-        let height = image.size.height
-        let ratio = width/height
-        
-        let screenWidth = UIScreen.main.bounds.width
-        let aspectHeight = (screenWidth/width) * height
-        
-        if ratio >= 1.25 {
-            return aspectHeight
-        } else if ratio <= 0.75 {
-            return screenWidth
-        } else {
-            return screenWidth
-        }
-        
-    }
+
 }

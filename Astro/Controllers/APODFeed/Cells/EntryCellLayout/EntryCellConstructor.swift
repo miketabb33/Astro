@@ -17,8 +17,9 @@ class EntryCellConstructor {
     }
     
     func imageConfiguration(cell: APODEntryCell, entry: APODEntryModel) {
-        cell.currentEntryImageView.image = UIImage(data: entry.image!)
-        cell.currentEntryImageView = EntryImageProcessingManager().processImage(currentCell: cell, stackUnder: cell.currentEntryTitle, edges: cell.contentView.safeAreaLayoutGuide)
+        let image = UIImage(data: entry.image!)
+        cell.currentEntryImageView.image = image
+        cell.currentEntryImageView = ImageProcessing(image: image!).getImageRatioAndFit(currentCell: cell, stackUnder: cell.currentEntryTitle, edges: cell.contentView.safeAreaLayoutGuide)
     }
     
     func explanationConfiguration(cell: APODEntryCell, entry: APODEntryModel) {
