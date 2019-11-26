@@ -67,7 +67,10 @@ class NewAPODEntryDispatcher {
             DispatchQueue.main.async {
                 let rootVC = UIApplication.shared.windows.first!.rootViewController as! MainTabController
                 let feedVC = rootVC.viewControllers?[1] as! APODFeedVC
-                feedVC.APODEntries = entriesWithImages
+                feedVC.entries = entriesWithImages
+                if feedVC.tableView != nil {
+                    feedVC.tableView.reloadData()
+                }
             }
         }
     }

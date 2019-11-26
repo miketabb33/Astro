@@ -1,7 +1,7 @@
 import UIKit
 
 protocol APODEntryCellDelegate {
-    func didTapExpandButton(index: Int)
+    func didTapExpandButton(index: Int, cell: APODEntryCell)
 }
 
 class APODEntryCell: UITableViewCell {
@@ -69,7 +69,7 @@ class APODEntryCell: UITableViewCell {
     }
     
     @objc func expandButtonPressed() {
-        delegate?.didTapExpandButton(index: index!)
+        delegate?.didTapExpandButton(index: index!, cell: self)
     }
 
 }

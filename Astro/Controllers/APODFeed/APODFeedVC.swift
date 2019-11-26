@@ -8,14 +8,7 @@ class APODFeedVC: UIViewController {
     
     let cellID = "APODEntryCell"
     
-    var APODEntries = [APODEntryModel]() {
-        didSet {
-            if tableView != nil {
-                tableView.reloadData()
-            }
-            print("APOD sata from launch process sent")
-        }
-    }
+    var entries = [APODEntryModel]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,16 +33,16 @@ class APODFeedVC: UIViewController {
 
 extension APODFeedVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return APODEntries.count
+        return entries.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return CGFloat(APODEntries[indexPath.row].cellHeight!)
+        return CGFloat(entries[indexPath.row].cellHeight!)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! APODEntryCell
-        let entry = APODEntries[indexPath.row]
+        let entry = entries[indexPath.row]
         
         cell.delegate = self
         cell.index = indexPath.row
@@ -61,7 +54,11 @@ extension APODFeedVC: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension APODFeedVC: APODEntryCellDelegate {
-    func didTapExpandButton(index: Int) {
-        print(APODEntries[index].title)
+    func didTapExpandButton(index: Int, cell: APODEntryCell) {
+        let results = ExpandExplanationManager().toggleExplanationExpansion(entry: entries[index], cell: cell)
+        entries[index].expandEnabled = results.0
+        entries[index].cellHeight = results.1
+        tableView.beginUpdates()
+        tableView.endUpdates()
     }
 }
