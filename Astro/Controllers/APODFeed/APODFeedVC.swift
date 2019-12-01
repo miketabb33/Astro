@@ -9,6 +9,11 @@ class APODFeedVC: UIViewController {
     let cellID = "APODEntryCell"
     
     var entries = [APODEntryModel]()
+    
+    var additionalImagesPending = false
+    var hitBottom = false
+    
+    var amountToShow = 10
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +26,28 @@ class APODFeedVC: UIViewController {
         //entries = APODEntryMethods().getPastEntries(amount: 10)
 
         tableView.allowsSelection = false
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let contentHeight = scrollView.contentSize.height
+        let currentHeight = scrollView.contentOffset.y
+        
+        let ratio = currentHeight / contentHeight
+        
+        if ratio > 0.5 && !additionalImagesPending {
+            amountToShow += 10
+            EntryDataUpload().saveImagesAndCellHeight(amount: amountToShow, completion: nil)
+            additionalImagesPending = true
+        }
+        
+        if currentHeight > contentHeight - scrollView.frame.size.height && !hitBottom {
+            hitBottom = true
+            entries = APODEntryMethods().getPastEntries(amount: amountToShow)
+            tableView.reloadData()
+            additionalImagesPending = false
+            hitBottom = false
+        }
+    
     }
 
 }
@@ -56,3 +83,4 @@ extension APODFeedVC: APODEntryCellDelegate {
         tableView.endUpdates()
     }
 }
+

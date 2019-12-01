@@ -8,7 +8,6 @@ class EntryDispatcher {
             feedVC.entries = entries
             if feedVC.tableView != nil {
                 feedVC.tableView.reloadData()
-                feedVC.tableView.scrollsToTop = true
             }
         }
     }
