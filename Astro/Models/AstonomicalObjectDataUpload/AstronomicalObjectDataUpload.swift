@@ -1,6 +1,6 @@
 import Foundation
 
-class AstronomicalObjectDBInjection {
+class AstronomicalObjectDataUpload {
     func uploadUnlessCompleted(isCompleted: Bool) {
         if !isCompleted {
             guard let AstronomicalObjectURLPath = Bundle.main.url(forResource: "AstronomicalObjectData", withExtension: "plist") else {

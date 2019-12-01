@@ -17,8 +17,10 @@
 		4B384B91236F351A00C3FD59 /* InjectableSubviewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B384B90236F351A00C3FD59 /* InjectableSubviewManager.swift */; };
 		4B3A4FBA238CD37A00ED5779 /* APODEntryComponentDefaultHeights.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3A4FB9238CD37A00ED5779 /* APODEntryComponentDefaultHeights.swift */; };
 		4B3A4FBC238CD65800ED5779 /* ImageProcessing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3A4FBB238CD65800ED5779 /* ImageProcessing.swift */; };
+		4B3A50532394233700ED5779 /* EntryUploadAndDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3A50522394233700ED5779 /* EntryUploadAndDispatcher.swift */; };
+		4B3A50552394254B00ED5779 /* EntryImageNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3A50542394254B00ED5779 /* EntryImageNetworking.swift */; };
 		4B47DDAD2343D7FD005F736F /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B47DDAC2343D7FD005F736F /* Keys.swift */; };
-		4B6023DE22BBBFFF00732745 /* AstronomicalObjectDBInjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6023DD22BBBFFF00732745 /* AstronomicalObjectDBInjection.swift */; };
+		4B6023DE22BBBFFF00732745 /* AstronomicalObjectDataUpload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6023DD22BBBFFF00732745 /* AstronomicalObjectDataUpload.swift */; };
 		4B6023E022BE76F200732745 /* UserDefaultsMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6023DF22BE76F200732745 /* UserDefaultsMethods.swift */; };
 		4B6023E422BE7CB900732745 /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6023E322BE7CB900732745 /* Navigation.swift */; };
 		4B98E8A022BEC9D90025B8F2 /* SearchBarMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B98E89F22BEC9D90025B8F2 /* SearchBarMethods.swift */; };
@@ -40,7 +42,7 @@
 		4BC55CCB225E59A90079A3E5 /* RelativeWeightCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BC55CC9225E59A90079A3E5 /* RelativeWeightCell.xib */; };
 		4BC55CF5225FB0210079A3E5 /* AstronomicalObjectData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4BC55CF4225FB0210079A3E5 /* AstronomicalObjectData.plist */; };
 		4BCA1CE822B69EA100118A1E /* LoadingAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCA1CE722B69EA100118A1E /* LoadingAnimation.swift */; };
-		4BCA1CEA22B6AA0900118A1E /* APODEntryDBUpload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCA1CE922B6AA0900118A1E /* APODEntryDBUpload.swift */; };
+		4BCA1CEA22B6AA0900118A1E /* EntryNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCA1CE922B6AA0900118A1E /* EntryNetworking.swift */; };
 		4BCA1CEC22B6B6AB00118A1E /* KeyboardMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCA1CEB22B6B6AB00118A1E /* KeyboardMethods.swift */; };
 		4BCA1CEE22B6BD9D00118A1E /* FormatterMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCA1CED22B6BD9D00118A1E /* FormatterMethods.swift */; };
 		4BCDFBAE22FC7740003E39E8 /* APODFeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCDFBAD22FC7740003E39E8 /* APODFeedVC.swift */; };
@@ -58,7 +60,7 @@
 		4BEC2F772381B80400395CA4 /* InjectableSubviewManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEC2F762381B80400395CA4 /* InjectableSubviewManagerTests.swift */; };
 		4BEE114B238ADD9C00379D6E /* RealmPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEE114A238ADD9C00379D6E /* RealmPath.swift */; };
 		4BEE114D238ADDDF00379D6E /* APODEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEE114C238ADDDF00379D6E /* APODEntry.swift */; };
-		4BEE1150238AE20400379D6E /* APODEntryJSONModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEE114F238AE20400379D6E /* APODEntryJSONModels.swift */; };
+		4BEE1150238AE20400379D6E /* JSONUploadModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEE114F238AE20400379D6E /* JSONUploadModels.swift */; };
 		4BEE1152238AE43300379D6E /* AstronomicalObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEE1151238AE43300379D6E /* AstronomicalObjects.swift */; };
 /* End PBXBuildFile section */
 
@@ -104,8 +106,10 @@
 		4B384B90236F351A00C3FD59 /* InjectableSubviewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjectableSubviewManager.swift; sourceTree = "<group>"; };
 		4B3A4FB9238CD37A00ED5779 /* APODEntryComponentDefaultHeights.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODEntryComponentDefaultHeights.swift; sourceTree = "<group>"; };
 		4B3A4FBB238CD65800ED5779 /* ImageProcessing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProcessing.swift; sourceTree = "<group>"; };
+		4B3A50522394233700ED5779 /* EntryUploadAndDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryUploadAndDispatcher.swift; sourceTree = "<group>"; };
+		4B3A50542394254B00ED5779 /* EntryImageNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryImageNetworking.swift; sourceTree = "<group>"; };
 		4B47DDAC2343D7FD005F736F /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
-		4B6023DD22BBBFFF00732745 /* AstronomicalObjectDBInjection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronomicalObjectDBInjection.swift; sourceTree = "<group>"; };
+		4B6023DD22BBBFFF00732745 /* AstronomicalObjectDataUpload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronomicalObjectDataUpload.swift; sourceTree = "<group>"; };
 		4B6023DF22BE76F200732745 /* UserDefaultsMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsMethods.swift; sourceTree = "<group>"; };
 		4B6023E322BE7CB900732745 /* Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
 		4B98E89F22BEC9D90025B8F2 /* SearchBarMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarMethods.swift; sourceTree = "<group>"; };
@@ -135,7 +139,7 @@
 		4BC55CC9225E59A90079A3E5 /* RelativeWeightCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RelativeWeightCell.xib; sourceTree = "<group>"; };
 		4BC55CF4225FB0210079A3E5 /* AstronomicalObjectData.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = AstronomicalObjectData.plist; sourceTree = "<group>"; };
 		4BCA1CE722B69EA100118A1E /* LoadingAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingAnimation.swift; sourceTree = "<group>"; };
-		4BCA1CE922B6AA0900118A1E /* APODEntryDBUpload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODEntryDBUpload.swift; sourceTree = "<group>"; };
+		4BCA1CE922B6AA0900118A1E /* EntryNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryNetworking.swift; sourceTree = "<group>"; };
 		4BCA1CEB22B6B6AB00118A1E /* KeyboardMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardMethods.swift; sourceTree = "<group>"; };
 		4BCA1CED22B6BD9D00118A1E /* FormatterMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatterMethods.swift; sourceTree = "<group>"; };
 		4BCDFBAD22FC7740003E39E8 /* APODFeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODFeedVC.swift; sourceTree = "<group>"; };
@@ -149,7 +153,7 @@
 		4BEC2F762381B80400395CA4 /* InjectableSubviewManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjectableSubviewManagerTests.swift; sourceTree = "<group>"; };
 		4BEE114A238ADD9C00379D6E /* RealmPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmPath.swift; sourceTree = "<group>"; };
 		4BEE114C238ADDDF00379D6E /* APODEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODEntry.swift; sourceTree = "<group>"; };
-		4BEE114F238AE20400379D6E /* APODEntryJSONModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODEntryJSONModels.swift; sourceTree = "<group>"; };
+		4BEE114F238AE20400379D6E /* JSONUploadModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONUploadModels.swift; sourceTree = "<group>"; };
 		4BEE1151238AE43300379D6E /* AstronomicalObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronomicalObjects.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -277,13 +281,13 @@
 			path = "Bin - needs home";
 			sourceTree = "<group>";
 		};
-		4B7577F4238202FD00A05151 /* InitialLaunchDataInjection */ = {
+		4B7577F4238202FD00A05151 /* AstonomicalObjectDataUpload */ = {
 			isa = PBXGroup;
 			children = (
-				4B6023DD22BBBFFF00732745 /* AstronomicalObjectDBInjection.swift */,
+				4B6023DD22BBBFFF00732745 /* AstronomicalObjectDataUpload.swift */,
 				4BC55CF4225FB0210079A3E5 /* AstronomicalObjectData.plist */,
 			);
-			path = InitialLaunchDataInjection;
+			path = AstonomicalObjectDataUpload;
 			sourceTree = "<group>";
 		};
 		4BA44E6322B92A6A009756AA /* AstroUITests */ = {
@@ -379,7 +383,7 @@
 				4B6023DF22BE76F200732745 /* UserDefaultsMethods.swift */,
 				4BD39AFB2381D7DF00B70DC3 /* ApplicationModels.swift */,
 				4BEE1149238ADD5B00379D6E /* Realm */,
-				4B7577F4238202FD00A05151 /* InitialLaunchDataInjection */,
+				4B7577F4238202FD00A05151 /* AstonomicalObjectDataUpload */,
 				4BD39B082381FB9000B70DC3 /* Networking */,
 			);
 			path = Models;
@@ -461,8 +465,10 @@
 		4BEE114E238AE1E600379D6E /* APODEntries */ = {
 			isa = PBXGroup;
 			children = (
-				4BCA1CE922B6AA0900118A1E /* APODEntryDBUpload.swift */,
-				4BEE114F238AE20400379D6E /* APODEntryJSONModels.swift */,
+				4BCA1CE922B6AA0900118A1E /* EntryNetworking.swift */,
+				4B3A50542394254B00ED5779 /* EntryImageNetworking.swift */,
+				4B3A50522394233700ED5779 /* EntryUploadAndDispatcher.swift */,
+				4BEE114F238AE20400379D6E /* JSONUploadModels.swift */,
 			);
 			path = APODEntries;
 			sourceTree = "<group>";
@@ -632,9 +638,10 @@
 			files = (
 				4B3A4FBA238CD37A00ED5779 /* APODEntryComponentDefaultHeights.swift in Sources */,
 				4B47DDAD2343D7FD005F736F /* Keys.swift in Sources */,
+				4B3A50552394254B00ED5779 /* EntryImageNetworking.swift in Sources */,
 				4BE14DCD2311B118000FA4E8 /* EntryCellConstructor.swift in Sources */,
 				4BB687AF226519E600D423F9 /* RelativeWeightInputVC.swift in Sources */,
-				4BEE1150238AE20400379D6E /* APODEntryJSONModels.swift in Sources */,
+				4BEE1150238AE20400379D6E /* JSONUploadModels.swift in Sources */,
 				4B384B91236F351A00C3FD59 /* InjectableSubviewManager.swift in Sources */,
 				4BEE114B238ADD9C00379D6E /* RealmPath.swift in Sources */,
 				4BE14DCB2311AA27000FA4E8 /* ExpandExplanationManager.swift in Sources */,
@@ -648,6 +655,7 @@
 				4B20CC6A2378A7AD0057FEB8 /* UIColor.swift in Sources */,
 				4BCA1CEC22B6B6AB00118A1E /* KeyboardMethods.swift in Sources */,
 				4BEE1152238AE43300379D6E /* AstronomicalObjects.swift in Sources */,
+				4B3A50532394233700ED5779 /* EntryUploadAndDispatcher.swift in Sources */,
 				4BC55CC5225D35450079A3E5 /* WeightDisplayTVC.swift in Sources */,
 				4BCA1CEE22B6BD9D00118A1E /* FormatterMethods.swift in Sources */,
 				4BD39B0A2381FC1600B70DC3 /* NetworkManager.swift in Sources */,
@@ -663,10 +671,10 @@
 				4BB687BC22664D1F00D423F9 /* AstroObjTempCell.swift in Sources */,
 				4B3A4FBC238CD65800ED5779 /* ImageProcessing.swift in Sources */,
 				4BCDFC0C22FF18F4003E39E8 /* BootStrapColors.swift in Sources */,
-				4BCA1CEA22B6AA0900118A1E /* APODEntryDBUpload.swift in Sources */,
+				4BCA1CEA22B6AA0900118A1E /* EntryNetworking.swift in Sources */,
 				4BC55CCA225E59A90079A3E5 /* RelativeWeightCell.swift in Sources */,
 				4BCA1CE822B69EA100118A1E /* LoadingAnimation.swift in Sources */,
-				4B6023DE22BBBFFF00732745 /* AstronomicalObjectDBInjection.swift in Sources */,
+				4B6023DE22BBBFFF00732745 /* AstronomicalObjectDataUpload.swift in Sources */,
 				4BEE114D238ADDDF00379D6E /* APODEntry.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

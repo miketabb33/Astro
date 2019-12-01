@@ -18,7 +18,7 @@ class APODFeedVC: UIViewController {
         internetDetection = InternetDetection(parentVC: self)
         internetDetection?.startMonitoringInternetConnection()
         
-        entries = APODEntryMethods().getPastEntries(amount: 10)
+        //entries = APODEntryMethods().getPastEntries(amount: 10)
 
         tableView.allowsSelection = false
     }
