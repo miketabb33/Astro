@@ -8,7 +8,7 @@ struct APODEntryModel {
     var image_url: String
     var image: Data?
     var cellHeight: Int?
-    var expandEnabled: Bool?
+    var expandEnabled = false
 }
 
 struct AstronomicalObjectModel: Decodable {

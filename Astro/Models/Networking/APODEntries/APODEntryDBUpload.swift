@@ -60,7 +60,7 @@ class NewAPODEntryDispatcher {
         DispatchQueue.global(qos: .background).async {
             let entries = APODEntryMethods().getPastEntries(amount: 10)
             
-            let entriesWithImages = APODImages().getImagesForAPODEntries(entries)
+            let entriesWithImages = APODImages().getImagesAndCellHeightForAPODEntries(entries)
             
             APODEntryMethods().saveCollectionOfImageDataAndCellHeight(entries: entriesWithImages)
             
@@ -77,7 +77,7 @@ class NewAPODEntryDispatcher {
 }
 
 class APODImages {
-    func getImagesForAPODEntries(_ entries: [APODEntryModel]) -> [APODEntryModel] {
+    func getImagesAndCellHeightForAPODEntries(_ entries: [APODEntryModel]) -> [APODEntryModel] {
         var entriesWithImages = [APODEntryModel]()
 
         for entry in entries {
@@ -93,9 +93,9 @@ class APODImages {
                     image = imageData as Data
                     cellHeight = getCellHeight(imageData: image)
                 }
-                entriesWithImages.append(APODEntryModel(id: entry.id, title: entry.title, explanation: entry.explanation, date: entry.date, image_url: entry.image_url, image: image, cellHeight: cellHeight, expandEnabled: false))
+                entriesWithImages.append(APODEntryModel(id: entry.id, title: entry.title, explanation: entry.explanation, date: entry.date, image_url: entry.image_url, image: image, cellHeight: cellHeight))
             } else {
-                entriesWithImages.append(APODEntryModel(id: entry.id, title: entry.title, explanation: entry.explanation, date: entry.date, image_url: entry.image_url, image: entry.image, cellHeight: entry.cellHeight, expandEnabled: false))
+                entriesWithImages.append(APODEntryModel(id: entry.id, title: entry.title, explanation: entry.explanation, date: entry.date, image_url: entry.image_url, image: entry.image, cellHeight: entry.cellHeight))
             }
             
             
