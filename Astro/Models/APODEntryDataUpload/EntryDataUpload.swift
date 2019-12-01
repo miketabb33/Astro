@@ -15,24 +15,36 @@ class EntryDataUpload {
         while index < results.count && currentResultIsntSaved {
             let newEntry = createAPODEntryModelWithUTF8(from: results[index])
             APODEntryMethods().create(from: newEntry)
-            entriesDispatched = dispatchEntrieUnlessAmountToSmallOrDispatched(amount: index, isDispatched: entriesDispatched)
+            entriesDispatched = saveImageDataUnlessAmountToSmall(amount: index, isDispatched: entriesDispatched)
             index += 1
         }
-        dispatchEntriesUnlessDispatched(isDispatched: entriesDispatched)
+        saveImageDataAndDispatch(isDispatched: entriesDispatched)
     }
     
-    func dispatchEntrieUnlessAmountToSmallOrDispatched(amount: Int, isDispatched: Bool) -> Bool {
+    func saveImageDataUnlessAmountToSmall(amount: Int, isDispatched: Bool) -> Bool {
         var dispatched = false
         if amount >= initialEntryDispatchCount {
-            dispatchEntriesUnlessDispatched(isDispatched: isDispatched)
+            saveImageDataAndDispatch(isDispatched: isDispatched)
             dispatched = true
         }
         return dispatched
     }
     
-    func dispatchEntriesUnlessDispatched(isDispatched: Bool) {
+    func saveImageDataAndDispatch(isDispatched: Bool) {
         if !isDispatched {
-            EntryDispatcher().sendAPODEntriesToFeed(amount: initialEntryDispatchCount)
+            saveImagesAndCellHeight(amount: initialEntryDispatchCount, completion: EntryDispatcher().dispatchEntriesToFeed(entries:))
+        }
+    }
+    
+    func saveImagesAndCellHeight(amount: Int, completion: (([APODEntryModel]) -> ())?) {
+        DispatchQueue.global(qos: .background).async {
+            let entries = APODEntryMethods().getPastEntries(amount: amount)
+            
+            let entriesWithImages = EntryImageNetworking().getImagesAndCellHeightForAPODEntries(entries)
+            
+            APODEntryMethods().saveCollectionOfImageDataAndCellHeight(entries: entriesWithImages)
+            
+            completion?(entriesWithImages)
         }
     }
     

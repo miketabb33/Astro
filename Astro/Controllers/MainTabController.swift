@@ -5,7 +5,7 @@ class MainTabController: UITabBarController {
         super.viewDidLoad()
         
         //select which tab is displayed upon opening app.
-        selectedViewController = self.viewControllers?[2]
+        selectedViewController = self.viewControllers?[1]
         
     }
     
