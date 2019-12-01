@@ -16,7 +16,7 @@ class APODEntryCell: UITableViewCell {
         "button": APODEntryComponentDefaultHeights().button
     ]
     
-    let currentExpandExplanationButton : UIButton = {
+    let expandButton: UIButton = {
         let button = UIButton()
         button.titleLabel?.font = UIFont(name: "Palatino", size: 20)
         button.setImage(UIImage(named: "down-arrow"), for: .normal)
@@ -25,7 +25,7 @@ class APODEntryCell: UITableViewCell {
         return button
     }()
     
-    let currentEntryTitle : UILabel = {
+    let title: UILabel = {
         let label = UILabel()
         label.font = UIFont (name: "Palatino", size: 20)
         label.textAlignment = .center
@@ -35,7 +35,7 @@ class APODEntryCell: UITableViewCell {
         return label
     }()
     
-    var currentEntryExplanation : UILabel = {
+    var explanation: UILabel = {
         let label = UILabel()
         label.font = UIFont (name: "Palatino", size: 14)
         label.numberOfLines = 7
@@ -46,7 +46,7 @@ class APODEntryCell: UITableViewCell {
         return label
     }()
     
-    var currentEntryImageView : UIImageView = {
+    var APODImage: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
@@ -55,12 +55,12 @@ class APODEntryCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        contentView.addSubview(currentEntryTitle)
-        contentView.addSubview(currentEntryImageView)
-        contentView.addSubview(currentEntryExplanation)
-        contentView.addSubview(currentExpandExplanationButton)
+        contentView.addSubview(title)
+        contentView.addSubview(APODImage)
+        contentView.addSubview(explanation)
+        contentView.addSubview(expandButton)
         
-        currentExpandExplanationButton.addTarget(self, action: #selector(expandButtonPressed), for: .touchUpInside)
+        expandButton.addTarget(self, action: #selector(expandButtonPressed), for: .touchUpInside)
         
     }
     

@@ -11,11 +11,11 @@ class ExpandExplanationManager {
         if entry.expandEnabled == false {
             stateOfExpansion = true
             resizeContentsAnimation(numberOfShowingLines: 0, cell: cell)
-            newExplanationHeight = getExpandedEntryExplanationFrameHeight(rawFrameHeight: cell.currentEntryExplanation.frame.height)
+            newExplanationHeight = getExpandedEntryExplanationFrameHeight(rawFrameHeight: cell.explanation.frame.height)
             
             updateConstraints(newHeight: newExplanationHeight, cell: cell)
             rotateArrowAnimation(cell: cell, arrowPosition: CGAffineTransform(rotationAngle: .pi))
-            newCellHeight = Int(Float(cell.componentHeight["title"]! + cell.componentHeight["image"]! + getExpandedEntryExplanationFrameHeight(rawFrameHeight: cell.currentEntryExplanation.frame.height) + cell.componentHeight["button"]!))
+            newCellHeight = Int(Float(cell.componentHeight["title"]! + cell.componentHeight["image"]! + getExpandedEntryExplanationFrameHeight(rawFrameHeight: cell.explanation.frame.height) + cell.componentHeight["button"]!))
         } else {
             stateOfExpansion = false
             resizeContentsAnimation(numberOfShowingLines: 7, cell: cell)
@@ -29,19 +29,19 @@ class ExpandExplanationManager {
     }
     
     func updateConstraints(newHeight: CGFloat, cell: APODEntryCell) {
-        addConstraints.addStackingConstraintTo(cell.currentEntryExplanation, stackUnder: cell.currentEntryImageView, edges: cell.contentView.layoutMarginsGuide, height: newHeight)
+        addConstraints.addStackingConstraintTo(cell.explanation, stackUnder: cell.APODImage, edges: cell.contentView.layoutMarginsGuide, height: newHeight)
     }
     
     func resizeContentsAnimation(numberOfShowingLines: Int, cell: APODEntryCell) {
-            UIView.transition(with: cell.currentEntryExplanation, duration: 0.3, options: [.curveLinear], animations: {
-                cell.currentEntryExplanation.numberOfLines = numberOfShowingLines
-                cell.currentEntryExplanation.sizeToFit()
+            UIView.transition(with: cell.explanation, duration: 0.3, options: [.curveLinear], animations: {
+                cell.explanation.numberOfLines = numberOfShowingLines
+                cell.explanation.sizeToFit()
             })
     }
     
     func rotateArrowAnimation(cell: APODEntryCell, arrowPosition: CGAffineTransform) {
         UIView.animate(withDuration: 0.3) {
-            cell.currentExpandExplanationButton.transform = arrowPosition
+            cell.expandButton.transform = arrowPosition
         }
     }
 

@@ -28,22 +28,22 @@ class ImageProcessing {
     
     func getImageRatioAndFit(currentCell: APODEntryCell, stackUnder topElement: UIView, edges edgeArea: UILayoutGuide) -> UIImageView {
         if ratio >= widePictureRatio {
-            currentCell.currentEntryImageView = fitImage(imageHeight: aspectHeight, contentMode: .scaleToFill, currentCell: currentCell, stackUnder: topElement, edges: edgeArea)
+            currentCell.APODImage = fitImage(imageHeight: aspectHeight, contentMode: .scaleToFill, currentCell: currentCell, stackUnder: topElement, edges: edgeArea)
         } else if ratio <= tallPictureRatio {
-            currentCell.currentEntryImageView = fitImage(imageHeight: screenWidth, contentMode: .scaleAspectFit, currentCell: currentCell, stackUnder: topElement, edges: edgeArea)
+            currentCell.APODImage = fitImage(imageHeight: screenWidth, contentMode: .scaleAspectFit, currentCell: currentCell, stackUnder: topElement, edges: edgeArea)
         } else {
-            currentCell.currentEntryImageView = fitImage(imageHeight: screenWidth, contentMode: .scaleToFill, currentCell: currentCell, stackUnder: topElement, edges: edgeArea)
+            currentCell.APODImage = fitImage(imageHeight: screenWidth, contentMode: .scaleToFill, currentCell: currentCell, stackUnder: topElement, edges: edgeArea)
         }
         
-        return currentCell.currentEntryImageView
+        return currentCell.APODImage
     }
     
     func fitImage(imageHeight: CGFloat, contentMode: UIView.ContentMode, currentCell: APODEntryCell, stackUnder topElement: UIView, edges edgeArea: UILayoutGuide) -> UIImageView {
-        currentCell.currentEntryImageView.contentMode = contentMode
+        currentCell.APODImage.contentMode = contentMode
         currentCell.componentHeight["image"] = imageHeight
-        constraints.addStackingConstraintTo(currentCell.currentEntryImageView, stackUnder: topElement, edges: edgeArea, height: imageHeight)
+        constraints.addStackingConstraintTo(currentCell.APODImage, stackUnder: topElement, edges: edgeArea, height: imageHeight)
         
-        return currentCell.currentEntryImageView
+        return currentCell.APODImage
     }
     
     

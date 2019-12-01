@@ -36,7 +36,7 @@ class EntryCellConstraints {
     func getTogglePositionOfExplanation(cell: APODEntryCell, entry: APODEntryModel) {
         var explanationHeight: CGFloat = 0
         if entry.expandEnabled == true {
-            explanationHeight = cell.currentEntryExplanation.frame.height
+            explanationHeight = cell.explanation.frame.height
             
             showExplanation(cell: cell, numberOfLines: 0, height: explanationHeight, arrowPosition: CGAffineTransform(rotationAngle: .pi))
         } else {
@@ -47,8 +47,8 @@ class EntryCellConstraints {
     }
     
     func showExplanation(cell: APODEntryCell, numberOfLines: Int, height: CGFloat, arrowPosition: CGAffineTransform) {
-        cell.currentExpandExplanationButton.transform = arrowPosition
-        cell.currentEntryExplanation.numberOfLines = numberOfLines
-        addStackingConstraintTo(cell.currentEntryExplanation, stackUnder: cell.currentEntryImageView, edges: cell.contentView.layoutMarginsGuide, height: height)
+        cell.expandButton.transform = arrowPosition
+        cell.explanation.numberOfLines = numberOfLines
+        addStackingConstraintTo(cell.explanation, stackUnder: cell.APODImage, edges: cell.contentView.layoutMarginsGuide, height: height)
     }
 }
