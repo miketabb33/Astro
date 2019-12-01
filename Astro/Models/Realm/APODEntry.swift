@@ -25,6 +25,19 @@ class APODEntryMethods: RealmPath {
         }
     }
     
+    func create(from entry: APODEntryModel) {
+        let newApodEntry = APODEntry()
+        newApodEntry.id = entry.id
+        newApodEntry.title = entry.title
+        newApodEntry.explanation = entry.explanation
+        newApodEntry.date = entry.date
+        newApodEntry.image_url = entry.image_url
+        
+        try! realm.write {
+            realm.add(newApodEntry)
+        }
+    }
+    
     func getLastID() -> Int {
         let entries = realm.objects(APODEntry.self)
         let sortedEntries = entries.sorted(byKeyPath: "id",ascending: false)
