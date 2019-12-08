@@ -15,6 +15,7 @@ class APODFeedVC: UIViewController {
     var hitBottom = false
     
     var amountToShow = 10
+    var nextIndex = 0
     
     let uploadManager = EntryDataUploadManager()
 
@@ -32,8 +33,6 @@ class APODFeedVC: UIViewController {
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        print(tableView.contentSize.height)
-        
         let contentHeight = scrollView.contentSize.height
         let currentHeight = scrollView.contentOffset.y
         
@@ -41,7 +40,7 @@ class APODFeedVC: UIViewController {
         
         if ratio > 0.5 && !additionalImagesPending {
             additionalImagesPending = true
-            amountToShow += 10
+            nextIndex += 10
             uploadManager.saveImagesAndCellHeight(amount: amountToShow, completion: nil)
         }
         
@@ -53,13 +52,16 @@ class APODFeedVC: UIViewController {
                     //Loading
                 } else {
                     timer.invalidate()
-                    self.entries = APODEntryMethods().getPastEntries(amount: self.amountToShow)
+                    
+                    let nextGroup = APODEntryMethods().getPastEntries(startingFrom: self.nextIndex, amount: self.amountToShow)
+                    self.entries.append(contentsOf: nextGroup)
                     self.tableView.reloadData()
+                    
+                    
 //                    let contentHeight = self.entries.reduce(0, { (sum, entry) -> CGFloat in
 //                        return sum + CGFloat(entry.cellHeight!)
 //                    })
 //                    self.tableView.contentSize = CGSize(width: self.view.frame.width, height: contentHeight)
-                    self.tableView.layoutIfNeeded()
                     self.additionalImagesPending = false
                     self.hitBottom = false
                 }

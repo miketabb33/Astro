@@ -53,13 +53,13 @@ class APODEntryMethods: RealmPath {
         }
     }
     
-    func getPastEntries(amount: Int) -> [APODEntryModel] {
+    func getPastEntries(startingFrom startingIndex: Int, amount: Int) -> [APODEntryModel] {
         let APODEntries = realm.objects(APODEntry.self).sorted(byKeyPath: "date",ascending: false)
         var container = [APODEntryModel]()
         
         var i = 0
         while i < amount {
-            let entry = APODEntries[i]
+            let entry = APODEntries[i + startingIndex]
             container.append(APODEntryModel(id: entry.id, title: entry.title, explanation: entry.explanation, date: entry.date, image_url: entry.image_url, image: entry.image, cellHeight: entry.cellHeight))
             
             i += 1

@@ -41,7 +41,7 @@ class EntryDataUploadManager {
     func saveImagesAndCellHeight(amount: Int, completion: (([APODEntryModel]) -> ())?) {
         DispatchQueue.global(qos: .background).async {
             self.isUploading = true
-            let entries = APODEntryMethods().getPastEntries(amount: amount)
+            let entries = APODEntryMethods().getPastEntries(startingFrom: 0, amount: amount)
             let entriesWithImages = EntryImageNetworking().getImagesAndCellHeightForAPODEntries(entries)
             
             APODEntryMethods().saveCollectionOfImageDataAndCellHeight(entries: entriesWithImages)
