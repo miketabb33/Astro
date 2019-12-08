@@ -33,7 +33,7 @@
 		4BB687BD22664D1F00D423F9 /* AstroObjTempCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BB687BB22664D1F00D423F9 /* AstroObjTempCell.xib */; };
 		4BB687BF2266538000D423F9 /* AstroObjTempDisplayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB687BE2266538000D423F9 /* AstroObjTempDisplayVC.swift */; };
 		4BBB94F82284CE9100944506 /* MainTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBB94F72284CE9100944506 /* MainTabController.swift */; };
-		4BC15CF02394333E0072213D /* EntryDataUpload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC15CEF2394333E0072213D /* EntryDataUpload.swift */; };
+		4BC15CF02394333E0072213D /* EntryDataUploadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC15CEF2394333E0072213D /* EntryDataUploadManager.swift */; };
 		4BC55CAA225D330B0079A3E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC55CA9225D330B0079A3E5 /* AppDelegate.swift */; };
 		4BC55CAF225D330B0079A3E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BC55CAD225D330B0079A3E5 /* Main.storyboard */; };
 		4BC55CB4225D330D0079A3E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BC55CB3225D330D0079A3E5 /* Assets.xcassets */; };
@@ -129,7 +129,7 @@
 		4BB687BB22664D1F00D423F9 /* AstroObjTempCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AstroObjTempCell.xib; sourceTree = "<group>"; };
 		4BB687BE2266538000D423F9 /* AstroObjTempDisplayVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstroObjTempDisplayVC.swift; sourceTree = "<group>"; };
 		4BBB94F72284CE9100944506 /* MainTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabController.swift; sourceTree = "<group>"; };
-		4BC15CEF2394333E0072213D /* EntryDataUpload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryDataUpload.swift; sourceTree = "<group>"; };
+		4BC15CEF2394333E0072213D /* EntryDataUploadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryDataUploadManager.swift; sourceTree = "<group>"; };
 		4BC55CA6225D330B0079A3E5 /* Astro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Astro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BC55CA9225D330B0079A3E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4BC55CAE225D330B0079A3E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -316,7 +316,7 @@
 		4BC15CEE239432EE0072213D /* APODEntryDataUpload */ = {
 			isa = PBXGroup;
 			children = (
-				4BC15CEF2394333E0072213D /* EntryDataUpload.swift */,
+				4BC15CEF2394333E0072213D /* EntryDataUploadManager.swift */,
 			);
 			path = APODEntryDataUpload;
 			sourceTree = "<group>";
@@ -671,7 +671,7 @@
 				4BCA1CEE22B6BD9D00118A1E /* FormatterMethods.swift in Sources */,
 				4BD39B0A2381FC1600B70DC3 /* NetworkManager.swift in Sources */,
 				4BD39AFC2381D7DF00B70DC3 /* ApplicationModels.swift in Sources */,
-				4BC15CF02394333E0072213D /* EntryDataUpload.swift in Sources */,
+				4BC15CF02394333E0072213D /* EntryDataUploadManager.swift in Sources */,
 				4BBB94F82284CE9100944506 /* MainTabController.swift in Sources */,
 				4BC55CAA225D330B0079A3E5 /* AppDelegate.swift in Sources */,
 				4B6023E022BE76F200732745 /* UserDefaultsMethods.swift in Sources */,

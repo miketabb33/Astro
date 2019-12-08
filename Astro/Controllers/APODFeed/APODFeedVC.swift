@@ -11,9 +11,12 @@ class APODFeedVC: UIViewController {
     var entries = [APODEntryModel]()
     
     var additionalImagesPending = false
+    
     var hitBottom = false
     
     var amountToShow = 10
+    
+    let uploadManager = EntryDataUploadManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,23 +32,40 @@ class APODFeedVC: UIViewController {
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        print(tableView.contentSize.height)
+        
         let contentHeight = scrollView.contentSize.height
         let currentHeight = scrollView.contentOffset.y
         
         let ratio = currentHeight / contentHeight
         
         if ratio > 0.5 && !additionalImagesPending {
-            amountToShow += 10
-            EntryDataUpload().saveImagesAndCellHeight(amount: amountToShow, completion: nil)
             additionalImagesPending = true
+            amountToShow += 10
+            uploadManager.saveImagesAndCellHeight(amount: amountToShow, completion: nil)
         }
         
         if currentHeight > contentHeight - scrollView.frame.size.height && !hitBottom {
             hitBottom = true
-            entries = APODEntryMethods().getPastEntries(amount: amountToShow)
-            tableView.reloadData()
-            additionalImagesPending = false
-            hitBottom = false
+            
+            Timer.scheduledTimer(withTimeInterval: 0.3, repeats: true) { (timer) in
+                if self.uploadManager.isUploading {
+                    //Loading
+                } else {
+                    timer.invalidate()
+                    self.entries = APODEntryMethods().getPastEntries(amount: self.amountToShow)
+                    self.tableView.reloadData()
+//                    let contentHeight = self.entries.reduce(0, { (sum, entry) -> CGFloat in
+//                        return sum + CGFloat(entry.cellHeight!)
+//                    })
+//                    self.tableView.contentSize = CGSize(width: self.view.frame.width, height: contentHeight)
+                    self.tableView.layoutIfNeeded()
+                    self.additionalImagesPending = false
+                    self.hitBottom = false
+                }
+            }
+            
+            
         }
     
     }

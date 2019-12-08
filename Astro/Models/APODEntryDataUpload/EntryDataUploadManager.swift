@@ -1,7 +1,9 @@
 import Foundation
 
-class EntryDataUpload {
+class EntryDataUploadManager {
     let initialEntryDispatchCount = 10
+    
+    var isUploading = false
     
     func addUnsavedAPODEntriesAndDispatchToFeed(_ results: APODEntriesJSONModel) {
         let lastSavedEntryID = APODEntryMethods().getLastID()
@@ -38,13 +40,14 @@ class EntryDataUpload {
     
     func saveImagesAndCellHeight(amount: Int, completion: (([APODEntryModel]) -> ())?) {
         DispatchQueue.global(qos: .background).async {
+            self.isUploading = true
             let entries = APODEntryMethods().getPastEntries(amount: amount)
-            
             let entriesWithImages = EntryImageNetworking().getImagesAndCellHeightForAPODEntries(entries)
             
             APODEntryMethods().saveCollectionOfImageDataAndCellHeight(entries: entriesWithImages)
             
             completion?(entriesWithImages)
+            self.isUploading = false
         }
     }
     
