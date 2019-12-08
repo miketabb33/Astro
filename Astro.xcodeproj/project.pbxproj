@@ -279,7 +279,6 @@
 				4B98E89F22BEC9D90025B8F2 /* SearchBarMethods.swift */,
 				4B1A9AEE22F723F000B88975 /* InternetDetection.swift */,
 				4B3A4FBB238CD65800ED5779 /* ImageProcessing.swift */,
-				4B3A50522394233700ED5779 /* EntryDispatcher.swift */,
 			);
 			path = "Bin - needs home";
 			sourceTree = "<group>";
@@ -317,6 +316,7 @@
 			isa = PBXGroup;
 			children = (
 				4BC15CEF2394333E0072213D /* EntryDataUploadManager.swift */,
+				4B3A50522394233700ED5779 /* EntryDispatcher.swift */,
 			);
 			path = APODEntryDataUpload;
 			sourceTree = "<group>";
