@@ -57,16 +57,10 @@ class APODFeedVC: UIViewController {
                     self.entries.append(contentsOf: nextGroup)
                     self.tableView.reloadData()
                     
-                    
-//                    let contentHeight = self.entries.reduce(0, { (sum, entry) -> CGFloat in
-//                        return sum + CGFloat(entry.cellHeight!)
-//                    })
-//                    self.tableView.contentSize = CGSize(width: self.view.frame.width, height: contentHeight)
                     self.additionalImagesPending = false
                     self.hitBottom = false
                 }
             }
-            
             
         }
     
