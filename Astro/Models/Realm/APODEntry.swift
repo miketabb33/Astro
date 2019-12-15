@@ -12,13 +12,12 @@ class APODEntry: Object {
 }
 
 class APODEntryMethods: RealmPath {
-    
-    func create(from entry: APODEntryModel) {
+    func create(entry: APODEntryJSONModel) {
         let newApodEntry = APODEntry()
-        newApodEntry.id = entry.id
-        newApodEntry.title = entry.title
-        newApodEntry.explanation = entry.explanation
-        newApodEntry.date = entry.date
+        newApodEntry.id = Int(entry.id)!
+        newApodEntry.title = DecoderMethods().decodeWithUTF8(string: entry.title)
+        newApodEntry.explanation = DecoderMethods().decodeWithUTF8(string: entry.explanation)
+        newApodEntry.date = FormatterMethods().convertToDate(yyyyMMdd: entry.date)
         newApodEntry.image_url = entry.image_url
         
         try! realm.write {

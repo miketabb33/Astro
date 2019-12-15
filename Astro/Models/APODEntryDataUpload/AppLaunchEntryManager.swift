@@ -13,8 +13,7 @@ class AppLaunchEntryManager {
         let currentResultIsntSaved = Int(results[index].id)! > lastSavedEntryID
         
         while index < results.count && currentResultIsntSaved {
-            let newEntry = createAPODEntryModelWithUTF8(from: results[index])
-            APODEntryMethods().create(from: newEntry)
+            APODEntryMethods().create(entry: results[index])
             entriesDispatched = saveImageDataUnlessAmountToSmall(amount: index, isDispatched: entriesDispatched)
             index += 1
         }
@@ -36,13 +35,6 @@ class AppLaunchEntryManager {
         }
     }
     
-    func createAPODEntryModelWithUTF8(from entry: APODEntryJSONModel) -> APODEntryModel {
-        let resultID = Int(entry.id)!
-        let resultTitle = DecoderMethods().decodeWithUTF8(string: entry.title)
-        let resultExplanation = DecoderMethods().decodeWithUTF8(string: entry.explanation)
-        let resultDate = FormatterMethods().convertToDate(yyyyMMdd: entry.date)
-        
-        return APODEntryModel(id: resultID, title: resultTitle, explanation: resultExplanation, date: resultDate, image_url: entry.image_url)
-    }
+    
     
 }
