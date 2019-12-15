@@ -46,7 +46,7 @@ class APODEntryMethods: RealmPath {
         var container = [APODEntryModel]()
         
         var i = 0
-        while i < amount {
+        while i < amount && startingIndex + i < APODEntries.count {
             let entry = APODEntries[i + startingIndex]
             container.append(APODEntryModel(id: entry.id, title: entry.title, explanation: entry.explanation, date: entry.date, image_url: entry.image_url, image: entry.image, cellHeight: entry.cellHeight))
             
