@@ -12,18 +12,6 @@ class APODEntry: Object {
 }
 
 class APODEntryMethods: RealmPath {
-    func create(id: Int, title: String, explanation: String, date: Date, imageURL: String) {
-        let newApodEntry = APODEntry()
-        newApodEntry.id = id
-        newApodEntry.title = title
-        newApodEntry.explanation = explanation
-        newApodEntry.date = date
-        newApodEntry.image_url = imageURL
-        
-        try! realm.write {
-            realm.add(newApodEntry)
-        }
-    }
     
     func create(from entry: APODEntryModel) {
         let newApodEntry = APODEntry()
@@ -90,20 +78,6 @@ class APODEntryMethods: RealmPath {
             saveImageData(realmObj: realmObj, entry: entry)
             saveCellHeight(realmObj: realmObj, entry: entry)
         }
-    }
-    
-    
-    func cleanAPODDatabase() {
-//        let allAPODEntries = getAll()
-//        for (index, entry) in allAPODEntries.enumerated() {
-//            try! realm.write {
-//                if index > 19 {
-//                    entry.image = nil
-//                }
-//                entry.cellHeight = 0
-//                entry.expandEnabled = false
-//            }
-//        }
     }
     
 }
