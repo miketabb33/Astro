@@ -207,6 +207,16 @@
 			path = InjectableSubviews;
 			sourceTree = "<group>";
 		};
+		4B2C414223A6DFA800B1CE7C /* APODEntryCell */ = {
+			isa = PBXGroup;
+			children = (
+				4BE51AD522E34EB4002905ED /* APODEntryCell.swift */,
+				4BE14DCA2311AA27000FA4E8 /* ExpandExplanationManager.swift */,
+				4B3A4FB6238CD0E800ED5779 /* EntryCellLayout */,
+			);
+			path = APODEntryCell;
+			sourceTree = "<group>";
+		};
 		4B384B88236F321F00C3FD59 /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
@@ -429,9 +439,7 @@
 		4BE14DC92311A8F4000FA4E8 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				4BE51AD522E34EB4002905ED /* APODEntryCell.swift */,
-				4BE14DCA2311AA27000FA4E8 /* ExpandExplanationManager.swift */,
-				4B3A4FB6238CD0E800ED5779 /* EntryCellLayout */,
+				4B2C414223A6DFA800B1CE7C /* APODEntryCell */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
