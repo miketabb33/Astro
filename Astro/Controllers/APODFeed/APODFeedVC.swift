@@ -41,7 +41,7 @@ class APODFeedVC: UIViewController {
         if ratio > 0.5 && !additionalImagesPending {
             additionalImagesPending = true
             nextIndex += 10
-            uploadManager.saveImagesAndCellHeight(amount: amountToShow, completion: nil)
+            uploadManager.saveImagesAndCellHeight(startingFrom: nextIndex, amount: amountToShow, completion: nil)
         }
         
         if currentHeight > contentHeight - scrollView.frame.size.height && !hitBottom {
@@ -50,6 +50,7 @@ class APODFeedVC: UIViewController {
             Timer.scheduledTimer(withTimeInterval: 0.3, repeats: true) { (timer) in
                 if self.uploadManager.isUploading {
                     //Loading
+                    print("Loading")
                 } else {
                     timer.invalidate()
                     

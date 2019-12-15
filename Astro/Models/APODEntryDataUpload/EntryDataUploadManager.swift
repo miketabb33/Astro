@@ -34,14 +34,14 @@ class EntryDataUploadManager {
     
     func saveImageDataAndDispatch(isDispatched: Bool) {
         if !isDispatched {
-            saveImagesAndCellHeight(amount: initialEntryDispatchCount, completion: EntryDispatcher().dispatchEntriesToFeed(entries:))
+            saveImagesAndCellHeight(startingFrom: 0, amount: initialEntryDispatchCount, completion: EntryDispatcher().dispatchEntriesToFeed(entries:))
         }
     }
     
-    func saveImagesAndCellHeight(amount: Int, completion: (([APODEntryModel]) -> ())?) {
+    func saveImagesAndCellHeight(startingFrom startingIndex: Int, amount: Int, completion: (([APODEntryModel]) -> ())?) {
         DispatchQueue.global(qos: .background).async {
             self.isUploading = true
-            let entries = APODEntryMethods().getPastEntries(startingFrom: 0, amount: amount)
+            let entries = APODEntryMethods().getPastEntries(startingFrom: startingIndex, amount: amount)
             let entriesWithImages = EntryImageNetworking().getImagesAndCellHeightForAPODEntries(entries)
             
             APODEntryMethods().saveCollectionOfImageDataAndCellHeight(entries: entriesWithImages)
