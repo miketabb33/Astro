@@ -33,7 +33,7 @@
 		4BB687BD22664D1F00D423F9 /* AstroObjTempCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BB687BB22664D1F00D423F9 /* AstroObjTempCell.xib */; };
 		4BB687BF2266538000D423F9 /* AstroObjTempDisplayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB687BE2266538000D423F9 /* AstroObjTempDisplayVC.swift */; };
 		4BBB94F82284CE9100944506 /* MainTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBB94F72284CE9100944506 /* MainTabController.swift */; };
-		4BC15CF02394333E0072213D /* EntryDataUploadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC15CEF2394333E0072213D /* EntryDataUploadManager.swift */; };
+		4BC15CF02394333E0072213D /* EntryUploadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC15CEF2394333E0072213D /* EntryUploadManager.swift */; };
 		4BC55CAA225D330B0079A3E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC55CA9225D330B0079A3E5 /* AppDelegate.swift */; };
 		4BC55CAF225D330B0079A3E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BC55CAD225D330B0079A3E5 /* Main.storyboard */; };
 		4BC55CB4225D330D0079A3E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BC55CB3225D330D0079A3E5 /* Assets.xcassets */; };
@@ -48,6 +48,8 @@
 		4BCA1CEE22B6BD9D00118A1E /* FormatterMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCA1CED22B6BD9D00118A1E /* FormatterMethods.swift */; };
 		4BCDFBAE22FC7740003E39E8 /* APODFeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCDFBAD22FC7740003E39E8 /* APODFeedVC.swift */; };
 		4BCDFC0C22FF18F4003E39E8 /* BootStrapColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCDFC0B22FF18F4003E39E8 /* BootStrapColors.swift */; };
+		4BD2BEE923A6923E005040D4 /* AppLaunchEntryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD2BEE823A6923E005040D4 /* AppLaunchEntryManager.swift */; };
+		4BD2BEEB23A69692005040D4 /* FeedManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD2BEEA23A69692005040D4 /* FeedManager.swift */; };
 		4BD39AFC2381D7DF00B70DC3 /* ApplicationModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD39AFB2381D7DF00B70DC3 /* ApplicationModels.swift */; };
 		4BD39B012381F11E00B70DC3 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BB2EB2E2316B2A700D16A2A /* Realm.framework */; };
 		4BD39B022381F11E00B70DC3 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BB2EB2C2316B2A700D16A2A /* RealmSwift.framework */; };
@@ -129,7 +131,7 @@
 		4BB687BB22664D1F00D423F9 /* AstroObjTempCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AstroObjTempCell.xib; sourceTree = "<group>"; };
 		4BB687BE2266538000D423F9 /* AstroObjTempDisplayVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstroObjTempDisplayVC.swift; sourceTree = "<group>"; };
 		4BBB94F72284CE9100944506 /* MainTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabController.swift; sourceTree = "<group>"; };
-		4BC15CEF2394333E0072213D /* EntryDataUploadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryDataUploadManager.swift; sourceTree = "<group>"; };
+		4BC15CEF2394333E0072213D /* EntryUploadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryUploadManager.swift; sourceTree = "<group>"; };
 		4BC55CA6225D330B0079A3E5 /* Astro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Astro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BC55CA9225D330B0079A3E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4BC55CAE225D330B0079A3E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -146,6 +148,8 @@
 		4BCA1CED22B6BD9D00118A1E /* FormatterMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatterMethods.swift; sourceTree = "<group>"; };
 		4BCDFBAD22FC7740003E39E8 /* APODFeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODFeedVC.swift; sourceTree = "<group>"; };
 		4BCDFC0B22FF18F4003E39E8 /* BootStrapColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BootStrapColors.swift; sourceTree = "<group>"; };
+		4BD2BEE823A6923E005040D4 /* AppLaunchEntryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLaunchEntryManager.swift; sourceTree = "<group>"; };
+		4BD2BEEA23A69692005040D4 /* FeedManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedManager.swift; sourceTree = "<group>"; };
 		4BD39AFB2381D7DF00B70DC3 /* ApplicationModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationModels.swift; sourceTree = "<group>"; };
 		4BD39B062381F56200B70DC3 /* DecoderMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecoderMethods.swift; sourceTree = "<group>"; };
 		4BD39B092381FC1600B70DC3 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -315,7 +319,8 @@
 		4BC15CEE239432EE0072213D /* APODEntryDataUpload */ = {
 			isa = PBXGroup;
 			children = (
-				4BC15CEF2394333E0072213D /* EntryDataUploadManager.swift */,
+				4BC15CEF2394333E0072213D /* EntryUploadManager.swift */,
+				4BD2BEE823A6923E005040D4 /* AppLaunchEntryManager.swift */,
 				4B3A50522394233700ED5779 /* EntryDispatcher.swift */,
 			);
 			path = APODEntryDataUpload;
@@ -415,6 +420,7 @@
 			isa = PBXGroup;
 			children = (
 				4BCDFBAD22FC7740003E39E8 /* APODFeedVC.swift */,
+				4BD2BEEA23A69692005040D4 /* FeedManager.swift */,
 				4BE14DC92311A8F4000FA4E8 /* Cells */,
 			);
 			path = APODFeed;
@@ -671,7 +677,7 @@
 				4BCA1CEE22B6BD9D00118A1E /* FormatterMethods.swift in Sources */,
 				4BD39B0A2381FC1600B70DC3 /* NetworkManager.swift in Sources */,
 				4BD39AFC2381D7DF00B70DC3 /* ApplicationModels.swift in Sources */,
-				4BC15CF02394333E0072213D /* EntryDataUploadManager.swift in Sources */,
+				4BC15CF02394333E0072213D /* EntryUploadManager.swift in Sources */,
 				4BBB94F82284CE9100944506 /* MainTabController.swift in Sources */,
 				4BC55CAA225D330B0079A3E5 /* AppDelegate.swift in Sources */,
 				4B6023E022BE76F200732745 /* UserDefaultsMethods.swift in Sources */,
@@ -684,9 +690,11 @@
 				4B3A4FBC238CD65800ED5779 /* ImageProcessing.swift in Sources */,
 				4BCDFC0C22FF18F4003E39E8 /* BootStrapColors.swift in Sources */,
 				4BCA1CEA22B6AA0900118A1E /* EntryNetworking.swift in Sources */,
+				4BD2BEEB23A69692005040D4 /* FeedManager.swift in Sources */,
 				4BC55CCA225E59A90079A3E5 /* RelativeWeightCell.swift in Sources */,
 				4BCA1CE822B69EA100118A1E /* LoadingAnimation.swift in Sources */,
 				4B6023DE22BBBFFF00732745 /* AstronomicalObjectDataUpload.swift in Sources */,
+				4BD2BEE923A6923E005040D4 /* AppLaunchEntryManager.swift in Sources */,
 				4BEE114D238ADDDF00379D6E /* APODEntry.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

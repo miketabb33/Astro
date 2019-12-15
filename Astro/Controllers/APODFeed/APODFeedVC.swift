@@ -10,14 +10,7 @@ class APODFeedVC: UIViewController {
     
     var entries = [APODEntryModel]()
     
-    var additionalImagesPending = false
-    
-    var hitBottom = false
-    
-    var amountToShow = 10
-    var nextIndex = 0
-    
-    let uploadManager = EntryDataUploadManager()
+    var feedManager = FeedManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,35 +28,11 @@ class APODFeedVC: UIViewController {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let contentHeight = scrollView.contentSize.height
         let currentHeight = scrollView.contentOffset.y
+        let frameHeight = scrollView.frame.size.height
         
-        let ratio = currentHeight / contentHeight
+        feedManager.beginDownloadingImageDataForNextEntrySet(currentHeight: currentHeight, contentHeight: contentHeight)
         
-        if ratio > 0.5 && !additionalImagesPending {
-            additionalImagesPending = true
-            nextIndex += 10
-            uploadManager.saveImagesAndCellHeight(startingFrom: nextIndex, amount: amountToShow, completion: nil)
-        }
-        
-        if currentHeight > contentHeight - scrollView.frame.size.height && !hitBottom {
-            hitBottom = true
-            
-            Timer.scheduledTimer(withTimeInterval: 0.3, repeats: true) { (timer) in
-                if self.uploadManager.isUploading {
-                    //Loading
-                    print("Loading")
-                } else {
-                    timer.invalidate()
-                    
-                    let nextGroup = APODEntryMethods().getPastEntries(startingFrom: self.nextIndex, amount: self.amountToShow)
-                    self.entries.append(contentsOf: nextGroup)
-                    self.tableView.reloadData()
-                    
-                    self.additionalImagesPending = false
-                    self.hitBottom = false
-                }
-            }
-            
-        }
+        feedManager.scrollDidApproachBottom(currentHeight: currentHeight, contentHeight: contentHeight, scrollViewFrameHeight: frameHeight, parentVC: self)
     
     }
 

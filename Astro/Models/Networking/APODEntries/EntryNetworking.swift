@@ -14,7 +14,7 @@ class EntryNetworking {
         if let safeData = data {
             do {
                 let results = try decoder.decode(APODEntriesJSONModel.self, from: safeData)
-                EntryDataUploadManager().addUnsavedAPODEntriesAndDispatchToFeed(results)
+                AppLaunchEntryManager().addUnsavedAPODEntriesAndDispatchToFeed(results)
             } catch {
                 print("Error decoding NDN-API Response")
             }
