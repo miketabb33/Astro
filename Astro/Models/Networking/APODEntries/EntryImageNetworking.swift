@@ -14,7 +14,7 @@ class EntryImageNetworking {
     }
 
     func getImage(url: String) -> Data {
-        if url.suffix(3) != "jpg" {
+        if url.suffix(3) != "jpg" && url.suffix(3) != "png" {
             return UIImage(named: "youtube")!.pngData()!
         } else {
             let imageUrl = URL(string: url)!
