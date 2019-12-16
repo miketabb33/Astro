@@ -8,7 +8,6 @@ class EntryImageNetworking {
         DispatchQueue.global(qos: .background).async {
             let imageURLs = APODEntryInteraction().getImageURLs(startingIndex: startingIndex, amount: amount)
             let feedDataUpload = self.getImagesAndCellHeight(imageURLs: imageURLs)
-            print(feedDataUpload)
             
             APODEntryInteraction().saveCollectionOfImageDataAndCellHeight(feedDataUpload: feedDataUpload)
             

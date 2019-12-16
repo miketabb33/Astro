@@ -39,6 +39,8 @@ class FeedManager {
                     self.approachedBottom = false
                     self.entryImageNetworking.isFinishedUploading = false
                     
+                    print(APODEntryBuilder().getAPODEntries(startingIndex: self.nextStartingIndex, amount: self.amountToShow))
+                    
                     self.nextStartingIndex += 10
                     
                 } else {
