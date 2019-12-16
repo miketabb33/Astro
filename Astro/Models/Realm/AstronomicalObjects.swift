@@ -7,7 +7,7 @@ class AstronomicalObjectRealm: Object {
     @objc dynamic var relativeWeight = 0.0
 }
 
-class AstronomicalObjectMethods: RealmPath {
+class AstronomicalObjectInteraction: RealmPath {
     func createAstronomicalObject(position: Int, name: String, relativeWeight: Int) {
         let newAstronomicalObject = AstronomicalObjectRealm()
         newAstronomicalObject.position = position

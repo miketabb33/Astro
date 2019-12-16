@@ -10,7 +10,7 @@ class WeightDisplayTVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        astronomicalObjContainer = AstronomicalObjectMethods().getAllAstronomicalObjects()
+        astronomicalObjContainer = AstronomicalObjectInteraction().getAllAstronomicalObjects()
         
         tableView.register(UINib(nibName: cellID, bundle: nil), forCellReuseIdentifier: cellID)
     }

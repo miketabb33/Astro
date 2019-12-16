@@ -31,7 +31,7 @@ class FeedManager {
                 if self.entryImageNetworking.isFinishedUploading {
                     timer.invalidate()
                     
-                    let nextGroup = APODEntryMethods().getPastEntries(startingIndex: self.nextStartingIndex, amount: self.amountToShow)
+                    let nextGroup = APODEntryInteraction().getPastEntries(startingIndex: self.nextStartingIndex, amount: self.amountToShow)
                     parentVC.entries.append(contentsOf: nextGroup)
                     parentVC.tableView.reloadData()
                     

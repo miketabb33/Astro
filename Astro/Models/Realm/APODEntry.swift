@@ -1,7 +1,7 @@
 import Foundation
 import RealmSwift
 
-class APODEntry: Object {
+class APODEntryRealm: Object {
     @objc dynamic var id = 0
     @objc dynamic var explanation = ""
     @objc dynamic var image_url = ""
@@ -11,9 +11,9 @@ class APODEntry: Object {
     @objc dynamic var cellHeight = 0
 }
 
-class APODEntryMethods: RealmPath {
+class APODEntryInteraction: RealmPath {
     func create(entry: EntryNetworkModel) {
-        let newApodEntry = APODEntry()
+        let newApodEntry = APODEntryRealm()
         newApodEntry.id = Int(entry.id)!
         newApodEntry.title = DecoderMethods().decodeWithUTF8(string: entry.title)
         newApodEntry.explanation = DecoderMethods().decodeWithUTF8(string: entry.explanation)
@@ -26,14 +26,14 @@ class APODEntryMethods: RealmPath {
     }
     
     func getLastID() -> Int {
-        let entries = realm.objects(APODEntry.self)
+        let entries = realm.objects(APODEntryRealm.self)
         let sortedEntries = entries.sorted(byKeyPath: "id",ascending: false)
         
         return sortedEntries.first?.id ?? 0
     }
     
-    func getAll() -> Results<APODEntry> {
-        return realm.objects(APODEntry.self).sorted(byKeyPath: "date",ascending: false)
+    func getAll() -> Results<APODEntryRealm> {
+        return realm.objects(APODEntryRealm.self).sorted(byKeyPath: "date",ascending: false)
     }
     
     func getPastEntries(startingIndex: Int, amount: Int) -> [APODEntryModel] {
@@ -52,16 +52,16 @@ class APODEntryMethods: RealmPath {
     
     func getImageURLs(startingIndex: Int, amount: Int) -> [(Int, String)] {
         let APODEntries = getAll()
-        var IndexAndImageURL = [(Int, String)]()
+        var indexAndImageURL = [(Int, String)]()
         
         var i = 0
         while i < amount && startingIndex + i < APODEntries.count {
             let entry = APODEntries[i + startingIndex]
-            IndexAndImageURL.append((entry.id, entry.image_url))
+            indexAndImageURL.append((entry.id, entry.image_url))
             
             i += 1
         }
-        return IndexAndImageURL
+        return indexAndImageURL
         
     }
     
@@ -74,8 +74,8 @@ class APODEntryMethods: RealmPath {
         }
     }
     
-    func realmGet(id: Int) -> APODEntry? {
-        let entry = realm.objects(APODEntry.self).filter("id = \(id)").first
+    func realmGet(id: Int) -> APODEntryRealm? {
+        let entry = realm.objects(APODEntryRealm.self).filter("id = \(id)").first
         return entry
     }
     
@@ -88,13 +88,13 @@ class APODEntryMethods: RealmPath {
         }
     }
     
-    func saveImageData(realmObj: APODEntry, image: Data) {
+    func saveImageData(realmObj: APODEntryRealm, image: Data) {
         try! realm.write {
             realmObj.image = image
         }
     }
     
-    func saveCellHeight(realmObj: APODEntry, cellHeight: Int) {
+    func saveCellHeight(realmObj: APODEntryRealm, cellHeight: Int) {
         try! realm.write {
             realmObj.cellHeight = cellHeight
         }
