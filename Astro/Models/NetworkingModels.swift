@@ -1,10 +1,10 @@
 import Foundation
 
-struct APODEntriesJSONModel: Decodable {
-    var entries: [APODEntryJSONModel]
+struct EntriesNetworkModel: Decodable {
+    var entries: [EntryNetworkModel]
 }
 
-struct APODEntryJSONModel: Decodable {
+struct EntryNetworkModel: Decodable {
     var id: String
     var image_url: String
     var explanation: String

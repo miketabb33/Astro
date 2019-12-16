@@ -12,7 +12,7 @@ class APODEntry: Object {
 }
 
 class APODEntryMethods: RealmPath {
-    func create(entry: APODEntryJSONModel) {
+    func create(entry: EntryNetworkModel) {
         let newApodEntry = APODEntry()
         newApodEntry.id = Int(entry.id)!
         newApodEntry.title = DecoderMethods().decodeWithUTF8(string: entry.title)

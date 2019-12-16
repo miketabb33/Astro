@@ -18,7 +18,7 @@ class EntryNetworking {
         let decoder = JSONDecoder()
         if let safeData = data {
             do {
-                let results = try decoder.decode(APODEntriesJSONModel.self, from: safeData)
+                let results = try decoder.decode(EntriesNetworkModel.self, from: safeData)
                 addUnsavedAPODEntriesAndDispatchToFeed(results)
             } catch {
                 print("Error decoding NDN-API Response")
@@ -26,7 +26,7 @@ class EntryNetworking {
         }
     }
     
-    func addUnsavedAPODEntriesAndDispatchToFeed(_ results: APODEntriesJSONModel) {
+    func addUnsavedAPODEntriesAndDispatchToFeed(_ results: EntriesNetworkModel) {
         let lastSavedEntryID = APODEntryMethods().getLastID()
         let results = results.entries
         
