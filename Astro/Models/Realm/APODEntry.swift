@@ -32,26 +32,37 @@ class APODEntryMethods: RealmPath {
         return sortedEntries.first?.id ?? 0
     }
     
-    func getAll() -> [APODEntryModel] {
-        let APODEntries = realm.objects(APODEntry.self).sorted(byKeyPath: "date",ascending: false)
-        
-        return APODEntries.map{
-            APODEntryModel(id: $0.id, title: $0.title, explanation: $0.explanation, date: $0.date, image_url: $0.image_url, image: $0.image, cellHeight: $0.cellHeight)
-        }
+    func getAll() -> Results<APODEntry> {
+        return realm.objects(APODEntry.self).sorted(byKeyPath: "date",ascending: false)
     }
     
-    func getPastEntries(startingFrom startingIndex: Int, amount: Int) -> [APODEntryModel] {
-        let APODEntries = realm.objects(APODEntry.self).sorted(byKeyPath: "date",ascending: false)
-        var container = [APODEntryModel]()
+    func getPastEntries(startingIndex: Int, amount: Int) -> [APODEntryModel] {
+        let APODEntries = getAll()
+        var entries = [APODEntryModel]()
         
         var i = 0
         while i < amount && startingIndex + i < APODEntries.count {
             let entry = APODEntries[i + startingIndex]
-            container.append(APODEntryModel(id: entry.id, title: entry.title, explanation: entry.explanation, date: entry.date, image_url: entry.image_url, image: entry.image, cellHeight: entry.cellHeight))
+            entries.append(APODEntryModel(id: entry.id, title: entry.title, explanation: entry.explanation, date: entry.date, image_url: entry.image_url, image: entry.image, cellHeight: entry.cellHeight))
             
             i += 1
         }
-        return container
+        return entries
+    }
+    
+    func getImageURLs(startingIndex: Int, amount: Int) -> [(Int, String)] {
+        let APODEntries = getAll()
+        var IndexAndImageURL = [(Int, String)]()
+        
+        var i = 0
+        while i < amount && startingIndex + i < APODEntries.count {
+            let entry = APODEntries[i + startingIndex]
+            IndexAndImageURL.append((entry.id, entry.image_url))
+            
+            i += 1
+        }
+        return IndexAndImageURL
+        
     }
     
     func realmGet(id: Int) -> APODEntry? {

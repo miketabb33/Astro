@@ -6,7 +6,7 @@ class EntryImageNetworking {
     
     func saveImagesAndCellHeight(startingFrom startingIndex: Int, amount: Int) {
         DispatchQueue.global(qos: .background).async {
-            let entries = APODEntryMethods().getPastEntries(startingFrom: startingIndex, amount: amount)
+            let entries = APODEntryMethods().getPastEntries(startingIndex: startingIndex, amount: amount)
             let entriesWithImages = self.getImagesAndCellHeightForAPODEntries(entries)
             
             APODEntryMethods().saveCollectionOfImageDataAndCellHeight(entries: entriesWithImages)

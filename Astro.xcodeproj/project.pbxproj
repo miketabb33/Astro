@@ -60,7 +60,7 @@
 		4BEC2F772381B80400395CA4 /* InjectableSubviewManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEC2F762381B80400395CA4 /* InjectableSubviewManagerTests.swift */; };
 		4BEE114B238ADD9C00379D6E /* RealmPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEE114A238ADD9C00379D6E /* RealmPath.swift */; };
 		4BEE114D238ADDDF00379D6E /* APODEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEE114C238ADDDF00379D6E /* APODEntry.swift */; };
-		4BEE1150238AE20400379D6E /* JSONUploadModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEE114F238AE20400379D6E /* JSONUploadModels.swift */; };
+		4BEE1150238AE20400379D6E /* NetworkingModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEE114F238AE20400379D6E /* NetworkingModels.swift */; };
 		4BEE1152238AE43300379D6E /* AstronomicalObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEE1151238AE43300379D6E /* AstronomicalObjects.swift */; };
 /* End PBXBuildFile section */
 
@@ -153,7 +153,7 @@
 		4BEC2F762381B80400395CA4 /* InjectableSubviewManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjectableSubviewManagerTests.swift; sourceTree = "<group>"; };
 		4BEE114A238ADD9C00379D6E /* RealmPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmPath.swift; sourceTree = "<group>"; };
 		4BEE114C238ADDDF00379D6E /* APODEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODEntry.swift; sourceTree = "<group>"; };
-		4BEE114F238AE20400379D6E /* JSONUploadModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONUploadModels.swift; sourceTree = "<group>"; };
+		4BEE114F238AE20400379D6E /* NetworkingModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingModels.swift; sourceTree = "<group>"; };
 		4BEE1151238AE43300379D6E /* AstronomicalObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronomicalObjects.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -396,6 +396,7 @@
 				4BEE1149238ADD5B00379D6E /* Realm */,
 				4B7577F4238202FD00A05151 /* AstonomicalObjectDataUpload */,
 				4BD39B082381FB9000B70DC3 /* Networking */,
+				4BEE114F238AE20400379D6E /* NetworkingModels.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -476,7 +477,6 @@
 			children = (
 				4BCA1CE922B6AA0900118A1E /* EntryNetworking.swift */,
 				4B3A50542394254B00ED5779 /* EntryImageNetworking.swift */,
-				4BEE114F238AE20400379D6E /* JSONUploadModels.swift */,
 			);
 			path = APODEntries;
 			sourceTree = "<group>";
@@ -649,7 +649,7 @@
 				4B3A50552394254B00ED5779 /* EntryImageNetworking.swift in Sources */,
 				4BE14DCD2311B118000FA4E8 /* EntryCellConstructor.swift in Sources */,
 				4BB687AF226519E600D423F9 /* RelativeWeightInputVC.swift in Sources */,
-				4BEE1150238AE20400379D6E /* JSONUploadModels.swift in Sources */,
+				4BEE1150238AE20400379D6E /* NetworkingModels.swift in Sources */,
 				4B384B91236F351A00C3FD59 /* InjectableSubviewManager.swift in Sources */,
 				4BEE114B238ADD9C00379D6E /* RealmPath.swift in Sources */,
 				4BE14DCB2311AA27000FA4E8 /* ExpandExplanationManager.swift in Sources */,

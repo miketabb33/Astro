@@ -11,3 +11,9 @@ struct APODEntryJSONModel: Decodable {
     var date: String
     var title: String
 }
+
+struct APODFeedDataUpload {
+    var id: Int
+    var image: Data
+    var cellHeight: Int
+}
