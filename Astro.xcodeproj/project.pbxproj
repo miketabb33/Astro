@@ -17,7 +17,6 @@
 		4B384B91236F351A00C3FD59 /* InjectableSubviewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B384B90236F351A00C3FD59 /* InjectableSubviewManager.swift */; };
 		4B3A4FBA238CD37A00ED5779 /* APODEntryComponentDefaultHeights.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3A4FB9238CD37A00ED5779 /* APODEntryComponentDefaultHeights.swift */; };
 		4B3A4FBC238CD65800ED5779 /* ImageProcessing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3A4FBB238CD65800ED5779 /* ImageProcessing.swift */; };
-		4B3A50532394233700ED5779 /* EntryDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3A50522394233700ED5779 /* EntryDispatcher.swift */; };
 		4B3A50552394254B00ED5779 /* EntryImageNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3A50542394254B00ED5779 /* EntryImageNetworking.swift */; };
 		4B47DDAD2343D7FD005F736F /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B47DDAC2343D7FD005F736F /* Keys.swift */; };
 		4B6023DE22BBBFFF00732745 /* AstronomicalObjectDataUpload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6023DD22BBBFFF00732745 /* AstronomicalObjectDataUpload.swift */; };
@@ -47,7 +46,6 @@
 		4BCA1CEE22B6BD9D00118A1E /* FormatterMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCA1CED22B6BD9D00118A1E /* FormatterMethods.swift */; };
 		4BCDFBAE22FC7740003E39E8 /* APODFeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCDFBAD22FC7740003E39E8 /* APODFeedVC.swift */; };
 		4BCDFC0C22FF18F4003E39E8 /* BootStrapColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCDFC0B22FF18F4003E39E8 /* BootStrapColors.swift */; };
-		4BD2BEE923A6923E005040D4 /* AppLaunchEntryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD2BEE823A6923E005040D4 /* AppLaunchEntryManager.swift */; };
 		4BD2BEEB23A69692005040D4 /* FeedManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD2BEEA23A69692005040D4 /* FeedManager.swift */; };
 		4BD39AFC2381D7DF00B70DC3 /* ApplicationModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD39AFB2381D7DF00B70DC3 /* ApplicationModels.swift */; };
 		4BD39B012381F11E00B70DC3 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BB2EB2E2316B2A700D16A2A /* Realm.framework */; };
@@ -108,7 +106,6 @@
 		4B384B90236F351A00C3FD59 /* InjectableSubviewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjectableSubviewManager.swift; sourceTree = "<group>"; };
 		4B3A4FB9238CD37A00ED5779 /* APODEntryComponentDefaultHeights.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODEntryComponentDefaultHeights.swift; sourceTree = "<group>"; };
 		4B3A4FBB238CD65800ED5779 /* ImageProcessing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProcessing.swift; sourceTree = "<group>"; };
-		4B3A50522394233700ED5779 /* EntryDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryDispatcher.swift; sourceTree = "<group>"; };
 		4B3A50542394254B00ED5779 /* EntryImageNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryImageNetworking.swift; sourceTree = "<group>"; };
 		4B47DDAC2343D7FD005F736F /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 		4B6023DD22BBBFFF00732745 /* AstronomicalObjectDataUpload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronomicalObjectDataUpload.swift; sourceTree = "<group>"; };
@@ -146,7 +143,6 @@
 		4BCA1CED22B6BD9D00118A1E /* FormatterMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatterMethods.swift; sourceTree = "<group>"; };
 		4BCDFBAD22FC7740003E39E8 /* APODFeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODFeedVC.swift; sourceTree = "<group>"; };
 		4BCDFC0B22FF18F4003E39E8 /* BootStrapColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BootStrapColors.swift; sourceTree = "<group>"; };
-		4BD2BEE823A6923E005040D4 /* AppLaunchEntryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLaunchEntryManager.swift; sourceTree = "<group>"; };
 		4BD2BEEA23A69692005040D4 /* FeedManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedManager.swift; sourceTree = "<group>"; };
 		4BD39AFB2381D7DF00B70DC3 /* ApplicationModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationModels.swift; sourceTree = "<group>"; };
 		4BD39B062381F56200B70DC3 /* DecoderMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecoderMethods.swift; sourceTree = "<group>"; };
@@ -282,6 +278,7 @@
 		4B6023DC22BBBEE300732745 /* Bin - needs home */ = {
 			isa = PBXGroup;
 			children = (
+				4BD39B062381F56200B70DC3 /* DecoderMethods.swift */,
 				4BCDFC0B22FF18F4003E39E8 /* BootStrapColors.swift */,
 				4B20CC662378A32A0057FEB8 /* TextColorSelector.swift */,
 				4BCA1CED22B6BD9D00118A1E /* FormatterMethods.swift */,
@@ -322,15 +319,6 @@
 				4BA44E7422B92A93009756AA /* Info.plist */,
 			);
 			path = AstroTests;
-			sourceTree = "<group>";
-		};
-		4BC15CEE239432EE0072213D /* APODEntryDataUpload */ = {
-			isa = PBXGroup;
-			children = (
-				4BD2BEE823A6923E005040D4 /* AppLaunchEntryManager.swift */,
-				4B3A50522394233700ED5779 /* EntryDispatcher.swift */,
-			);
-			path = APODEntryDataUpload;
 			sourceTree = "<group>";
 		};
 		4BC55C9D225D330B0079A3E5 = {
@@ -407,7 +395,6 @@
 				4BD39AFB2381D7DF00B70DC3 /* ApplicationModels.swift */,
 				4BEE1149238ADD5B00379D6E /* Realm */,
 				4B7577F4238202FD00A05151 /* AstonomicalObjectDataUpload */,
-				4BC15CEE239432EE0072213D /* APODEntryDataUpload */,
 				4BD39B082381FB9000B70DC3 /* Networking */,
 			);
 			path = Models;
@@ -418,7 +405,6 @@
 			children = (
 				4BD39B092381FC1600B70DC3 /* NetworkManager.swift */,
 				4BEE114E238AE1E600379D6E /* APODEntries */,
-				4BD39B062381F56200B70DC3 /* DecoderMethods.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -677,7 +663,6 @@
 				4B20CC6A2378A7AD0057FEB8 /* UIColor.swift in Sources */,
 				4BCA1CEC22B6B6AB00118A1E /* KeyboardMethods.swift in Sources */,
 				4BEE1152238AE43300379D6E /* AstronomicalObjects.swift in Sources */,
-				4B3A50532394233700ED5779 /* EntryDispatcher.swift in Sources */,
 				4BC55CC5225D35450079A3E5 /* WeightDisplayTVC.swift in Sources */,
 				4BCA1CEE22B6BD9D00118A1E /* FormatterMethods.swift in Sources */,
 				4BD39B0A2381FC1600B70DC3 /* NetworkManager.swift in Sources */,
@@ -698,7 +683,6 @@
 				4BC55CCA225E59A90079A3E5 /* RelativeWeightCell.swift in Sources */,
 				4BCA1CE822B69EA100118A1E /* LoadingAnimation.swift in Sources */,
 				4B6023DE22BBBFFF00732745 /* AstronomicalObjectDataUpload.swift in Sources */,
-				4BD2BEE923A6923E005040D4 /* AppLaunchEntryManager.swift in Sources */,
 				4BEE114D238ADDDF00379D6E /* APODEntry.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

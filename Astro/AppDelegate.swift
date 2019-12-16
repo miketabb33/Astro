@@ -18,8 +18,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         Timer.scheduledTimer(withTimeInterval: 0.3, repeats: true) { (timer) in
             if self.entryNetworking.isImageDownloadReady {
-                self.entryImageNetworking.saveImagesAndCellHeight(startingFrom: 0, amount: 10, completion: nil)
+                self.entryImageNetworking.saveImagesAndCellHeight(startingFrom: 0, amount: 10)
                 timer.invalidate()
+            } else {
+                //loading
             }
         }
         
