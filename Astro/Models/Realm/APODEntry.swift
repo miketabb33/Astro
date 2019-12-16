@@ -65,28 +65,38 @@ class APODEntryMethods: RealmPath {
         
     }
     
+    func entryImageDownloadedCheck(id: Int) -> Bool {
+        let entry = realmGet(id: id)
+        if entry?.image != nil {
+            return true
+        } else {
+            return false
+        }
+    }
+    
     func realmGet(id: Int) -> APODEntry? {
         let entry = realm.objects(APODEntry.self).filter("id = \(id)").first
         return entry
     }
     
-    func saveImageData(realmObj: APODEntry, entry: APODEntryModel) {
-        try! realm.write {
-            realmObj.image = entry.image!
+    
+    func saveCollectionOfImageDataAndCellHeight(feedDataUpload: [APODFeedDataUpload]) {
+        for item in feedDataUpload {
+            let realmObj = realmGet(id: item.id)!
+            saveImageData(realmObj: realmObj, image: item.image)
+            saveCellHeight(realmObj: realmObj, cellHeight: item.cellHeight)
         }
     }
     
-    func saveCellHeight(realmObj: APODEntry, entry: APODEntryModel) {
+    func saveImageData(realmObj: APODEntry, image: Data) {
         try! realm.write {
-            realmObj.cellHeight = entry.cellHeight!
+            realmObj.image = image
         }
     }
     
-    func saveCollectionOfImageDataAndCellHeight(entries: [APODEntryModel]) {
-        for entry in entries {
-            let realmObj = realmGet(id: entry.id)!
-            saveImageData(realmObj: realmObj, entry: entry)
-            saveCellHeight(realmObj: realmObj, entry: entry)
+    func saveCellHeight(realmObj: APODEntry, cellHeight: Int) {
+        try! realm.write {
+            realmObj.cellHeight = cellHeight
         }
     }
     

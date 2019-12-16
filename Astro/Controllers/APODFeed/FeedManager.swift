@@ -15,7 +15,7 @@ class FeedManager {
         
         if ratio > 0.1 && !additionalImagesPending {
             additionalImagesPending = true
-            entryImageNetworking.saveImagesAndCellHeight(startingFrom: nextStartingIndex, amount: amountToShow)
+            entryImageNetworking.saveImagesAndCellHeight(startingIndex: nextStartingIndex, amount: amountToShow)
         }
     }
     

@@ -4,27 +4,33 @@ class EntryImageNetworking {
     
     var isFinishedUploading = false
     
-    func saveImagesAndCellHeight(startingFrom startingIndex: Int, amount: Int) {
+    func saveImagesAndCellHeight(startingIndex: Int, amount: Int) {
         DispatchQueue.global(qos: .background).async {
-            let entries = APODEntryMethods().getPastEntries(startingIndex: startingIndex, amount: amount)
-            let entriesWithImages = self.getImagesAndCellHeightForAPODEntries(entries)
+            let imageURLs = APODEntryMethods().getImageURLs(startingIndex: startingIndex, amount: amount)
+            let feedDataUpload = self.getImagesAndCellHeight(imageURLs: imageURLs)
+            print(feedDataUpload)
             
-            APODEntryMethods().saveCollectionOfImageDataAndCellHeight(entries: entriesWithImages)
+            APODEntryMethods().saveCollectionOfImageDataAndCellHeight(feedDataUpload: feedDataUpload)
             
             self.isFinishedUploading = true
         }
     }
     
-    func getImagesAndCellHeightForAPODEntries(_ entries: [APODEntryModel]) -> [APODEntryModel] {
-        return entries.map { (entry) -> APODEntryModel in
-            if entry.image == nil {
-                let image = getImage(url: entry.image_url)
+    func getImagesAndCellHeight(imageURLs: [(Int, String)]) -> [APODFeedDataUpload] {
+        var APODFeedDataUploadGroup = [APODFeedDataUpload]()
+        
+        for imageURL in imageURLs {
+            let entryID = imageURL.0
+            let isImageDownloaded = APODEntryMethods().entryImageDownloadedCheck(id: entryID)
+            
+            if !isImageDownloaded {
+                let image = getImage(url: imageURL.1)
                 let cellHeight = getCellHeight(imageData: image)
-                return APODEntryModel(id: entry.id, title: entry.title, explanation: entry.explanation, date: entry.date, image_url: entry.image_url, image: image, cellHeight: cellHeight)
-            } else {
-                return entry
+                APODFeedDataUploadGroup.append(APODFeedDataUpload(id: entryID, image: image, cellHeight: cellHeight))
             }
         }
+        
+        return APODFeedDataUploadGroup
     }
 
     func getImage(url: String) -> Data {
