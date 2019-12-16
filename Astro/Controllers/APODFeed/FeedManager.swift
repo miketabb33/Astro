@@ -5,17 +5,17 @@ class FeedManager {
     
     var approachedBottom = false
     
-    var amountToShow = AppLaunchEntryManager().initialEntryDispatchCount
-    var nextStartingIndex = AppLaunchEntryManager().initialEntryDispatchCount
+    var amountToShow = 10
+    var nextStartingIndex = 10
     
-    let uploadManager = EntryUploadManager()
+    let entryImageNetworking = EntryImageNetworking()
     
     func beginDownloadingImageDataForNextEntrySet(currentHeight: CGFloat, contentHeight: CGFloat) {
         let ratio = currentHeight / contentHeight
         
         if ratio > 0.1 && !additionalImagesPending {
             additionalImagesPending = true
-            uploadManager.saveImagesAndCellHeight(startingFrom: nextStartingIndex, amount: amountToShow, completion: nil)
+            entryImageNetworking.saveImagesAndCellHeight(startingFrom: nextStartingIndex, amount: amountToShow, completion: nil)
         }
     }
     
@@ -28,7 +28,7 @@ class FeedManager {
             approachedBottom = true
             
             Timer.scheduledTimer(withTimeInterval: 0.3, repeats: true) { (timer) in
-                if self.uploadManager.isUploading {
+                if self.entryImageNetworking.isUploading {
                     //Loading
                     print("Loading")
                 } else {

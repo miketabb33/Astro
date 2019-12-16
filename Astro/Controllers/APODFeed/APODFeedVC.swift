@@ -11,6 +11,8 @@ class APODFeedVC: UIViewController {
     var entries = [APODEntryModel]()
     
     var feedManager = FeedManager()
+    
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +22,9 @@ class APODFeedVC: UIViewController {
         internetDetection = InternetDetection(parentVC: self)
         internetDetection?.startMonitoringInternetConnection()
         
+        Timer.scheduledTimer(withTimeInterval: 0.3, repeats: true) { (timer) in
+            print("images uploading?: \(self.appDelegate.entryImageNetworking.isUploading)")
+        }
         //entries = APODEntryMethods().getPastEntries(amount: 10)
 
         tableView.allowsSelection = false
