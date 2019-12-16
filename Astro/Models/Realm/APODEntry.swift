@@ -36,20 +36,6 @@ class APODEntryInteraction: RealmPath {
         return realm.objects(APODEntryRealm.self).sorted(byKeyPath: "date",ascending: false)
     }
     
-    func getPastEntries(startingIndex: Int, amount: Int) -> [APODEntryModel] {
-        let APODEntries = getAll()
-        var entries = [APODEntryModel]()
-        
-        var i = 0
-        while i < amount && startingIndex + i < APODEntries.count {
-            let entry = APODEntries[i + startingIndex]
-            entries.append(APODEntryModel(id: entry.id, title: entry.title, explanation: entry.explanation, date: entry.date, image_url: entry.image_url, image: entry.image, cellHeight: entry.cellHeight))
-            
-            i += 1
-        }
-        return entries
-    }
-    
     func getImageURLs(startingIndex: Int, amount: Int) -> [(Int, String)] {
         let APODEntries = getAll()
         var indexAndImageURL = [(Int, String)]()

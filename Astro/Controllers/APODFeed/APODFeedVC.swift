@@ -31,7 +31,6 @@ class APODFeedVC: UIViewController {
                 //Loading
             }
         }
-        //entries = APODEntryMethods().getPastEntries(amount: 10)
 
         tableView.allowsSelection = false
     }
