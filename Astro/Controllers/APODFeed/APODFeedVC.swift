@@ -8,7 +8,7 @@ class APODFeedVC: UIViewController {
     
     let APODEntryCellID = "APODEntryCell"
     
-    var entries = [APODEntryModel]()
+    var entries = [APODEntry]()
     
     var feedManager = FeedManager()
     
@@ -24,7 +24,7 @@ class APODFeedVC: UIViewController {
         
         Timer.scheduledTimer(withTimeInterval: 0.3, repeats: true) { (timer) in
             if self.appDelegate.entryImageNetworking.isFinishedUploading {
-                self.entries = APODEntryInteraction().getPastEntries(startingIndex: 0, amount: 10)
+                self.entries = APODEntryBuilder().getAPODEntries(startingIndex: 0, amount: 10)
                 self.tableView.reloadData()
                 timer.invalidate()
             } else {
@@ -55,7 +55,7 @@ extension APODFeedVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return CGFloat(entries[indexPath.row].cellHeight!)
+        return CGFloat(entries[indexPath.row].feedData.cellHeight)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -74,8 +74,8 @@ extension APODFeedVC: UITableViewDelegate, UITableViewDataSource {
 extension APODFeedVC: APODEntryCellDelegate {
     func didTapExpandButton(index: Int, cell: APODEntryCell) {
         let results = ExpandExplanationManager().toggleExplanationExpansion(entry: entries[index], cell: cell)
-        entries[index].expandEnabled = results.0
-        entries[index].cellHeight = results.1
+        entries[index].feedData.expandEnabled = results.0
+        entries[index].feedData.cellHeight = results.1
         tableView.beginUpdates()
         tableView.endUpdates()
     }

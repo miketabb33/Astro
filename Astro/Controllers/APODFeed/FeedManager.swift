@@ -31,15 +31,13 @@ class FeedManager {
                 if self.entryImageNetworking.isFinishedUploading {
                     timer.invalidate()
                     
-                    let nextGroup = APODEntryInteraction().getPastEntries(startingIndex: self.nextStartingIndex, amount: self.amountToShow)
+                    let nextGroup = APODEntryBuilder().getAPODEntries(startingIndex: self.nextStartingIndex, amount: self.amountToShow)
                     parentVC.entries.append(contentsOf: nextGroup)
                     parentVC.tableView.reloadData()
                     
                     self.additionalImagesPending = false
                     self.approachedBottom = false
                     self.entryImageNetworking.isFinishedUploading = false
-                    
-                    print(APODEntryBuilder().getAPODEntries(startingIndex: self.nextStartingIndex, amount: self.amountToShow))
                     
                     self.nextStartingIndex += 10
                     

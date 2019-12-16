@@ -33,9 +33,9 @@ class EntryCellConstraints {
     }
     
     
-    func getTogglePositionOfExplanation(cell: APODEntryCell, entry: APODEntryModel) {
+    func getTogglePositionOfExplanation(cell: APODEntryCell, entry: APODEntry) {
         var explanationHeight: CGFloat = 0
-        if entry.expandEnabled == true {
+        if entry.feedData.expandEnabled == true {
             explanationHeight = cell.explanation.frame.height
             
             showExplanation(cell: cell, numberOfLines: 0, height: explanationHeight, arrowPosition: CGAffineTransform(rotationAngle: .pi))

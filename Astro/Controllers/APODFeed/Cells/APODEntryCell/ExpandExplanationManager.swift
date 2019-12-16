@@ -3,12 +3,12 @@ import UIKit
 class ExpandExplanationManager {
     let addConstraints = EntryCellConstraints()
     
-    func toggleExplanationExpansion(entry: APODEntryModel, cell: APODEntryCell) -> (Bool, Int) {
+    func toggleExplanationExpansion(entry: APODEntry, cell: APODEntryCell) -> (Bool, Int) {
         var stateOfExpansion = false
         var newCellHeight = 0
         var newExplanationHeight: CGFloat = 0
         
-        if entry.expandEnabled == false {
+        if entry.feedData.expandEnabled == false {
             stateOfExpansion = true
             resizeContentsAnimation(numberOfShowingLines: 0, cell: cell)
             newExplanationHeight = getExpandedEntryExplanationFrameHeight(rawFrameHeight: cell.explanation.frame.height)
