@@ -2,18 +2,17 @@ import UIKit
 
 class EntryImageNetworking {
     
-    var isUploading = false
+    var isFinishedUploading = false
     
     func saveImagesAndCellHeight(startingFrom startingIndex: Int, amount: Int, completion: (([APODEntryModel]) -> ())?) {
         DispatchQueue.global(qos: .background).async {
-            self.isUploading = true
             let entries = APODEntryMethods().getPastEntries(startingFrom: startingIndex, amount: amount)
             let entriesWithImages = self.getImagesAndCellHeightForAPODEntries(entries)
             
             APODEntryMethods().saveCollectionOfImageDataAndCellHeight(entries: entriesWithImages)
             
             completion?(entriesWithImages)
-            self.isUploading = false
+            self.isFinishedUploading = true
         }
     }
     

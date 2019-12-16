@@ -23,7 +23,13 @@ class APODFeedVC: UIViewController {
         internetDetection?.startMonitoringInternetConnection()
         
         Timer.scheduledTimer(withTimeInterval: 0.3, repeats: true) { (timer) in
-            print("images uploading?: \(self.appDelegate.entryImageNetworking.isUploading)")
+            if self.appDelegate.entryImageNetworking.isFinishedUploading {
+                self.entries = APODEntryMethods().getPastEntries(startingFrom: 0, amount: 10)
+                self.tableView.reloadData()
+                timer.invalidate()
+            } else {
+                //Loading
+            }
         }
         //entries = APODEntryMethods().getPastEntries(amount: 10)
 

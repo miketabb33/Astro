@@ -9,7 +9,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let entryImageNetworking = EntryImageNetworking()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        //Line below prints location of realm Database
+        print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
+        
         AstronomicalObjectDataUpload().uploadUnlessCompleted(isCompleted: UserDefaultsMethods().getBoolean(key: UserDefaultsMethods().astroObjUploadCompletedKey))
+        
         entryNetworking.SyncronizeAPODEntries()
         
         Timer.scheduledTimer(withTimeInterval: 0.3, repeats: true) { (timer) in
@@ -19,8 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
         
-        //Line below prints location of realm Database
-        print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
+        
         return true
     }
 

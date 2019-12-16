@@ -28,10 +28,7 @@ class FeedManager {
             approachedBottom = true
             
             Timer.scheduledTimer(withTimeInterval: 0.3, repeats: true) { (timer) in
-                if self.entryImageNetworking.isUploading {
-                    //Loading
-                    print("Loading")
-                } else {
+                if self.entryImageNetworking.isFinishedUploading {
                     timer.invalidate()
                     
                     let nextGroup = APODEntryMethods().getPastEntries(startingFrom: self.nextStartingIndex, amount: self.amountToShow)
@@ -42,6 +39,10 @@ class FeedManager {
                     self.approachedBottom = false
                     
                     self.nextStartingIndex += 10
+                    
+                } else {
+                    print("Loading")
+                    
                 }
             }
         }
