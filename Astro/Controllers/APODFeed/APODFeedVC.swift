@@ -6,7 +6,7 @@ class APODFeedVC: UIViewController {
     
     var internetDetection: InternetDetection?
     
-    let cellID = "APODEntryCell"
+    let APODEntryCellID = "APODEntryCell"
     
     var entries = [APODEntryModel]()
     
@@ -17,7 +17,7 @@ class APODFeedVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.register(APODEntryCell.self, forCellReuseIdentifier: cellID)
+        tableView.register(APODEntryCell.self, forCellReuseIdentifier: APODEntryCellID)
         
         internetDetection = InternetDetection(parentVC: self)
         internetDetection?.startMonitoringInternetConnection()
@@ -59,7 +59,7 @@ extension APODFeedVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! APODEntryCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: APODEntryCellID, for: indexPath) as! APODEntryCell
         let entry = entries[indexPath.row]
         
         cell.delegate = self

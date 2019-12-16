@@ -37,6 +37,7 @@ class FeedManager {
                     
                     self.additionalImagesPending = false
                     self.approachedBottom = false
+                    self.entryImageNetworking.isFinishedUploading = false
                     
                     self.nextStartingIndex += 10
                     
