@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4B033F3D23A85C2300D9965E /* APODFeedDataInteraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B033F3C23A85C2300D9965E /* APODFeedDataInteraction.swift */; };
+		4B033F4023A8691300D9965E /* LoadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B033F3E23A8691300D9965E /* LoadingCell.swift */; };
+		4B033F4123A8691300D9965E /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B033F3F23A8691300D9965E /* LoadingCell.xib */; };
 		4B1A9AEF22F723F000B88975 /* InternetDetection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1A9AEE22F723F000B88975 /* InternetDetection.swift */; };
 		4B20CC672378A32A0057FEB8 /* TextColorSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B20CC662378A32A0057FEB8 /* TextColorSelector.swift */; };
 		4B20CC6A2378A7AD0057FEB8 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B20CC692378A7AD0057FEB8 /* UIColor.swift */; };
@@ -99,6 +101,8 @@
 
 /* Begin PBXFileReference section */
 		4B033F3C23A85C2300D9965E /* APODFeedDataInteraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODFeedDataInteraction.swift; sourceTree = "<group>"; };
+		4B033F3E23A8691300D9965E /* LoadingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingCell.swift; sourceTree = "<group>"; };
+		4B033F3F23A8691300D9965E /* LoadingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingCell.xib; sourceTree = "<group>"; };
 		4B1A9AEE22F723F000B88975 /* InternetDetection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternetDetection.swift; sourceTree = "<group>"; };
 		4B20CC662378A32A0057FEB8 /* TextColorSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextColorSelector.swift; sourceTree = "<group>"; };
 		4B20CC692378A7AD0057FEB8 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
@@ -188,6 +192,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4B033F4223A86E7600D9965E /* LoadingCell */ = {
+			isa = PBXGroup;
+			children = (
+				4B033F3E23A8691300D9965E /* LoadingCell.swift */,
+				4B033F3F23A8691300D9965E /* LoadingCell.xib */,
+			);
+			path = LoadingCell;
+			sourceTree = "<group>";
+		};
 		4B20CC682378A7940057FEB8 /* NativeClassExtensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -429,6 +442,7 @@
 			isa = PBXGroup;
 			children = (
 				4B2C414223A6DFA800B1CE7C /* APODEntryCell */,
+				4B033F4223A86E7600D9965E /* LoadingCell */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -621,6 +635,7 @@
 				4BB687BD22664D1F00D423F9 /* AstroObjTempCell.xib in Resources */,
 				4BC55CF5225FB0210079A3E5 /* AstronomicalObjectData.plist in Resources */,
 				4BC55CCB225E59A90079A3E5 /* RelativeWeightCell.xib in Resources */,
+				4B033F4123A8691300D9965E /* LoadingCell.xib in Resources */,
 				4B384B8C236F329200C3FD59 /* DropDownAlert.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -660,6 +675,7 @@
 				4BEE114B238ADD9C00379D6E /* RealmPath.swift in Sources */,
 				4BE14DCB2311AA27000FA4E8 /* ExpandExplanationManager.swift in Sources */,
 				4B98E8A022BEC9D90025B8F2 /* SearchBarMethods.swift in Sources */,
+				4B033F4023A8691300D9965E /* LoadingCell.swift in Sources */,
 				4BB687B922664C6A00D423F9 /* AstroObjTempTVC.swift in Sources */,
 				4BE51AD722E34EB4002905ED /* APODEntryCell.swift in Sources */,
 				4BD39B072381F56200B70DC3 /* DecoderMethods.swift in Sources */,

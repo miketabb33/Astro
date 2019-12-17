@@ -7,6 +7,7 @@ class APODFeedVC: UIViewController {
     var internetDetection: InternetDetection?
     
     let APODEntryCellID = "APODEntryCell"
+    let LoadingCellID = "LoadingCell"
     
     var entries = [APODEntry]()
     
@@ -18,6 +19,7 @@ class APODFeedVC: UIViewController {
         super.viewDidLoad()
         
         tableView.register(APODEntryCell.self, forCellReuseIdentifier: APODEntryCellID)
+        tableView.register(LoadingCell.self, forCellReuseIdentifier: LoadingCellID)
         
         internetDetection = InternetDetection(parentVC: self)
         internetDetection?.startMonitoringInternetConnection()
