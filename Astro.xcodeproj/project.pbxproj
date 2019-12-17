@@ -201,12 +201,12 @@
 			path = LoadingCell;
 			sourceTree = "<group>";
 		};
-		4B20CC682378A7940057FEB8 /* NativeClassExtensions */ = {
+		4B20CC682378A7940057FEB8 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				4B20CC692378A7AD0057FEB8 /* UIColor.swift */,
 			);
-			path = NativeClassExtensions;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		4B20CC6B2378ABFF0057FEB8 /* InjectableSubviews */ = {
@@ -364,7 +364,6 @@
 			isa = PBXGroup;
 			children = (
 				4BC55CA9225D330B0079A3E5 /* AppDelegate.swift */,
-				4B20CC682378A7940057FEB8 /* NativeClassExtensions */,
 				4B6023DC22BBBEE300732745 /* Bin - needs home */,
 				4B384B88236F321F00C3FD59 /* Subviews */,
 				4BC55CC2225D337B0079A3E5 /* Controllers */,
@@ -381,6 +380,7 @@
 			isa = PBXGroup;
 			children = (
 				4BC55CAD225D330B0079A3E5 /* Main.storyboard */,
+				4B20CC682378A7940057FEB8 /* Extensions */,
 			);
 			path = Views;
 			sourceTree = "<group>";
