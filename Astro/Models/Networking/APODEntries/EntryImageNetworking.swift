@@ -10,6 +10,7 @@ class EntryImageNetworking {
             let feedDataUpload = self.getImagesAndCellHeight(imageURLs: imageURLs)
             
             APODEntryInteraction().saveCollectionOfImageDataAndCellHeight(feedDataUpload: feedDataUpload)
+            APODFeedDataInteraction().create(feedDataUpload)
             
             self.isFinishedUploading = true
         }

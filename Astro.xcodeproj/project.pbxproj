@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B033F3D23A85C2300D9965E /* APODFeedDataInteraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B033F3C23A85C2300D9965E /* APODFeedDataInteraction.swift */; };
 		4B1A9AEF22F723F000B88975 /* InternetDetection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1A9AEE22F723F000B88975 /* InternetDetection.swift */; };
 		4B20CC672378A32A0057FEB8 /* TextColorSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B20CC662378A32A0057FEB8 /* TextColorSelector.swift */; };
 		4B20CC6A2378A7AD0057FEB8 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B20CC692378A7AD0057FEB8 /* UIColor.swift */; };
@@ -60,9 +61,9 @@
 		4BE51AD722E34EB4002905ED /* APODEntryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE51AD522E34EB4002905ED /* APODEntryCell.swift */; };
 		4BEC2F772381B80400395CA4 /* InjectableSubviewManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEC2F762381B80400395CA4 /* InjectableSubviewManagerTests.swift */; };
 		4BEE114B238ADD9C00379D6E /* RealmPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEE114A238ADD9C00379D6E /* RealmPath.swift */; };
-		4BEE114D238ADDDF00379D6E /* APODEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEE114C238ADDDF00379D6E /* APODEntry.swift */; };
+		4BEE114D238ADDDF00379D6E /* APODEntryInteraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEE114C238ADDDF00379D6E /* APODEntryInteraction.swift */; };
 		4BEE1150238AE20400379D6E /* NetworkingModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEE114F238AE20400379D6E /* NetworkingModels.swift */; };
-		4BEE1152238AE43300379D6E /* AstronomicalObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEE1151238AE43300379D6E /* AstronomicalObjects.swift */; };
+		4BEE1152238AE43300379D6E /* AstronomicalObjectsInteraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEE1151238AE43300379D6E /* AstronomicalObjectsInteraction.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +98,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4B033F3C23A85C2300D9965E /* APODFeedDataInteraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODFeedDataInteraction.swift; sourceTree = "<group>"; };
 		4B1A9AEE22F723F000B88975 /* InternetDetection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternetDetection.swift; sourceTree = "<group>"; };
 		4B20CC662378A32A0057FEB8 /* TextColorSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextColorSelector.swift; sourceTree = "<group>"; };
 		4B20CC692378A7AD0057FEB8 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
@@ -154,9 +156,9 @@
 		4BE51AD522E34EB4002905ED /* APODEntryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODEntryCell.swift; sourceTree = "<group>"; };
 		4BEC2F762381B80400395CA4 /* InjectableSubviewManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjectableSubviewManagerTests.swift; sourceTree = "<group>"; };
 		4BEE114A238ADD9C00379D6E /* RealmPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmPath.swift; sourceTree = "<group>"; };
-		4BEE114C238ADDDF00379D6E /* APODEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODEntry.swift; sourceTree = "<group>"; };
+		4BEE114C238ADDDF00379D6E /* APODEntryInteraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODEntryInteraction.swift; sourceTree = "<group>"; };
 		4BEE114F238AE20400379D6E /* NetworkingModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingModels.swift; sourceTree = "<group>"; };
-		4BEE1151238AE43300379D6E /* AstronomicalObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronomicalObjects.swift; sourceTree = "<group>"; };
+		4BEE1151238AE43300379D6E /* AstronomicalObjectsInteraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronomicalObjectsInteraction.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -469,8 +471,9 @@
 			isa = PBXGroup;
 			children = (
 				4BEE114A238ADD9C00379D6E /* RealmPath.swift */,
-				4BEE114C238ADDDF00379D6E /* APODEntry.swift */,
-				4BEE1151238AE43300379D6E /* AstronomicalObjects.swift */,
+				4BEE114C238ADDDF00379D6E /* APODEntryInteraction.swift */,
+				4B033F3C23A85C2300D9965E /* APODFeedDataInteraction.swift */,
+				4BEE1151238AE43300379D6E /* AstronomicalObjectsInteraction.swift */,
 			);
 			path = Realm;
 			sourceTree = "<group>";
@@ -665,7 +668,7 @@
 				4B1A9AEF22F723F000B88975 /* InternetDetection.swift in Sources */,
 				4B20CC6A2378A7AD0057FEB8 /* UIColor.swift in Sources */,
 				4BCA1CEC22B6B6AB00118A1E /* KeyboardMethods.swift in Sources */,
-				4BEE1152238AE43300379D6E /* AstronomicalObjects.swift in Sources */,
+				4BEE1152238AE43300379D6E /* AstronomicalObjectsInteraction.swift in Sources */,
 				4BC55CC5225D35450079A3E5 /* WeightDisplayTVC.swift in Sources */,
 				4BCA1CEE22B6BD9D00118A1E /* FormatterMethods.swift in Sources */,
 				4BD39B0A2381FC1600B70DC3 /* NetworkManager.swift in Sources */,
@@ -683,11 +686,12 @@
 				4BCDFC0C22FF18F4003E39E8 /* BootStrapColors.swift in Sources */,
 				4BCA1CEA22B6AA0900118A1E /* EntryNetworking.swift in Sources */,
 				4BD2BEEB23A69692005040D4 /* FeedManager.swift in Sources */,
+				4B033F3D23A85C2300D9965E /* APODFeedDataInteraction.swift in Sources */,
 				4B43AC0023A842BD004FC99C /* APODEntryBuilder.swift in Sources */,
 				4BC55CCA225E59A90079A3E5 /* RelativeWeightCell.swift in Sources */,
 				4BCA1CE822B69EA100118A1E /* LoadingAnimation.swift in Sources */,
 				4B6023DE22BBBFFF00732745 /* AstronomicalObjectDataUpload.swift in Sources */,
-				4BEE114D238ADDDF00379D6E /* APODEntry.swift in Sources */,
+				4BEE114D238ADDDF00379D6E /* APODEntryInteraction.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
