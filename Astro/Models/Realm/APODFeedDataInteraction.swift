@@ -20,4 +20,9 @@ class APODFeedDataInteraction: RealmPath {
             }
         }
     }
+    
+    
+    func get(id: Int) -> APODFeedDataRealm? {
+        return realm.objects(APODFeedDataRealm.self).filter("id = \(id)").first
+    }
 }
