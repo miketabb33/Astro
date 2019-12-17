@@ -7,8 +7,6 @@ class APODEntryRealm: Object {
     @objc dynamic var image_url = ""
     @objc dynamic var title = ""
     @objc dynamic var date = Date()
-    @objc dynamic var image: Data?
-    @objc dynamic var cellHeight = 0
 }
 
 class APODEntryInteraction: RealmPath {
@@ -50,40 +48,4 @@ class APODEntryInteraction: RealmPath {
         return indexAndImageURL
         
     }
-    
-    func entryImageDownloadedCheck(id: Int) -> Bool {
-        let entry = realmGet(id: id)
-        if entry?.image != nil {
-            return true
-        } else {
-            return false
-        }
-    }
-    
-    func realmGet(id: Int) -> APODEntryRealm? {
-        let entry = realm.objects(APODEntryRealm.self).filter("id = \(id)").first
-        return entry
-    }
-    
-    
-    func saveCollectionOfImageDataAndCellHeight(feedDataUpload: [APODFeedDataUpload]) {
-        for item in feedDataUpload {
-            let realmObj = realmGet(id: item.id)!
-            saveImageData(realmObj: realmObj, image: item.image)
-            saveCellHeight(realmObj: realmObj, cellHeight: item.cellHeight)
-        }
-    }
-    
-    func saveImageData(realmObj: APODEntryRealm, image: Data) {
-        try! realm.write {
-            realmObj.image = image
-        }
-    }
-    
-    func saveCellHeight(realmObj: APODEntryRealm, cellHeight: Int) {
-        try! realm.write {
-            realmObj.cellHeight = cellHeight
-        }
-    }
-    
 }

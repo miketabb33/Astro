@@ -9,7 +9,6 @@ class EntryImageNetworking {
             let imageURLs = APODEntryInteraction().getImageURLs(startingIndex: startingIndex, amount: amount)
             let feedDataUpload = self.getImagesAndCellHeight(imageURLs: imageURLs)
             
-            APODEntryInteraction().saveCollectionOfImageDataAndCellHeight(feedDataUpload: feedDataUpload)
             APODFeedDataInteraction().create(feedDataUpload)
             
             self.isFinishedUploading = true
@@ -21,9 +20,9 @@ class EntryImageNetworking {
         
         for imageURL in imageURLs {
             let entryID = imageURL.0
-            let isImageDownloaded = APODEntryInteraction().entryImageDownloadedCheck(id: entryID)
+            let feedData = APODFeedDataInteraction().get(id: entryID)
             
-            if !isImageDownloaded {
+            if feedData == nil {
                 let image = getImage(url: imageURL.1)
                 let cellHeight = getCellHeight(imageData: image)
                 APODFeedDataUploadGroup.append(APODFeedDataUpload(id: entryID, image: image, cellHeight: cellHeight))
