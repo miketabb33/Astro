@@ -22,6 +22,8 @@ class APODFeedVC: UIViewController {
         internetDetection = InternetDetection(parentVC: self)
         internetDetection?.startMonitoringInternetConnection()
         
+        entries = APODEntryBuilder().getLastLoadedAPODEntries(amount: 10)
+        
         Timer.scheduledTimer(withTimeInterval: 0.3, repeats: true) { (timer) in
             if self.appDelegate.entryImageNetworking.isFinishedUploading {
                 self.entries = APODEntryBuilder().getAPODEntries(startingIndex: 0, amount: 10)

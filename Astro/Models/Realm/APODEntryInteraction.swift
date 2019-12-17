@@ -23,15 +23,19 @@ class APODEntryInteraction: RealmPath {
         }
     }
     
+    func getAll() -> Results<APODEntryRealm> {
+        return realm.objects(APODEntryRealm.self).sorted(byKeyPath: "date",ascending: false)
+    }
+    
+    func get(id: Int) -> APODEntryRealm? {
+        return realm.objects(APODEntryRealm.self).filter("id = \(id)").first
+    }
+    
     func getLastID() -> Int {
         let entries = realm.objects(APODEntryRealm.self)
         let sortedEntries = entries.sorted(byKeyPath: "id",ascending: false)
         
         return sortedEntries.first?.id ?? 0
-    }
-    
-    func getAll() -> Results<APODEntryRealm> {
-        return realm.objects(APODEntryRealm.self).sorted(byKeyPath: "date",ascending: false)
     }
     
     func getImageURLs(startingIndex: Int, amount: Int) -> [(Int, String)] {

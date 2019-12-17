@@ -22,6 +22,10 @@ class APODFeedDataInteraction: RealmPath {
     }
     
     
+    func getAll() -> Results<APODFeedDataRealm> {
+        return realm.objects(APODFeedDataRealm.self).sorted(byKeyPath: "id",ascending: false)
+    }
+    
     func get(id: Int) -> APODFeedDataRealm? {
         return realm.objects(APODFeedDataRealm.self).filter("id = \(id)").first
     }
