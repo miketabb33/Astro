@@ -66,6 +66,8 @@
 		4BEE114D238ADDDF00379D6E /* APODEntryInteraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEE114C238ADDDF00379D6E /* APODEntryInteraction.swift */; };
 		4BEE1150238AE20400379D6E /* NetworkingModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEE114F238AE20400379D6E /* NetworkingModels.swift */; };
 		4BEE1152238AE43300379D6E /* AstronomicalObjectsInteraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEE1151238AE43300379D6E /* AstronomicalObjectsInteraction.swift */; };
+		4BF2CD1923CB6F35009475E3 /* APODTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF2CD1723CB6F35009475E3 /* APODTableViewCell.swift */; };
+		4BF2CD1A23CB6F35009475E3 /* APODTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BF2CD1823CB6F35009475E3 /* APODTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -163,6 +165,8 @@
 		4BEE114C238ADDDF00379D6E /* APODEntryInteraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODEntryInteraction.swift; sourceTree = "<group>"; };
 		4BEE114F238AE20400379D6E /* NetworkingModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingModels.swift; sourceTree = "<group>"; };
 		4BEE1151238AE43300379D6E /* AstronomicalObjectsInteraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronomicalObjectsInteraction.swift; sourceTree = "<group>"; };
+		4BF2CD1723CB6F35009475E3 /* APODTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODTableViewCell.swift; sourceTree = "<group>"; };
+		4BF2CD1823CB6F35009475E3 /* APODTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = APODTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,6 +225,8 @@
 		4B2C414223A6DFA800B1CE7C /* APODEntryCell */ = {
 			isa = PBXGroup;
 			children = (
+				4BF2CD1723CB6F35009475E3 /* APODTableViewCell.swift */,
+				4BF2CD1823CB6F35009475E3 /* APODTableViewCell.xib */,
 				4BE51AD522E34EB4002905ED /* APODEntryCell.swift */,
 				4BE14DCA2311AA27000FA4E8 /* ExpandExplanationManager.swift */,
 				4B3A4FB6238CD0E800ED5779 /* EntryCellLayout */,
@@ -636,6 +642,7 @@
 				4BC55CF5225FB0210079A3E5 /* AstronomicalObjectData.plist in Resources */,
 				4BC55CCB225E59A90079A3E5 /* RelativeWeightCell.xib in Resources */,
 				4B033F4123A8691300D9965E /* LoadingCell.xib in Resources */,
+				4BF2CD1A23CB6F35009475E3 /* APODTableViewCell.xib in Resources */,
 				4B384B8C236F329200C3FD59 /* DropDownAlert.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -682,6 +689,7 @@
 				4BCDFBAE22FC7740003E39E8 /* APODFeedVC.swift in Sources */,
 				4B384B8A236F327A00C3FD59 /* DropDownAlertVC.swift in Sources */,
 				4B1A9AEF22F723F000B88975 /* InternetDetection.swift in Sources */,
+				4BF2CD1923CB6F35009475E3 /* APODTableViewCell.swift in Sources */,
 				4B20CC6A2378A7AD0057FEB8 /* UIColor.swift in Sources */,
 				4BCA1CEC22B6B6AB00118A1E /* KeyboardMethods.swift in Sources */,
 				4BEE1152238AE43300379D6E /* AstronomicalObjectsInteraction.swift in Sources */,
