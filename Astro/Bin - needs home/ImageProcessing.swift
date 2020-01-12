@@ -1,8 +1,6 @@
 import UIKit
 
 class ImageProcessing {
-    let constraints = EntryCellConstraints()
-    
     var image: UIImage
     
     let width: CGFloat
@@ -26,25 +24,18 @@ class ImageProcessing {
         aspectHeight = (screenWidth/width) * height
     }
     
-    func getImageRatioAndFit(currentCell: APODEntryCell, stackUnder topElement: UIView, edges edgeArea: UILayoutGuide) -> UIImageView {
-        if ratio >= widePictureRatio {
-            currentCell.APODImage = fitImage(imageHeight: aspectHeight, contentMode: .scaleToFill, currentCell: currentCell, stackUnder: topElement, edges: edgeArea)
-        } else if ratio <= tallPictureRatio {
-            currentCell.APODImage = fitImage(imageHeight: screenWidth, contentMode: .scaleAspectFit, currentCell: currentCell, stackUnder: topElement, edges: edgeArea)
+    func getContentMode() -> UIView.ContentMode {
+        var contentMode: UIView.ContentMode?
+        
+        if ratio <= tallPictureRatio {
+            contentMode = .scaleAspectFit
         } else {
-            currentCell.APODImage = fitImage(imageHeight: screenWidth, contentMode: .scaleToFill, currentCell: currentCell, stackUnder: topElement, edges: edgeArea)
+            contentMode = .scaleToFill
         }
         
-        return currentCell.APODImage
+        return contentMode!
     }
-    
-    func fitImage(imageHeight: CGFloat, contentMode: UIView.ContentMode, currentCell: APODEntryCell, stackUnder topElement: UIView, edges edgeArea: UILayoutGuide) -> UIImageView {
-        currentCell.APODImage.contentMode = contentMode
-        currentCell.componentHeight["image"] = imageHeight
-        constraints.addStackingConstraintTo(currentCell.APODImage, stackUnder: topElement, edges: edgeArea, height: imageHeight)
-        
-        return currentCell.APODImage
-    }
+
     
     
     func getImageDisplayHeight() -> CGFloat {

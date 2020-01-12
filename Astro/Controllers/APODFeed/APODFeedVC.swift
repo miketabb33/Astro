@@ -69,6 +69,15 @@ extension APODFeedVC: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: APODTableViewCellID, for: indexPath) as! APODTableViewCell
         let entry = entries[indexPath.row]
         
+        cell.titleLabel.text = entry.contents.title
+        
+        let image = UIImage(data: entry.feedData.image)!
+        cell.APODImageView.image = image
+        cell.APODImageView.contentMode = ImageProcessing(image: image).getContentMode()
+        
+        
+        cell.explanationLabel.text = entry.contents.explanation
+        
         //cell.delegate = self
         //cell.index = indexPath.row
         //EntryCellConstructor().assignCell(cell: cell, entry: entry, tableView: tableView, parent: self)
