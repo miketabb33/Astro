@@ -369,6 +369,7 @@
 				4BC55CC2225D337B0079A3E5 /* Controllers */,
 				4BC55CBE225D33430079A3E5 /* Views */,
 				4BC55CC3225D337D0079A3E5 /* Models */,
+				4BD39B082381FB9000B70DC3 /* Networking */,
 				4BC55CC0225D336E0079A3E5 /* Supporting Files */,
 				4BC55CB3225D330D0079A3E5 /* Assets.xcassets */,
 				4BC55CB5225D330D0079A3E5 /* LaunchScreen.storyboard */,
@@ -413,8 +414,6 @@
 				4B43ABFF23A842BD004FC99C /* APODEntryBuilder.swift */,
 				4BEE1149238ADD5B00379D6E /* Realm */,
 				4B7577F4238202FD00A05151 /* AstonomicalObjectDataUpload */,
-				4BD39B082381FB9000B70DC3 /* Networking */,
-				4BEE114F238AE20400379D6E /* NetworkingModels.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -423,6 +422,7 @@
 			isa = PBXGroup;
 			children = (
 				4BD39B092381FC1600B70DC3 /* NetworkManager.swift */,
+				4BEE114F238AE20400379D6E /* NetworkingModels.swift */,
 				4BEE114E238AE1E600379D6E /* APODEntries */,
 			);
 			path = Networking;

@@ -27,7 +27,7 @@ class APODFeedVC: UIViewController {
         entries = APODEntryBuilder().getLastLoadedAPODEntries(amount: 10)
         
         Timer.scheduledTimer(withTimeInterval: 0.3, repeats: true) { (timer) in
-            if self.appDelegate.entryImageNetworking.isFinishedUploading {
+            if self.appDelegate.entryImageNetworking.entriesFinishedUploading {
                 self.entries = APODEntryBuilder().getAPODEntries(startingIndex: 0, amount: 10)
                 self.tableView.reloadData()
                 timer.invalidate()

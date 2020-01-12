@@ -28,7 +28,7 @@ class FeedManager {
             approachedBottom = true
             
             Timer.scheduledTimer(withTimeInterval: 0.3, repeats: true) { (timer) in
-                if self.entryImageNetworking.isFinishedUploading {
+                if self.entryImageNetworking.entriesFinishedUploading {
                     timer.invalidate()
                     
                     let nextGroup = APODEntryBuilder().getAPODEntries(startingIndex: self.nextStartingIndex, amount: self.amountToShow)
@@ -37,7 +37,7 @@ class FeedManager {
                     
                     self.additionalImagesPending = false
                     self.approachedBottom = false
-                    self.entryImageNetworking.isFinishedUploading = false
+                    self.entryImageNetworking.entriesFinishedUploading = false
                     
                     self.nextStartingIndex += 10
                     
