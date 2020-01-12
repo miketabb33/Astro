@@ -78,8 +78,9 @@ extension APODFeedVC: UITableViewDelegate, UITableViewDataSource {
         
         cell.explanationLabel.text = entry.contents.explanation
         
-        //cell.delegate = self
-        //cell.index = indexPath.row
+        cell.delegate = self
+        cell.index = indexPath.row
+        
         //EntryCellConstructor().assignCell(cell: cell, entry: entry, tableView: tableView, parent: self)
     
         return cell
@@ -87,13 +88,13 @@ extension APODFeedVC: UITableViewDelegate, UITableViewDataSource {
     
 }
 
-extension APODFeedVC: APODEntryCellDelegate {
-    func didTapExpandButton(index: Int, cell: APODEntryCell) {
-        let results = ExpandExplanationManager().toggleExplanationExpansion(entry: entries[index], cell: cell)
-        entries[index].feedData.expandEnabled = results.0
-        entries[index].feedData.cellHeight = results.1
-        tableView.beginUpdates()
-        tableView.endUpdates()
+extension APODFeedVC: APODTableViewCellDelegate {
+    func didTapExpandButton(cell: APODTableViewCell) {
+//        let results = ExpandExplanationManager().toggleExplanationExpansion(entry: entries[index], cell: cell)
+//        entries[index].feedData.expandEnabled = results.0
+//        entries[index].feedData.cellHeight = results.1
+//        tableView.beginUpdates()
+//        tableView.endUpdates()
     }
 }
 
