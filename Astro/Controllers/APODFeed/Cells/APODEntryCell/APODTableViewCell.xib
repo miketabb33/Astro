@@ -40,7 +40,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EAY-EH-lN3">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EAY-EH-lN3" userLabel="Button Container">
                                 <rect key="frame" x="0.0" y="352" width="320" height="20"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O6J-lf-kqI">
@@ -51,6 +51,9 @@
                                         </constraints>
                                         <color key="tintColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Button" image="down-arrow"/>
+                                        <connections>
+                                            <action selector="expandButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="XhE-BW-LE7"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -71,6 +74,12 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="APODImageView" destination="GQm-Km-hCn" id="3tw-DW-aGI"/>
+                <outlet property="expandButton" destination="O6J-lf-kqI" id="Tlm-vx-woS"/>
+                <outlet property="explanationLabel" destination="BD2-0z-Omc" id="vRj-4v-fEJ"/>
+                <outlet property="titleLabel" destination="yIe-BE-rw8" id="dQy-RZ-Fcg"/>
+            </connections>
             <point key="canvasLocation" x="140.57971014492756" y="213.61607142857142"/>
         </tableViewCell>
     </objects>

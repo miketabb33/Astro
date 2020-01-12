@@ -1,16 +1,18 @@
 import UIKit
 
 class APODTableViewCell: UITableViewCell {
-
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var APODImageView: UIImageView!
+    @IBOutlet weak var explanationLabel: UILabel!
+    @IBOutlet weak var expandButton: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    @IBAction func expandButtonPressed(_ sender: Any) {
+        
     }
     
 }
