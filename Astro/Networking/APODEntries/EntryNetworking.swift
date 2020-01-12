@@ -4,7 +4,7 @@ class EntryNetworking {
     
     let initialEntryDispatchCount = 10
     
-    var isImageDownloadReady = false
+    var imagesReadyForDownload = false
     
     func SyncronizeAPODEntries() {
         let urlString = "https://ndn-api.herokuapp.com?id=\(Keys().APOD_API_KEY)"
@@ -36,10 +36,10 @@ class EntryNetworking {
         
         while index < results.count && currentResultIsntSaved {
             APODEntryInteraction().create(entry: results[index])
-            isImageDownloadReady = imageDownloadReadyChecker(numberOfNewEntries: index)
+            imagesReadyForDownload = imageDownloadReadyChecker(numberOfNewEntries: index)
             index += 1
         }
-        isImageDownloadReady = true
+        imagesReadyForDownload = true
     }
     
     func imageDownloadReadyChecker(numberOfNewEntries: Int) -> Bool {

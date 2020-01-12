@@ -2,7 +2,7 @@ import UIKit
 
 class EntryImageNetworking {
     
-    var isFinishedUploading = false
+    var entriesFinishedUploading = false
     
     func saveImagesAndCellHeight(startingIndex: Int, amount: Int) {
         DispatchQueue.global(qos: .background).async {
@@ -11,7 +11,7 @@ class EntryImageNetworking {
             
             APODFeedDataInteraction().create(feedDataUpload)
             
-            self.isFinishedUploading = true
+            self.entriesFinishedUploading = true
         }
     }
     
