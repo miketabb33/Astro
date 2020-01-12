@@ -6,8 +6,9 @@ class APODFeedVC: UIViewController {
     
     var internetDetection: InternetDetection?
     
-    let APODEntryCellID = "APODEntryCell"
+    //let APODEntryCellID = "APODEntryCell"
     let LoadingCellID = "LoadingCell"
+    let APODTableViewCellID = "APODTableViewCell"
     
     var entries = [APODEntry]()
     
@@ -18,7 +19,10 @@ class APODFeedVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.register(APODEntryCell.self, forCellReuseIdentifier: APODEntryCellID)
+        //tableView.register(APODEntryCell.self, forCellReuseIdentifier: APODEntryCellID)
+        
+        tableView.register(UINib(nibName: APODTableViewCellID, bundle: nil), forCellReuseIdentifier: APODTableViewCellID)
+        
         tableView.register(LoadingCell.self, forCellReuseIdentifier: LoadingCellID)
         
         internetDetection = InternetDetection(parentVC: self)
@@ -62,12 +66,12 @@ extension APODFeedVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: APODEntryCellID, for: indexPath) as! APODEntryCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: APODTableViewCellID, for: indexPath) as! APODTableViewCell
         let entry = entries[indexPath.row]
         
-        cell.delegate = self
-        cell.index = indexPath.row
-        EntryCellConstructor().assignCell(cell: cell, entry: entry, tableView: tableView, parent: self)
+        //cell.delegate = self
+        //cell.index = indexPath.row
+        //EntryCellConstructor().assignCell(cell: cell, entry: entry, tableView: tableView, parent: self)
     
         return cell
     }
