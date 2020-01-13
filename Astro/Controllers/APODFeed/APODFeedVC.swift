@@ -62,28 +62,21 @@ extension APODFeedVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return CGFloat(300+20+50+120)
+        print("height")
+        return CGFloat(entries[indexPath.row].feedData.cellHeight)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        print("cell")
         let cell = tableView.dequeueReusableCell(withIdentifier: APODTableViewCellID, for: indexPath) as! APODTableViewCell
         let entry = entries[indexPath.row]
-
-        cell.APODImageView.heightAnchor.constraint(equalToConstant: 300).isActive = true
         
-        cell.titleLabel.text = entry.contents.title
-        
-        let image = UIImage(data: entry.feedData.image)!
-        cell.APODImageView.image = image
-        cell.APODImageView.contentMode = ImageProcessing(image: image).getContentMode()
-        
-        
-        cell.explanationLabel.text = entry.contents.explanation
+        cell.setCellData(entry: entry)
         
         cell.delegate = self
         cell.index = indexPath.row
         
-        //EntryCellConstructor().assignCell(cell: cell, entry: entry, tableView: tableView, parent: self)
+        //entry.feedData.cellHeight = Int(cell.getCellHeight())
     
         return cell
     }

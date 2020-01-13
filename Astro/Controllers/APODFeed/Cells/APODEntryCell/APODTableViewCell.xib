@@ -82,6 +82,7 @@
             <connections>
                 <outlet property="APODImageView" destination="GQm-Km-hCn" id="3tw-DW-aGI"/>
                 <outlet property="expandButton" destination="O6J-lf-kqI" id="Tlm-vx-woS"/>
+                <outlet property="expandButtonView" destination="EAY-EH-lN3" id="MUT-Yn-xWg"/>
                 <outlet property="explanationLabel" destination="BD2-0z-Omc" id="vRj-4v-fEJ"/>
                 <outlet property="titleLabel" destination="yIe-BE-rw8" id="dQy-RZ-Fcg"/>
             </connections>
