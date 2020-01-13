@@ -92,11 +92,11 @@ extension APODFeedVC: UITableViewDelegate, UITableViewDataSource {
 
 extension APODFeedVC: APODTableViewCellDelegate {
     func didTapExpandButton(cell: APODTableViewCell) {
-//        let results = ExpandExplanationManager().toggleExplanationExpansion(entry: entries[index], cell: cell)
-//        entries[index].feedData.expandEnabled = results.0
-//        entries[index].feedData.cellHeight = results.1
-//        tableView.beginUpdates()
-//        tableView.endUpdates()
+        let results = ExpandExplanationManager().toggleExplanationExpansion(entry: entries[cell.index!], cell: cell)
+        entries[cell.index!].feedData.expandEnabled = results.0
+        entries[cell.index!].feedData.cellHeight = results.1
+        tableView.beginUpdates()
+        tableView.endUpdates()
     }
 }
 
