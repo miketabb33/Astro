@@ -62,12 +62,14 @@ extension APODFeedVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return CGFloat(entries[indexPath.row].feedData.cellHeight)
+        return CGFloat(300+20+50+120)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: APODTableViewCellID, for: indexPath) as! APODTableViewCell
         let entry = entries[indexPath.row]
+
+        cell.APODImageView.heightAnchor.constraint(equalToConstant: 300).isActive = true
         
         cell.titleLabel.text = entry.contents.title
         
