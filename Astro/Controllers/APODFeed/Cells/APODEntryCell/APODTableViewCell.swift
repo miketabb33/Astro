@@ -26,28 +26,19 @@ class APODTableViewCell: UITableViewCell {
     
     func setCellData(entry: APODEntry) {
         titleLabel.text = entry.contents.title
-        configureImage(imageData: entry.feedData.image)
         explanationLabel.text = entry.contents.explanation
-    }
-    
-    func configureImage(imageData: Data) {
-        let image = UIImage(data: imageData)!
+        
+        let image = UIImage(data: entry.feedData.image)!
         
         APODImageView.image = image
+        
+        let imageHeight = CGFloat(entry.feedData.imageHeight)
+        let constraint = APODImageView.heightAnchor.constraint(equalToConstant: imageHeight)
+            
+        constraint.priority = UILayoutPriority(rawValue: 1)
+        constraint.isActive = true
+        
         APODImageView.contentMode = ImageProcessing(image: image).getContentMode()
-        
-        let imageHeight = ImageProcessing(image: image).getImageDisplayHeight()
-        APODImageView.heightAnchor.constraint(equalToConstant: imageHeight).isActive = true
-    }
-    
-    func getCellHeight() -> CGFloat {
-        let titleHeight = titleLabel.frame.height
-        let imageHeight = APODImageView.frame.height
-        let explanationHeight = explanationLabel.frame.height
-        let expandButtonViewHeight = expandButtonView.frame.height
-        
-        let sum = titleHeight + imageHeight + explanationHeight + expandButtonViewHeight
-        return sum
     }
     
 }
