@@ -27,18 +27,44 @@ class APODTableViewCell: UITableViewCell {
     func setCellData(entry: APODEntry) {
         titleLabel.text = entry.contents.title
         explanationLabel.text = entry.contents.explanation
+        configureImage(entry: entry)
         
+    }
+    
+    func configureImage(entry: APODEntry) {
         let image = UIImage(data: entry.feedData.image)!
         
         APODImageView.image = image
+        setImageConstraints(imageHeight: entry.feedData.imageHeight)
         
-        let imageHeight = CGFloat(entry.feedData.imageHeight)
+        APODImageView.contentMode = ImageProcessing(image: image).getContentMode()
+    }
+    
+    func setImageConstraints(imageHeight: Int) {
+        let imageHeight = CGFloat(imageHeight)
         let constraint = APODImageView.heightAnchor.constraint(equalToConstant: imageHeight)
             
         constraint.priority = UILayoutPriority(rawValue: 1)
         constraint.isActive = true
-        
-        APODImageView.contentMode = ImageProcessing(image: image).getContentMode()
     }
+    
+//    func getTogglePositionOfExplanation(cell: APODEntryCell, entry: APODEntry) {
+//        var explanationHeight: CGFloat = 0
+//        if entry.feedData.expandEnabled == true {
+//            explanationHeight = cell.explanation.frame.height
+//
+//            showExplanation(cell: cell, numberOfLines: 0, height: explanationHeight, arrowPosition: CGAffineTransform(rotationAngle: .pi))
+//        } else {
+//            explanationHeight = cell.componentHeight["explanation"]!
+//            
+//            showExplanation(cell: cell, numberOfLines: 7, height: explanationHeight, arrowPosition: .identity)
+//        }
+//    }
+//
+//    func showExplanation(cell: APODEntryCell, numberOfLines: Int, height: CGFloat, arrowPosition: CGAffineTransform) {
+//        cell.expandButton.transform = arrowPosition
+//        cell.explanation.numberOfLines = numberOfLines
+//        addStackingConstraintTo(cell.explanation, stackUnder: cell.APODImage, edges: cell.contentView.layoutMarginsGuide, height: height)
+//    }
     
 }

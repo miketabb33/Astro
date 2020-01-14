@@ -27,7 +27,6 @@
 		4B6023E022BE76F200732745 /* UserDefaultsMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6023DF22BE76F200732745 /* UserDefaultsMethods.swift */; };
 		4B6023E422BE7CB900732745 /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6023E322BE7CB900732745 /* Navigation.swift */; };
 		4B98E8A022BEC9D90025B8F2 /* SearchBarMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B98E89F22BEC9D90025B8F2 /* SearchBarMethods.swift */; };
-		4B98E8A422C2B63E0025B8F2 /* EntryCellConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B98E8A322C2B63E0025B8F2 /* EntryCellConstraints.swift */; };
 		4BA44E6522B92A6A009756AA /* AstroUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA44E6422B92A6A009756AA /* AstroUITests.swift */; };
 		4BA44E7322B92A93009756AA /* FormatterMethodsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA44E7222B92A93009756AA /* FormatterMethodsTests.swift */; };
 		4BB687AF226519E600D423F9 /* RelativeWeightInputVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB687AE226519E600D423F9 /* RelativeWeightInputVC.swift */; };
@@ -59,8 +58,6 @@
 		4BD39B072381F56200B70DC3 /* DecoderMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD39B062381F56200B70DC3 /* DecoderMethods.swift */; };
 		4BD39B0A2381FC1600B70DC3 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD39B092381FC1600B70DC3 /* NetworkManager.swift */; };
 		4BE14DCB2311AA27000FA4E8 /* ExpandExplanationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE14DCA2311AA27000FA4E8 /* ExpandExplanationManager.swift */; };
-		4BE14DCD2311B118000FA4E8 /* EntryCellConstructor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE14DCC2311B118000FA4E8 /* EntryCellConstructor.swift */; };
-		4BE51AD722E34EB4002905ED /* APODEntryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE51AD522E34EB4002905ED /* APODEntryCell.swift */; };
 		4BEC2F772381B80400395CA4 /* InjectableSubviewManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEC2F762381B80400395CA4 /* InjectableSubviewManagerTests.swift */; };
 		4BEE114B238ADD9C00379D6E /* RealmPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEE114A238ADD9C00379D6E /* RealmPath.swift */; };
 		4BEE114D238ADDDF00379D6E /* APODEntryInteraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEE114C238ADDDF00379D6E /* APODEntryInteraction.swift */; };
@@ -122,7 +119,6 @@
 		4B6023DF22BE76F200732745 /* UserDefaultsMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsMethods.swift; sourceTree = "<group>"; };
 		4B6023E322BE7CB900732745 /* Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
 		4B98E89F22BEC9D90025B8F2 /* SearchBarMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarMethods.swift; sourceTree = "<group>"; };
-		4B98E8A322C2B63E0025B8F2 /* EntryCellConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryCellConstraints.swift; sourceTree = "<group>"; };
 		4BA44E6222B92A6A009756AA /* AstroUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AstroUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BA44E6422B92A6A009756AA /* AstroUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstroUITests.swift; sourceTree = "<group>"; };
 		4BA44E6622B92A6A009756AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -158,8 +154,6 @@
 		4BD39B062381F56200B70DC3 /* DecoderMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecoderMethods.swift; sourceTree = "<group>"; };
 		4BD39B092381FC1600B70DC3 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		4BE14DCA2311AA27000FA4E8 /* ExpandExplanationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandExplanationManager.swift; sourceTree = "<group>"; };
-		4BE14DCC2311B118000FA4E8 /* EntryCellConstructor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryCellConstructor.swift; sourceTree = "<group>"; };
-		4BE51AD522E34EB4002905ED /* APODEntryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODEntryCell.swift; sourceTree = "<group>"; };
 		4BEC2F762381B80400395CA4 /* InjectableSubviewManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjectableSubviewManagerTests.swift; sourceTree = "<group>"; };
 		4BEE114A238ADD9C00379D6E /* RealmPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmPath.swift; sourceTree = "<group>"; };
 		4BEE114C238ADDDF00379D6E /* APODEntryInteraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODEntryInteraction.swift; sourceTree = "<group>"; };
@@ -227,9 +221,8 @@
 			children = (
 				4BF2CD1723CB6F35009475E3 /* APODTableViewCell.swift */,
 				4BF2CD1823CB6F35009475E3 /* APODTableViewCell.xib */,
-				4BE51AD522E34EB4002905ED /* APODEntryCell.swift */,
 				4BE14DCA2311AA27000FA4E8 /* ExpandExplanationManager.swift */,
-				4B3A4FB6238CD0E800ED5779 /* EntryCellLayout */,
+				4B3A4FB9238CD37A00ED5779 /* APODEntryComponentDefaultHeights.swift */,
 			);
 			path = APODEntryCell;
 			sourceTree = "<group>";
@@ -250,16 +243,6 @@
 				4B384B8B236F329200C3FD59 /* DropDownAlert.storyboard */,
 			);
 			path = DropDownAlert;
-			sourceTree = "<group>";
-		};
-		4B3A4FB6238CD0E800ED5779 /* EntryCellLayout */ = {
-			isa = PBXGroup;
-			children = (
-				4BE14DCC2311B118000FA4E8 /* EntryCellConstructor.swift */,
-				4B98E8A322C2B63E0025B8F2 /* EntryCellConstraints.swift */,
-				4B3A4FB9238CD37A00ED5779 /* APODEntryComponentDefaultHeights.swift */,
-			);
-			path = EntryCellLayout;
 			sourceTree = "<group>";
 		};
 		4B47DDA72343D10E005F736F /* Astro Obj Temp Table View */ = {
@@ -675,7 +658,6 @@
 				4B3A4FBA238CD37A00ED5779 /* APODEntryComponentDefaultHeights.swift in Sources */,
 				4B47DDAD2343D7FD005F736F /* Keys.swift in Sources */,
 				4B3A50552394254B00ED5779 /* EntryImageNetworking.swift in Sources */,
-				4BE14DCD2311B118000FA4E8 /* EntryCellConstructor.swift in Sources */,
 				4BB687AF226519E600D423F9 /* RelativeWeightInputVC.swift in Sources */,
 				4BEE1150238AE20400379D6E /* NetworkingModels.swift in Sources */,
 				4B384B91236F351A00C3FD59 /* InjectableSubviewManager.swift in Sources */,
@@ -684,7 +666,6 @@
 				4B98E8A022BEC9D90025B8F2 /* SearchBarMethods.swift in Sources */,
 				4B033F4023A8691300D9965E /* LoadingCell.swift in Sources */,
 				4BB687B922664C6A00D423F9 /* AstroObjTempTVC.swift in Sources */,
-				4BE51AD722E34EB4002905ED /* APODEntryCell.swift in Sources */,
 				4BD39B072381F56200B70DC3 /* DecoderMethods.swift in Sources */,
 				4BCDFBAE22FC7740003E39E8 /* APODFeedVC.swift in Sources */,
 				4B384B8A236F327A00C3FD59 /* DropDownAlertVC.swift in Sources */,
@@ -703,7 +684,6 @@
 				4BB687BF2266538000D423F9 /* AstroObjTempDisplayVC.swift in Sources */,
 				4B20CC672378A32A0057FEB8 /* TextColorSelector.swift in Sources */,
 				4B384B8F236F32C900C3FD59 /* DropDownAlertManager.swift in Sources */,
-				4B98E8A422C2B63E0025B8F2 /* EntryCellConstraints.swift in Sources */,
 				4B6023E422BE7CB900732745 /* Navigation.swift in Sources */,
 				4BB687BC22664D1F00D423F9 /* AstroObjTempCell.swift in Sources */,
 				4B3A4FBC238CD65800ED5779 /* ImageProcessing.swift in Sources */,
