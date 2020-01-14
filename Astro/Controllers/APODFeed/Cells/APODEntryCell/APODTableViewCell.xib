@@ -34,7 +34,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Explanation" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BD2-0z-Omc">
                                 <rect key="frame" x="0.0" y="232" width="320" height="120"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="120" id="CUV-nV-KfA"/>
+                                    <constraint firstAttribute="height" constant="120" identifier="height" id="CUV-nV-KfA"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="14"/>
                                 <nil key="textColor"/>
@@ -83,6 +83,7 @@
                 <outlet property="APODImageView" destination="GQm-Km-hCn" id="3tw-DW-aGI"/>
                 <outlet property="expandButton" destination="O6J-lf-kqI" id="Tlm-vx-woS"/>
                 <outlet property="expandButtonView" destination="EAY-EH-lN3" id="MUT-Yn-xWg"/>
+                <outlet property="explanationHeight" destination="CUV-nV-KfA" id="Qwh-11-EW3"/>
                 <outlet property="explanationLabel" destination="BD2-0z-Omc" id="vRj-4v-fEJ"/>
                 <outlet property="titleLabel" destination="yIe-BE-rw8" id="dQy-RZ-Fcg"/>
             </connections>

@@ -2,6 +2,9 @@ import UIKit
 
 class ExpandExplanationManager {
     func toggleExplanationExpansion(entry: APODEntry, cell: APODTableViewCell) -> (Bool, Int) {
+        let componentHeight = APODEntryComponentDefaultHeights()
+        
+        print(cell.APODImageView.constraints)
         var stateOfExpansion = false
         var newCellHeight = 0
         var newExplanationHeight: CGFloat = 0
@@ -9,11 +12,14 @@ class ExpandExplanationManager {
         if entry.feedData.expandEnabled == false {
             stateOfExpansion = true
             resizeContentsAnimation(numberOfShowingLines: 0, cell: cell)
-            newExplanationHeight = getExpandedEntryExplanationFrameHeight(rawFrameHeight: cell.explanationLabel.frame.height)
+            //newExplanationHeight = getExpandedEntryExplanationFrameHeight(rawFrameHeight: cell.explanationLabel.frame.height)
+            
+            cell.explanationHeight.isActive = false
+            cell.explanationLabel.heightAnchor.constraint(equalToConstant: cell.explanationLabel.frame.height).isActive = true
             
             //updateConstraints(newHeight: newExplanationHeight, cell: cell)
             rotateArrowAnimation(cell: cell, arrowPosition: CGAffineTransform(rotationAngle: .pi))
-            newCellHeight = 0//Int(Float(cell.componentHeight["title"]! + cell.componentHeight["image"]! + getExpandedEntryExplanationFrameHeight(rawFrameHeight: cell.explanation.frame.height) + cell.componentHeight["button"]!))
+            newCellHeight = Int(CGFloat(entry.feedData.imageHeight) + componentHeight.title + componentHeight.button + cell.explanationLabel.frame.height)
         } else {
             stateOfExpansion = false
             resizeContentsAnimation(numberOfShowingLines: 7, cell: cell)

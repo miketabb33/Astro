@@ -10,6 +10,7 @@ class APODTableViewCell: UITableViewCell {
     @IBOutlet weak var explanationLabel: UILabel!
     @IBOutlet weak var expandButton: UIButton!
     @IBOutlet weak var expandButtonView: UIView!
+    @IBOutlet weak var explanationHeight: NSLayoutConstraint!
     
     var delegate: APODTableViewCellDelegate?
     var index: Int?
