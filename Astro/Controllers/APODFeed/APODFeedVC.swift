@@ -61,8 +61,7 @@ extension APODFeedVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let imageHeight = entries[indexPath.row].feedData.imageHeight
-        return CGFloat(120+imageHeight+20+50)
+        return CGFloat(entries[indexPath.row].feedData.cellHeight)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

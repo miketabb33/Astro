@@ -24,8 +24,9 @@ class EntryImageNetworking {
             
             if feedData == nil {
                 let imageData = getImage(url: imageURL.1)
-                let ImageHeight = getImageHeight(imageData: imageData)
-                APODFeedDataUploadGroup.append(APODFeedDataUpload(id: entryID, image: imageData, cellHeight: ImageHeight))
+                let imageHeight = getImageHeight(imageData: imageData)
+                let cellHeight = getCellHeight(imageHeight: imageHeight)
+                APODFeedDataUploadGroup.append(APODFeedDataUpload(id: entryID, image: imageData, imageHeight: imageHeight, cellHeight: cellHeight))
             }
         }
         
@@ -46,5 +47,12 @@ class EntryImageNetworking {
         let image = UIImage(data: imageData!)
         let imageHeight = ImageProcessing(image: image!).getImageDisplayHeight()
         return Int(imageHeight)
+    }
+    
+    func getCellHeight(imageHeight: Int) -> Int {
+        let componentHeight = APODEntryComponentDefaultHeights()
+        
+        let cellHeight = Int(componentHeight.title) + Int(componentHeight.explanation) + Int(componentHeight.button) + imageHeight
+        return cellHeight
     }
 }

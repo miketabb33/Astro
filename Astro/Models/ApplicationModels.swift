@@ -16,6 +16,7 @@ struct Contents {
 struct FeedData {
     var image: Data
     var imageHeight: Int
+    var cellHeight: Int
     var expandEnabled = false
 }
 

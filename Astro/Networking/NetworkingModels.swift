@@ -15,5 +15,6 @@ struct EntryNetworkModel: Decodable {
 struct APODFeedDataUpload {
     var id: Int
     var image: Data
+    var imageHeight: Int
     var cellHeight: Int
 }
