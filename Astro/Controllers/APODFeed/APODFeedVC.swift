@@ -6,7 +6,6 @@ class APODFeedVC: UIViewController {
     
     var internetDetection: InternetDetection?
     
-    //let APODEntryCellID = "APODEntryCell"
     let LoadingCellID = "LoadingCell"
     let APODTableViewCellID = "APODTableViewCell"
     
@@ -19,11 +18,7 @@ class APODFeedVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //tableView.register(APODEntryCell.self, forCellReuseIdentifier: APODEntryCellID)
-        
-        tableView.register(UINib(nibName: APODTableViewCellID, bundle: nil), forCellReuseIdentifier: APODTableViewCellID)
-        
-        tableView.register(LoadingCell.self, forCellReuseIdentifier: LoadingCellID)
+        configureTableView()
         
         internetDetection = InternetDetection(parentVC: self)
         internetDetection?.startMonitoringInternetConnection()
@@ -39,8 +34,6 @@ class APODFeedVC: UIViewController {
                 //Loading
             }
         }
-
-        tableView.allowsSelection = false
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -52,6 +45,12 @@ class APODFeedVC: UIViewController {
         
         feedManager.scrollDidApproachBottom(currentHeight: currentHeight, contentHeight: contentHeight, scrollViewFrameHeight: frameHeight, parentVC: self)
     
+    }
+    
+    func configureTableView() {
+        tableView.register(UINib(nibName: APODTableViewCellID, bundle: nil), forCellReuseIdentifier: APODTableViewCellID)
+        tableView.register(LoadingCell.self, forCellReuseIdentifier: LoadingCellID)
+        tableView.allowsSelection = false
     }
 
 }
