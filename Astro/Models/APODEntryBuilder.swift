@@ -12,7 +12,7 @@ class APODEntryBuilder {
             let feedDataRealm = APODFeedDataInteraction().get(id: entry.id)!
             
             let contents = Contents(title: entry.title, explanation: entry.explanation, date: entry.date, image_url: entry.image_url)
-            let feedData = FeedData(image: feedDataRealm.image, imageHeight: feedDataRealm.cellHeight, cellHeight: feedDataRealm.cellHeight)
+            let feedData = FeedData(image: feedDataRealm.image, imageHeight: feedDataRealm.imageHeight, cellHeight: feedDataRealm.cellHeight)
             
             entries.append(APODEntry(id: entry.id, contents: contents, feedData: feedData))
              

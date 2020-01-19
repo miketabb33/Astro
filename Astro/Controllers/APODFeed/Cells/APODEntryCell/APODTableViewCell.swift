@@ -10,14 +10,14 @@ class APODTableViewCell: UITableViewCell {
     @IBOutlet weak var explanationLabel: UILabel!
     @IBOutlet weak var expandButton: UIButton!
     @IBOutlet weak var expandButtonView: UIView!
-    @IBOutlet weak var explanationHeight: NSLayoutConstraint!
+    
+    @IBOutlet weak var APODImageViewHeightConstraint: NSLayoutConstraint!
     
     var delegate: APODTableViewCellDelegate?
     var index: Int?
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
     }
 
     @IBAction func expandButtonPressed(_ sender: Any) {
@@ -33,20 +33,23 @@ class APODTableViewCell: UITableViewCell {
     }
     
     func configureImage(entry: APODEntry) {
+        print("******* START Cell Config ******")
         let image = UIImage(data: entry.feedData.image)!
+        print(entry.contents.title)
         
         APODImageView.image = image
         setImageConstraints(imageHeight: entry.feedData.imageHeight)
         
         APODImageView.contentMode = ImageProcessing(image: image).getContentMode()
+        
+        print("Frame Height:", APODImageView.frame.height)
+        print("******* END *******")
     }
     
     func setImageConstraints(imageHeight: Int) {
         let imageHeight = CGFloat(imageHeight)
-        let constraint = APODImageView.heightAnchor.constraint(equalToConstant: imageHeight)
-            
-        constraint.priority = UILayoutPriority(rawValue: 1)
-        constraint.isActive = true
+        print("Stored Image Height:", imageHeight)
+        APODImageViewHeightConstraint.constant = imageHeight
     }
     
 //    func getTogglePositionOfExplanation(cell: APODEntryCell, entry: APODEntry) {

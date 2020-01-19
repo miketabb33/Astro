@@ -4,7 +4,6 @@ class ExpandExplanationManager {
     func toggleExplanationExpansion(entry: APODEntry, cell: APODTableViewCell) -> (Bool, Int) {
         let componentHeight = APODEntryComponentDefaultHeights()
         
-        print(cell.APODImageView.constraints)
         var stateOfExpansion = false
         var newCellHeight = 0
         var newExplanationHeight: CGFloat = 0
@@ -14,7 +13,7 @@ class ExpandExplanationManager {
             resizeContentsAnimation(numberOfShowingLines: 0, cell: cell)
             //newExplanationHeight = getExpandedEntryExplanationFrameHeight(rawFrameHeight: cell.explanationLabel.frame.height)
             
-            cell.explanationHeight.isActive = false
+            //cell.explanationHeight.isActive = false
             cell.explanationLabel.heightAnchor.constraint(equalToConstant: cell.explanationLabel.frame.height).isActive = true
             
             //updateConstraints(newHeight: newExplanationHeight, cell: cell)
