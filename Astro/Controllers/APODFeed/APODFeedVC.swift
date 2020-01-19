@@ -62,16 +62,23 @@ extension APODFeedVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         //return CGFloat(entries[indexPath.row].feedData.cellHeight)
-        let imageHeight = entries[indexPath.row].feedData.imageHeight
- 
-        return CGFloat(50 + imageHeight + 120 + 20)
+//        let imageHeight = entries[indexPath.row].feedData.imageHeight
+//
+//        return CGFloat(50 + imageHeight + 120 + 20)
+        
+        
+        
+        return CGFloat(entries[indexPath.row].feedData.cellHeight)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: APODTableViewCellID, for: indexPath) as! APODTableViewCell
-        let entry = entries[indexPath.row]
+        var entry = entries[indexPath.row]
         
         cell.setCellData(entry: entry)
+        
+        entry.feedData.cellHeight = Int((cell.cellHeight?.getCellHeight())!)
+        
         cell.delegate = self
         cell.index = indexPath.row
     
@@ -82,11 +89,14 @@ extension APODFeedVC: UITableViewDelegate, UITableViewDataSource {
 
 extension APODFeedVC: APODTableViewCellDelegate {
     func didTapExpandButton(cell: APODTableViewCell) {
+        
+        cell.cellHeight?.explanationHeight = 300
+        entries[cell.index!].feedData.cellHeight = Int((cell.cellHeight?.getCellHeight())!)
 //        let results = ExpandExplanationManager().toggleExplanationExpansion(entry: entries[cell.index!], cell: cell)
 //        entries[cell.index!].feedData.expandEnabled = results.0
 //        entries[cell.index!].feedData.cellHeight = results.1
-//        tableView.beginUpdates()
-//        tableView.endUpdates()
+        tableView.beginUpdates()
+        tableView.endUpdates()
     }
 }
 

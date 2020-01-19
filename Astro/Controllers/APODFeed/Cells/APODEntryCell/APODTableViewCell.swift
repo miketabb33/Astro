@@ -16,6 +16,8 @@ class APODTableViewCell: UITableViewCell {
     var delegate: APODTableViewCellDelegate?
     var index: Int?
     
+    var cellHeight: APODCellHeight?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -25,31 +27,41 @@ class APODTableViewCell: UITableViewCell {
     }
     
     
+    
+    
     func setCellData(entry: APODEntry) {
         titleLabel.text = entry.contents.title
         explanationLabel.text = entry.contents.explanation
         configureImage(entry: entry)
         
+        cellHeight = APODCellHeight(titleHeight: titleLabel.frame.height, imageHeight: CGFloat(entry.feedData.imageHeight), explanationHeight: explanationLabel.frame.height, buttonViewHeight: expandButtonView.frame.height)
     }
     
     func configureImage(entry: APODEntry) {
-        print("******* START Cell Config ******")
         let image = UIImage(data: entry.feedData.image)!
-        print(entry.contents.title)
         
         APODImageView.image = image
-        setImageConstraints(imageHeight: entry.feedData.imageHeight)
-        
+        APODImageViewHeightConstraint.constant = CGFloat(entry.feedData.imageHeight)
         APODImageView.contentMode = ImageProcessing(image: image).getContentMode()
-        
-        print("Frame Height:", APODImageView.frame.height)
-        print("******* END *******")
     }
     
-    func setImageConstraints(imageHeight: Int) {
-        let imageHeight = CGFloat(imageHeight)
-        print("Stored Image Height:", imageHeight)
-        APODImageViewHeightConstraint.constant = imageHeight
+    class APODCellHeight {
+        var titleHeight: CGFloat
+        var imageHeight: CGFloat
+        var explanationHeight: CGFloat
+        var buttonViewHeight: CGFloat
+        
+        init(titleHeight: CGFloat, imageHeight: CGFloat, explanationHeight: CGFloat, buttonViewHeight: CGFloat) {
+            self.titleHeight = titleHeight
+            self.imageHeight = imageHeight
+            self.explanationHeight = explanationHeight
+            self.buttonViewHeight = buttonViewHeight
+        }
+        
+        func getCellHeight() -> CGFloat {
+            return titleHeight + imageHeight + explanationHeight + buttonViewHeight
+        }
+        
     }
     
 //    func getTogglePositionOfExplanation(cell: APODEntryCell, entry: APODEntry) {
