@@ -61,7 +61,7 @@ extension APODFeedVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return entries[indexPath.row].feedData.cellHeight.total
+        return entries[indexPath.row].feedData.cellHeight.total()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -80,11 +80,12 @@ extension APODFeedVC: UITableViewDelegate, UITableViewDataSource {
 
 extension APODFeedVC: APODTableViewCellDelegate {
     func didTapExpandButton(cell: APODTableViewCell) {
-
+        
         entries[cell.index!].feedData.cellHeight.explanation = 300
 //        let results = ExpandExplanationManager().toggleExplanationExpansion(entry: entries[cell.index!], cell: cell)
 //        entries[cell.index!].feedData.expandEnabled = results.0
 //        entries[cell.index!].feedData.cellHeight = results.1
+        
         tableView.beginUpdates()
         tableView.endUpdates()
     }

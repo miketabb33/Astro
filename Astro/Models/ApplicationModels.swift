@@ -25,15 +25,15 @@ class CellHeight {
     var explanation: CGFloat
     var expandButtonView: CGFloat
     
-    lazy var total = {
-        self.title + self.image + self.explanation + self.expandButtonView
-    }()
-    
     init(title: CGFloat, image: Int, explanation: CGFloat, expandButtonView: CGFloat) {
         self.title = title
         self.image = CGFloat(image)
         self.explanation = explanation
         self.expandButtonView = expandButtonView
+    }
+    
+    func total() -> CGFloat {
+        return title + image + explanation + expandButtonView
     }
 }
 
