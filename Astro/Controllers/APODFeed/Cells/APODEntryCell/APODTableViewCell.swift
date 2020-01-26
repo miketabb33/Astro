@@ -1,7 +1,7 @@
 import UIKit
 
 protocol APODTableViewCellDelegate {
-    func didTapExpandButton(cell: APODTableViewCell)
+    func didTapExpandButton(index: Int, explanationLabel: UILabel, expandButton: UIButton, explanationHeightConstraint: NSLayoutConstraint)
 }
 
 class APODTableViewCell: UITableViewCell {
@@ -20,7 +20,7 @@ class APODTableViewCell: UITableViewCell {
     var index: Int?
 
     @IBAction func expandButtonPressed(_ sender: Any) {
-        delegate?.didTapExpandButton(cell: self)
+        delegate?.didTapExpandButton(index: index!, explanationLabel: explanationLabel, expandButton: expandButton, explanationHeightConstraint: explanationHeightConstraint)
     }
     
     

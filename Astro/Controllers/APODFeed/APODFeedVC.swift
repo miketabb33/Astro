@@ -79,12 +79,12 @@ extension APODFeedVC: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension APODFeedVC: APODTableViewCellDelegate {
-    func didTapExpandButton(cell: APODTableViewCell) {
+    func didTapExpandButton(index: Int, explanationLabel: UILabel, expandButton: UIButton, explanationHeightConstraint: NSLayoutConstraint) {
+        entries[index].feedData.cellHeight.explanation = ExpandExplanationManager().toggle(isExpanded: entries[index].feedData.expandEnabled, label: explanationLabel, button: expandButton)
         
-        entries[cell.index!].feedData.cellHeight.explanation = 300
-//        let results = ExpandExplanationManager().toggleExplanationExpansion(entry: entries[cell.index!], cell: cell)
-//        entries[cell.index!].feedData.expandEnabled = results.0
-//        entries[cell.index!].feedData.cellHeight = results.1
+        explanationHeightConstraint.constant = entries[index].feedData.cellHeight.explanation
+        
+        entries[index].feedData.expandEnabled = entries[index].feedData.expandEnabled == true ? false : true
         
         tableView.beginUpdates()
         tableView.endUpdates()
