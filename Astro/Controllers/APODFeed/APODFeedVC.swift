@@ -58,11 +58,8 @@ extension APODFeedVC: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: APODTableViewCellID, for: indexPath) as! APODTableViewCell
         let entry = entries[indexPath.row]
         
-        cell.setCellData(entry: entry)
+        cell.setCellData(entry: entry, index: indexPath.row, delegate: self)
         
-        cell.delegate = self
-        cell.index = indexPath.row
-    
         return cell
     }
     

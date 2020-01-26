@@ -24,7 +24,10 @@ class APODTableViewCell: UITableViewCell {
     }
     
     
-    func setCellData(entry: APODEntry) {
+    func setCellData(entry: APODEntry, index: Int, delegate: APODFeedVC) {
+        self.index = index
+        self.delegate = delegate
+        
         configureTitle(text: entry.contents.title, height: entry.feedData.cellHeight.title)
         configureImage(imageData: entry.feedData.image, height: entry.feedData.cellHeight.image)
         configureExplanation(text: entry.contents.explanation, height: entry.feedData.cellHeight.explanation, isExpanded: entry.feedData.expandEnabled)
