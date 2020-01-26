@@ -2,8 +2,6 @@ import Foundation
 
 class EntryNetworking {
     
-    let initialEntryDispatchCount = 10
-    
     var imagesReadyForDownload = false
     
     func SyncronizeAPODEntries() {
@@ -28,13 +26,14 @@ class EntryNetworking {
     
     func addUnsavedAPODEntriesAndDispatchToFeed(_ results: EntriesNetworkModel) {
         let lastSavedEntryID = APODEntryInteraction().getLastID()
+        
         let results = results.entries
         
         var index = 0
+        print("last", lastSavedEntryID)
         
-        let currentResultIsntSaved = Int(results[index].id)! > lastSavedEntryID
-        
-        while index < results.count && currentResultIsntSaved {
+        while index < results.count && Int(results[index].id)! > lastSavedEntryID {
+            print("result:", results[index].id)
             APODEntryInteraction().create(entry: results[index])
             imagesReadyForDownload = imageDownloadReadyChecker(numberOfNewEntries: index)
             index += 1
@@ -43,7 +42,7 @@ class EntryNetworking {
     }
     
     func imageDownloadReadyChecker(numberOfNewEntries: Int) -> Bool {
-        if numberOfNewEntries >= initialEntryDispatchCount {
+        if numberOfNewEntries >= FeedSettings().amountToShow {
             return true
         } else {
             return false
