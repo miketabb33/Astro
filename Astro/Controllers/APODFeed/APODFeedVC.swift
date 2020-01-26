@@ -5,35 +5,26 @@ class APODFeedVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var internetDetection: InternetDetection?
+    var infiniteScroll: InfiniteScroll?
     
     let LoadingCellID = "LoadingCell"
     let APODTableViewCellID = "APODTableViewCell"
     
     var entries = [APODEntry]()
-    
-    var feedManager = FeedManager()
-    
-    let appDelegate = UIApplication.shared.delegate as! AppDelegate
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configureTableView()
         
+        infiniteScroll = InfiniteScroll(parentVC: self)
+        
         internetDetection = InternetDetection(parentVC: self)
         internetDetection?.startMonitoringInternetConnection()
         
         //entries = APODEntryBuilder().getLastLoadedAPODEntries(amount: 10)
         
-        Timer.scheduledTimer(withTimeInterval: 0.3, repeats: true) { (timer) in
-            if self.appDelegate.entryImageNetworking.entriesFinishedUploading {
-                self.entries = APODEntryBuilder().getAPODEntries(startingIndex: 0, amount: FeedSettings().amountToShow)
-                self.tableView.reloadData()
-                timer.invalidate()
-            } else {
-                //Loading
-            }
-        }
+        updateTableWithNewEntriesWhenReady()
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -41,10 +32,9 @@ class APODFeedVC: UIViewController {
         let currentHeight = scrollView.contentOffset.y
         let frameHeight = scrollView.frame.size.height
         
-        feedManager.beginDownloadingImageDataForNextEntrySet(currentHeight: currentHeight, contentHeight: contentHeight)
+        infiniteScroll!.beginDownloadingImageDataForNextEntrySet(percentageToBottom: 0.5, currentHeight: currentHeight, contentHeight: contentHeight)
         
-        feedManager.scrollDidApproachBottom(currentHeight: currentHeight, contentHeight: contentHeight, scrollViewFrameHeight: frameHeight, parentVC: self)
-    
+        infiniteScroll!.displayNextEntrySetWhenReady(distanceFromBottom: 700, currentHeight: currentHeight, contentHeight: contentHeight, scrollViewFrameHeight: frameHeight)
     }
     
     func configureTableView() {
@@ -89,5 +79,22 @@ extension APODFeedVC: APODTableViewCellDelegate {
         tableView.beginUpdates()
         tableView.endUpdates()
     }
+}
+
+extension APODFeedVC {
+    func updateTableWithNewEntriesWhenReady() {
+        InternalNetworking().listen(onComplete: completeUpload, updateConditional: updateConditional)
+    }
+    
+    func completeUpload() {
+        entries = APODEntryBuilder().getAPODEntries(startingIndex: 0, amount: FeedSettings().amountToShow)
+        tableView.reloadData()
+    }
+    
+    func updateConditional() -> Bool {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        return appDelegate.entryImageNetworking.entriesFinishedUploading
+    }
+    
 }
 

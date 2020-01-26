@@ -32,6 +32,7 @@
 		4BB28E2523DE01E400EE6876 /* ExpandExplanationAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB28E2423DE01E400EE6876 /* ExpandExplanationAnimation.swift */; };
 		4BB28E2723DE07FC00EE6876 /* ExpandSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB28E2623DE07FC00EE6876 /* ExpandSettings.swift */; };
 		4BB28E2923DE0F2100EE6876 /* FeedSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB28E2823DE0F2100EE6876 /* FeedSettings.swift */; };
+		4BB28E2C23DE198D00EE6876 /* InternalNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB28E2B23DE198D00EE6876 /* InternalNetworking.swift */; };
 		4BB687AF226519E600D423F9 /* RelativeWeightInputVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB687AE226519E600D423F9 /* RelativeWeightInputVC.swift */; };
 		4BB687B922664C6A00D423F9 /* AstroObjTempTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB687B822664C6A00D423F9 /* AstroObjTempTVC.swift */; };
 		4BB687BC22664D1F00D423F9 /* AstroObjTempCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB687BA22664D1F00D423F9 /* AstroObjTempCell.swift */; };
@@ -52,7 +53,7 @@
 		4BCA1CEE22B6BD9D00118A1E /* FormatterMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCA1CED22B6BD9D00118A1E /* FormatterMethods.swift */; };
 		4BCDFBAE22FC7740003E39E8 /* APODFeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCDFBAD22FC7740003E39E8 /* APODFeedVC.swift */; };
 		4BCDFC0C22FF18F4003E39E8 /* BootStrapColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCDFC0B22FF18F4003E39E8 /* BootStrapColors.swift */; };
-		4BD2BEEB23A69692005040D4 /* FeedManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD2BEEA23A69692005040D4 /* FeedManager.swift */; };
+		4BD2BEEB23A69692005040D4 /* InfiniteScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD2BEEA23A69692005040D4 /* InfiniteScroll.swift */; };
 		4BD39AFC2381D7DF00B70DC3 /* ApplicationModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD39AFB2381D7DF00B70DC3 /* ApplicationModels.swift */; };
 		4BD39B012381F11E00B70DC3 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BB2EB2E2316B2A700D16A2A /* Realm.framework */; };
 		4BD39B022381F11E00B70DC3 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BB2EB2C2316B2A700D16A2A /* RealmSwift.framework */; };
@@ -131,6 +132,7 @@
 		4BB28E2423DE01E400EE6876 /* ExpandExplanationAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandExplanationAnimation.swift; sourceTree = "<group>"; };
 		4BB28E2623DE07FC00EE6876 /* ExpandSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandSettings.swift; sourceTree = "<group>"; };
 		4BB28E2823DE0F2100EE6876 /* FeedSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedSettings.swift; sourceTree = "<group>"; };
+		4BB28E2B23DE198D00EE6876 /* InternalNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalNetworking.swift; sourceTree = "<group>"; };
 		4BB2EB2C2316B2A700D16A2A /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		4BB2EB2E2316B2A700D16A2A /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		4BB687AE226519E600D423F9 /* RelativeWeightInputVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelativeWeightInputVC.swift; sourceTree = "<group>"; };
@@ -155,7 +157,7 @@
 		4BCA1CED22B6BD9D00118A1E /* FormatterMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatterMethods.swift; sourceTree = "<group>"; };
 		4BCDFBAD22FC7740003E39E8 /* APODFeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODFeedVC.swift; sourceTree = "<group>"; };
 		4BCDFC0B22FF18F4003E39E8 /* BootStrapColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BootStrapColors.swift; sourceTree = "<group>"; };
-		4BD2BEEA23A69692005040D4 /* FeedManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedManager.swift; sourceTree = "<group>"; };
+		4BD2BEEA23A69692005040D4 /* InfiniteScroll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfiniteScroll.swift; sourceTree = "<group>"; };
 		4BD39AFB2381D7DF00B70DC3 /* ApplicationModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationModels.swift; sourceTree = "<group>"; };
 		4BD39B062381F56200B70DC3 /* DecoderMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecoderMethods.swift; sourceTree = "<group>"; };
 		4BD39B092381FC1600B70DC3 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -354,7 +356,7 @@
 		4BB28E2A23DE0F5E00EE6876 /* FeedManager */ = {
 			isa = PBXGroup;
 			children = (
-				4BD2BEEA23A69692005040D4 /* FeedManager.swift */,
+				4BD2BEEA23A69692005040D4 /* InfiniteScroll.swift */,
 				4BB28E2823DE0F2100EE6876 /* FeedSettings.swift */,
 			);
 			path = FeedManager;
@@ -445,6 +447,7 @@
 			children = (
 				4BD39B092381FC1600B70DC3 /* NetworkManager.swift */,
 				4BEE114F238AE20400379D6E /* NetworkingModels.swift */,
+				4BB28E2B23DE198D00EE6876 /* InternalNetworking.swift */,
 				4BEE114E238AE1E600379D6E /* APODEntries */,
 			);
 			path = Networking;
@@ -705,6 +708,7 @@
 				4B1A9AEF22F723F000B88975 /* InternetDetection.swift in Sources */,
 				4BF2CD1923CB6F35009475E3 /* APODTableViewCell.swift in Sources */,
 				4B20CC6A2378A7AD0057FEB8 /* UIColor.swift in Sources */,
+				4BB28E2C23DE198D00EE6876 /* InternalNetworking.swift in Sources */,
 				4BCA1CEC22B6B6AB00118A1E /* KeyboardMethods.swift in Sources */,
 				4BEE1152238AE43300379D6E /* AstronomicalObjectsInteraction.swift in Sources */,
 				4BC55CC5225D35450079A3E5 /* WeightDisplayTVC.swift in Sources */,
@@ -723,7 +727,7 @@
 				4BCDFC0C22FF18F4003E39E8 /* BootStrapColors.swift in Sources */,
 				4BCA1CEA22B6AA0900118A1E /* EntryNetworking.swift in Sources */,
 				4BB28E2923DE0F2100EE6876 /* FeedSettings.swift in Sources */,
-				4BD2BEEB23A69692005040D4 /* FeedManager.swift in Sources */,
+				4BD2BEEB23A69692005040D4 /* InfiniteScroll.swift in Sources */,
 				4B033F3D23A85C2300D9965E /* APODFeedDataInteraction.swift in Sources */,
 				4B43AC0023A842BD004FC99C /* APODEntryBuilder.swift in Sources */,
 				4BC55CCA225E59A90079A3E5 /* RelativeWeightCell.swift in Sources */,

@@ -30,7 +30,6 @@ class EntryNetworking {
         let results = results.entries
         
         var index = 0
-        print("last", lastSavedEntryID)
         
         while index < results.count && Int(results[index].id)! > lastSavedEntryID {
             print("result:", results[index].id)

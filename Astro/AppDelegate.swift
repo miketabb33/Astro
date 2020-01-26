@@ -15,16 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         AstronomicalObjectDataUpload().uploadUnlessCompleted(isCompleted: UserDefaultsMethods().getBoolean(key: UserDefaultsMethods().astroObjUploadCompletedKey))
         
         entryNetworking.SyncronizeAPODEntries()
-        
-        Timer.scheduledTimer(withTimeInterval: 0.3, repeats: true) { (timer) in
-            if self.entryNetworking.imagesReadyForDownload {
-                self.entryImageNetworking.saveImagesAndCellHeight(startingIndex: 0, amount: FeedSettings().amountToShow)
-                timer.invalidate()
-            } else {
-                //loading
-            }
-        }
-        
+        saveImagesAndHeightWhenReady()
         
         return true
     }
@@ -50,4 +41,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 }
+
+extension AppDelegate {
+    func saveImagesAndHeightWhenReady() {
+        InternalNetworking().listen(onComplete: completed, updateConditional: updateConditional)
+    }
+    
+    func completed() {
+        entryImageNetworking.saveImagesAndCellHeight(startingIndex: 0, amount: FeedSettings().amountToShow)
+    }
+    
+    func updateConditional() -> Bool {
+        return entryNetworking.imagesReadyForDownload
+    }
+}
+
 
