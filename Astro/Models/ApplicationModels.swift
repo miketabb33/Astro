@@ -1,4 +1,4 @@
-import Foundation
+import UIKit
 
 struct APODEntry {
     var id: Int
@@ -15,9 +15,26 @@ struct Contents {
 
 struct FeedData {
     var image: Data
-    var imageHeight: Int
-    var cellHeight: Int
+    var cellHeight: CellHeight
     var expandEnabled = false
+}
+
+class CellHeight {
+    var title: CGFloat
+    var image: CGFloat
+    var explanation: CGFloat
+    var expandButtonView: CGFloat
+    
+    lazy var total = {
+        self.title + self.image + self.explanation + self.expandButtonView
+    }()
+    
+    init(title: CGFloat, image: Int, explanation: CGFloat, expandButtonView: CGFloat) {
+        self.title = title
+        self.image = CGFloat(image)
+        self.explanation = explanation
+        self.expandButtonView = expandButtonView
+    }
 }
 
 struct AstronomicalObjectModel: Decodable {

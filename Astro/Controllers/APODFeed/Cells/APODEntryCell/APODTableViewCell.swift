@@ -16,8 +16,6 @@ class APODTableViewCell: UITableViewCell {
     var delegate: APODTableViewCellDelegate?
     var index: Int?
     
-    var cellHeight: APODCellHeight?
-    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -33,35 +31,14 @@ class APODTableViewCell: UITableViewCell {
         titleLabel.text = entry.contents.title
         explanationLabel.text = entry.contents.explanation
         configureImage(entry: entry)
-        
-        cellHeight = APODCellHeight(titleHeight: titleLabel.frame.height, imageHeight: CGFloat(entry.feedData.imageHeight), explanationHeight: explanationLabel.frame.height, buttonViewHeight: expandButtonView.frame.height)
     }
     
     func configureImage(entry: APODEntry) {
         let image = UIImage(data: entry.feedData.image)!
         
         APODImageView.image = image
-        APODImageViewHeightConstraint.constant = CGFloat(entry.feedData.imageHeight)
+        APODImageViewHeightConstraint.constant = CGFloat(entry.feedData.cellHeight.image)
         APODImageView.contentMode = ImageProcessing(image: image).getContentMode()
-    }
-    
-    class APODCellHeight {
-        var titleHeight: CGFloat
-        var imageHeight: CGFloat
-        var explanationHeight: CGFloat
-        var buttonViewHeight: CGFloat
-        
-        init(titleHeight: CGFloat, imageHeight: CGFloat, explanationHeight: CGFloat, buttonViewHeight: CGFloat) {
-            self.titleHeight = titleHeight
-            self.imageHeight = imageHeight
-            self.explanationHeight = explanationHeight
-            self.buttonViewHeight = buttonViewHeight
-        }
-        
-        func getCellHeight() -> CGFloat {
-            return titleHeight + imageHeight + explanationHeight + buttonViewHeight
-        }
-        
     }
     
 //    func getTogglePositionOfExplanation(cell: APODEntryCell, entry: APODEntry) {

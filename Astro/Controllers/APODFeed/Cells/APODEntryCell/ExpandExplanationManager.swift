@@ -18,7 +18,7 @@ class ExpandExplanationManager {
             
             //updateConstraints(newHeight: newExplanationHeight, cell: cell)
             rotateArrowAnimation(cell: cell, arrowPosition: CGAffineTransform(rotationAngle: .pi))
-            newCellHeight = Int(CGFloat(entry.feedData.imageHeight) + componentHeight.title + componentHeight.button + cell.explanationLabel.frame.height)
+//            newCellHeight = Int(CGFloat(entry.feedData.imageHeight) + componentHeight.title + componentHeight.button + cell.explanationLabel.frame.height)
         } else {
             stateOfExpansion = false
             resizeContentsAnimation(numberOfShowingLines: 7, cell: cell)

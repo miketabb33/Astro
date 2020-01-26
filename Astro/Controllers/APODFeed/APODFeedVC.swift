@@ -23,7 +23,7 @@ class APODFeedVC: UIViewController {
         internetDetection = InternetDetection(parentVC: self)
         internetDetection?.startMonitoringInternetConnection()
         
-        entries = APODEntryBuilder().getLastLoadedAPODEntries(amount: 10)
+        //entries = APODEntryBuilder().getLastLoadedAPODEntries(amount: 10)
         
         Timer.scheduledTimer(withTimeInterval: 0.3, repeats: true) { (timer) in
             if self.appDelegate.entryImageNetworking.entriesFinishedUploading {
@@ -61,23 +61,14 @@ extension APODFeedVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        //return CGFloat(entries[indexPath.row].feedData.cellHeight)
-//        let imageHeight = entries[indexPath.row].feedData.imageHeight
-//
-//        return CGFloat(50 + imageHeight + 120 + 20)
-        
-        
-        
-        return CGFloat(entries[indexPath.row].feedData.cellHeight)
+        return entries[indexPath.row].feedData.cellHeight.total
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: APODTableViewCellID, for: indexPath) as! APODTableViewCell
-        var entry = entries[indexPath.row]
+        let entry = entries[indexPath.row]
         
         cell.setCellData(entry: entry)
-        
-        entry.feedData.cellHeight = Int((cell.cellHeight?.getCellHeight())!)
         
         cell.delegate = self
         cell.index = indexPath.row
@@ -89,9 +80,8 @@ extension APODFeedVC: UITableViewDelegate, UITableViewDataSource {
 
 extension APODFeedVC: APODTableViewCellDelegate {
     func didTapExpandButton(cell: APODTableViewCell) {
-        
-        cell.cellHeight?.explanationHeight = 300
-        entries[cell.index!].feedData.cellHeight = Int((cell.cellHeight?.getCellHeight())!)
+
+        entries[cell.index!].feedData.cellHeight.explanation = 300
 //        let results = ExpandExplanationManager().toggleExplanationExpansion(entry: entries[cell.index!], cell: cell)
 //        entries[cell.index!].feedData.expandEnabled = results.0
 //        entries[cell.index!].feedData.cellHeight = results.1

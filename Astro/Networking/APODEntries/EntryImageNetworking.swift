@@ -52,7 +52,7 @@ class EntryImageNetworking {
     func getCellHeight(imageHeight: Int) -> Int {
         let componentHeight = APODEntryComponentDefaultHeights()
         
-        let cellHeight = Int(componentHeight.title) + Int(componentHeight.explanation) + Int(componentHeight.button) + imageHeight
+        let cellHeight = Int(componentHeight.title) + Int(componentHeight.explanation) + Int(componentHeight.expandButtonView) + imageHeight
         return cellHeight
     }
 }
