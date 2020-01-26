@@ -31,6 +31,7 @@
 		4BA44E7322B92A93009756AA /* FormatterMethodsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA44E7222B92A93009756AA /* FormatterMethodsTests.swift */; };
 		4BB28E2523DE01E400EE6876 /* ExpandExplanationAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB28E2423DE01E400EE6876 /* ExpandExplanationAnimation.swift */; };
 		4BB28E2723DE07FC00EE6876 /* ExpandSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB28E2623DE07FC00EE6876 /* ExpandSettings.swift */; };
+		4BB28E2923DE0F2100EE6876 /* FeedSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB28E2823DE0F2100EE6876 /* FeedSettings.swift */; };
 		4BB687AF226519E600D423F9 /* RelativeWeightInputVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB687AE226519E600D423F9 /* RelativeWeightInputVC.swift */; };
 		4BB687B922664C6A00D423F9 /* AstroObjTempTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB687B822664C6A00D423F9 /* AstroObjTempTVC.swift */; };
 		4BB687BC22664D1F00D423F9 /* AstroObjTempCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB687BA22664D1F00D423F9 /* AstroObjTempCell.swift */; };
@@ -129,6 +130,7 @@
 		4BA44E7422B92A93009756AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4BB28E2423DE01E400EE6876 /* ExpandExplanationAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandExplanationAnimation.swift; sourceTree = "<group>"; };
 		4BB28E2623DE07FC00EE6876 /* ExpandSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandSettings.swift; sourceTree = "<group>"; };
+		4BB28E2823DE0F2100EE6876 /* FeedSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedSettings.swift; sourceTree = "<group>"; };
 		4BB2EB2C2316B2A700D16A2A /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		4BB2EB2E2316B2A700D16A2A /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		4BB687AE226519E600D423F9 /* RelativeWeightInputVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelativeWeightInputVC.swift; sourceTree = "<group>"; };
@@ -349,6 +351,15 @@
 			path = ExpandExplanation;
 			sourceTree = "<group>";
 		};
+		4BB28E2A23DE0F5E00EE6876 /* FeedManager */ = {
+			isa = PBXGroup;
+			children = (
+				4BD2BEEA23A69692005040D4 /* FeedManager.swift */,
+				4BB28E2823DE0F2100EE6876 /* FeedSettings.swift */,
+			);
+			path = FeedManager;
+			sourceTree = "<group>";
+		};
 		4BC55C9D225D330B0079A3E5 = {
 			isa = PBXGroup;
 			children = (
@@ -443,7 +454,7 @@
 			isa = PBXGroup;
 			children = (
 				4BCDFBAD22FC7740003E39E8 /* APODFeedVC.swift */,
-				4BD2BEEA23A69692005040D4 /* FeedManager.swift */,
+				4BB28E2A23DE0F5E00EE6876 /* FeedManager */,
 				4BE14DC92311A8F4000FA4E8 /* Cells */,
 			);
 			path = APODFeed;
@@ -711,6 +722,7 @@
 				4B3A4FBC238CD65800ED5779 /* ImageProcessing.swift in Sources */,
 				4BCDFC0C22FF18F4003E39E8 /* BootStrapColors.swift in Sources */,
 				4BCA1CEA22B6AA0900118A1E /* EntryNetworking.swift in Sources */,
+				4BB28E2923DE0F2100EE6876 /* FeedSettings.swift in Sources */,
 				4BD2BEEB23A69692005040D4 /* FeedManager.swift in Sources */,
 				4B033F3D23A85C2300D9965E /* APODFeedDataInteraction.swift in Sources */,
 				4B43AC0023A842BD004FC99C /* APODEntryBuilder.swift in Sources */,

@@ -5,8 +5,7 @@ class FeedManager {
     
     var approachedBottom = false
     
-    var amountToShow = 10
-    var nextStartingIndex = 10
+    var nextStartingIndex = FeedSettings().amountToShow
     
     let entryImageNetworking = EntryImageNetworking()
     
@@ -15,23 +14,23 @@ class FeedManager {
         
         if ratio > 0.1 && !additionalImagesPending {
             additionalImagesPending = true
-            entryImageNetworking.saveImagesAndCellHeight(startingIndex: nextStartingIndex, amount: amountToShow)
+            entryImageNetworking.saveImagesAndCellHeight(startingIndex: nextStartingIndex, amount: FeedSettings().amountToShow)
         }
     }
     
     func scrollDidApproachBottom(currentHeight: CGFloat, contentHeight: CGFloat, scrollViewFrameHeight: CGFloat, parentVC: APODFeedVC) {
-        let amountBeforeBottom: CGFloat = 1000
+        let distanceToLoadNextImage: CGFloat = 1000
         
         let topOfScreen = contentHeight - scrollViewFrameHeight
         
-        if currentHeight > topOfScreen - amountBeforeBottom && !approachedBottom {
+        if currentHeight > topOfScreen - distanceToLoadNextImage && !approachedBottom {
             approachedBottom = true
             
             Timer.scheduledTimer(withTimeInterval: 0.3, repeats: true) { (timer) in
                 if self.entryImageNetworking.entriesFinishedUploading {
                     timer.invalidate()
                     
-                    let nextGroup = APODEntryBuilder().getAPODEntries(startingIndex: self.nextStartingIndex, amount: self.amountToShow)
+                    let nextGroup = APODEntryBuilder().getAPODEntries(startingIndex: self.nextStartingIndex, amount: FeedSettings().amountToShow)
                     parentVC.entries.append(contentsOf: nextGroup)
                     parentVC.tableView.reloadData()
                     
@@ -39,7 +38,7 @@ class FeedManager {
                     self.approachedBottom = false
                     self.entryImageNetworking.entriesFinishedUploading = false
                     
-                    self.nextStartingIndex += 10
+                    self.nextStartingIndex += FeedSettings().amountToShow
                     
                 } else {
                     //Loading
