@@ -30,6 +30,7 @@
 		4BA44E6522B92A6A009756AA /* AstroUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA44E6422B92A6A009756AA /* AstroUITests.swift */; };
 		4BA44E7322B92A93009756AA /* FormatterMethodsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA44E7222B92A93009756AA /* FormatterMethodsTests.swift */; };
 		4BB28E2523DE01E400EE6876 /* ExpandExplanationAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB28E2423DE01E400EE6876 /* ExpandExplanationAnimation.swift */; };
+		4BB28E2723DE07FC00EE6876 /* ExpandSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB28E2623DE07FC00EE6876 /* ExpandSettings.swift */; };
 		4BB687AF226519E600D423F9 /* RelativeWeightInputVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB687AE226519E600D423F9 /* RelativeWeightInputVC.swift */; };
 		4BB687B922664C6A00D423F9 /* AstroObjTempTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB687B822664C6A00D423F9 /* AstroObjTempTVC.swift */; };
 		4BB687BC22664D1F00D423F9 /* AstroObjTempCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB687BA22664D1F00D423F9 /* AstroObjTempCell.swift */; };
@@ -127,6 +128,7 @@
 		4BA44E7222B92A93009756AA /* FormatterMethodsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatterMethodsTests.swift; sourceTree = "<group>"; };
 		4BA44E7422B92A93009756AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4BB28E2423DE01E400EE6876 /* ExpandExplanationAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandExplanationAnimation.swift; sourceTree = "<group>"; };
+		4BB28E2623DE07FC00EE6876 /* ExpandSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandSettings.swift; sourceTree = "<group>"; };
 		4BB2EB2C2316B2A700D16A2A /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		4BB2EB2E2316B2A700D16A2A /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		4BB687AE226519E600D423F9 /* RelativeWeightInputVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelativeWeightInputVC.swift; sourceTree = "<group>"; };
@@ -342,6 +344,7 @@
 			children = (
 				4BE14DCA2311AA27000FA4E8 /* ExpandExplanationManager.swift */,
 				4BB28E2423DE01E400EE6876 /* ExpandExplanationAnimation.swift */,
+				4BB28E2623DE07FC00EE6876 /* ExpandSettings.swift */,
 			);
 			path = ExpandExplanation;
 			sourceTree = "<group>";
@@ -714,6 +717,7 @@
 				4BC55CCA225E59A90079A3E5 /* RelativeWeightCell.swift in Sources */,
 				4BCA1CE822B69EA100118A1E /* LoadingAnimation.swift in Sources */,
 				4B6023DE22BBBFFF00732745 /* AstronomicalObjectDataUpload.swift in Sources */,
+				4BB28E2723DE07FC00EE6876 /* ExpandSettings.swift in Sources */,
 				4BB28E2523DE01E400EE6876 /* ExpandExplanationAnimation.swift in Sources */,
 				4BEE114D238ADDDF00379D6E /* APODEntryInteraction.swift in Sources */,
 			);

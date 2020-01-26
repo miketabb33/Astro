@@ -27,7 +27,7 @@ class APODTableViewCell: UITableViewCell {
     func setCellData(entry: APODEntry) {
         configureTitle(text: entry.contents.title, height: entry.feedData.cellHeight.title)
         configureImage(imageData: entry.feedData.image, height: entry.feedData.cellHeight.image)
-        configureExplanation(text: entry.contents.explanation, height: entry.feedData.cellHeight.explanation)
+        configureExplanation(text: entry.contents.explanation, height: entry.feedData.cellHeight.explanation, isExpanded: entry.feedData.expandEnabled)
         configureExpandButtonView(height: entry.feedData.cellHeight.expandButtonView)
     }
     
@@ -44,34 +44,15 @@ class APODTableViewCell: UITableViewCell {
         APODImageView.contentMode = ImageProcessing(image: image).getContentMode()
     }
     
-    func configureExplanation(text: String, height: CGFloat) {
+    func configureExplanation(text: String, height: CGFloat, isExpanded: Bool) {
         explanationLabel.text = text
         explanationHeightConstraint.constant = height
+        ExpandSettings().show(isExpanded: isExpanded, label: explanationLabel, button: expandButton)
     }
     
     func configureExpandButtonView(height: CGFloat) {
         expandButtonViewHeightConstraint.constant = height
     }
     
-    
-    
-//    func getTogglePositionOfExplanation(cell: APODEntryCell, entry: APODEntry) {
-//        var explanationHeight: CGFloat = 0
-//        if entry.feedData.expandEnabled == true {
-//            explanationHeight = cell.explanation.frame.height
-//
-//            showExplanation(cell: cell, numberOfLines: 0, height: explanationHeight, arrowPosition: CGAffineTransform(rotationAngle: .pi))
-//        } else {
-//            explanationHeight = cell.componentHeight["explanation"]!
-//            
-//            showExplanation(cell: cell, numberOfLines: 7, height: explanationHeight, arrowPosition: .identity)
-//        }
-//    }
-//
-//    func showExplanation(cell: APODEntryCell, numberOfLines: Int, height: CGFloat, arrowPosition: CGAffineTransform) {
-//        cell.expandButton.transform = arrowPosition
-//        cell.explanation.numberOfLines = numberOfLines
-//        addStackingConstraintTo(cell.explanation, stackUnder: cell.APODImage, edges: cell.contentView.layoutMarginsGuide, height: height)
-//    }
     
 }

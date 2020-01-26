@@ -14,9 +14,9 @@ class ExpandExplanationManager {
     
     func toggleContentSize(isExpanded: Bool, label: UILabel) {
         if isExpanded {
-            ExpandExplanationAnimation().resizeContentsAnimation(label: label, numberOfShowingLines: 7, duration: 0)
+            ExpandExplanationAnimation().resizeContentsAnimation(label: label, numberOfShowingLines: ExpandSettings().numberOfLinesDefault, duration: 0)
         } else {
-            ExpandExplanationAnimation().resizeContentsAnimation(label: label, numberOfShowingLines: 0, duration: 0.3)
+            ExpandExplanationAnimation().resizeContentsAnimation(label: label, numberOfShowingLines: ExpandSettings().numberOfLinesIsExpanded, duration: 0.3)
         }
     }
     
@@ -30,9 +30,9 @@ class ExpandExplanationManager {
     
     func toggleArrowDirection(isExpanded: Bool, button: UIButton) {
         if isExpanded {
-            ExpandExplanationAnimation().rotateArrowAnimation(button: button, arrowPosition: .identity)
+            ExpandExplanationAnimation().rotateArrowAnimation(button: button, arrowPosition: ExpandSettings().arrowDefault)
         } else {
-            ExpandExplanationAnimation().rotateArrowAnimation(button: button, arrowPosition: CGAffineTransform(rotationAngle: .pi))
+            ExpandExplanationAnimation().rotateArrowAnimation(button: button, arrowPosition: ExpandSettings().arrowIsExpanded)
         }
     }
 }
