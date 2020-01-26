@@ -18,7 +18,7 @@
 		4B384B8C236F329200C3FD59 /* DropDownAlert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B384B8B236F329200C3FD59 /* DropDownAlert.storyboard */; };
 		4B384B8F236F32C900C3FD59 /* DropDownAlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B384B8E236F32C900C3FD59 /* DropDownAlertManager.swift */; };
 		4B384B91236F351A00C3FD59 /* InjectableSubviewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B384B90236F351A00C3FD59 /* InjectableSubviewManager.swift */; };
-		4B3A4FBA238CD37A00ED5779 /* APODEntryComponentDefaultHeights.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3A4FB9238CD37A00ED5779 /* APODEntryComponentDefaultHeights.swift */; };
+		4B3A4FBA238CD37A00ED5779 /* StaticElementHeights.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3A4FB9238CD37A00ED5779 /* StaticElementHeights.swift */; };
 		4B3A4FBC238CD65800ED5779 /* ImageProcessing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3A4FBB238CD65800ED5779 /* ImageProcessing.swift */; };
 		4B3A50552394254B00ED5779 /* EntryImageNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3A50542394254B00ED5779 /* EntryImageNetworking.swift */; };
 		4B43AC0023A842BD004FC99C /* APODEntryBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B43ABFF23A842BD004FC99C /* APODEntryBuilder.swift */; };
@@ -110,7 +110,7 @@
 		4B384B8B236F329200C3FD59 /* DropDownAlert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DropDownAlert.storyboard; sourceTree = "<group>"; };
 		4B384B8E236F32C900C3FD59 /* DropDownAlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownAlertManager.swift; sourceTree = "<group>"; };
 		4B384B90236F351A00C3FD59 /* InjectableSubviewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjectableSubviewManager.swift; sourceTree = "<group>"; };
-		4B3A4FB9238CD37A00ED5779 /* APODEntryComponentDefaultHeights.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODEntryComponentDefaultHeights.swift; sourceTree = "<group>"; };
+		4B3A4FB9238CD37A00ED5779 /* StaticElementHeights.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticElementHeights.swift; sourceTree = "<group>"; };
 		4B3A4FBB238CD65800ED5779 /* ImageProcessing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProcessing.swift; sourceTree = "<group>"; };
 		4B3A50542394254B00ED5779 /* EntryImageNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryImageNetworking.swift; sourceTree = "<group>"; };
 		4B43ABFF23A842BD004FC99C /* APODEntryBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODEntryBuilder.swift; sourceTree = "<group>"; };
@@ -222,7 +222,7 @@
 				4BF2CD1723CB6F35009475E3 /* APODTableViewCell.swift */,
 				4BF2CD1823CB6F35009475E3 /* APODTableViewCell.xib */,
 				4BE14DCA2311AA27000FA4E8 /* ExpandExplanationManager.swift */,
-				4B3A4FB9238CD37A00ED5779 /* APODEntryComponentDefaultHeights.swift */,
+				4BB28E2223DDF1DE00EE6876 /* ElementHeights */,
 			);
 			path = APODEntryCell;
 			sourceTree = "<group>";
@@ -293,7 +293,6 @@
 				4B6023E322BE7CB900732745 /* Navigation.swift */,
 				4B98E89F22BEC9D90025B8F2 /* SearchBarMethods.swift */,
 				4B1A9AEE22F723F000B88975 /* InternetDetection.swift */,
-				4B3A4FBB238CD65800ED5779 /* ImageProcessing.swift */,
 			);
 			path = "Bin - needs home";
 			sourceTree = "<group>";
@@ -325,6 +324,15 @@
 				4BA44E7422B92A93009756AA /* Info.plist */,
 			);
 			path = AstroTests;
+			sourceTree = "<group>";
+		};
+		4BB28E2223DDF1DE00EE6876 /* ElementHeights */ = {
+			isa = PBXGroup;
+			children = (
+				4B3A4FB9238CD37A00ED5779 /* StaticElementHeights.swift */,
+				4B3A4FBB238CD65800ED5779 /* ImageProcessing.swift */,
+			);
+			path = ElementHeights;
 			sourceTree = "<group>";
 		};
 		4BC55C9D225D330B0079A3E5 = {
@@ -655,7 +663,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B3A4FBA238CD37A00ED5779 /* APODEntryComponentDefaultHeights.swift in Sources */,
+				4B3A4FBA238CD37A00ED5779 /* StaticElementHeights.swift in Sources */,
 				4B47DDAD2343D7FD005F736F /* Keys.swift in Sources */,
 				4B3A50552394254B00ED5779 /* EntryImageNetworking.swift in Sources */,
 				4BB687AF226519E600D423F9 /* RelativeWeightInputVC.swift in Sources */,

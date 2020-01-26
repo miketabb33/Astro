@@ -2,7 +2,7 @@ import UIKit
 
 class ExpandExplanationManager {
     func toggleExplanationExpansion(entry: APODEntry, cell: APODTableViewCell) -> (Bool, Int) {
-        let componentHeight = APODEntryComponentDefaultHeights()
+        let componentHeight = StaticElementHeights()
         
         var stateOfExpansion = false
         var newCellHeight = 0

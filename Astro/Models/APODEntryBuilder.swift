@@ -2,7 +2,7 @@ import Foundation
 
 class APODEntryBuilder {
     func getAPODEntries(startingIndex: Int, amount: Int) -> [APODEntry] {
-        let heights = APODEntryComponentDefaultHeights()
+        let heights = StaticElementHeights()
         let entriesRealm = APODEntryInteraction().getAll()
         var entries = [APODEntry]()
          

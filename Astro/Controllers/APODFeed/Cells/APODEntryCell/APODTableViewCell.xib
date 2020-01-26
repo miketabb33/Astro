@@ -82,10 +82,13 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="APODImageView" destination="GQm-Km-hCn" id="3tw-DW-aGI"/>
-                <outlet property="APODImageViewHeightConstraint" destination="ckS-p1-a5C" id="l1y-z6-vBQ"/>
                 <outlet property="expandButton" destination="O6J-lf-kqI" id="Tlm-vx-woS"/>
                 <outlet property="expandButtonView" destination="EAY-EH-lN3" id="MUT-Yn-xWg"/>
+                <outlet property="expandButtonViewHeightConstraint" destination="WKF-aA-gNU" id="3FA-ZN-Hgu"/>
+                <outlet property="explanationHeightConstraint" destination="jDU-p3-gtR" id="mfX-YN-tlH"/>
                 <outlet property="explanationLabel" destination="BD2-0z-Omc" id="vRj-4v-fEJ"/>
+                <outlet property="imageHeightConstraint" destination="ckS-p1-a5C" id="l1y-z6-vBQ"/>
+                <outlet property="titleHeightConstraint" destination="Nhp-gW-FKX" id="KBd-jQ-dEU"/>
                 <outlet property="titleLabel" destination="yIe-BE-rw8" id="dQy-RZ-Fcg"/>
             </connections>
             <point key="canvasLocation" x="163.04347826086959" y="257.8125"/>

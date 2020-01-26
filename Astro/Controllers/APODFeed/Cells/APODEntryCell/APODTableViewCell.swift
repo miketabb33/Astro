@@ -11,35 +11,49 @@ class APODTableViewCell: UITableViewCell {
     @IBOutlet weak var expandButton: UIButton!
     @IBOutlet weak var expandButtonView: UIView!
     
-    @IBOutlet weak var APODImageViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var titleHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var imageHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var explanationHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var expandButtonViewHeightConstraint: NSLayoutConstraint!
     
     var delegate: APODTableViewCellDelegate?
     var index: Int?
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
 
     @IBAction func expandButtonPressed(_ sender: Any) {
         delegate?.didTapExpandButton(cell: self)
     }
     
     
-    
-    
     func setCellData(entry: APODEntry) {
-        titleLabel.text = entry.contents.title
-        explanationLabel.text = entry.contents.explanation
-        configureImage(entry: entry)
+        configureTitle(text: entry.contents.title, height: entry.feedData.cellHeight.title)
+        configureImage(imageData: entry.feedData.image, height: entry.feedData.cellHeight.image)
+        configureExplanation(text: entry.contents.explanation, height: entry.feedData.cellHeight.explanation)
+        configureExpandButtonView(height: entry.feedData.cellHeight.expandButtonView)
     }
     
-    func configureImage(entry: APODEntry) {
-        let image = UIImage(data: entry.feedData.image)!
+    func configureTitle(text: String, height: CGFloat) {
+        titleLabel.text = text
+        titleHeightConstraint.constant = height
+    }
+    
+    func configureImage(imageData: Data, height: CGFloat) {
+        let image = UIImage(data: imageData)!
         
         APODImageView.image = image
-        APODImageViewHeightConstraint.constant = CGFloat(entry.feedData.cellHeight.image)
+        imageHeightConstraint.constant = height
         APODImageView.contentMode = ImageProcessing(image: image).getContentMode()
     }
+    
+    func configureExplanation(text: String, height: CGFloat) {
+        explanationLabel.text = text
+        explanationHeightConstraint.constant = height
+    }
+    
+    func configureExpandButtonView(height: CGFloat) {
+        expandButtonViewHeightConstraint.constant = height
+    }
+    
+    
     
 //    func getTogglePositionOfExplanation(cell: APODEntryCell, entry: APODEntry) {
 //        var explanationHeight: CGFloat = 0
