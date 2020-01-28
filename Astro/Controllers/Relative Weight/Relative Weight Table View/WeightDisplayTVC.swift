@@ -32,6 +32,7 @@ extension WeightDisplayTVC {
         let currentObject = astronomicalObjContainer![indexPath.row]
         
         let userWeightOnThisObj = currentObject.relativeWeight * enteredWeight!
+
         let formattedUserWeight = FormatterMethods().roundTo2DecimalPlaces(weight: userWeightOnThisObj)
         cell.weightLabel.text = "\(formattedUserWeight) lbs"
         

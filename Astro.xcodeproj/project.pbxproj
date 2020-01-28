@@ -62,6 +62,7 @@
 		4BD39B072381F56200B70DC3 /* DecoderMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD39B062381F56200B70DC3 /* DecoderMethods.swift */; };
 		4BD39B0A2381FC1600B70DC3 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD39B092381FC1600B70DC3 /* NetworkManager.swift */; };
 		4BE14DCB2311AA27000FA4E8 /* ExpandExplanationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE14DCA2311AA27000FA4E8 /* ExpandExplanationManager.swift */; };
+		4BE95D8A23E0B11C000D3267 /* DecodorMethodsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE95D8923E0B11C000D3267 /* DecodorMethodsTests.swift */; };
 		4BEC2F772381B80400395CA4 /* InjectableSubviewManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEC2F762381B80400395CA4 /* InjectableSubviewManagerTests.swift */; };
 		4BEE114B238ADD9C00379D6E /* RealmPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEE114A238ADD9C00379D6E /* RealmPath.swift */; };
 		4BEE114D238ADDDF00379D6E /* APODEntryCRUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEE114C238ADDDF00379D6E /* APODEntryCRUD.swift */; };
@@ -162,6 +163,7 @@
 		4BD39B062381F56200B70DC3 /* DecoderMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecoderMethods.swift; sourceTree = "<group>"; };
 		4BD39B092381FC1600B70DC3 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		4BE14DCA2311AA27000FA4E8 /* ExpandExplanationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandExplanationManager.swift; sourceTree = "<group>"; };
+		4BE95D8923E0B11C000D3267 /* DecodorMethodsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodorMethodsTests.swift; sourceTree = "<group>"; };
 		4BEC2F762381B80400395CA4 /* InjectableSubviewManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjectableSubviewManagerTests.swift; sourceTree = "<group>"; };
 		4BEE114A238ADD9C00379D6E /* RealmPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmPath.swift; sourceTree = "<group>"; };
 		4BEE114C238ADDDF00379D6E /* APODEntryCRUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODEntryCRUD.swift; sourceTree = "<group>"; };
@@ -300,7 +302,6 @@
 				4BCA1CEB22B6B6AB00118A1E /* KeyboardMethods.swift */,
 				4B6023E322BE7CB900732745 /* Navigation.swift */,
 				4B98E89F22BEC9D90025B8F2 /* SearchBarMethods.swift */,
-				4B1A9AEE22F723F000B88975 /* InternetDetection.swift */,
 			);
 			path = "Bin - needs home";
 			sourceTree = "<group>";
@@ -326,6 +327,7 @@
 		4BA44E7122B92A93009756AA /* AstroTests */ = {
 			isa = PBXGroup;
 			children = (
+				4BE95D8823E0B0F9000D3267 /* Bin */,
 				4BEC2F742381B7D300395CA4 /* Subviews */,
 				4BA44E7222B92A93009756AA /* FormatterMethodsTests.swift */,
 				4B2F6EC6236F1C3D00F8D890 /* SearchBarMethodsTests.swift */,
@@ -449,6 +451,7 @@
 				4BEE114F238AE20400379D6E /* NetworkingModels.swift */,
 				4BB28E2B23DE198D00EE6876 /* Notifier.swift */,
 				4BEE114E238AE1E600379D6E /* APODEntries */,
+				4B1A9AEE22F723F000B88975 /* InternetDetection.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -488,6 +491,14 @@
 				4B47DDA92343D23A005F736F /* Relative Weight Table View */,
 			);
 			path = "Relative Weight";
+			sourceTree = "<group>";
+		};
+		4BE95D8823E0B0F9000D3267 /* Bin */ = {
+			isa = PBXGroup;
+			children = (
+				4BE95D8923E0B11C000D3267 /* DecodorMethodsTests.swift */,
+			);
+			path = Bin;
 			sourceTree = "<group>";
 		};
 		4BEC2F742381B7D300395CA4 /* Subviews */ = {
@@ -684,6 +695,7 @@
 				4B2F6EC7236F1C3D00F8D890 /* SearchBarMethodsTests.swift in Sources */,
 				4BEC2F772381B80400395CA4 /* InjectableSubviewManagerTests.swift in Sources */,
 				4BA44E7322B92A93009756AA /* FormatterMethodsTests.swift in Sources */,
+				4BE95D8A23E0B11C000D3267 /* DecodorMethodsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
