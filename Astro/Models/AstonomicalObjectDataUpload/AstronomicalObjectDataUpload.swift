@@ -11,7 +11,7 @@ class AstronomicalObjectDataUpload {
                 let decoder = PropertyListDecoder()
                 do {
                     let results = try decoder.decode([AstronomicalObjectModel].self, from: AstronomicalObjectFileData)
-                    AstronomicalObjectInteraction().createSetOfAstonomicalObjects(set: results)
+                    AstronomicalObjectCRUD().createSetOfAstonomicalObjects(set: results)
                     
                     UserDefaultsMethods().setUserDefaults(data: true, key: UserDefaultsMethods().astroObjUploadCompletedKey)
                     

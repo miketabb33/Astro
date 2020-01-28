@@ -25,14 +25,14 @@ class EntryNetworking {
     }
     
     func addUnsavedAPODEntriesAndDispatchToFeed(_ results: EntriesNetworkModel) {
-        let lastSavedEntryID = APODEntryInteraction().getLastID()
+        let lastSavedEntryID = APODEntryCRUD().getLastID()
         
         let results = results.entries
         
         var index = 0
         
         while index < results.count && Int(results[index].id)! > lastSavedEntryID {
-            APODEntryInteraction().create(entry: results[index])
+            APODEntryCRUD().create(entry: results[index])
             imagesReadyForDownload = imageDownloadReadyChecker(numberOfNewEntries: index)
             index += 1
         }

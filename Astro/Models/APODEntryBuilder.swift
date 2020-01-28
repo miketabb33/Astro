@@ -3,14 +3,14 @@ import Foundation
 class APODEntryBuilder {
     func getAPODEntries(startingIndex: Int, amount: Int) -> [APODEntry] {
         let heights = StaticElementHeights()
-        let entriesRealm = APODEntryInteraction().getAll()
+        let entriesRealm = APODEntryCRUD().getAll()
         var entries = [APODEntry]()
          
         var i = 0
         while i < amount && startingIndex + i < entriesRealm.count {
             let entry = entriesRealm[i + startingIndex]
             
-            let feedDataRealm = APODFeedDataInteraction().get(id: entry.id)!
+            let feedDataRealm = APODFeedDataCRUD().get(id: entry.id)!
             
             let contents = Contents(title: entry.title, explanation: entry.explanation, date: entry.date, image_url: entry.image_url)
             
@@ -30,14 +30,14 @@ class APODEntryBuilder {
     
 //    func getLastLoadedAPODEntries(amount: Int) -> [APODEntry] {
 //        var entries = [APODEntry]()
-//        let feedDataRealm = APODFeedDataInteraction().getAll()
+//        let feedDataRealm = APODFeedDataCRUD().getAll()
 //
 //        var i = 0
 //        while i < amount && i < feedDataRealm.count {
 //
 //            let feedData = feedDataRealm[i]
 //
-//            let entryRealm = APODEntryInteraction().get(id: feedData.id)!
+//            let entryRealm = APODEntryCRUD().get(id: feedData.id)!
 //
 //            let contents = Contents(title: entryRealm.title, explanation: entryRealm.explanation, date: entryRealm.date, image_url: entryRealm.image_url)
 //            let feed = FeedData(image: feedData.image, imageHeight: feedData.cellHeight, cellHeight: feedData.cellHeight)

@@ -7,7 +7,7 @@ class APODFeedDataRealm: Object {
     @objc dynamic var imageHeight = 0
 }
 
-class APODFeedDataInteraction: RealmPath {
+class APODFeedDataCRUD: RealmPath {
     func create(_ feedDataUpload: [APODFeedDataUpload]) {
         for item in feedDataUpload {
             let feedData = APODFeedDataRealm()

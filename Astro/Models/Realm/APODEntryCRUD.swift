@@ -9,7 +9,7 @@ class APODEntryRealm: Object {
     @objc dynamic var date = Date()
 }
 
-class APODEntryInteraction: RealmPath {
+class APODEntryCRUD: RealmPath {
     func create(entry: EntryNetworkModel) {
         let newApodEntry = APODEntryRealm()
         newApodEntry.id = Int(entry.id)!

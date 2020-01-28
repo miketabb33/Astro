@@ -6,10 +6,10 @@ class EntryImageNetworking {
     
     func saveImagesAndCellHeight(startingIndex: Int, amount: Int) {
         DispatchQueue.global(qos: .background).async {
-            let imageURLs = APODEntryInteraction().getImageURLs(startingIndex: startingIndex, amount: amount)
+            let imageURLs = APODEntryCRUD().getImageURLs(startingIndex: startingIndex, amount: amount)
             let feedDataUpload = self.getImagesAndCellHeight(imageURLs: imageURLs)
             
-            APODFeedDataInteraction().create(feedDataUpload)
+            APODFeedDataCRUD().create(feedDataUpload)
             
             self.entriesFinishedUploading = true
         }
@@ -20,7 +20,7 @@ class EntryImageNetworking {
         
         for imageURL in imageURLs {
             let entryID = imageURL.0
-            let feedData = APODFeedDataInteraction().get(id: entryID)
+            let feedData = APODFeedDataCRUD().get(id: entryID)
             
             if feedData == nil {
                 let imageData = getImage(url: imageURL.1)
