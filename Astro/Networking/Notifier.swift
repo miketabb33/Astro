@@ -1,7 +1,7 @@
 import UIKit
 
-class InternalNetworking {
-    func listen(onComplete: @escaping () -> Void, updateConditional: @escaping () -> Bool, onLoading: (() -> Void)? = nil, onTimeOut: (() -> Void)? = nil, timeOutTime: Int = 15) {
+class Notifier {
+    func await(onComplete: @escaping () -> Void, updateConditional: @escaping () -> Bool, onLoading: (() -> Void)? = nil, onTimeOut: (() -> Void)? = nil, timeOutTime: Int = 60) {
         var isLoading = false
         var conditional = false
         

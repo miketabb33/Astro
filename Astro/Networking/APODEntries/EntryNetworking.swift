@@ -32,7 +32,6 @@ class EntryNetworking {
         var index = 0
         
         while index < results.count && Int(results[index].id)! > lastSavedEntryID {
-            print("result:", results[index].id)
             APODEntryInteraction().create(entry: results[index])
             imagesReadyForDownload = imageDownloadReadyChecker(numberOfNewEntries: index)
             index += 1

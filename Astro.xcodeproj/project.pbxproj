@@ -32,7 +32,7 @@
 		4BB28E2523DE01E400EE6876 /* ExpandExplanationAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB28E2423DE01E400EE6876 /* ExpandExplanationAnimation.swift */; };
 		4BB28E2723DE07FC00EE6876 /* ExpandSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB28E2623DE07FC00EE6876 /* ExpandSettings.swift */; };
 		4BB28E2923DE0F2100EE6876 /* FeedSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB28E2823DE0F2100EE6876 /* FeedSettings.swift */; };
-		4BB28E2C23DE198D00EE6876 /* InternalNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB28E2B23DE198D00EE6876 /* InternalNetworking.swift */; };
+		4BB28E2C23DE198D00EE6876 /* Notifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB28E2B23DE198D00EE6876 /* Notifier.swift */; };
 		4BB687AF226519E600D423F9 /* RelativeWeightInputVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB687AE226519E600D423F9 /* RelativeWeightInputVC.swift */; };
 		4BB687B922664C6A00D423F9 /* AstroObjTempTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB687B822664C6A00D423F9 /* AstroObjTempTVC.swift */; };
 		4BB687BC22664D1F00D423F9 /* AstroObjTempCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB687BA22664D1F00D423F9 /* AstroObjTempCell.swift */; };
@@ -132,7 +132,7 @@
 		4BB28E2423DE01E400EE6876 /* ExpandExplanationAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandExplanationAnimation.swift; sourceTree = "<group>"; };
 		4BB28E2623DE07FC00EE6876 /* ExpandSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandSettings.swift; sourceTree = "<group>"; };
 		4BB28E2823DE0F2100EE6876 /* FeedSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedSettings.swift; sourceTree = "<group>"; };
-		4BB28E2B23DE198D00EE6876 /* InternalNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalNetworking.swift; sourceTree = "<group>"; };
+		4BB28E2B23DE198D00EE6876 /* Notifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifier.swift; sourceTree = "<group>"; };
 		4BB2EB2C2316B2A700D16A2A /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		4BB2EB2E2316B2A700D16A2A /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		4BB687AE226519E600D423F9 /* RelativeWeightInputVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelativeWeightInputVC.swift; sourceTree = "<group>"; };
@@ -447,7 +447,7 @@
 			children = (
 				4BD39B092381FC1600B70DC3 /* NetworkManager.swift */,
 				4BEE114F238AE20400379D6E /* NetworkingModels.swift */,
-				4BB28E2B23DE198D00EE6876 /* InternalNetworking.swift */,
+				4BB28E2B23DE198D00EE6876 /* Notifier.swift */,
 				4BEE114E238AE1E600379D6E /* APODEntries */,
 			);
 			path = Networking;
@@ -708,7 +708,7 @@
 				4B1A9AEF22F723F000B88975 /* InternetDetection.swift in Sources */,
 				4BF2CD1923CB6F35009475E3 /* APODTableViewCell.swift in Sources */,
 				4B20CC6A2378A7AD0057FEB8 /* UIColor.swift in Sources */,
-				4BB28E2C23DE198D00EE6876 /* InternalNetworking.swift in Sources */,
+				4BB28E2C23DE198D00EE6876 /* Notifier.swift in Sources */,
 				4BCA1CEC22B6B6AB00118A1E /* KeyboardMethods.swift in Sources */,
 				4BEE1152238AE43300379D6E /* AstronomicalObjectsInteraction.swift in Sources */,
 				4BC55CC5225D35450079A3E5 /* WeightDisplayTVC.swift in Sources */,

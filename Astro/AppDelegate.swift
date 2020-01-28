@@ -5,8 +5,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     
-    let entryNetworking = EntryNetworking()
-    let entryImageNetworking = EntryImageNetworking()
+    var entryNetworking: EntryNetworking? = EntryNetworking()
+    var entryImageNetworking: EntryImageNetworking? = EntryImageNetworking()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         //Line below prints location of realm Database
@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         AstronomicalObjectDataUpload().uploadUnlessCompleted(isCompleted: UserDefaultsMethods().getBoolean(key: UserDefaultsMethods().astroObjUploadCompletedKey))
         
-        entryNetworking.SyncronizeAPODEntries()
+        entryNetworking!.SyncronizeAPODEntries()
         saveImagesAndHeightWhenReady()
         
         return true
@@ -44,15 +44,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 extension AppDelegate {
     func saveImagesAndHeightWhenReady() {
-        InternalNetworking().listen(onComplete: completed, updateConditional: updateConditional)
+        Notifier().await(onComplete: completed, updateConditional: updateConditional)
     }
     
     func completed() {
-        entryImageNetworking.saveImagesAndCellHeight(startingIndex: 0, amount: FeedSettings().amountToShow)
+        entryImageNetworking!.saveImagesAndCellHeight(startingIndex: 0, amount: FeedSettings().amountToShow)
+        entryNetworking = nil
     }
     
     func updateConditional() -> Bool {
-        return entryNetworking.imagesReadyForDownload
+        return entryNetworking!.imagesReadyForDownload
     }
 }
 

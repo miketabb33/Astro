@@ -80,17 +80,20 @@ extension APODFeedVC: APODTableViewCellDelegate {
 
 extension APODFeedVC {
     func updateTableWithNewEntriesWhenReady() {
-        InternalNetworking().listen(onComplete: completeUpload, updateConditional: updateConditional)
+        Notifier().await(onComplete: completeUpload, updateConditional: updateConditional)
     }
     
     func completeUpload() {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.entryImageNetworking = nil
+        
         entries = APODEntryBuilder().getAPODEntries(startingIndex: 0, amount: FeedSettings().amountToShow)
         tableView.reloadData()
     }
     
     func updateConditional() -> Bool {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        return appDelegate.entryImageNetworking.entriesFinishedUploading
+        return appDelegate.entryImageNetworking!.entriesFinishedUploading
     }
     
 }

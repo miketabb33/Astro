@@ -38,7 +38,7 @@ class InfiniteScroll {
 
 extension InfiniteScroll {
     func LoadNewEntriesWhenReady() {
-        InternalNetworking().listen(onComplete: completeLoad, updateConditional: updateConditional)
+        Notifier().await(onComplete: completeLoad, updateConditional: updateConditional)
     }
     
     func completeLoad() {
