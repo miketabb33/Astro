@@ -2,6 +2,7 @@ import UIKit
 
 class APODFeedVC: UIViewController {
     
+    
     @IBOutlet weak var tableView: UITableView!
     
     var internetDetection: InternetDetection?
@@ -22,7 +23,7 @@ class APODFeedVC: UIViewController {
         internetDetection = InternetDetection(parentVC: self)
         internetDetection?.startMonitoringInternetConnection()
         
-        //entries = APODEntryBuilder().getLastLoadedAPODEntries(amount: 10)
+        entries = APODEntryBuilder().getAPODEntries(startingIndex: 0, amount: FeedSettings().amountToShow)
         
         updateTableWithNewEntriesWhenReady()
     }
@@ -84,16 +85,16 @@ extension APODFeedVC {
     }
     
     func completeUpload() {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.entryImageNetworking = nil
+        let tabController = tabBarController as! MainTabController
+        tabController.entryImageNetworking = nil
         
         entries = APODEntryBuilder().getAPODEntries(startingIndex: 0, amount: FeedSettings().amountToShow)
         tableView.reloadData()
     }
     
     func updateConditional() -> Bool {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        return appDelegate.entryImageNetworking!.entriesFinishedUploading
+        let tabController = tabBarController as! MainTabController
+        return tabController.entryImageNetworking!.entriesFinishedUploading
     }
     
 }
