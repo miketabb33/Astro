@@ -2,12 +2,13 @@ import UIKit
 
 class UserDefaultsMethods {
     let astroObjUploadCompletedKey = "Astronomical-Object-Preload-Completed"
+    let domain = UserDefaults.standard
     
     func setUserDefaults(data: Any, key: String) {
-        UserDefaults.standard.set(data, forKey: key)
+        domain.set(data, forKey: key)
     }
     
     func getBoolean(key: String) -> Bool {
-        return UserDefaults.standard.bool(forKey: key)
+        return domain.bool(forKey: key)
     }
 }
