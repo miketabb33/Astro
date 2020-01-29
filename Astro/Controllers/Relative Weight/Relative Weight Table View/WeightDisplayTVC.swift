@@ -33,7 +33,7 @@ extension WeightDisplayTVC {
         
         let userWeightOnThisObj = currentObject.relativeWeight * enteredWeight!
 
-        let formattedUserWeight = FormatterMethods().roundTo2DecimalPlaces(weight: userWeightOnThisObj)
+        let formattedUserWeight = NumberFormatter.roundTo2DecimalPlaces(number: userWeightOnThisObj)
         cell.weightLabel.text = "\(formattedUserWeight) lbs"
         
         cell.objectName.text = currentObject.name

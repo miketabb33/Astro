@@ -13,9 +13,9 @@ class APODEntryCRUD: RealmPath {
     func create(entry: EntryNetworkModel) {
         let newApodEntry = APODEntryRealm()
         newApodEntry.id = Int(entry.id)!
-        newApodEntry.title = DecoderMethods().decodeWithUTF8(string: entry.title)
-        newApodEntry.explanation = DecoderMethods().decodeWithUTF8(string: entry.explanation)
-        newApodEntry.date = FormatterMethods().convertToDate(yyyyMMdd: entry.date)
+        newApodEntry.title = String.decodeHTMLSymbols(string: entry.title)
+        newApodEntry.explanation = String.decodeHTMLSymbols(string: entry.explanation)
+        newApodEntry.date = DateFormatter.convertToDate(yyyyMMdd: entry.date)
         newApodEntry.image_url = entry.image_url
         
         try! realm.write {

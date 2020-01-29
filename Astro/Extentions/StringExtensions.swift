@@ -1,7 +1,7 @@
 import Foundation
 
-class DecoderMethods {
-    func decodeWithUTF8(string: String) -> String {
+extension String {
+    static func decodeHTMLSymbols(string: String) -> String {
         let data = string.data(using: .utf8)!
 
         let options: [NSAttributedString.DocumentReadingOptionKey: Any] = [
