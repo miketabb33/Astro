@@ -8,7 +8,7 @@ class MainTabController: UITabBarController {
         super.viewDidLoad()
         
         //select which tab is displayed upon opening app.
-        selectedViewController = self.viewControllers?[1]
+        selectedViewController = self.viewControllers?[0]
         
         entryNetworking!.SyncronizeAPODEntries()
         saveImagesAndHeightWhenReady()

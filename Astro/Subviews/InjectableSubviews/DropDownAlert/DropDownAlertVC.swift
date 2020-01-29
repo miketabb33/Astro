@@ -13,6 +13,6 @@ class DropDownAlertVC: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         view.backgroundColor = backgroundColor
-        label.textColor = TextColorSelector().getTextColor(backgroundColor: backgroundColor!)
+        label.textColor = UIColor.getAppropriateTextColorFor(backgroundColor: backgroundColor!)
     }
 }

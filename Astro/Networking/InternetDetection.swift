@@ -41,7 +41,7 @@ class InternetDetection {
             }
         } else if newValue == false && newValue != oldValue {
             DispatchQueue.main.async {
-                self.alertVC = DropDownAlertManager().createAndAddAlertToScreen(parentVC: self.parentVC, message: "No Internet", backgroundColor: BootStrapColors().danger(alpha: 0.93))
+                self.alertVC = DropDownAlertManager().createAndAddAlertToScreen(parentVC: self.parentVC, message: "No Internet", backgroundColor: UIColor.danger(alpha: 0.93))
             }
         }
     }
